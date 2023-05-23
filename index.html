@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="./styles/loader.css">
+  <link rel="stylesheet" href="./styles/radio.css">
+  <link rel="stylesheet" href="./styles/chkbox.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/start-dlg.css">
+</head>
+
+<body>
+  <div class="body">
+    <div class="header">
+      <div class="logo">PsychoQuiz</div>
+      <div class="center f-c">
+      </div>
+      <div class="right f-c">
+        <div class="timer-wrap"></div>
+      </div>
+    </div>
+
+    <div class="start-panel">
+      <div class="start-btn f-c">
+        <img src="./assets/app/start.png">
+      </div>
+    </div>
+
+    <div class="questions-panel">
+      <div class="main">
+      </div>
+      <div class="footer">
+        <div class="answers">
+          <div class="answer q1">1</div>
+          <div class="answer q1">2</div>
+          <div class="answer q1">3</div>
+          <div class="answer q1">4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="answers-panel">
+
+    </div>
+
+    <div class="loader-wrap">
+      <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5ebd3e" />
+            <stop offset="33%" stop-color="#ffb900" />
+            <stop offset="67%" stop-color="#f78200" />
+            <stop offset="100%" stop-color="#e23838" />
+          </linearGradient>
+          <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0%" stop-color="#e23838" />
+            <stop offset="33%" stop-color="#973999" />
+            <stop offset="67%" stop-color="#009cdf" />
+            <stop offset="100%" stop-color="#5ebd3e" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-width="16">
+          <g class="ip__track" stroke="#ddd">
+            <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+            <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+          </g>
+          <g stroke-dasharray="180 656">
+            <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0"
+              d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+            <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358"
+              d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="start-dlg-wrap dlg-wrap">
+    <div class="popper">
+    </div>
+    <div class="dlg dlg-start">
+      <div class="panel step1">
+        <div class="dlg-header">
+          <div class="title">Choose Subject</div>
+        </div>
+        <div class="dlg-body">
+          <div class="radio">
+            <ul>
+              <li>
+                <input type="radio" id="select-math" value="math" checked name="subjects-radio">
+                <label for="select-math">Math</label>
+                <div class="check"></div>
+              </li>
+              <li>
+                <input type="radio" id="select-he" value="he" name="subjects-radio">
+                <label for="select-he">Hebrew</label>
+                <div class="check">
+                  <div class="inside"></div>
+                </div>
+              </li>
+              <li>
+                <input type="radio" id="select-en" value="en" name="subjects-radio">
+                <label for="select-en">English</label>
+                <div class="check">
+                  <div class="inside"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel step2">
+        <div class="dlg-header">
+          <div class="title">Choose Area</div>
+        </div>
+        <div class="dlg-body">
+          <div class="area math">
+            <label class="checkbox">
+              <input type="checkbox" class="select-all" value="all">
+              <span> All</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="geo1">
+              <span> גאומטריה (ריבוע)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="geo2">
+              <span> גאומטריה (מעגל)</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="deduction">
+              <span> בעיות הסקה</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="fractions">
+              <span> שברים</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="percentage">
+              <span> אחוזים</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="operations">
+              <span> פעולות ממוצאות</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="prob">
+              <span> הסתברות</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="combi">
+              <span> קומבינטוריקה</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="movement">
+              <span> תנועה</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="supplying">
+              <span> הספק</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="eq">
+              <span> אי שיוויוים</span>
+            </label>
+          </div>
+          <div class="area he">
+            <label class="checkbox">
+              <input type="checkbox" class="select-all" value="all">
+              <span> All</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="analogs">
+              <span> אנלוגיות</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="sentences">
+              <span> משפטים</span>
+            </label>
+          </div>
+          <div class="area en">
+            <label class="checkbox">
+              <input type="checkbox" class="select-all" value="all">
+              <span> All</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="completions">
+              <span> Sentence Completions</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="select-item" value="restatements">
+              <span> Restatements</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel step3">
+        <div class="dlg-header">
+          <div class="title">Choose Source</div>
+        </div>
+        <div class="dlg-body source">
+          <label class="checkbox">
+            <input type="checkbox" class="select-all" value="all">
+            <span> All</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="select-item" value="malo1" checked>
+            <span> (2017-2023) מאל"ו</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="select-item" value="malo2">
+            <span> (2012-2017) מאל"ו</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="select-item" value="niv">
+            <span> ניב רווח</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="select-item" value="pshco">
+            <span> פסיכו</span>
+          </label>
+        </div>
+      </div>
+      <div class="dlg-footer">
+        <div class="btn btn-prev">Prev</div>
+        <div class="btn btn-next">Next</div>
+        <div class="btn btn-go f-c active">Let's Go</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+  <script src="./js/common/consts.js"></script>
+  <script src="./js/common/utils.js"></script>
+  <script src="./js/common/timer.js"></script>
+  <script src="./js/data-builder/data-builder.js"></script>
+  <script src="./js/data-builder/question-builder.js"></script>
+  <script src="./js/data-builder/validators/chapter-validator.js"></script>
+  <script src="./js/data-builder/validators/file-validator.js"></script>
+  <script src="./js/dialogs/start-dlg.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

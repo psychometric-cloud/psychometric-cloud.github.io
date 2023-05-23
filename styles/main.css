@@ -1,0 +1,171 @@
+body {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.f-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+
+/* -------------------------------------------- */
+/* body */
+/* -------------------------------------------- */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #3c3c3c;
+  height: 60px;
+}
+
+.header .logo {
+  margin-left: 15px;
+  font-size: 23px;
+  color: white;
+  margin-top: -3px;
+}
+
+.header .center {
+  flex: 1;
+  height: 100%;
+}
+
+.header .center .inner {
+  height: 100%;
+}
+
+
+.header .right .timer-wrap {
+  color: white;
+  font-size: 23px;
+  padding: 0 20px;
+}
+
+
+/* -------------------------------------------- */
+/* loader-wrap */
+/* -------------------------------------------- */
+
+.loader-wrap {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* -------------------------------------------- */
+/* start-panel */
+/* -------------------------------------------- */
+
+
+.start-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.start-panel .start-btn img {
+  width: auto;
+  height: auto;
+  background: #078376;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.start-panel .start-btn img:hover {
+  background: #098b7e;
+}
+
+
+/* -------------------------------------------- */
+/* questions-panel */
+/* -------------------------------------------- */
+
+
+.questions-panel {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.questions-panel.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.questions-panel .main {
+  flex: 1;
+}
+
+.questions-panel .footer {
+  display: flex;
+  background-color: #eeeeee;
+  height: 80px;
+  width: 100%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: end;
+}
+
+.questions-panel .footer .answers {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+.questions-panel .footer .answers .answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.questions-panel .footer .answers .answer:hover {
+  background-color: #009688;
+}
