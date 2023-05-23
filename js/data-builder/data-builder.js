@@ -42,7 +42,7 @@ function DataBuilder() {
 
   loadTestFiles = (callback) => {
 
-    for (let i = 0; i < 40; i++) { //test only!!!!!!!!!
+    for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
       filesUrls.push(filesUrls[0]);
     }
 
