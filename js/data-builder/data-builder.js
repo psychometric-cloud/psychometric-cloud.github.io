@@ -5,9 +5,9 @@ function DataBuilder() {
 
   filesUrls = [
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json"
+    //"https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json"
+    //"https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json"
   ];
 
   //-----------------------------------------
@@ -42,9 +42,9 @@ function DataBuilder() {
 
   loadTestFiles = (callback) => {
 
-    for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
-      filesUrls.push(filesUrls[0]);
-    }
+    // for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
+    //   filesUrls.push(filesUrls[0]);
+    // }
 
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {
