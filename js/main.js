@@ -28,6 +28,7 @@ function registerEvents() {
 function onInit() {
   registerEvents();
 
+  console.log(qBank.length);
   startDlg.set((data) => {
     startQuiz(data);
   })
