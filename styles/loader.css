@@ -1,93 +1,320 @@
-/* * {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-} */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  touch-action: none;
+}
+
 :root {
-  --hue: 223;
-  --bg: hsl(var(--hue), 90%, 95%);
-  --fg: hsl(var(--hue), 90%, 5%);
-  --trans-dur: 0.3s;
-  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+  --rotation-y: 0;
+  --rotation-x: 0;
+  --size: 60vmin;
+  --segment: calc(var(--size) / 100);
+  --loading-speed: 10s;
+  --color: hsl(210 80% 50%);
+  --segments-per-second: calc(var(--loading-speed) / var(--total-length));
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--fg);
-  /* font: 1em/1.5 sans-serif;
-	height: 100vh;
-	display: grid; */
+  display: grid;
   place-items: center;
-  transition: background-color var(--trans-dur);
+  min-height: 100vh;
+  background: hsl(0 0% 90%);
+  font-family: 'Google Sans', sans-serif, system-ui;
 }
 
-.loader-wrap.show {
-  display: flex;
+#flip:checked~.container {
+  --rotation-y: -24;
+  --rotation-x: -24;
 }
 
-.ip {
-  width: 16em;
-  height: 8em;
+[for] {
+  transform: translateZ(200vmin);
+  position: fixed;
+  inset: 0;
 }
 
-.ip__track {
-  stroke: hsl(var(--hue), 90%, 90%);
-  transition: stroke var(--trans-dur);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-.ip__worm1,
-.ip__worm2 {
-  animation: worm1 2s linear infinite;
+.loading-label {
+  position: absolute;
+  left: 0;
+  bottom: 110%;
+  font-weight: bold;
+  font-size: clamp(1rem, var(--size) * 0.025, 6rem);
 }
 
-.ip__worm2 {
-  animation-name: worm2;
+.container {
+  width: var(--size);
+  aspect-ratio: 16 / 1.25;
+  position: relative;
 }
 
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: hsl(var(--hue), 90%, 5%);
-    --fg: hsl(var(--hue), 90%, 95%);
-  }
-
-  .ip__track {
-    stroke: hsl(var(--hue), 90%, 15%);
-  }
+.scene {
+  height: 100%;
+  width: 100%;
+  transform: translate3d(0, 0, 100vmin) rotateX(calc(var(--rotation-y, 0) * 1deg)) rotateY(calc(var(--rotation-x, 0) * 1deg));
+  transition: transform 0.25s;
 }
 
-/* Animation */
-@keyframes worm1 {
+h1 {
+  opacity: 0.5;
+  color: var(--color);
+  font-size: calc(var(--depth, 20vmin) * 0.25);
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 0;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: var(--columns);
+}
+
+.bar__segment {
+  background: hsl(0 0% 100%);
+  transform: translateZ(calc(var(--depth) * var(--segment)));
+  border: calc(var(--segment) * 0.5) solid black;
+}
+
+.bar__segment:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color);
+  transform-origin: 0 50%;
+  /*animation: reveal calc(var(--length) * var(--segments-per-second)) calc(var(--delay) * var(--segments-per-second)) both linear;*/
+  animation-name: var(--name);
+  animation-duration: var(--loading-speed);
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes reveal {
   from {
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    animation-timing-function: steps(1);
-    stroke-dashoffset: -358;
-  }
-
-  50.01% {
-    animation-timing-function: linear;
-    stroke-dashoffset: 358;
-  }
-
-  to {
-    stroke-dashoffset: 0;
+    transform: scaleX(0);
   }
 }
 
-@keyframes worm2 {
-  from {
-    stroke-dashoffset: 358;
+.bar__segment:not(:first-of-type, :last-of-type) {
+  border-left: transparent;
+  border-right: transparent;
+}
+
+.bar__segment:first-of-type {
+  border-right: transparent;
+}
+
+.bar__segment:last-of-type {
+  border-left: transparent;
+}
+
+.bar__segment:not(.bar__segment--aligned) {
+  width: calc(var(--segment) * var(--length));
+  transform-origin: 0 50%;
+  filter: brightness(0.78);
+  transform: translateZ(calc(var(--depth) * var(--segment))) rotateY(var(--rotation, 0deg));
+}
+
+.bar__segment--front {
+  --rotation: -90deg;
+}
+
+.bar__segment--back {
+  --rotation: 90deg;
+}
+
+/* Perhaps it makes more sense for each segment to have its own keyframe */
+/* We know how each keyframes work... */
+/**
+* 1. Start at 0% plus delay% with scaleX(0). We can normalize the keyframes by dividing 100 / 400 to get a keyframe step.
+* 2. Then by the length%, 100% scaleX(1). 
+* 3. That's it. Then we don't need delays. Set the animation-name and forget.
+* */
+/* Keyframes Step = 100 / 400 = 0.25 */
+/**
+* Step: 100 / 400 = 0.25% ;
+* Start: --delay * step || previous ending frame;
+* End: (--delay + --length) * step || The next --delay * step;
+* */
+@keyframes segment-1 {
+  0% {
+    transform: scaleX(0);
   }
 
-  50% {
-    stroke-dashoffset: 0;
+  5%,
+  100% {
+    transform: scaleX(1);
   }
 
-  to {
-    stroke-dashoffset: -358;
+}
+
+@keyframes segment-2 {
+
+  0%,
+  5% {
+    transform: scaleX(0);
+  }
+
+  12.5%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-3 {
+
+  0%,
+  12.5% {
+    transform: scaleX(0);
+  }
+
+  15%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-4 {
+
+  0%,
+  15% {
+    transform: scaleX(0);
+  }
+
+  27.5%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-5 {
+
+  0%,
+  27.5% {
+    transform: scaleX(0);
+  }
+
+  30%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-6 {
+
+  0%,
+  30% {
+    transform: scaleX(0);
+  }
+
+  45%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-7 {
+
+  0%,
+  45% {
+    transform: scaleX(0);
+  }
+
+  47.5%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-8 {
+
+  0%,
+  47.5% {
+    transform: scaleX(0);
+  }
+
+  65%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-9 {
+
+  0%,
+  65% {
+    transform: scaleX(0);
+  }
+
+  70%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-10 {
+
+  0%,
+  70% {
+    transform: scaleX(0);
+  }
+
+  82.5%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-11 {
+
+  0%,
+  82.5% {
+    transform: scaleX(0);
+  }
+
+  90%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-12 {
+
+  0%,
+  90% {
+    transform: scaleX(0);
+  }
+
+  95%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes segment-13 {
+
+  0%,
+  95% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
   }
 }

@@ -1,7 +1,5 @@
+qBank = [];
 selectedQuestions = [];
-timer = new Timer();
-startDlg = new StartDialog();
-dataBuilder = new DataBuilder();
 
 /*-------------------------------------------*/
 
@@ -39,15 +37,28 @@ function onInit() {
 
 showLoader = (show) => {
   $(".loader-wrap").toggleClass("show", show);
+  $(".start-panel").toggleClass("show", !show);
+}
+
+//-----------------------------------------------------
+
+initProviders = () => {
+  utils = new utils();
+  fileValidator = new FileValidator();
+  questionBuilder = new QuestionBuilder();
+  timer = new Timer();
+  dataBuilder = new DataBuilder();
+  startDlg = new StartDialog();
 }
 
 //-----------------------------------------------------
 
 $(document).ready(() => {
-  //  showLoader(true);
-  debugger;
+  showLoader(true);
+  initProviders();
+
   dataBuilder.build(() => {
     onInit();
-    //    showLoader(false);
+    showLoader(false);
   })
 });

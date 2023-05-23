@@ -9,12 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-
-  <!-- <link rel="stylesheet" href="./styles/loader.css">
+  <link rel="stylesheet" href="./styles/loader.css">
   <link rel="stylesheet" href="./styles/radio.css">
   <link rel="stylesheet" href="./styles/chkbox.css">
   <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/start-dlg.css"> -->
+  <link rel="stylesheet" href="./styles/start-dlg.css">
 </head>
 
 <body>
@@ -52,34 +51,41 @@
     </div>
 
     <div class="loader-wrap">
-      <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#5ebd3e" />
-            <stop offset="33%" stop-color="#ffb900" />
-            <stop offset="67%" stop-color="#f78200" />
-            <stop offset="100%" stop-color="#e23838" />
-          </linearGradient>
-          <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
-            <stop offset="0%" stop-color="#e23838" />
-            <stop offset="33%" stop-color="#973999" />
-            <stop offset="67%" stop-color="#009cdf" />
-            <stop offset="100%" stop-color="#5ebd3e" />
-          </linearGradient>
-        </defs>
-        <g fill="none" stroke-linecap="round" stroke-width="16">
-          <g class="ip__track" stroke="#ddd">
-            <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
-            <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
-          </g>
-          <g stroke-dasharray="180 656">
-            <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0"
-              d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
-            <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358"
-              d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
-          </g>
-        </g>
-      </svg>
+      <input class="sr-only" type="checkbox" id="flip" checked>
+      <label for="flip"></label>
+      <div class="container">
+        <div class="scene">
+          <span class="loading-label">Loading test...</span>
+          <div class="bar" style="--columns: 20% 0 10% 0 10% 0 10% 0 20% 0 10% 0 20%; --total-length: 400;">
+            <div style="--name:  segment-1; --delay:   0; --length: 20; --depth:   0;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name:  segment-2; --delay:  20; --length: 30; --depth:   0;"
+              class="bar__segment bar__segment--front"></div>
+            <div style="--name:  segment-3; --delay:  50; --length: 10; --depth:  30;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name:  segment-4; --delay:  60; --length: 50; --depth:  30;"
+              class="bar__segment bar__segment--back"></div>
+            <div style="--name:  segment-5; --delay: 110; --length: 10; --depth: -20;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name:  segment-6; --delay: 120; --length: 60; --depth: -20;"
+              class="bar__segment bar__segment--front"></div>
+            <div style="--name:  segment-7; --delay: 180; --length: 10; --depth:  40;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name:  segment-8; --delay: 190; --length: 70; --depth:  40;"
+              class="bar__segment bar__segment--back"></div>
+            <div style="--name:  segment-9; --delay: 260; --length: 20; --depth: -30;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name: segment-10; --delay: 280; --length: 50; --depth: -30;"
+              class="bar__segment bar__segment--front"></div>
+            <div style="--name: segment-11; --delay: 330; --length: 30; --depth:  20;"
+              class="bar__segment bar__segment--aligned"></div>
+            <div style="--name: segment-12; --delay: 360; --length: 20; --depth:  20;"
+              class="bar__segment bar__segment--back"></div>
+            <div style="--name: segment-13; --delay: 380; --length: 20; --depth:   0;"
+              class="bar__segment bar__segment--aligned"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -248,7 +254,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
-  <!-- <script src="./js/common/consts.js"></script>
+  <script src="./js/common/consts.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/timer.js"></script>
   <script src="./js/data-builder/data-builder.js"></script>
@@ -256,7 +262,7 @@
   <script src="./js/data-builder/validators/chapter-validator.js"></script>
   <script src="./js/data-builder/validators/file-validator.js"></script>
   <script src="./js/dialogs/start-dlg.js"></script>
-  <script src="./js/main.js"></script> -->
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

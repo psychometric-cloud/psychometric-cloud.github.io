@@ -85,6 +85,9 @@ html {
   justify-content: center;
 }
 
+.loader-wrap.show {
+  display: flex;
+}
 
 /* -------------------------------------------- */
 /* start-panel */
@@ -92,10 +95,14 @@ html {
 
 
 .start-panel {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.start-panel.show {
+  display: flex;
 }
 
 .start-panel .start-btn img {
