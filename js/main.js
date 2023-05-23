@@ -18,7 +18,7 @@ function showStartDlg() {
 /*-------------------------------------------*/
 
 function registerEvents() {
-  $(".start-btn").on("click", () => {
+  $(".start-panel .start-btn").on("click", () => {
     showStartDlg();
   });
 }
@@ -37,8 +37,8 @@ function onInit() {
 //-----------------------------------------------------
 
 showLoader = (show) => {
-  $(".loader-wrap").toggleClass("show", show);
-  $(".start-panel").toggleClass("show", !show);
+  $(".loader").toggleClass("show", show);
+  $(".start-btn").toggleClass("show", !show);
 }
 
 //-----------------------------------------------------
