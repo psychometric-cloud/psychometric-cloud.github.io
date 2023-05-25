@@ -1,11 +1,13 @@
 function utils() {
 
   loadJson = (file, cb) => {
+
     fetch(file)
-      .then((response) => {
-        cb(response.json());
-      })
+      .then((response) => response.json())
       .then((json) => {
+        cb(json)
+      })
+      .catch(function () {
         console.log(`loading ${file} has failed`);
       });
   }

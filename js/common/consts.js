@@ -1,6 +1,6 @@
 window.ePublisher = {
-  mallo: "mallo",
-  niv: "nivR"
+  mallo: "MALLO",
+  niv: "NIVR"
 }
 
 window.sSeasons = {
@@ -13,10 +13,10 @@ window.sSeasons = {
 window.eChapters = {
   math1: "math1",
   math2: "math2",
-  he1: "he1",
-  he2: "he2",
-  en1: "en1",
-  en2: "en2"
+  he1: "HE1",
+  he2: "HE2",
+  en1: "EN1",
+  en2: "EN2"
 }
 
 window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];

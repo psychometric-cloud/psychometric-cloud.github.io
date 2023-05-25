@@ -1,5 +1,7 @@
 function FileValidator() {
 
+  chapterValidator = new ChapterValidator();
+
   checkMainStructure = (fileName, fileData) => {
     let isValid =
       _.has(fileData, "publisher") &&
@@ -70,12 +72,12 @@ function FileValidator() {
   checkChapters = (fileName, fileData) => {
 
     let isValid =
-      chapterValidator.checkChapter(fileName, fileData, eSubject.math1) &&
-      chapterValidator.checkChapter(fileName, fileData, eSubject.math2) &&
-      chapterValidator.checkChapter(fileName, fileData, eSubject.HE1) &&
-      chapterValidator.checkChapter(fileName, fileData, eSubject.HE2) &&
-      chapterValidator.checkChapter(fileName, fileData, eSubject.EN1) &&
-      chapterValidator.checkChapter(fileName, fileData, eSubject.EN2);
+      chapterValidator.checkChapter(fileName, fileData, eChapters.math1) &&
+      chapterValidator.checkChapter(fileName, fileData, eChapters.math2) &&
+      chapterValidator.checkChapter(fileName, fileData, eChapters.he1) &&
+      chapterValidator.checkChapter(fileName, fileData, eChapters.he2) &&
+      chapterValidator.checkChapter(fileName, fileData, eChapters.en1) &&
+      chapterValidator.checkChapter(fileName, fileData, eChapters.en2);
 
     return isValid;
   }
@@ -88,13 +90,12 @@ function FileValidator() {
 
     if (window.location.href.includes('?test')) {
       isValid =
-        checkMainStruct(fileName, fileData) &&
-        checkQuestionsStruct(fileName, fileData) &&
-        checkPublisher(test) &&
-        checkYear(test) &&
-        checkSeason(test) &&
-        checkSubjects(test) &&
-        checkChapters();
+        checkMainStructure(fileName, fileData) &&
+        checkQuestionsStructure(fileName, fileData) &&
+        checkPublisher(fileName, fileData) &&
+        checkYear(fileName, fileData) &&
+        checkSeason(fileName, fileData) &&
+        checkChapters(fileName, fileData);
     }
     return isValid;
   }

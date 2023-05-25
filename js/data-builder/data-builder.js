@@ -1,16 +1,13 @@
 function DataBuilder() {
 
-  utils = new utils();
-  fileValidator = new FileValidator();
-
-  tests = [];
+  files = [];
   chapterArr = Object.values(eChapters);
 
   filesUrls = [
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json"
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json"
   ];
 
   //-----------------------------------------
@@ -27,25 +24,25 @@ function DataBuilder() {
 
   //-----------------------------------------
 
-  processFiles = (fileIndex, cb) => {
+  processFiles = (fileIndex, callback) => {
     let file = files[fileIndex];
 
     setTimeout(() => {
       processFile(file);
 
       if (fileIndex < files.length - 1) {
-        processFiles(fileIndex + 1, cb)
+        processFiles(fileIndex + 1, callback)
       } else {
-        cb();
+        callback();
       }
     }, 250);
   }
 
   //-----------------------------------------
 
-  loadTestFiles = () => {
+  loadTestFiles = (callback) => {
 
-    // for(let i=0;i<30;i++){ //test only!!!!!!!!!
+    // for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
     //   filesUrls.push(filesUrls[0]);
     // }
 
@@ -56,7 +53,7 @@ function DataBuilder() {
           data: json
         });
         if (files.length === filesUrls.length) {
-          cb();
+          callback();
         }
       })
     });
@@ -64,11 +61,10 @@ function DataBuilder() {
 
   //-----------------------------------------
 
-  build = (cb) => {
-    debugger;
+  build = (callback) => {
     loadTestFiles(() => {
       processFiles(0, () => {
-        cb();
+        callback();
       })
     })
   }

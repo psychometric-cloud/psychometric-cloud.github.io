@@ -1,7 +1,5 @@
+qBank = [];
 selectedQuestions = [];
-timer = new Timer();
-startDlg = new StartDialog();
-dataBuilder = new DataBuilder();
 
 /*-------------------------------------------*/
 
@@ -20,7 +18,7 @@ function showStartDlg() {
 /*-------------------------------------------*/
 
 function registerEvents() {
-  $(".start-btn").on("click", () => {
+  $(".start-panel .start-btn").on("click", () => {
     showStartDlg();
   });
 }
@@ -30,6 +28,7 @@ function registerEvents() {
 function onInit() {
   registerEvents();
 
+  console.log(qBank.length);
   startDlg.set((data) => {
     startQuiz(data);
   })
@@ -38,16 +37,29 @@ function onInit() {
 //-----------------------------------------------------
 
 showLoader = (show) => {
-  $(".loader-wrap").toggleClass("show", show);
+  $(".loader").toggleClass("show", show);
+  $(".start-btn").toggleClass("show", !show);
+}
+
+//-----------------------------------------------------
+
+initProviders = () => {
+  utils = new utils();
+  fileValidator = new FileValidator();
+  questionBuilder = new QuestionBuilder();
+  timer = new Timer();
+  dataBuilder = new DataBuilder();
+  startDlg = new StartDialog();
 }
 
 //-----------------------------------------------------
 
 $(document).ready(() => {
-  //  showLoader(true);
-  debugger;
+  showLoader(true);
+  initProviders();
+
   dataBuilder.build(() => {
     onInit();
-    //    showLoader(false);
+    showLoader(false);
   })
 });
