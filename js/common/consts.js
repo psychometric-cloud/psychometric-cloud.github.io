@@ -1,5 +1,7 @@
 window.ePublisher = {
   mallo: "MALLO",
+  mallo1: "mallo1",
+  mallo2: "mallo2",
   niv: "NIVR"
 }
 

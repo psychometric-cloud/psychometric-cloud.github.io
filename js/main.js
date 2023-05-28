@@ -3,7 +3,17 @@ selectedQuestions = [];
 
 /*-------------------------------------------*/
 
-function startQuiz(data) {
+function filterData(filterBy, callback) {
+  $(".filter-panel").addClass("show");
+
+  dataFilter.filter(filterBy, (filteredData) => {
+    callback(filteredData);
+  })
+}
+
+/*-------------------------------------------*/
+
+function startQuiz() {
   $(".questions-panel").addClass("show");
   timer.start();
 }
@@ -28,9 +38,11 @@ function registerEvents() {
 function onInit() {
   registerEvents();
 
-  console.log(qBank.length);
   startDlg.set((data) => {
-    startQuiz(data);
+    filterData(data, (res) => {
+      console.log(res);
+      startQuiz();
+    });
   })
 }
 
@@ -48,6 +60,7 @@ initProviders = () => {
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
   timer = new Timer();
+  dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
   startDlg = new StartDialog();
 }

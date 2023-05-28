@@ -4,17 +4,10 @@ const eSubject = {
   en: "en"
 };
 
-const eSource = {
-  malo1: "malo1",
-  malo2: "malo2",
-  niv: "niv",
-  pshco: "pshco"
-};
-
 function StartDialog() {
 
   selectedSubject = eSubject.math;
-  selectedSources = [eSource.malo1];
+  selectedPublishers = [ePublisher.mallo1];
   selectedAreas = [];
 
   function show() {
@@ -80,9 +73,14 @@ function StartDialog() {
 
   function onGoClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
+
+    console.log(selectedSubject);
+    console.log(selectedPublishers);
+    console.log(selectedAreas);
+
     onFinish({
       selectedSubject,
-      selectedSources,
+      selectedPublishers,
       selectedAreas
     });
   }
@@ -114,13 +112,16 @@ function StartDialog() {
 
   //--------------------------------------------
 
-  function onAreaSelectAllClicked(type) {
+  function onSelectGroupClicked(e) {
+    $(e.target).closest(".select-group").find(".body").toggleClass("open");
+  }
 
-    selectedAreas = [];
+  //--------------------------------------------
+
+  function onAreaSelectAllClicked(type) {
 
     if ($(`.area.${type} .select-all`).prop('checked')) {
       $(`.area.${type} .select-item`).each(function () {
-        selectedAreas.push(this.value)
         this.checked = true;
       });
     } else {
@@ -128,6 +129,8 @@ function StartDialog() {
         this.checked = false;
       });
     }
+
+    markSelectedArea(type);
     checkButtons();
   }
 
@@ -135,72 +138,87 @@ function StartDialog() {
 
   function onAreaSelectItemClicked(e, type) {
 
-    if ($(e.target).prop('checked')) {
-      selectedAreas.push($(e.target).prop('value'))
+    if ($(e.target).hasClass("main")) {
+      let isChecked = $(e.target).prop('checked');
+
+      $(e.target).closest(".select-group").find(".select-item.sub").each(function () {
+        this.checked = isChecked;
+      });
     } else {
-      var index = selectedAreas.indexOf($(e.target).prop('value'));
-      if (index !== -1) {
-        selectedAreas.splice(index, 1);
-      }
+      let subChecked = $(e.target).closest(".select-group").find(".select-item.sub:checked");
+      $(e.target).closest(".select-group").find(".select-item.main").prop('checked', subChecked.length > 0);
     }
 
-    if ($(`.area.${type} .select-item:checked`).length == $(`.area.${type} .select-item`).length) {
-      $(`.area.${type} .select-all`).prop('checked', true);
-    } else {
-      $(`.area.${type} .select-all`).prop('checked', false);
-    }
+    let allAreaChecked = ($(`.area.${type} .select-item:checked`).length == $(`.area.${type} .select-item`).length);
+    $(`.area.${type} .select-all`).prop('checked', allAreaChecked);
 
+    markSelectedArea(type);
     checkButtons();
   }
 
   //--------------------------------------------
 
-  function onSourceSelectAllClicked(e, type) {
+  function markSelectedArea(type) {
+    selectedAreas = [];
 
-    selectedSources = [];
+    $(`.area.${type} .select-item`).each(function () {
+      if (this.checked) {
+        selectedAreas.push(this.value);
+      }
+    });
+  }
 
-    if ($(`.source .select-all`).prop('checked')) {
-      $(`.source .select-item`).each(function () {
-        selectedSources.push(this.value)
+  //--------------------------------------------
+
+  function onPublisherSelectAllClicked(e, type) {
+
+    selectedPublishers = [];
+
+    if ($(`.publisher .select-all`).prop('checked')) {
+      $(`.publisher .select-item`).each(function () {
         this.checked = true;
       });
     } else {
-      $(`.source .select-item`).each(function () {
+      $(`.publisher .select-item`).each(function () {
         this.checked = false;
       });
     }
-    console.log(selectedSources)
+    setSelectedPublisher();
     checkButtons();
   }
 
   //--------------------------------------------
 
-  function onSourceSelectItemClicked(e) {
+  function onPublisherSelectItemClicked(e) {
 
-    if ($(e.target).prop('checked')) {
-      selectedSources.push($(e.target).prop('value'))
+    if ($(`.publisher .select-item:checked`).length == $(`.publisher .select-item`).length) {
+      $(`.publisher .select-all`).prop('checked', true);
     } else {
-      var index = selectedSources.indexOf($(e.target).prop('value'));
-      if (index !== -1) {
-        selectedSources.splice(index, 1);
-      }
+      $(`.publisher .select-all`).prop('checked', false);
     }
 
-    if ($(`.source .select-item:checked`).length == $(`.source .select-item`).length) {
-      $(`.source .select-all`).prop('checked', true);
-    } else {
-      $(`.source .select-all`).prop('checked', false);
-    }
-
-    console.log(selectedSources)
+    setSelectedPublisher();
     checkButtons();
+  }
+
+  //--------------------------------------------
+
+  function setSelectedPublisher() {
+
+    selectedPublishers = [];
+
+    $(`.publisher .select-item`).each(function () {
+      if (this.checked) {
+        selectedPublishers.push(this.value)
+      }
+    });
   }
 
   //--------------------------------------------
 
   function checkButtons() {
     $(".btn-next").toggleClass("disable", currStep > 0 && selectedAreas.length == 0);
-    $(".btn-go").toggleClass("disable", selectedSources.length == 0);
+    $(".btn-go").toggleClass("disable", selectedPublishers.length == 0);
   }
 
   /*-------------------------------------------*/
@@ -218,12 +236,17 @@ function StartDialog() {
     $('input[type=radio][name="subjects-radio"]').change(() => {
       onSubjectChange();
     });
+
+    $('.area.math .select-group .header .toggle-btn').click((e) => {
+      onSelectGroupClicked(e, eSubject.math);
+    });
     $('.area.math .select-all').click((e) => {
       onAreaSelectAllClicked(eSubject.math);
     });
     $('.area.math .select-item').click((e) => {
       onAreaSelectItemClicked(e, eSubject.math);
     });
+
     $('.area.he .select-all').click((e) => {
       onAreaSelectAllClicked(eSubject.he);
     });
@@ -236,11 +259,12 @@ function StartDialog() {
     $('.area.en .select-item').click((e) => {
       onAreaSelectItemClicked(e, eSubject.en);
     });
-    $('.source .select-all').click((e) => {
-      onSourceSelectAllClicked(e);
+
+    $('.publisher .select-all').click((e) => {
+      onPublisherSelectAllClicked(e);
     });
-    $('.source .select-item').click((e) => {
-      onSourceSelectItemClicked(e);
+    $('.publisher .select-item').click((e) => {
+      onPublisherSelectItemClicked(e);
     });
   }
 
