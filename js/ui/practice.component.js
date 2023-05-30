@@ -22,17 +22,18 @@ function PracticeComponent() {
   //-------------------------------------
 
   function getSeason(qData) {
+
     if (qData.season === "winter") {
-      return sSeasons.winter;
+      return sSeasons.w;
     }
     if (qData.season === "summer") {
-      return sSeasons.summer;
+      return sSeasons.su;
     }
     if (qData.season === "spring") {
-      return sSeasons.spring;
+      return sSeasons.sp;
     }
     if (qData.season === "autumn") {
-      return sSeasons.autumn;
+      return sSeasons.a;
     }
   }
 
@@ -43,7 +44,7 @@ function PracticeComponent() {
     qData = questionsArr[currQuestion];
 
     if (qData) {
-      let title = `${getPublisher(qData)}-${qData.year}-${getSeason(qData)}-${qData.chapter}-${qData.qNum}`;
+      let title = `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`;
       $(".practice-panel .main .col2 .title").text(title);
     }
   }
@@ -73,9 +74,56 @@ function PracticeComponent() {
     currQuestion = 0;
     questionsArr = _filteredData;
 
+    updateButtonsStatus();
     showQuestion();
+
     $(".practice-panel").addClass("show");
   }
+
+  //------------------------------------
+
+  function onNextPrevClick(step) {
+    currQuestion += step;
+
+    updateButtonsStatus();
+    showQuestion();
+  }
+
+  //------------------------------------
+
+  function onAnswerClick() {
+
+  }
+
+  //------------------------------------
+
+  function updateButtonsStatus() {
+
+    $(".practice-panel .btn-prev").toggleClass("disabled", currQuestion === 0)
+    $(".practice-panel .btn-next").toggleClass("disabled", currQuestion === questionsArr.length - 1);
+  }
+
+  //------------------------------------
+
+  function regeisterEvents() {
+    $(".practice-panel .btn-prev").click(() => {
+      onNextPrevClick(-1);
+    });
+    $(".practice-panel .btn-next").click(() => {
+      onNextPrevClick(1);
+    })
+    $(".practice-panel .btn-answer").click(() => {
+      onAnswerClick();
+    })
+  }
+
+  //-------------------------------------
+
+  function init() {
+    regeisterEvents();
+  }
+
+  init();
 
   return {
     show: show

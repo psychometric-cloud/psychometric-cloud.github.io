@@ -61,6 +61,10 @@
   border-radius: 3px;
 }
 
+.practice-panel .img-wrap {
+  margin-top: 80px;
+}
+
 .practice-panel .footer {
   display: flex;
   background-color: #eeeeee;
@@ -77,4 +81,14 @@
   border-radius: 5px;
   color: #fff;
   margin-left: 15px;
+  cursor: pointer;
+}
+
+.practice-panel .footer .btn:hover {
+  background-color: #303030;
+}
+
+.practice-panel .footer .btn.disabled {
+  pointer-events: none;
+  background-color: gray;
 }
