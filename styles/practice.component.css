@@ -22,12 +22,59 @@
   flex: 1;
 }
 
+.practice-panel .main {
+  display: flex;
+  width: 100%
+}
+
+.practice-panel .main .col1 {
+  display: none;
+}
+
+.practice-panel .main .col2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.practice-panel .title-wrap {
+  background-color: #e2e2e2;
+  padding: 8px 10px;
+  display: flex;
+  margin-top: 40px;
+  min-width: 480px;
+  border-radius: 5px;
+}
+
+.practice-panel .title-wrap .title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.practice-panel .btn-answer {
+  padding: 5px 10px;
+  color: #fff;
+  background-color: green;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
 .practice-panel .footer {
   display: flex;
   background-color: #eeeeee;
   height: 80px;
   width: 100%;
-  /* display: flex; */
   align-items: center;
   justify-content: end;
+  padding-right: 50px;
+}
+
+.practice-panel .footer .btn {
+  background-color: #000;
+  padding: 7px;
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 15px;
 }

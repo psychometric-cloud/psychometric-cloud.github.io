@@ -16,6 +16,7 @@ function DataBuilder() {
     if (fileValidator.validate(file.name, file.data)) {
       chapterArr.forEach((chapter) => {
         file.data.questions[chapter].forEach((question) => {
+          debugger;
           questionBuilder.add(file.data, question, chapter);
         })
       });
