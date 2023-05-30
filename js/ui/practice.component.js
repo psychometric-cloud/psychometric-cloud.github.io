@@ -3,31 +3,59 @@ function PracticeComponent() {
   questionsArr = [];
   currQuestion = 0;
 
-  function extract(name, letter) {
-    name = name.substring(0, str.length - 1);
-
-    if (letter === 1) {
-      name = name.toUpperCase();
-    }
-    else if (letter === 2) {
-      name = name.toLowerCase();
-    }
-    return name;
+  function getPublisher(qData) {
+    return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
   }
 
+  //-------------------------------------
+
+  function getSubject(qData) {
+    return qData.chapter.substring(0, qData.chapter.length - 1).toLowerCase();
+  }
+
+  //-------------------------------------
+
+  function getName(qData) {
+    return `${qData.chapter.slice(-1)}_${qData.qNum}`;
+  }
+
+  //-------------------------------------
+
+  function getSeason(qData) {
+    if (qData.season === "winter") {
+      return sSeasons.winter;
+    }
+    if (qData.season === "summer") {
+      return sSeasons.summer;
+    }
+    if (qData.season === "spring") {
+      return sSeasons.spring;
+    }
+    if (qData.season === "autumn") {
+      return sSeasons.autumn;
+    }
+  }
+
+  //-------------------------------------
+
+  function setTitle() {
+
+    qData = questionsArr[currQuestion];
+
+    if (qData) {
+      let title = `${getPublisher(qData)}-${qData.year}-${getSeason(qData)}-${qData.chapter}-${qData.qNum}`;
+      $(".practice-panel .main .col2 .title").text(title);
+    }
+  }
 
   //-------------------------------------
 
   function setQuestionImg() {
 
     qData = questionsArr[currQuestion];
-    if (qData) {
-      let publisher = qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
-      let subject = qData.chapter.substring(0, qData.chapter.length - 1).toLowerCase();
-      let qName = `${qData.chapter.slice(-1)}_${qData.qNum}`;
-      let src = `./assets/questions/${publisher}/${qData.year}/${qData.season}/questions/${subject}/${qName}.png`;
 
-      debugger;
+    if (qData) {
+      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions/${getSubject(qData)}/${getName(qData)}.png`;
       $(".practice-panel .main .col2 img").attr('src', src);
     }
   }
@@ -35,6 +63,7 @@ function PracticeComponent() {
   //-------------------------------------
 
   function showQuestion() {
+    setTitle();
     setQuestionImg();
   }
 
