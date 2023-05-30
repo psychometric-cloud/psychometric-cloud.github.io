@@ -60,11 +60,15 @@ function DataFilter() {
 
     filterBySubject(qBank, filterBy, (res1) => {
       filterByPublishers(res1, filterBy, (res2) => {
-        filterByAreas(res2, filterBy, (res3) => {
-          callback(res3);
-        })
+        if (filterBy.actionType === eActionType.practice) {
+          filterByAreas(res2, filterBy, (res3) => {
+            callback(res3);
+          })
+        } else {
+          callback(res2);
+        }
       })
-    })
+    });
   }
 
   return {

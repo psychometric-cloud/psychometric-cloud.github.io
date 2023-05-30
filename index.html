@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/dialog.css">
   <link rel="stylesheet" href="./styles/start-dlg.css">
+  <link rel="stylesheet" href="./styles/practice.component.css">
+  <link rel="stylesheet" href="./styles/test.component.css">
 </head>
 
 <body>
@@ -28,26 +30,27 @@
       </div>
     </div>
 
+    <div class="lds-default loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <div class="start-panel show">
       <img src="./assets/app/start.svg">
-      <div class="lds-default loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
       <div class="start-btn">Let's Start</div>
     </div>
 
-    <div class="questions-panel">
+    <div class="test-panel">
       <div class="main">
       </div>
       <div class="footer">
@@ -60,8 +63,16 @@
       </div>
     </div>
 
-    <div class="answers-panel">
+    <div class="practice-panel">
+      <div class="main">
+      </div>
+      <div class="footer">
+        sdfgsdfgsdfg
+      </div>
+    </div>
 
+
+    <div class="answers-panel">
     </div>
   </div>
 
@@ -69,6 +80,13 @@
     <div class="popper">
     </div>
     <div class="dlg dlg-start">
+      <div class="init-panel f-c">
+        <img src="./assets/app/start_sign.png">
+        <div class="actions f-c">
+          <div class="btn-practice">Practice</div>
+          <div class="btn-test">Test</div>
+        </div>
+      </div>
       <div class="panel step1">
         <div class="dlg-header">
           <div class="title">Choose Subject</div>
@@ -262,12 +280,15 @@
   <script src="./js/common/consts.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/timer.js"></script>
-  <script src="./js/data/builders/data-builder.js"></script>
-  <script src="./js/data/builders/question-builder.js"></script>
-  <script src="./js/data/validators/chapter-validator.js"></script>
-  <script src="./js/data/validators/file-validator.js"></script>
-  <script src="./js/data/filter/data-filter.js"></script>
-  <script src="./js/dialogs/start-dlg.js"></script>
+  <script src="./js/common/test-builder.js"></script>
+  <script src="./js/db/builders/data-builder.js"></script>
+  <script src="./js/db/builders/question-builder.js"></script>
+  <script src="./js/db/validators/chapter-validator.js"></script>
+  <script src="./js/db/validators/file-validator.js"></script>
+  <script src="./js/db/data-filter.js"></script>
+  <script src="./js/ui/start.dlg.js"></script>
+  <script src="./js/ui/practice.component.js"></script>
+  <script src="./js/ui/test.component.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

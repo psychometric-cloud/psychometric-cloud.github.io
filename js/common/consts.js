@@ -5,6 +5,11 @@ window.ePublisher = {
   niv: "NIVR"
 }
 
+window.eActionType = {
+  test: 1,
+  practice: 2
+};
+
 window.sSeasons = {
   a: "a",
   w: "w",

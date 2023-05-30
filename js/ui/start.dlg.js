@@ -62,7 +62,14 @@ function StartDialog() {
   /*-------------------------------------------*/
 
   function onPrevNextClick(step) {
+
     currStep += step;
+
+    if (actionType === eActionType.test) {
+      if (currStep === 1) {
+        currStep += step;
+      }
+    }
 
     showButtons();
     showPanels();
@@ -79,6 +86,7 @@ function StartDialog() {
     console.log(selectedAreas);
 
     onFinish({
+      actionType,
       selectedSubject,
       selectedPublishers,
       selectedAreas
@@ -221,7 +229,14 @@ function StartDialog() {
     $(".btn-go").toggleClass("disable", selectedPublishers.length == 0);
   }
 
-  /*-------------------------------------------*/
+  //---------------------------------------------
+
+  function onBtnPreActionClicked(_actionType) {
+    actionType = _actionType;
+    $(".dlg-start .init-panel").hide();
+  }
+
+  //---------------------------------------------
 
   function registerEvents(onFinish) {
     $(".dlg-start .btn-prev").on("click", () => {
@@ -265,6 +280,13 @@ function StartDialog() {
     });
     $('.publisher .select-item').click((e) => {
       onPublisherSelectItemClicked(e);
+    });
+
+    $('.btn-test').click((e) => {
+      onBtnPreActionClicked(eActionType.test);
+    });
+    $('.btn-practice').click((e) => {
+      onBtnPreActionClicked(eActionType.practice);
     });
   }
 

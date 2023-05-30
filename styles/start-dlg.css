@@ -58,11 +58,44 @@
   margin-left: -250px;
 }
 
+.dlg-start .init-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.dlg-start .init-panel img {
+  margin-bottom: 35px;
+}
+
+.btn-test,
+.btn-practice {
+  padding: 20px;
+  border-radius: 35px;
+  background: #F44336;
+  min-width: 140px;
+  text-align: center;
+  margin: 0 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-test {
+  background: #008000;
+}
+
 .dlg-start .panel {
   display: none;
   flex-direction: column;
   flex: 1;
   overflow: auto;
+  border-radius: 10px;
 }
 
 .dlg-start .panel.active {
