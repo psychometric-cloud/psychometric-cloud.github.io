@@ -2,6 +2,8 @@ function FileValidator() {
 
   chapterValidator = new ChapterValidator();
 
+  ePublisherArr = Object.values(ePublisher);
+
   checkMainStructure = (fileName, fileData) => {
     let isValid =
       _.has(fileData, "publisher") &&
@@ -35,7 +37,7 @@ function FileValidator() {
   //--------------------------------------------
 
   checkPublisher = (fileName, fileData) => {
-    if (![ePublisher.mallo].includes(fileData.publisher)) {
+    if (!ePublisherArr.includes(fileData.publisher)) {
       console.log(`Publisher ${fileData.publisher} in: '${fileName}' is invalid`);
       return false;
     }

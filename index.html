@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/dialog.css">
   <link rel="stylesheet" href="./styles/start-dlg.css">
+  <link rel="stylesheet" href="./styles/practice.component.css">
+  <link rel="stylesheet" href="./styles/test.component.css">
 </head>
 
 <body>
@@ -28,26 +30,27 @@
       </div>
     </div>
 
+    <div class="lds-default loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <div class="start-panel show">
       <img src="./assets/app/start.svg">
-      <div class="lds-default loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
       <div class="start-btn">Let's Start</div>
     </div>
 
-    <div class="questions-panel">
+    <div class="test-panel">
       <div class="main">
       </div>
       <div class="footer">
@@ -60,8 +63,16 @@
       </div>
     </div>
 
-    <div class="answers-panel">
+    <div class="practice-panel">
+      <div class="main">
+      </div>
+      <div class="footer">
+        sdfgsdfgsdfg
+      </div>
+    </div>
 
+
+    <div class="answers-panel">
     </div>
   </div>
 
@@ -69,6 +80,13 @@
     <div class="popper">
     </div>
     <div class="dlg dlg-start">
+      <div class="init-panel f-c">
+        <img src="./assets/app/start_sign.png">
+        <div class="actions f-c">
+          <div class="btn-practice">Practice</div>
+          <div class="btn-test">Test</div>
+        </div>
+      </div>
       <div class="panel step1">
         <div class="dlg-header">
           <div class="title">Choose Subject</div>
@@ -110,49 +128,78 @@
               <span> All</span>
             </label>
             <label class="checkbox">
-              <input type="checkbox" class="select-item" value="geo1">
-              <span> גאומטריה (ריבוע)</span>
+              <input type="checkbox" class="select-item" value="chart">
+              <span> הסקה מתרשים</span>
             </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="geo2">
-              <span> גאומטריה (מעגל)</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="deduction">
-              <span> בעיות הסקה</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="fractions">
-              <span> שברים</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="percentage">
-              <span> אחוזים</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="operations">
-              <span> פעולות ממוצאות</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="prob">
-              <span> הסתברות</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="combi">
-              <span> קומבינטוריקה</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="movement">
-              <span> תנועה</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="supplying">
-              <span> הספק</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="eq">
-              <span> אי שיוויוים</span>
-            </label>
+            <div class="select-group">
+              <div class="header">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item main" value="geo1">
+                  <span> גאומטריה (ריבוע)</span>
+                </label>
+                <div class="toggle-btn"><img src="./assets/app/arrow-down.svg"></div>
+              </div>
+              <div class="body">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="geo2">
+                  <span> גאומטריה (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="geo3">
+                  <span> גאומטריה (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="geo4">
+                  <span> גאומטריה (מעגל)</span>
+                </label>
+              </div>
+            </div>
+            <div class="select-group">
+              <div class="header">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item main" value="algebra">
+                  <span> algebra</span>
+                </label>
+                <div class="toggle-btn"><img src="./assets/app/arrow-down.svg"></div>
+              </div>
+              <div class="body">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="algebra1">
+                  <span> algebra (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="algebra2">
+                  <span> algebra (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="algebra3">
+                  <span> algebra (מעגל)</span>
+                </label>
+              </div>
+            </div>
+            <div class="select-group">
+              <div class="header">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item main" value="problems">
+                  <span> problems</span>
+                </label>
+                <div class="toggle-btn"><img src="./assets/app/arrow-down.svg"></div>
+              </div>
+              <div class="body">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="problems1">
+                  <span> problems (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="problems2">
+                  <span> problems (מעגל)</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="problems3">
+                  <span> problems (מעגל)</span>
+                </label>
+              </div>
+            </div>
           </div>
           <div class="area he">
             <label class="checkbox">
@@ -189,18 +236,18 @@
         <div class="dlg-header">
           <div class="title">Choose Source</div>
         </div>
-        <div class="dlg-body source">
+        <div class="dlg-body publisher">
           <label class="checkbox">
             <input type="checkbox" class="select-all" value="all">
             <span> All</span>
           </label>
           <label class="checkbox">
-            <input type="checkbox" class="select-item" value="malo1" checked>
-            <span> (2017-2023) מאל"ו</span>
+            <input type="checkbox" class="select-item" value="mallo1" checked>
+            <span> (2013-2023) מאל"ו</span>
           </label>
           <label class="checkbox">
-            <input type="checkbox" class="select-item" value="malo2">
-            <span> (2012-2017) מאל"ו</span>
+            <input type="checkbox" class="select-item" value="mallo2">
+            <span> (2009-2012) מאל"ו</span>
           </label>
           <label class="checkbox">
             <input type="checkbox" class="select-item" value="niv">
@@ -233,11 +280,15 @@
   <script src="./js/common/consts.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/timer.js"></script>
-  <script src="./js/data-builder/data-builder.js"></script>
-  <script src="./js/data-builder/question-builder.js"></script>
-  <script src="./js/data-builder/validators/chapter-validator.js"></script>
-  <script src="./js/data-builder/validators/file-validator.js"></script>
-  <script src="./js/dialogs/start-dlg.js"></script>
+  <script src="./js/common/test-builder.js"></script>
+  <script src="./js/db/builders/data-builder.js"></script>
+  <script src="./js/db/builders/question-builder.js"></script>
+  <script src="./js/db/validators/chapter-validator.js"></script>
+  <script src="./js/db/validators/file-validator.js"></script>
+  <script src="./js/db/data-filter.js"></script>
+  <script src="./js/ui/start.dlg.js"></script>
+  <script src="./js/ui/practice.component.js"></script>
+  <script src="./js/ui/test.component.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

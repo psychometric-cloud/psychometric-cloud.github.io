@@ -3,9 +3,23 @@ selectedQuestions = [];
 
 /*-------------------------------------------*/
 
-function startQuiz(data) {
-  $(".questions-panel").addClass("show");
-  timer.start();
+function renderUI(actionType, filteredData) {
+  if (actionType === eActionType.test) {
+    testComponent.show(filteredData);
+  } else {
+    practiceComponent.show(filteredData);
+  }
+}
+
+/*-------------------------------------------*/
+
+function filterData(filterBy, callback) {
+  showLoader(true);
+
+  dataFilter.filter(filterBy, (filteredData) => {
+    showLoader(false);
+    callback(filteredData);
+  })
 }
 
 /*-------------------------------------------*/
@@ -28,9 +42,10 @@ function registerEvents() {
 function onInit() {
   registerEvents();
 
-  console.log(qBank.length);
-  startDlg.set((data) => {
-    startQuiz(data);
+  startDlg.set((filterBy) => {
+    filterData(filterBy, (res) => {
+      renderUI(filterBy.actionType, res);
+    });
   })
 }
 
@@ -38,7 +53,6 @@ function onInit() {
 
 showLoader = (show) => {
   $(".loader").toggleClass("show", show);
-  $(".start-btn").toggleClass("show", !show);
 }
 
 //-----------------------------------------------------
@@ -48,8 +62,12 @@ initProviders = () => {
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
   timer = new Timer();
+  testBuilder = new TestBuilder();
+  dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
   startDlg = new StartDialog();
+  testComponent = new TestComponent();
+  practiceComponent = new PracticeComponent();
 }
 
 //-----------------------------------------------------
@@ -61,5 +79,6 @@ $(document).ready(() => {
   dataBuilder.build(() => {
     onInit();
     showLoader(false);
+    $(".start-btn").toggleClass("show", true);
   })
 });

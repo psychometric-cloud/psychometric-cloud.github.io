@@ -1,0 +1,58 @@
+/* -------------------------------------------- */
+/* questions-panel */
+/* -------------------------------------------- */
+
+
+.test-panel {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.test-panel.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-panel .main {
+  flex: 1;
+}
+
+.test-panel .footer {
+  display: flex;
+  background-color: #eeeeee;
+  height: 80px;
+  width: 100%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: end;
+}
+
+.test-panel .footer .answers {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+.test-panel .footer .answers .answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.test-panel .footer .answers .answer:hover {
+  background-color: #009688;
+}

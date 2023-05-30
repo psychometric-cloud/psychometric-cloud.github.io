@@ -39,10 +39,22 @@ function utils() {
     return parseFloat(str) >= num1 && parseFloat(str) <= num2;
   }
 
+  //----------------------------------------
+
+  shuffleNums = (maxNum) => {
+    let arr = [];
+
+    for (var i = 0; i < maxNum; i++) {
+      arr.push(i);
+    }
+    return _.shuffle(arr);
+  }
+
   return {
     isEq: isEq,
     isBetween: isBetween,
     isNumeric: isNumeric,
-    loadJson: loadJson
+    loadJson: loadJson,
+    shuffleNums: shuffleNums
   }
 }
