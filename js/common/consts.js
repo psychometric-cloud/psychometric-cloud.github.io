@@ -56,7 +56,7 @@ window.MATH_SUB_AREAS = [
   "abs",
   "remainder",
   "series",
-  "axis"
+  "axis",
 
   //--- prb: --------------------------
 

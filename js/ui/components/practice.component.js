@@ -2,6 +2,7 @@ function PracticeComponent() {
 
   questionsArr = [];
   currQuestion = 0;
+  presentationMode = "questions";
 
   function getPublisher(qData) {
     return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
@@ -56,7 +57,7 @@ function PracticeComponent() {
     qData = questionsArr[currQuestion];
 
     if (qData) {
-      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions/${getSubject(qData)}/${getName(qData)}.png`;
+      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${presentationMode}/${getSubject(qData)}/${getName(qData)}.png`;
       $(".practice-panel .main .col2 img").attr('src', src);
     }
   }
@@ -66,18 +67,6 @@ function PracticeComponent() {
   function showQuestion() {
     setTitle();
     setQuestionImg();
-  }
-
-  //-------------------------------------
-
-  function show(_filteredData) {
-    currQuestion = 0;
-    questionsArr = _filteredData;
-
-    updateButtonsStatus();
-    showQuestion();
-
-    $(".practice-panel").addClass("show");
   }
 
   //------------------------------------
@@ -103,9 +92,22 @@ function PracticeComponent() {
     $(".practice-panel .btn-next").toggleClass("disabled", currQuestion === questionsArr.length - 1);
   }
 
-  //------------------------------------
+  //-------------------------------------
 
-  function regeisterEvents() {
+  function show(_filteredData, _presentationMode) {
+    currQuestion = 0;
+    questionsArr = _filteredData;
+    presentationMode = _presentationMode || "questions";
+
+    updateButtonsStatus();
+    showQuestion();
+
+    $(".practice-panel").addClass("show");
+  }
+
+  //-------------------------------------
+
+  function init() {
     $(".practice-panel .btn-prev").click(() => {
       onNextPrevClick(-1);
     });
@@ -115,12 +117,6 @@ function PracticeComponent() {
     $(".practice-panel .btn-answer").click(() => {
       onAnswerClick();
     })
-  }
-
-  //-------------------------------------
-
-  function init() {
-    regeisterEvents();
   }
 
   init();

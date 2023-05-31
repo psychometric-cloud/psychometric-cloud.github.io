@@ -67,9 +67,10 @@ initProviders = () => {
   testBuilder = new TestBuilder();
   dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
-  startDlg = new StartDialog();
   testComponent = new TestComponent();
   practiceComponent = new PracticeComponent();
+  startDlg = new StartDialog();
+  imgTesterDlg = new ImagesTesterDialog();
 }
 
 //-----------------------------------------------------

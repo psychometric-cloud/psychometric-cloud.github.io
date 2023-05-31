@@ -28,6 +28,20 @@ function DataFilter() {
 
   //-----------------------------------------
 
+  filterByYear = (arr, filterBy, callback) => {
+
+    res = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (filterBy.selectedYear === arr[i].year && filterBy.selectedSeason === arr[i].season) {
+        res.push(arr[i]);
+      }
+    }
+    callback(res);
+  }
+
+  //-----------------------------------------
+
   filterByPublishers = (arr, filterBy, callback) => {
     setTimeout(() => {
       res = [];
@@ -62,11 +76,12 @@ function DataFilter() {
 
     filterBySubject(qBank, filterBy, (res1) => {
       filterByPublishers(res1, filterBy, (res2) => {
-        if (filterBy.actionType === eActionType.practice) {
+        if (!_isEmpty(filterBy.selectedAreas)) {
           filterByAreas(res2, filterBy, (res3) => {
             callback(res3);
           })
-        } else {
+        }
+        else {
           callback(res2);
         }
       })

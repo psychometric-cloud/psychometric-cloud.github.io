@@ -63,6 +63,10 @@
 
 .practice-panel .img-wrap {
   margin-top: 80px;
+  max-height: 450px;
+  overflow: auto;
+  border: 1px solid green;
+  padding: 20px;
 }
 
 .practice-panel .footer {

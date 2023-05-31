@@ -18,7 +18,7 @@ function QuestionBuilder() {
 
     qBank.push({
       publisher: getPublisher(test),
-      year: test.year,
+      year: parseInt(test.year),
       season: test.season,
       chapter: chapter,
       qNum: parseInt(qInfo[0]),

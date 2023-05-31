@@ -1,0 +1,52 @@
+.chkbox-wrap {
+  padding: 0 30px;
+  flex: 1;
+}
+
+.chkbox-wrap .select-all {
+  margin-right: 10px;
+  width: 19px;
+  height: 18px;
+}
+
+
+.select-group {
+  display: block
+}
+
+.select-group .header {
+  display: flex;
+  max-width: 375px;
+  background-color: #fff;
+}
+
+.select-group .header label {
+  flex: 1;
+}
+
+.select-group .header .toggle-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.select-group .header .toggle-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.select-group .header .toggle-btn img {
+  width: 17px;
+}
+
+.select-group .body {
+  margin-left: 25px;
+  display: none;
+}
+
+.select-group .body.open {
+  display: flex;
+}

@@ -12,9 +12,12 @@
   <link rel="stylesheet" href="./styles/loader.css">
   <link rel="stylesheet" href="./styles/radio.css">
   <link rel="stylesheet" href="./styles/chkbox.css">
+  <link rel="stylesheet" href="./styles/dropdown.css">
+  <link rel="stylesheet" href="./styles/selec-group.css">
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/dialog.css">
   <link rel="stylesheet" href="./styles/start-dlg.css">
+  <link rel="stylesheet" href="./styles/img-tester-dlg.css">
   <link rel="stylesheet" href="./styles/practice.component.css">
   <link rel="stylesheet" href="./styles/test.component.css">
 </head>
@@ -27,6 +30,7 @@
       </div>
       <div class="right f-c">
         <div class="timer-wrap"></div>
+        <div class="btn-test-images">Check Images</div>
       </div>
     </div>
 
@@ -351,6 +355,52 @@
     </div>
   </div>
 
+  <div class="images-tester-dlg-wrap dlg-wrap">
+    <div class="popper">
+    </div>
+    <div class="dlg images-tester-dlg">
+      <div class="title">Year</div>
+      <select name="year">
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+      </select>
+      <div class="title">Season</div>
+      <select name="season">
+        <option value="winter">Winter</option>
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+        <option value="autumn">Autumn</option>
+      </select>
+      <div class="title">Subject</div>
+      <select name="subject">
+        <option value="math">Math</option>
+        <option value="HE">Hebrew</option>
+        <option value="EN">English</option>
+      </select>
+      <div class="title">Type</div>
+      <select name="type">
+        <option value="questions">Questions</option>
+        <option value="answers">Answers</option>
+      </select>
+      <div class="actions">
+        <div class="btn-check">Check</div>
+      </div>
+    </div>
+
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -362,6 +412,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
   <script src="./js/common/consts.js"></script>
+  <script src="./js/common/dropdown.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/timer.js"></script>
   <script src="./js/common/test-builder.js"></script>
@@ -369,10 +420,11 @@
   <script src="./js/db/builders/question-builder.js"></script>
   <script src="./js/db/validators/chapter-validator.js"></script>
   <script src="./js/db/validators/file-validator.js"></script>
-  <script src="./js/db/data-filter.js"></script>
-  <script src="./js/ui/start.dlg.js"></script>
-  <script src="./js/ui/practice.component.js"></script>
-  <script src="./js/ui/test.component.js"></script>
+  <script src="./js/db/filters/data-filter.js"></script>
+  <script src="./js/ui/dialogs/start.dlg.js"></script>
+  <script src="./js/ui/dialogs/img-tester.dlg.js"></script>
+  <script src="./js/ui/components/test.component.js"></script>
+  <script src="./js/ui/components/practice.component.js"></script>
   <script src="./js/main.js"></script>
 </body>
 
