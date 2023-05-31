@@ -4,6 +4,8 @@ selectedQuestions = [];
 /*-------------------------------------------*/
 
 function renderUI(actionType, filteredData) {
+  console.log(filteredData);
+
   if (actionType === eActionType.test) {
     testComponent.show(filteredData);
   } else {

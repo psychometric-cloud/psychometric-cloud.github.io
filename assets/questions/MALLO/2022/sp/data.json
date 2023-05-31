@@ -4,10 +4,10 @@
   "season": "spring",
   "questions": {
     "math1": [
-      "1:prb,actions:3",
+      "1:prb,quant:3",
       "2:alg,eq:3",
       "3:alg,newOp:1",
-      "4:geo,area:1",
+      "4:geo:1",
       "5:prb:1",
       "6:prb,expression:4",
       "7:alg,abs:2",
@@ -23,15 +23,15 @@
       "17:alg,axis:2",
       "18:prb,supply:4",
       "19:prb,percent:2",
-      "20:alg,range:4"
+      "20:alg,inequality:4"
     ],
     "math2": [
       "1:geo:3",
       "2:geo,tri:3",
       "3:alg,eq:3",
-      "4:prb,actions:3",
+      "4:prb,quant:3",
       "5:prb,probability:2",
-      "6:alg,range:1",
+      "6:alg,inequality:1",
       "7:prb,percent:1",
       "8:prb,movement:2",
       "9:chart:1",

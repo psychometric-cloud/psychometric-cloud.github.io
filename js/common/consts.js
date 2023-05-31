@@ -40,20 +40,22 @@ window.MATH_SUB_AREAS = [
   //--- alg: --------------------------
 
   "eq",
+  "expression",
   "percent",
   "fractions",
-  "expression",
   "exponent",
   "root",
   "oddEven",
   "prime",
   "newOp",
+  "letters",
   "avg",
-  "remainder",
-  "range",
+  "inequality",
+  "divide",
   "factorial",
   "abs",
-  "divide",
+  "remainder",
+  "series",
 
   //--- prb: --------------------------
 
@@ -61,7 +63,8 @@ window.MATH_SUB_AREAS = [
   "comb",
   "probability",
   "supply",
-  "movement"
+  "movement",
+  "quant",
 ];
 
 window.HE_AREAS = [

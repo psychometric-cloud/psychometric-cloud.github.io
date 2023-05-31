@@ -18,6 +18,8 @@ function DataFilter() {
       for (let i = 0; i < arr.length; i++) {
         if (isAreaInclude(arr[i], filterBy)) {
           res.push(arr[i]);
+        } else {
+          console.log(arr[i]);
         }
       }
       callback(res);
