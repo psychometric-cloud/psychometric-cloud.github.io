@@ -1,23 +1,23 @@
-.dlg.images-tester-dlg {
+.dlg.cloud-tester-dlg {
   width: 505px;
-  height: 505px;
+  height: 430px;
   margin-top: -250px;
   margin-left: -250px;
 }
 
-.dlg.images-tester-dlg .title {
+.dlg.cloud-tester-dlg .title {
   margin: 25px 0 9px 4px;
   font-size: 16px;
   color: #e91e63;
 }
 
-.dlg.images-tester-dlg .actions {
+.dlg.cloud-tester-dlg .actions {
   display: flex;
   margin-top: 75px;
   justify-content: flex-end;
 }
 
-.dlg.images-tester-dlg .btn-check {
+.dlg.cloud-tester-dlg .btn-run {
   background-color: green;
   padding: 10px 19px;
   cursor: pointer;

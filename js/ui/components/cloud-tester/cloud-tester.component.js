@@ -1,8 +1,8 @@
-function PracticeComponent() {
+function CloudTesterComponent() {
 
-  questionsArr = [];
-  currQuestion = 0;
-  presentationMode = "questions";
+  itemsArr = [];
+  currItem = 0;
+  selectedOption = "questions";
 
   function getPublisher(qData) {
     return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
@@ -42,81 +42,88 @@ function PracticeComponent() {
 
   function setTitle() {
 
-    qData = questionsArr[currQuestion];
+    qData = itemsArr[currItem];
 
     if (qData) {
       let title = `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`;
-      $(".practice-panel .main .col2 .title").text(title);
+      $(".cloud-tester-panel .main .col2 .title").text(title);
     }
   }
 
   //-------------------------------------
 
-  function setQuestionImg() {
+  function setItemImg() {
 
-    qData = questionsArr[currQuestion];
+    qData = itemsArr[currItem];
 
     if (qData) {
-      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${presentationMode}/${getSubject(qData)}/${getName(qData)}.png`;
-      $(".practice-panel .main .col2 img").attr('src', src);
+      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${selectedOption}/${getSubject(qData)}/${getName(qData)}.png`;
+      $(".cloud-tester-panel .main .col2 img").attr('src', src);
     }
   }
 
   //-------------------------------------
 
-  function showQuestion() {
+  function showItem() {
     setTitle();
-    setQuestionImg();
+    setItemImg();
   }
 
   //------------------------------------
 
   function onNextPrevClick(step) {
-    currQuestion += step;
+    currItem += step;
 
     updateButtonsStatus();
-    showQuestion();
+    showItem();
   }
 
   //------------------------------------
 
-  function onAnswerClick() {
+  function onOptionClick(option) {
 
+    $(".cloud-tester-panel .option").removeClass("active");
+    $(`.cloud-tester-panel .option.${option}`).addClass("active");
+
+    selectedOption = option;
+    show(itemsArr);
   }
 
   //------------------------------------
 
   function updateButtonsStatus() {
 
-    $(".practice-panel .btn-prev").toggleClass("disabled", currQuestion === 0)
-    $(".practice-panel .btn-next").toggleClass("disabled", currQuestion === questionsArr.length - 1);
+    $(".cloud-tester-panel .btn-prev").toggleClass("disabled", currItem === 0)
+    $(".cloud-tester-panel .btn-next").toggleClass("disabled", currItem === itemsArr.length - 1);
   }
 
   //-------------------------------------
 
-  function show(_filteredData, _presentationMode) {
-    currQuestion = 0;
-    questionsArr = _filteredData;
-    presentationMode = _presentationMode || "questions";
+  function show(_filteredData) {
+    currItem = 0;
+    itemsArr = _filteredData;
 
     updateButtonsStatus();
-    showQuestion();
+    showItem();
 
-    $(".practice-panel").addClass("show");
+    $(".cloud-tester-panel").addClass("show");
   }
 
   //-------------------------------------
 
   function init() {
-    $(".practice-panel .btn-prev").click(() => {
+    $(".cloud-tester-panel .btn-prev").click(() => {
       onNextPrevClick(-1);
     });
-    $(".practice-panel .btn-next").click(() => {
+    $(".cloud-tester-panel .btn-next").click(() => {
       onNextPrevClick(1);
-    })
-    $(".practice-panel .btn-answer").click(() => {
-      onAnswerClick();
-    })
+    });
+    $(".cloud-tester-panel .option.questions").click(() => {
+      onOptionClick("questions");
+    });
+    $(".cloud-tester-panel .option.answers").click(() => {
+      onOptionClick("answers");
+    });
   }
 
   init();

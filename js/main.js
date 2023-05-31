@@ -44,6 +44,8 @@ function registerEvents() {
 function onInit() {
   registerEvents();
 
+  cloudTesterDlg.init();
+
   startDlg.set((filterBy) => {
     filterData(filterBy, (res) => {
       renderUI(filterBy.actionType, res);
@@ -70,7 +72,8 @@ initProviders = () => {
   testComponent = new TestComponent();
   practiceComponent = new PracticeComponent();
   startDlg = new StartDialog();
-  imgTesterDlg = new ImagesTesterDialog();
+  cloudTesterDlg = new CloudTesterDialog();
+  cloudTesterComponent = new CloudTesterComponent();
 }
 
 //-----------------------------------------------------

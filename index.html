@@ -9,17 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles/loader.css">
-  <link rel="stylesheet" href="./styles/radio.css">
-  <link rel="stylesheet" href="./styles/chkbox.css">
-  <link rel="stylesheet" href="./styles/dropdown.css">
-  <link rel="stylesheet" href="./styles/selec-group.css">
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/dialog.css">
-  <link rel="stylesheet" href="./styles/start-dlg.css">
-  <link rel="stylesheet" href="./styles/img-tester-dlg.css">
-  <link rel="stylesheet" href="./styles/practice.component.css">
-  <link rel="stylesheet" href="./styles/test.component.css">
+  <link rel="stylesheet" href="./assets/styles/loader.css">
+  <link rel="stylesheet" href="./assets/styles/radio.css">
+  <link rel="stylesheet" href="./assets/styles/chkbox.css">
+  <link rel="stylesheet" href="./assets/styles/dropdown.css">
+  <link rel="stylesheet" href="./assets/styles/selec-group.css">
+  <link rel="stylesheet" href="./assets/styles/dialog.css">
+  <link rel="stylesheet" href="./js/main.css">
+  <link rel="stylesheet" href="./js/ui/dialogs/start/start-dlg.css">
+  <link rel="stylesheet" href="./js/ui/dialogs/cloud-tester/cloud-tester-dlg.css">
+  <link rel="stylesheet" href="./js/ui/components/practice/practice.component.css">
+  <link rel="stylesheet" href="./js/ui/components/test/test.component.css">
+  <link rel="stylesheet" href="./js/ui/components/cloud-tester/cloud-tester.component.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
       </div>
       <div class="right f-c">
         <div class="timer-wrap"></div>
-        <div class="btn-test-images">Check Images</div>
+        <div class="btn-test-cloud">Test Cloud</div>
       </div>
     </div>
 
@@ -75,6 +76,28 @@
           <div class="title-wrap">
             <div class="title"></div>
             <div class="btn-answer">Answer</div>
+          </div>
+          <div class="img-wrap">
+            <img>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="btn btn-next">Next</div>
+        <div class="btn btn-prev">Prev</div>
+      </div>
+    </div>
+
+    <div class="cloud-tester-panel">
+      <div class="main">
+        <div class="col2">
+          <div class="options">
+            <div class="option questions active">Questions</div>
+            <div class="option answers">Answers</div>
+          </div>
+          <div class="title-wrap">
+
+            <div class="title"></div>
           </div>
           <div class="img-wrap">
             <img>
@@ -355,10 +378,10 @@
     </div>
   </div>
 
-  <div class="images-tester-dlg-wrap dlg-wrap">
+  <div class="cloud-tester-dlg-wrap dlg-wrap">
     <div class="popper">
     </div>
-    <div class="dlg images-tester-dlg">
+    <div class="dlg cloud-tester-dlg">
       <div class="title">Year</div>
       <select name="year">
         <option value="2022">2022</option>
@@ -389,13 +412,8 @@
         <option value="HE">Hebrew</option>
         <option value="EN">English</option>
       </select>
-      <div class="title">Type</div>
-      <select name="type">
-        <option value="questions">Questions</option>
-        <option value="answers">Answers</option>
-      </select>
       <div class="actions">
-        <div class="btn-check">Check</div>
+        <div class="btn-run">Check</div>
       </div>
     </div>
 
@@ -421,10 +439,11 @@
   <script src="./js/db/validators/chapter-validator.js"></script>
   <script src="./js/db/validators/file-validator.js"></script>
   <script src="./js/db/filters/data-filter.js"></script>
-  <script src="./js/ui/dialogs/start.dlg.js"></script>
-  <script src="./js/ui/dialogs/img-tester.dlg.js"></script>
-  <script src="./js/ui/components/test.component.js"></script>
-  <script src="./js/ui/components/practice.component.js"></script>
+  <script src="./js/ui/dialogs/start/start.dlg.js"></script>
+  <script src="./js/ui/dialogs/cloud-tester/cloud-tester-dlg.js"></script>
+  <script src="./js/ui/components/test/test.component.js"></script>
+  <script src="./js/ui/components/practice/practice.component.js"></script>
+  <script src="./js/ui/components/cloud-tester/cloud-tester.component.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

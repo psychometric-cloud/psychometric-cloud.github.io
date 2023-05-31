@@ -68,7 +68,7 @@ html {
   padding: 0 20px;
 }
 
-.header .btn-test-images {
+.header .btn-test-cloud {
   background-color: red;
   padding: 5px 10px;
   cursor: pointer;
@@ -79,7 +79,7 @@ html {
   font-size: 14px;
 }
 
-.header .btn-test-images.show {
+.header .btn-test-cloud.show {
   display: block;
 }
 
