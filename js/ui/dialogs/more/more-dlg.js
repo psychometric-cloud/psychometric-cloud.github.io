@@ -1,7 +1,6 @@
 function MoreDialog() {
 
   function show(item, type) {
-    debugger;
     let src = srcBuilder.build(item, "questions", type);
     $(".more-panel img").attr('src', src);
     $(".more-panel").addClass("show");
