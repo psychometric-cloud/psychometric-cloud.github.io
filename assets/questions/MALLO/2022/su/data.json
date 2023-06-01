@@ -64,7 +64,13 @@
       "14:deduce:1",
       "15:deduce:3",
       "16:deduce:2",
-      "17:deduce:4"
+      "17:deduce:4",
+      "18:reading:1",
+      "19:reading:1",
+      "20:reading:1",
+      "21:reading:1",
+      "22:reading:1",
+      "23:reading:1"
     ],
     "HE2": [
       "1:analogy:2",
@@ -83,7 +89,13 @@
       "14:deduce:4",
       "15:deduce:2",
       "16:deduce:2",
-      "17:deduce:4"
+      "17:deduce:4",
+      "18:reading:1",
+      "19:reading:1",
+      "20:reading:1",
+      "21:reading:1",
+      "22:reading:1",
+      "23:reading:1"
     ],
     "EN1": [
       "1:complete:2",
@@ -97,7 +109,17 @@
       "9:restate:2",
       "10:restate:1",
       "11:restate:3",
-      "12:restate:3"
+      "12:restate:3",
+      "13:reading,text1:4",
+      "14:reading,text1:3",
+      "15:reading,text1:4",
+      "16:reading,text1:4",
+      "17:reading,text1:3",
+      "18:reading,text2:4",
+      "19:reading,text2:3",
+      "20:reading,text2:4",
+      "21:reading,text2:4",
+      "22:reading,text2:3"
     ],
     "EN2": [
       "1:complete:1",
@@ -111,7 +133,17 @@
       "9:restate:1",
       "10:restate:1",
       "11:restate:4",
-      "12:restate:4"
+      "12:restate:4",
+      "13:reading,text1:4",
+      "14:reading,text1:3",
+      "15:reading,text1:4",
+      "16:reading,text1:4",
+      "17:reading,text1:3",
+      "18:reading,text2:4",
+      "19:reading,text2:3",
+      "20:reading,text2:4",
+      "21:reading,text2:4",
+      "22:reading,text2:3"
     ]
   }
 }
