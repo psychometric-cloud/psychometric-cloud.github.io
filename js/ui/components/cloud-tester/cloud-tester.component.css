@@ -57,12 +57,12 @@
   min-height: 67px;
 }
 
-.cloud-tester-panel .title-wrap .chart-icon {
+.cloud-tester-panel .title-wrap .icon {
   background: #f0f0f0;
   display: none;
 }
 
-.cloud-tester-panel .title-wrap .chart-icon.show {
+.cloud-tester-panel .title-wrap .icon.show {
   display: block;
 }
 

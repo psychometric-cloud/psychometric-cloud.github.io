@@ -7,9 +7,9 @@ function CloudTesterComponent() {
 
   //-------------------------------------
 
-  function onChartClick() {
+  function onMoreClick(type) {
     let qData = itemsArr[currItem];
-    moreDlg.show(qData, "chart");
+    moreDlg.show(qData, type);
   }
 
   //-------------------------------------
@@ -24,7 +24,9 @@ function CloudTesterComponent() {
       let src = srcBuilder.build(qData, selectedOption);
       $(".cloud-tester-panel .main .col2 .img").attr('src', src);
 
-      $(".cloud-tester-panel .main .col2 .chart-icon").toggleClass('show', qData.qAreas[0] === "chart");
+      $(".cloud-tester-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
+      $(".cloud-tester-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
+      $(".cloud-tester-panel .main .col2 .icon-txt2").toggleClass('show', qData.qAreas[0] === "reading" && qData.qAreas[1] === "text2");
     }
   }
 
@@ -85,8 +87,11 @@ function CloudTesterComponent() {
     $(".cloud-tester-panel .option.answers").click(() => {
       onOptionClick("answers");
     });
-    $(".cloud-tester-panel .chart-icon").click(() => {
-      onChartClick();
+    $(".cloud-tester-panel .icon-chart").click(() => {
+      onMoreClick("chart");
+    });
+    $(".cloud-tester-panel .icon-txt, .cloud-tester-panel .icon-txt2").click(() => {
+      onMoreClick("reading");
     });
   }
 
