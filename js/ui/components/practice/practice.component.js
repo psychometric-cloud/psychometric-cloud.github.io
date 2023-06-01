@@ -1,7 +1,7 @@
 function PracticeComponent() {
 
-  questionsArr = [];
-  currQuestion = 0;
+  let questionsArr = [];
+  let currQuestion = 0;
 
   function getPublisher(qData) {
     return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();

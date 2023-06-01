@@ -23,7 +23,7 @@ function CloudTesterDialog() {
 
     filter(filterBy, (filteredData) => {
       $(".cloud-tester-dlg-wrap").removeClass("active");
-      cloudTesterComponent.show(filteredData);
+      cloudTesterComponent.show(filteredData, $(".cloud-tester-dlg-wrap select[name=type]").val());
     })
   }
 
@@ -41,12 +41,16 @@ function CloudTesterDialog() {
     if (window.location.href.includes('?dev')) {
 
       $(".btn-test-cloud").addClass("show");
+
       $(".btn-test-cloud").click(() => {
         onTestCloudClick();
       });
       $(".cloud-tester-dlg-wrap .btn-run").click(() => {
         onBtnRunClick();
       });
+      $(".cloud-tester-dlg-wrap .popper").click(() => {
+        $(".cloud-tester-dlg-wrap").removeClass("active");
+      })
     }
   }
 

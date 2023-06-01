@@ -1,72 +1,31 @@
 function CloudTesterComponent() {
 
-  itemsArr = [];
-  currItem = 0;
-  selectedOption = "questions";
+  let itemsArr = [];
+  let currItem = 0;
+  let selectedOption = "questions";
 
-  function getPublisher(qData) {
-    return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
-  }
 
   //-------------------------------------
 
-  function getSubject(qData) {
-    return qData.chapter.substring(0, qData.chapter.length - 1).toLowerCase();
-  }
-
-  //-------------------------------------
-
-  function getName(qData) {
-    return `${qData.chapter.slice(-1)}_${qData.qNum}`;
-  }
-
-  //-------------------------------------
-
-  function getSeason(qData) {
-
-    if (qData.season === "winter") {
-      return sSeasons.w;
-    }
-    if (qData.season === "summer") {
-      return sSeasons.su;
-    }
-    if (qData.season === "spring") {
-      return sSeasons.sp;
-    }
-    if (qData.season === "autumn") {
-      return sSeasons.a;
-    }
-  }
-
-  //-------------------------------------
-
-  function setTitle() {
-
-    qData = itemsArr[currItem];
-
-    if (qData) {
-      let title = `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`;
-      $(".cloud-tester-panel .main .col2 .title").text(title);
-    }
-  }
-
-  //-------------------------------------
-
-  function setItemImg() {
-
-    qData = itemsArr[currItem];
-
-    if (qData) {
-      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${selectedOption}/${getSubject(qData)}/${getName(qData)}.png`;
-      $(".cloud-tester-panel .main .col2 img").attr('src', src);
-    }
+  function onChartClick() {
+    let qData = itemsArr[currItem];
+    moreDlg.show(qData, "chart");
   }
 
   //-------------------------------------
 
   function showItem() {
-    setTitle();
-    setItemImg();
+    let qData = itemsArr[currItem];
+
+    if (qData) {
+      let title = srcBuilder.getTitle(qData);
+      $(".cloud-tester-panel .main .col2 .title").text(title);
+
+      let src = srcBuilder.build(qData, selectedOption);
+      $(".cloud-tester-panel .main .col2 .img").attr('src', src);
+
+      $(".cloud-tester-panel .main .col2 .chart-icon").toggleClass('show', qData.qAreas[0] === "chart");
+    }
   }
 
   //------------------------------------
@@ -99,9 +58,11 @@ function CloudTesterComponent() {
 
   //-------------------------------------
 
-  function show(_filteredData) {
+  function show(_filteredData, _selectedOption) {
+
     currItem = 0;
     itemsArr = _filteredData;
+    selectedOption = _selectedOption;
 
     updateButtonsStatus();
     showItem();
@@ -123,6 +84,9 @@ function CloudTesterComponent() {
     });
     $(".cloud-tester-panel .option.answers").click(() => {
       onOptionClick("answers");
+    });
+    $(".cloud-tester-panel .chart-icon").click(() => {
+      onChartClick();
     });
   }
 

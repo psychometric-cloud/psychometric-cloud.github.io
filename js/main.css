@@ -136,14 +136,3 @@ html {
 .start-panel .start-btn.show {
   display: block;
 }
-
-.prepare-panel {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.prepare-panel.show {
-  display: flex;
-}

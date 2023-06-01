@@ -17,6 +17,13 @@ window.sSeasons = {
   su: "su"
 }
 
+window.eSubjects = {
+  math: "math",
+  en: "en",
+  he: "he"
+}
+
+
 window.eChapters = {
   math1: "math1",
   math2: "math2",

@@ -6,9 +6,9 @@ const eSubject = {
 
 function StartDialog() {
 
-  selectedSubject = eSubject.math;
-  selectedPublishers = [ePublisher.mallo1];
-  selectedAreas = [];
+  let selectedSubject = eSubject.math;
+  let selectedPublishers = [ePublisher.mallo1];
+  let selectedAreas = [];
 
   function show() {
     $(".start-dlg-wrap").addClass("active");

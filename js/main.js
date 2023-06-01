@@ -66,12 +66,14 @@ initProviders = () => {
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
   timer = new Timer();
-  testBuilder = new TestBuilder();
+  srcBuilder = new SrcBuilder();
+  testDataBuilder = new TestDataBuilder();
   dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
   testComponent = new TestComponent();
   practiceComponent = new PracticeComponent();
   startDlg = new StartDialog();
+  moreDlg = new MoreDialog();
   cloudTesterDlg = new CloudTesterDialog();
   cloudTesterComponent = new CloudTesterComponent();
 }

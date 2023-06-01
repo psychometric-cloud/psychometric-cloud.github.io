@@ -1,4 +1,4 @@
-function TestBuilder() {
+function TestDataBuilder() {
 
 
   function getChartSiblings(chart) {

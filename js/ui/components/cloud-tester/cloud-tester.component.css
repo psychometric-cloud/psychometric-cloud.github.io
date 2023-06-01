@@ -43,7 +43,7 @@
   background-color: #e2e2e2;
   padding: 8px 10px;
   display: flex;
-  margin-top: 20px;
+  margin-top: 60px;
   min-width: 480px;
   border-radius: 5px;
 }
@@ -52,6 +52,18 @@
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  min-height: 67px;
+}
+
+.cloud-tester-panel .title-wrap .chart-icon {
+  background: #f0f0f0;
+  display: none;
+}
+
+.cloud-tester-panel .title-wrap .chart-icon.show {
+  display: block;
 }
 
 .cloud-tester-panel .btn-answer {
@@ -63,11 +75,10 @@
 }
 
 .cloud-tester-panel .img-wrap {
-  margin-top: 80px;
+  position: relative;
+  margin-top: 60px;
   max-height: 450px;
   overflow: auto;
-  border: 1px solid green;
-  padding: 20px;
 }
 
 .cloud-tester-panel .footer {
@@ -96,23 +107,6 @@
 .cloud-tester-panel .footer .btn.disabled {
   pointer-events: none;
   background-color: gray;
-}
-
-.cloud-tester .options {
-  position: absolute;
-  right: 100px;
-  top: 50px;
-}
-
-.cloud-tester-panel .options {
-  display: flex;
-  margin-top: 30px;
-}
-
-.cloud-tester-panel .option {
-  font-size: 17px;
-  cursor: pointer;
-  padding: 10px;
 }
 
 .cloud-tester-panel .option.active {
