@@ -1,6 +1,6 @@
 .more-panel {
   overflow: auto;
-  padding-top: 100px;
+  padding-top: 45px;
   display: none;
   position: fixed;
   top: 0;
@@ -8,9 +8,8 @@
   right: 0;
   left: 0;
   background-color: #fff;
-  z-index: 11;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .more-panel.show {
@@ -18,7 +17,7 @@
 }
 
 .more-panel .btn-close {
-  position: absolute;
+  position: fixed;
   top: 50px;
   right: 50px;
 }

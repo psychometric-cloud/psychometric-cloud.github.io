@@ -45,16 +45,19 @@ function SrcBuilder() {
   function build(qData, option, more) {
     src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
 
-    if (more === eSubject.math) {
-      src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions/math/${qData.chapter.slice(-1)}_G.png`
-    }
-    if (more === eSubject.he) {
-      src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions/math/${qData.chapter.slice(-1)}_T.png`
-    }
-    if (more === eSubject.en) {
-      let subject = getSubject(qData);
-      let t = subject === "text1" ? "T1" : "T2";
-      src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions/math/${qData.chapter.slice(-1)}_${t}.png`
+    if (more === "chart" || more === "reading") {
+      let _src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;
+
+      if (more === "chart") {
+        src = `${_src}/math/${qData.chapter.slice(-1)}_T.png`;
+      } else {
+        if (qData.qAreas.length === 2) {
+          let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
+          src = `${_src}/en/${qData.chapter.slice(-1)}_${t}.png`
+        } else {
+          src = `${_src}/he/${qData.chapter.slice(-1)}_T.png`
+        }
+      }
     }
     return src;
   }
