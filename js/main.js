@@ -4,12 +4,11 @@ selectedQuestions = [];
 /*-------------------------------------------*/
 
 function renderUI(actionType, filteredData) {
-  console.log(filteredData);
 
   if (actionType === eActionType.test) {
     testComponent.show(filteredData);
   } else {
-    practiceComponent.show(filteredData);
+    practiceComponent.show(filteredData, "questions");
   }
 }
 
@@ -36,6 +35,9 @@ function showStartDlg() {
 function registerEvents() {
   $(".start-panel .start-btn").on("click", () => {
     showStartDlg();
+  });
+  $(".logo").on("click", () => {
+    location.reload();
   });
 }
 

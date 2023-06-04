@@ -81,10 +81,6 @@ function StartDialog() {
   function onGoClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
-    console.log(selectedSubject);
-    console.log(selectedPublishers);
-    console.log(selectedAreas);
-
     onFinish({
       actionType,
       selectedSubject,
@@ -288,6 +284,11 @@ function StartDialog() {
     $('.btn-practice').click((e) => {
       onBtnPreActionClicked(eActionType.practice);
     });
+
+    $('.start-dlg-wrap .popper').click((e) => {
+      location.reload();
+    });
+
   }
 
   //---------------------------------------

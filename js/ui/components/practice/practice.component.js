@@ -1,104 +1,69 @@
 function PracticeComponent() {
 
-  let questionsArr = [];
-  let currQuestion = 0;
+  let itemsArr = [];
+  let currItem = 0;
+  let selectedOption = "questions";
 
-  function getPublisher(qData) {
-    return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
+
+  //-------------------------------------
+
+  function onMoreClick(type) {
+    let qData = itemsArr[currItem];
+    moreDlg.show(qData);
   }
 
   //-------------------------------------
 
-  function getSubject(qData) {
-    return qData.chapter.substring(0, qData.chapter.length - 1).toLowerCase();
-  }
-
-  //-------------------------------------
-
-  function getName(qData) {
-    return `${qData.chapter.slice(-1)}_${qData.qNum}`;
-  }
-
-  //-------------------------------------
-
-  function getSeason(qData) {
-
-    if (qData.season === "winter") {
-      return sSeasons.w;
-    }
-    if (qData.season === "summer") {
-      return sSeasons.su;
-    }
-    if (qData.season === "spring") {
-      return sSeasons.sp;
-    }
-    if (qData.season === "autumn") {
-      return sSeasons.a;
-    }
-  }
-
-  //-------------------------------------
-
-  function setTitle() {
-
-    qData = questionsArr[currQuestion];
+  function showItem() {
+    let qData = itemsArr[currItem];
 
     if (qData) {
-      let title = `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`;
+      let title = srcBuilder.getTitle(qData);
       $(".practice-panel .main .col2 .title").text(title);
+
+      let src = srcBuilder.build(qData, selectedOption);
+      $(".practice-panel .main .col2 .img").attr('src', src);
+
+      $(".practice-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
+      $(".practice-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
+      $(".practice-panel .main .col2 .icon-txt2").toggleClass('show', qData.qAreas[0] === "reading" && qData.qAreas[1] === "text2");
     }
-  }
-
-  //-------------------------------------
-
-  function setQuestionImg() {
-
-    qData = questionsArr[currQuestion];
-
-    if (qData) {
-      let src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${presentationMode}/${getSubject(qData)}/${getName(qData)}.png`;
-      $(".practice-panel .main .col2 img").attr('src', src);
-    }
-  }
-
-  //-------------------------------------
-
-  function showQuestion() {
-    setTitle();
-    setQuestionImg();
   }
 
   //------------------------------------
 
   function onNextPrevClick(step) {
-    currQuestion += step;
+    currItem += step;
 
     updateButtonsStatus();
-    showQuestion();
+    showItem();
   }
 
   //------------------------------------
 
-  function onAnswerClick() {
-
+  function onAnsBtnClick(type) {
+    let qData = itemsArr[currItem];
+    moreDlg.showAnswer(qData);
   }
 
   //------------------------------------
 
   function updateButtonsStatus() {
 
-    $(".practice-panel .btn-prev").toggleClass("disabled", currQuestion === 0)
-    $(".practice-panel .btn-next").toggleClass("disabled", currQuestion === questionsArr.length - 1);
+    $(".practice-panel .btn-prev").toggleClass("disabled", currItem === 0)
+    $(".practice-panel .btn-next").toggleClass("disabled", currItem === itemsArr.length - 1);
   }
 
   //-------------------------------------
 
-  function show(_filteredData) {
-    currQuestion = 0;
-    questionsArr = _filteredData;
+  function show(_filteredData, _selectedOption) {
+
+    currItem = 0;
+    itemsArr = _filteredData;
+    selectedOption = _selectedOption;
 
     updateButtonsStatus();
-    showQuestion();
+    showItem();
 
     $(".practice-panel").addClass("show");
   }
@@ -111,10 +76,13 @@ function PracticeComponent() {
     });
     $(".practice-panel .btn-next").click(() => {
       onNextPrevClick(1);
-    })
-    $(".practice-panel .btn-answer").click(() => {
-      onAnswerClick();
-    })
+    });
+    $(".practice-panel .img-wrap img").click(() => {
+      onAnsBtnClick();
+    });
+    $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
+      onMoreClick();
+    });
   }
 
   init();

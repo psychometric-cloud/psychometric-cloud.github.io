@@ -73,14 +73,6 @@ function PracticeDataBuilder() {
     }
   }
 
-  function log(arr, step) {
-    console.log(`---------------------- start (${step})---------------------`)
-    for (var i = 0; i < arr.length; i++) {
-      console.log(arr[i].qAreas);
-    }
-    console.log(`---------------------- end ---------------------`)
-  }
-
   //---------------------------------------
 
   function build(data) {

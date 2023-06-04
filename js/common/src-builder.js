@@ -45,18 +45,15 @@ function SrcBuilder() {
   function build(qData, option, more) {
     src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
 
-    if (more === "chart" || more === "reading") {
+    if (more) {
       let _src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;
+      let subject = getSubject(qData);
 
-      if (more === "chart") {
-        src = `${_src}/math/${qData.chapter.slice(-1)}_T.png`;
+      if (qData.qAreas.length === 2) {
+        let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
+        src = `${_src}/${subject}/${qData.chapter.slice(-1)}_${t}.png`
       } else {
-        if (qData.qAreas.length === 2) {
-          let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
-          src = `${_src}/en/${qData.chapter.slice(-1)}_${t}.png`
-        } else {
-          src = `${_src}/he/${qData.chapter.slice(-1)}_T.png`
-        }
+        src = `${_src}/${subject}/${qData.chapter.slice(-1)}_T.png`
       }
     }
     return src;

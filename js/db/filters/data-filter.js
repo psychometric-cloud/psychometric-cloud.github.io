@@ -18,8 +18,6 @@ function DataFilter() {
       for (let i = 0; i < arr.length; i++) {
         if (isAreaInclude(arr[i], filterBy)) {
           res.push(arr[i]);
-        } else {
-          console.log(arr[i]);
         }
       }
       callback(res);
@@ -62,7 +60,7 @@ function DataFilter() {
       res = [];
 
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i].chapter.startsWith(filterBy.selectedSubject)) {
+        if (arr[i].chapter.toLowerCase().startsWith(filterBy.selectedSubject)) {
           res.push(arr[i]);
         }
       }
@@ -76,7 +74,7 @@ function DataFilter() {
 
     filterBySubject(qBank, filterBy, (res1) => {
       filterByPublishers(res1, filterBy, (res2) => {
-        if (!_isEmpty(filterBy.selectedAreas)) {
+        if (!_.isEmpty(filterBy.selectedAreas)) {
           filterByAreas(res2, filterBy, (res3) => {
             callback(res3);
           })

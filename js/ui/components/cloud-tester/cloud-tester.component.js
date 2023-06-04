@@ -7,9 +7,9 @@ function CloudTesterComponent() {
 
   //-------------------------------------
 
-  function onMoreClick(type) {
+  function onMoreClick() {
     let qData = itemsArr[currItem];
-    moreDlg.show(qData, type);
+    moreDlg.show(qData);
   }
 
   //-------------------------------------
@@ -87,11 +87,8 @@ function CloudTesterComponent() {
     $(".cloud-tester-panel .option.answers").click(() => {
       onOptionClick("answers");
     });
-    $(".cloud-tester-panel .icon-chart").click(() => {
-      onMoreClick("chart");
-    });
-    $(".cloud-tester-panel .icon-txt, .cloud-tester-panel .icon-txt2").click(() => {
-      onMoreClick("reading");
+    $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
+      onMoreClick();
     });
   }
 

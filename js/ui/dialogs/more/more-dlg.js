@@ -1,7 +1,13 @@
 function MoreDialog() {
 
-  function show(item, type) {
-    let src = srcBuilder.build(item, "questions", type);
+  function show(item) {
+    let src = srcBuilder.build(item, "questions", true);
+    $(".more-panel img").attr('src', src);
+    $(".more-panel").addClass("show");
+  }
+
+  function showAnswer(item) {
+    let src = srcBuilder.build(item, "answers");
     $(".more-panel img").attr('src', src);
     $(".more-panel").addClass("show");
   }
@@ -15,6 +21,7 @@ function MoreDialog() {
   init();
 
   return {
-    show: show
+    show: show,
+    showAnswer: showAnswer
   }
 }

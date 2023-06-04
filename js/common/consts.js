@@ -77,10 +77,12 @@ window.MATH_SUB_AREAS = [
 
 window.HE_AREAS = [
   "analogy",
-  "deduce"
+  "deduce",
+  "text"
 ];
 
 window.EN_AREAS = [
   "complete",
-  "restate"
+  "restate",
+  "text"
 ];
