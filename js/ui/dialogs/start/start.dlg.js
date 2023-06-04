@@ -167,7 +167,11 @@ function StartDialog() {
 
     $(`.area.${type} .select-item`).each(function () {
       if (this.checked) {
-        selectedAreas.push(this.value);
+        if (this.value === "texts") {
+          selectedAreas = ["reading", "text1", "text2"];
+        } else {
+          selectedAreas.push(this.value);
+        }
       }
     });
   }

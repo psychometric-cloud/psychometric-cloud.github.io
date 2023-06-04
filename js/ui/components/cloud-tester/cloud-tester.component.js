@@ -87,7 +87,7 @@ function CloudTesterComponent() {
     $(".cloud-tester-panel .option.answers").click(() => {
       onOptionClick("answers");
     });
-    $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
+    $(".cloud-tester-panel .icon-chart, .cloud-tester-panel .icon-txt, .cloud-tester-panel .icon-txt2").click(() => {
       onMoreClick();
     });
   }
