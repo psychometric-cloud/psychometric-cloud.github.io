@@ -10,6 +10,7 @@
   background-color: #fff;
   justify-content: center;
   align-items: flex-start;
+  background: #607D8B;
 }
 
 .more-panel.show {

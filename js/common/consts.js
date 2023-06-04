@@ -84,5 +84,6 @@ window.HE_AREAS = [
 window.EN_AREAS = [
   "complete",
   "restate",
-  "text"
+  "text1",
+  "text2",
 ];
