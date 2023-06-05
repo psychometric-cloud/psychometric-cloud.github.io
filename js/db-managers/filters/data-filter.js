@@ -78,8 +78,7 @@ function DataFilter() {
           filterByAreas(res2, filterBy, (res3) => {
             callback(res3);
           })
-        }
-        else {
+        } else {
           callback(res2);
         }
       })

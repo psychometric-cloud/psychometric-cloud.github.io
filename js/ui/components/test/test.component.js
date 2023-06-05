@@ -1,9 +1,9 @@
 function TestComponent() {
 
 
-  function show(filteredData) {
+  function show(subject, filteredData) {
 
-    let test = testBuilder.build(filteredData);
+    let test = testDataBuilder.build(subject, filteredData);
     console.log(test);
 
     $(".test-panel").addClass("show");

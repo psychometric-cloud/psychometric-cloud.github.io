@@ -3,10 +3,10 @@ selectedQuestions = [];
 
 /*-------------------------------------------*/
 
-function renderUI(actionType, filteredData) {
+function renderUI(filterBy, filteredData) {
 
-  if (actionType === eActionType.test) {
-    testComponent.show(filteredData);
+  if (filterBy.actionType === eActionType.test) {
+    testComponent.show(filterBy.selectedSubject, filteredData);
   } else {
     practiceComponent.show(filteredData, "questions");
   }
@@ -50,7 +50,7 @@ function onInit() {
 
   startDlg.set((filterBy) => {
     filterData(filterBy, (res) => {
-      renderUI(filterBy.actionType, res);
+      renderUI(filterBy, res);
     });
   })
 }
@@ -70,6 +70,8 @@ initProviders = () => {
   timer = new Timer();
   srcBuilder = new SrcBuilder();
   testDataBuilder = new TestDataBuilder();
+  testHistory = new TestHistory();
+  textsHandler = new TextsHandler();
   dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
   testComponent = new TestComponent();
