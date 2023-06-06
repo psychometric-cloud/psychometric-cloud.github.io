@@ -87,3 +87,9 @@ window.EN_AREAS = [
   "text1",
   "text2",
 ];
+
+window.eQuestionStatus = {
+  correct: "correct",
+  unAnswered: "unanswered",
+  error: "error"
+}

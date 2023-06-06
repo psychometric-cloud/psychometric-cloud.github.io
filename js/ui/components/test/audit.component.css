@@ -1,4 +1,4 @@
-.practice-panel {
+.audit-panel {
   position: relative;
   display: none;
   justify-content: center;
@@ -9,29 +9,28 @@
   width: 100%;
 }
 
-.practice-panel.show {
+.audit-panel.show {
   display: flex;
   flex-direction: column;
 }
 
-.practice-panel .main {
+.audit-panel .main {
   flex: 1;
 }
 
-.practice-panel .main {
+.audit-panel .main {
   display: flex;
   width: 100%
 }
 
-
-.practice-panel .main .col2 {
+.audit-panel .main .col2 {
   flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.practice-panel .title-wrap {
+.audit-panel .title-wrap {
   background-color: #e2e2e2;
   padding: 8px 10px;
   display: flex;
@@ -40,7 +39,7 @@
   border-radius: 5px;
 }
 
-.practice-panel .title-wrap .title {
+.audit-panel .title-wrap .title {
   flex: 1;
   display: flex;
   align-items: center;
@@ -49,23 +48,23 @@
   min-height: 67px;
 }
 
-.practice-panel .title-wrap .icon {
+.audit-panel .title-wrap .icon {
   background: #f0f0f0;
   display: none;
 }
 
-.practice-panel .title-wrap .icon.show {
+.audit-panel .title-wrap .icon.show {
   display: block;
 }
 
-.practice-panel .img-wrap {
+.audit-panel .img-wrap {
   position: relative;
   margin-top: 60px;
   max-height: 450px;
   overflow: auto;
 }
 
-.practice-panel .footer {
+.audit-panel .footer {
   display: flex;
   background-color: #eeeeee;
   height: 80px;
@@ -75,25 +74,30 @@
   padding-right: 50px;
 }
 
-.practice-panel .footer .btn {
-  background-color: #000;
+.audit-panel .footer .btn {
+  background: #707070;
   padding: 7px;
   border-radius: 5px;
   color: #fff;
   margin-left: 15px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  min-width: 20px;
 }
 
-.practice-panel .footer .btn:hover {
-  background-color: #303030;
+.audit-panel .footer .btn.correct {
+  background: green;
 }
 
-.practice-panel .footer .btn.disabled {
-  pointer-events: none;
-  background-color: gray;
+.audit-panel .footer .btn.error {
+  background: red;
 }
 
-.practice-panel .option.active {
-  font-weight: 600;
+.audit-panel .ans-info {
+  margin-top: 30px;
+}
+
+.audit-panel .ans-info.error {
   color: red;
 }

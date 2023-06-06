@@ -30,6 +30,12 @@ function showStartDlg() {
   startDlg.show();
 }
 
+//---------------------------------------------
+
+function onHistoryClick() {
+  $(".history-dlg-wrap").addClass("active");
+}
+
 /*-------------------------------------------*/
 
 function registerEvents() {
@@ -38,6 +44,9 @@ function registerEvents() {
   });
   $(".logo").on("click", () => {
     location.reload();
+  });
+  $(".history-btn").on("click", () => {
+    onHistoryClick();
   });
 }
 
@@ -67,17 +76,21 @@ initProviders = () => {
   utils = new utils();
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
-  timer = new Timer();
   srcBuilder = new SrcBuilder();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();
+  testStat = new TestStat();
+  testTimer = new TestTimer();
   textsHandler = new TextsHandler();
   dataFilter = new DataFilter();
   dataBuilder = new DataBuilder();
   testComponent = new TestComponent();
+  reportComponent = new ReportComponent();
+  auditComponent = new AuditComponent();
   practiceComponent = new PracticeComponent();
   startDlg = new StartDialog();
   moreDlg = new MoreDialog();
+  historyDlg = new HistoryDialog();
   cloudTesterDlg = new CloudTesterDialog();
   cloudTesterComponent = new CloudTesterComponent();
 }

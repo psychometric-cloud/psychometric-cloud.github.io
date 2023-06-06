@@ -11,6 +11,7 @@
   flex: 1;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .test-panel.show {
@@ -20,6 +21,99 @@
 
 .test-panel .main {
   flex: 1;
+  position: relative;
+}
+
+.test-panel .main .col2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.test-panel .q-info {
+  display: flex;
+  padding: 20px 0;
+  font-size: 23px;
+}
+
+.test-panel .title-wrap {
+  background-color: #e2e2e2;
+  padding: 8px 10px;
+  display: flex;
+  min-width: 480px;
+  border-radius: 5px;
+}
+
+.test-panel .title-wrap .title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  min-height: 67px;
+}
+
+.test-panel .title-wrap .icon {
+  background: #f0f0f0;
+  display: none;
+}
+
+.test-panel .title-wrap .icon.show {
+  display: block;
+}
+
+.test-panel .chart-title,
+.test-panel .text-title {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  color: white;
+}
+
+.test-panel .title-wrap.chart {
+  background: #E91E63;
+}
+
+.test-panel .title-wrap.chart .title,
+.test-panel .title-wrap.chart .text-title,
+.test-panel .title-wrap.chart .icon-txt {
+  display: none;
+}
+
+.test-panel .title-wrap.chart .chart-title,
+.test-panel .title-wrap.chart .icon-chart {
+  display: flex;
+}
+
+.test-panel .title-wrap.reading .title,
+.test-panel .title-wrap.reading .chart-title,
+.test-panel .title-wrap.reading .chart-txt {
+  display: none;
+}
+
+.test-panel .title-wrap.reading .text-title,
+.test-panel .title-wrap.reading .icon-txt {
+  display: flex;
+}
+
+.test-panel .img-wrap {
+  position: relative;
+  margin-top: 60px;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.test-panel .footer {
+  display: flex;
+  background-color: #eeeeee;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+  padding-right: 50px;
 }
 
 .test-panel .footer {

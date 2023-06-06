@@ -53,10 +53,7 @@ function TestDataBuilder() {
     qArr = buildBasicTest(data);
     qArr = textsHandler.handleText(qArr);
 
-    return {
-      subject,
-      qArr
-    };
+    return qArr;
   }
 
   return {
