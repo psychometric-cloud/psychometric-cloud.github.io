@@ -1,7 +1,7 @@
 function SrcBuilder() {
 
   function getPublisher(qData) {
-    return qData.publisher.substring(0, qData.publisher.length - 1).toUpperCase();
+    return qData.publisher.toUpperCase();
   }
 
   //-------------------------------------

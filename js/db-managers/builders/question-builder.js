@@ -1,23 +1,11 @@
 function QuestionBuilder() {
 
-  getPublisher = (test) => {
-    if (test.publisher === "MALLO") {
-      if (parseInt(test.year) < 2012) {
-        return ePublisher.mallo2
-      }
-      return ePublisher.mallo1
-    }
-    return test.publisher;
-  }
-
-  //--------------------------------------------
-
   add = (test, question, chapter) => {
     let qInfo = question.split(":");
     let areas = qInfo[1].split(",");
 
     qBank.push({
-      publisher: getPublisher(test),
+      publisher: test.publisher,
       year: parseInt(test.year),
       season: test.season,
       chapter: chapter,

@@ -7,7 +7,7 @@ const eSubject = {
 function StartDialog() {
 
   let selectedSubject = eSubject.math;
-  let selectedPublishers = [ePublisher.mallo1];
+  let selectedPublishers = [ePublisher.mallo];
   let selectedAreas = [];
 
   function show(show) {
@@ -96,19 +96,19 @@ function StartDialog() {
     selectedSubject = $('input[name="subjects-radio"]:checked').val();
 
     if (selectedSubject === eSubject.math) {
-      $(`.area.math .select-all`).prop('checked', true);
+      $(`.area.math .select-all`).prop('checked', false);
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.math);
       }, 0);
     }
     else if (selectedSubject === eSubject.he) {
-      $(`.area.he .select-all`).prop('checked', true);
+      $(`.area.he .select-all`).prop('checked', false);
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.he);
       }, 0);
     }
     else if (selectedSubject === eSubject.en) {
-      $(`.area.en .select-all`).prop('checked', true)
+      $(`.area.en .select-all`).prop('checked', false)
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.en);
       }, 0);
@@ -248,6 +248,8 @@ function StartDialog() {
 
     $(".step1").addClass("active");
     $(".btn-next").addClass("active");
+
+    onSubjectChange();
   }
 
   //---------------------------------------------

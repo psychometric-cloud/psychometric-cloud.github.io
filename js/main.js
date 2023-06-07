@@ -41,9 +41,9 @@ function onHistoryClick() {
 function resetMainUI() {
   testTimer.end();
 
-  debugger;
   $(".start-panel").addClass("show");
   $(".test-panel").removeClass("show");
+  $(".test-panel .report").removeClass("show");
   $(".audit-panel").removeClass("show");
   $(".practice-panel").removeClass("show");
   $(".cloud-tester-panel").removeClass("show");
