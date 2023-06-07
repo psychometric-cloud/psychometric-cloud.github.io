@@ -22,12 +22,15 @@
 
 .dlg-history .history-item .date {
   color: red;
+  min-width: 175px;
 }
 
 .dlg-history .history-item .percentage {
   flex: 1;
-  padding-left: 95px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin-left: -15px;
 }
 
 .dlg-history .history-item .subject {

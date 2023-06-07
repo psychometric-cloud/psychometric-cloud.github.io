@@ -26,7 +26,7 @@ function filterData(filterBy, callback) {
 /*-------------------------------------------*/
 
 function showStartDlg() {
-  $(".start-panel").hide();
+  $(".start-panel").removeClass("show");
   startDlg.show(true);
 }
 
@@ -38,12 +38,27 @@ function onHistoryClick() {
 
 /*-------------------------------------------*/
 
+function resetMainUI() {
+  testTimer.end();
+
+  debugger;
+  $(".start-panel").addClass("show");
+  $(".test-panel").removeClass("show");
+  $(".audit-panel").removeClass("show");
+  $(".practice-panel").removeClass("show");
+  $(".cloud-tester-panel").removeClass("show");
+
+  startDlg.reset();
+}
+
+/*-------------------------------------------*/
+
 function registerEvents() {
   $(".start-panel .start-btn").on("click", () => {
     showStartDlg();
   });
   $(".logo").on("click", () => {
-    location.reload();
+    resetMainUI();
   });
   $(".history-btn").on("click", () => {
     onHistoryClick();

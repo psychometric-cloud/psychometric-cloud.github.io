@@ -11,6 +11,7 @@ function StartDialog() {
   let selectedAreas = [];
 
   function show(show) {
+    reset();
     $(".start-dlg-wrap").toggleClass("active", show);
   }
 
@@ -238,6 +239,19 @@ function StartDialog() {
 
   //---------------------------------------------
 
+  function reset() {
+    currStep = 0;
+
+    $(".start-dlg-wrap").removeClass("active");
+    $(".start-dlg-wrap .active").removeClass("active");
+    $(".dlg-start .init-panel").show();
+
+    $(".step1").addClass("active");
+    $(".btn-next").addClass("active");
+  }
+
+  //---------------------------------------------
+
   function registerEvents(onFinish) {
     $(".dlg-start .btn-prev").on("click", () => {
       onPrevNextClick(-1);
@@ -290,9 +304,9 @@ function StartDialog() {
     });
 
     $('.start-dlg-wrap .popper').click((e) => {
-      location.reload();
+      reset();
+      resetMainUI();
     });
-
   }
 
   //---------------------------------------
@@ -307,12 +321,11 @@ function StartDialog() {
 
     $(".btn").removeClass("active");
     $(".btn-next").addClass("active");
-
-    onSubjectChange();
   }
 
   return {
     set: set,
-    show: show
+    show: show,
+    reset: reset
   }
 }

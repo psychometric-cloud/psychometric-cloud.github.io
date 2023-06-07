@@ -5,7 +5,7 @@ function HistoryDialog() {
   onHistoryItemClick = (date) => {
     $(".history-dlg-wrap").removeClass("active");
 
-    for (let i = 0; i < math.min(latest.length, 8); i++) {
+    for (let i = 0; i < Math.min(latest.length, 9); i++) {
       if (latest[i].date === date) {
         auditComponent.show(latest[i].test);
         break;
@@ -35,7 +35,8 @@ function HistoryDialog() {
 
   function init() {
     $(".history-dlg-wrap .popper").click(() => {
-      $(".history-dlg-wrap").removeClass("active")
+      $(".history-dlg-wrap").removeClass("active");
+      resetMainUI();
     });
   }
 

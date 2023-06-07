@@ -10,7 +10,7 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json"
   ];
 
   //-----------------------------------------
