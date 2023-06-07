@@ -34,7 +34,10 @@ function TestComponent() {
   function endTest() {
     testTimer.end();
     let stat = testStat.getStat(test);
-    // testHistory.add(test, currSubject, stat);
+    testHistory.add(test, currSubject, stat);
+
+    let h = testHistory.get(currSubject);
+    console.log("len" + h.length);
 
     reportComponent.show(test, stat);
   }

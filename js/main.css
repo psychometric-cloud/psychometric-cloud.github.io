@@ -70,7 +70,11 @@ html {
 
 .header .history-btn {
   margin-right: 15px;
-  ;
+  display: none;
+}
+
+.header .history-btn.show {
+  display: block;
 }
 
 .header .btn-test-cloud {

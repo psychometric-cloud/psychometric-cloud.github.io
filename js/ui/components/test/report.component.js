@@ -45,7 +45,6 @@ function ReportComponent() {
       $(".report img.great").addClass("show");
     }
 
-
     showCircle(89);
   }
 

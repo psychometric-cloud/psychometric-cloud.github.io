@@ -38,16 +38,12 @@ function DataBuilder() {
       } else {
         callback();
       }
-    }, 250);
+    }, 1S50);
   }
 
   //-----------------------------------------
 
   loadTestFiles = (callback) => {
-
-    // for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
-    //   filesUrls.push(filesUrls[0]);
-    // }
 
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {

@@ -4,3 +4,32 @@
   margin-top: -250px;
   margin-left: -250px;
 }
+
+.dlg-history .inner-wrap {
+  padding: 10px;
+}
+
+.dlg-history .history-item {
+  display: flex;
+  border-bottom: 1px solid #cfcccc;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.dlg-history .history-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dlg-history .history-item .date {
+  color: red;
+}
+
+.dlg-history .history-item .percentage {
+  flex: 1;
+  padding-left: 95px;
+  font-weight: 600;
+}
+
+.dlg-history .history-item .subject {
+  font-weight: 600;
+}

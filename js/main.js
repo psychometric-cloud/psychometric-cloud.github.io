@@ -27,13 +27,13 @@ function filterData(filterBy, callback) {
 
 function showStartDlg() {
   $(".start-panel").hide();
-  startDlg.show();
+  startDlg.show(true);
 }
 
 //---------------------------------------------
 
 function onHistoryClick() {
-  $(".history-dlg-wrap").addClass("active");
+  historyDlg.show();
 }
 
 /*-------------------------------------------*/
@@ -104,6 +104,8 @@ $(document).ready(() => {
   dataBuilder.build(() => {
     onInit();
     showLoader(false);
+
     $(".start-btn").toggleClass("show", true);
+    $(".history-btn").toggleClass("show", true);
   })
 });

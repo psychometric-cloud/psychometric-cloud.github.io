@@ -9,6 +9,7 @@ function TestDataBuilder() {
       q1.season === q2.season &&
       q1.chapter === q2.chapter &&
       q1.qNum === q2.qNum;
+
     return res;
   }
 
@@ -16,15 +17,15 @@ function TestDataBuilder() {
 
   function removeHistory(subject, data) {
 
-    let history = testHistory.get(subject);
+    let historyTests = testHistory.getTests(subject);
     let res = [];
 
-    if (_.isEmpty(history)) {
+    if (_.isEmpty(historyTests)) {
       return data;
     }
     for (let i = 0; i < data.length; i++) {
-      for (let j = 0; i < history.length; j++) {
-        if (!isQuestionEqual(data[i], history[j])) {
+      for (let j = 0; j < historyTests.length; j++) {
+        if (!isQuestionEqual(data[i], historyTests[j])) {
           res.push(data[i]);
         }
       }

@@ -22,6 +22,8 @@ function AuditComponent() {
 
   onBtnClick = (i) => {
     currItem = i;
+    $(".audit-panel .questions .btn").removeClass("active");
+    $(`.audit-panel .questions .btn[data-id="${i}"]`).addClass("active");
     showItem();
   }
 
@@ -42,12 +44,10 @@ function AuditComponent() {
         $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
       } else {
         $(".audit-panel .ans-info").removeClass("error");
-        $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>.`);
+        $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);
       }
 
-      $(".audit-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
-      $(".audit-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
-      $(".audit-panel .main .col2 .icon-txt2").toggleClass('show', qData.qAreas[0] === "reading" && qData.qAreas[1] === "text2");
+      $(".audit-panel .icon-txt").toggleClass('show', (qData.qAreas[0] === "chart" || qData.qAreas[0] === "reading"));
     }
   }
 
@@ -71,12 +71,14 @@ function AuditComponent() {
 
     for (let i = 0; i < test.length; i++) {
       let status = getQuestionStatus(i);
+      let active = i === 0 ? "active" : "";
+
       buttons += `
-        <div class="btn ${status}" data-id="${i}" onclick="onBtnClick(${i})">
+        <div class="btn ${status} ${active}" data-id="${i}" onclick="onBtnClick(${i})">
           ${i + 1}
         </div>`
     }
-    $(".audit-panel .footer").html(buttons);
+    $(".audit-panel .questions").html(buttons);
   }
 
   //-------------------------------------
@@ -88,6 +90,7 @@ function AuditComponent() {
     showItem();
     buildButtons();
 
+    $(".start-panel").removeClass("show");
     $(".audit-panel").addClass("show");
   }
 
@@ -97,7 +100,7 @@ function AuditComponent() {
     $(".audit-panel .img-wrap img").click(() => {
       onAnsBtnClick();
     });
-    $(".audit-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
+    $(".audit-panel .icon-txt").click(() => {
       onMoreClick();
     });
   }
