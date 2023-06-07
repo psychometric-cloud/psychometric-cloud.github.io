@@ -1,0 +1,93 @@
+.audit-panel {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.audit-panel.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-panel .main {
+  flex: 1;
+}
+
+.audit-panel .main {
+  display: flex;
+  width: 100%
+}
+
+.audit-panel .main .col2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.audit-panel .img-wrap {
+  position: relative;
+  margin-top: 60px;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.audit-panel .questions {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  margin-top: 40px;
+}
+
+.audit-panel .questions .btn {
+  padding: 7px;
+  border-radius: 5px;
+  color: #2a2a2a;
+  margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  min-width: 20px;
+  border: 1px solid gray;
+}
+
+.audit-panel .questions .btn.active {
+  background: #e7e7e7;
+}
+
+.audit-panel .questions .btn.correct {
+  border: 1px solid green;
+}
+
+.audit-panel .questions .btn.error {
+  border: 1px solid red;
+}
+
+.audit-panel .ans-info {
+  margin-top: 30px;
+}
+
+.audit-panel .ans-info.error {
+  color: red;
+}
+
+.audit-panel .icon-txt {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+
+.audit-panel .icon-txt.show {
+  display: block;
+}

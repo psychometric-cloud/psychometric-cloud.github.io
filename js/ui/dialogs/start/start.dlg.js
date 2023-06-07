@@ -10,8 +10,8 @@ function StartDialog() {
   let selectedPublishers = [ePublisher.mallo1];
   let selectedAreas = [];
 
-  function show() {
-    $(".start-dlg-wrap").addClass("active");
+  function show(show) {
+    $(".start-dlg-wrap").toggleClass("active", show);
   }
 
   /*-------------------------------------------*/

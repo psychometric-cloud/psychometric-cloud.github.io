@@ -19,8 +19,11 @@
   <link rel="stylesheet" href="./js/ui/dialogs/start/start-dlg.css">
   <link rel="stylesheet" href="./js/ui/dialogs/cloud-tester/cloud-tester-dlg.css">
   <link rel="stylesheet" href="./js/ui/dialogs/more/more-dlg.css">
+  <link rel="stylesheet" href="./js/ui/dialogs/history/history-dlg.css">
   <link rel="stylesheet" href="./js/ui/components/practice/practice.component.css">
   <link rel="stylesheet" href="./js/ui/components/test/test.component.css">
+  <link rel="stylesheet" href="./js/ui/components/test/audit.component.css">
+  <link rel="stylesheet" href="./js/ui/components/test/report.component.css">
   <link rel="stylesheet" href="./js/ui/components/cloud-tester/cloud-tester.component.css">
 </head>
 
@@ -31,8 +34,8 @@
       <div class="center f-c">
       </div>
       <div class="right f-c">
-        <div class="timer-wrap"></div>
-        <div class="btn-test-cloud">Test Cloud</div>
+        <div class="countdown"></div>
+        <img class="history-btn" src="./assets/app/icon-history.png">
       </div>
     </div>
 
@@ -58,14 +61,68 @@
 
     <div class="test-panel">
       <div class="main">
+        <div class="col2">
+          <div class="q-info">
+          </div>
+          <div class="title-wrap">
+            <div class="title"></div>
+            <div class="chart-title">Read Chart before answering..</div>
+            <div class="text-title">Read Text before answering..</div>
+            <div class="icon icon-chart">
+              <img src="./assets/app/chart.png">
+            </div>
+            <div class="icon icon-txt">
+              <img src="./assets/app/txt.png">
+            </div>
+          </div>
+          <div class="img-wrap">
+            <img class="img">
+          </div>
+        </div>
       </div>
       <div class="footer">
         <div class="answers">
-          <div class="answer q1">1</div>
-          <div class="answer q1">2</div>
-          <div class="answer q1">3</div>
-          <div class="answer q1">4</div>
+          <div class="answer" data-num="1">1</div>
+          <div class="answer" data-num="2">2</div>
+          <div class="answer" data-num="3">3</div>
+          <div class="answer" data-num="4">4</div>
         </div>
+      </div>
+      <div class="report">
+        <div class="report-box">
+          <div class="title">
+            Test Results
+          </div>
+          <div class="box-body">
+            <div class="left">
+              <img class="great" src="./assets/app/great.png">
+              <img class="bummer" src="./assets/app/bummer.png">
+            </div>
+            <div class="right">
+              <div class="circle-wrap">
+                <div class="block">
+                  <div class="box">
+                    <p class="number">
+                      <span class="num">95</span>
+                      <span class="sub">%</span>
+                    </p>
+                  </div>
+                  <span class="dots"></span>
+                  <svg class="svg">
+                    <defs>
+                      <linearGradient id="gradientStyle">
+                        <stop offset="0%" stop-color="#E91E63" />
+                        <stop offset="100%" stop-color="#E91E63" />
+                      </linearGradient>
+                    </defs>
+                    <circle class="circle" cx="90" cy="90" r="80" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -92,6 +149,22 @@
       <div class="footer">
         <div class="btn btn-next">Next</div>
         <div class="btn btn-prev">Prev</div>
+      </div>
+    </div>
+
+    <div class="audit-panel">
+      <div class="main">
+        <div class="col2">
+          <div class="questions"></div>
+          <div class="ans-info">
+          </div>
+          <div class="img-wrap">
+            <img class="img">
+          </div>
+        </div>
+        <div class="icon icon-txt">
+          <img src="./assets/app/txt.png">
+        </div>
       </div>
     </div>
 
@@ -397,6 +470,14 @@
     </div>
   </div>
 
+  <div class="history-dlg-wrap dlg-wrap">
+    <div class="popper">
+    </div>
+    <div class="dlg dlg-history">
+      <div class="inner-wrap"></div>
+    </div>
+  </div>
+
   <div class="cloud-tester-dlg-wrap dlg-wrap">
     <div class="popper">
     </div>
@@ -462,25 +543,30 @@
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.8/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
   <script src="./js/common/consts.js"></script>
   <script src="./js/common/dropdown.js"></script>
   <script src="./js/common/utils.js"></script>
-  <script src="./js/common/timer.js"></script>
   <script src="./js/common/src-builder.js"></script>
   <script src="./js/db-managers/builders/data-builder.js"></script>
   <script src="./js/db-managers/builders/question-builder.js"></script>
   <script src="./js/db-managers/validators/chapter-validator.js"></script>
   <script src="./js/db-managers/validators/file-validator.js"></script>
   <script src="./js/db-managers/filters/data-filter.js"></script>
-  <script src="./js/test-managers/test-builder.js"></script>
+  <script src="./js/test-managers/test-data-builder.js"></script>
   <script src="./js/test-managers/test-history.js"></script>
+  <script src="./js/test-managers/test-timer.js"></script>
+  <script src="./js/test-managers/test-stat.js"></script>
   <script src="./js/test-managers/texts.handler.js"></script>
   <script src="./js/ui/dialogs/start/start.dlg.js"></script>
+  <script src="./js/ui/dialogs/history/history-dlg.js"></script>
   <script src="./js/ui/dialogs/cloud-tester/cloud-tester-dlg.js"></script>
   <script src="./js/ui/dialogs/more/more-dlg.js"></script>
   <script src="./js/ui/components/test/test.component.js"></script>
+  <script src="./js/ui/components/test/report.component.js"></script>
+  <script src="./js/ui/components/test/audit.component.js"></script>
   <script src="./js/ui/components/practice/practice.component.js"></script>
   <script src="./js/ui/components/cloud-tester/cloud-tester.component.js"></script>
   <script src="./js/main.js"></script>

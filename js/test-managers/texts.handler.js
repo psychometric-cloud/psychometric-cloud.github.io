@@ -32,7 +32,7 @@ function TextsHandler() {
     let filtered = [];
 
     for (var i = 0; i < qArr.length; i++) {
-      if (qArr[i].qAreas[0] !== "chart" || qArr[i].qAreas[0] !== "reading") {
+      if (qArr[i].qAreas[0] !== "chart" && qArr[i].qAreas[0] !== "reading") {
         filtered.push(JSON.parse(JSON.stringify(qArr[i])));
       }
     }
@@ -56,10 +56,14 @@ function TextsHandler() {
 
   function handleText(qArr) {
     let texts = getTexts(qArr);
-    let filtered = filterTexts(qArr);
-    let append = appendTextSiblings(filtered, texts);
 
-    return append;
+    if (texts.length > 0) {
+      let filtered = filterTexts(qArr);
+      let append = appendTextSiblings(filtered, texts);
+
+      return append;
+    }
+    return qArr;
   }
 
   return {
