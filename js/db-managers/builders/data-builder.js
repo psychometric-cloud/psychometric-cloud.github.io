@@ -19,6 +19,7 @@ function DataBuilder() {
 
   processFile = (file) => {
     if (fileValidator.validate(file.name, file.data)) {
+      console.log(file.name)
       chapterArr.forEach((chapter) => {
         file.data.questions[chapter].forEach((question) => {
           questionBuilder.add(file.data, question, chapter);
@@ -46,10 +47,6 @@ function DataBuilder() {
   //-----------------------------------------
 
   loadTestFiles = (callback) => {
-
-    // for (let i = 0; i < 60; i++) { //test only!!!!!!!!!
-    //   filesUrls.push(filesUrls[0]);
-    // }
 
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {

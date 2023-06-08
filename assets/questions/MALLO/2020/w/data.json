@@ -1,7 +1,7 @@
 {
   "publisher": "MALLO",
-  "year": "2022",
-  "season": "autumn",
+  "year": "2020",
+  "season": "winter",
   "questions": {
     "math1": [
       "1:prb,quant:1",
@@ -34,18 +34,18 @@
       "6:geo,tri:2",
       "7:alg,root:1",
       "8:geo:1",
-      "9:prb,movement:3",
-      "10:prb,quant:3",
-      "11:geo:2",
-      "12:alg,inequality:4",
+      "9:chart:3",
+      "10:chart:3",
+      "11:chart:2",
+      "12:chart:4",
       "13:prb:4",
       "14:alg,newOp:4",
       "15:prb,probability:1",
       "16:chart:2",
-      "17:chart:2",
-      "18:chart:2",
-      "19:chart:3",
-      "20:chart:1"
+      "17:alg:2",
+      "18:alg:2",
+      "19:alg:3",
+      "20:alg:1"
     ],
     "HE1": [
       "1:analogy:3",
@@ -65,7 +65,7 @@
       "15:deduce:2",
       "16:deduce:3",
       "17:deduce:1",
-      "18:reading:1",
+      "18:deduce:1",
       "19:reading:1",
       "20:reading:1",
       "21:reading:1",

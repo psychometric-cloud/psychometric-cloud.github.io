@@ -52,8 +52,8 @@ function TestDataBuilder() {
 
     data = removeHistory(subject, data);
     qArr = buildBasicTest(data);
+    console.log(qArr);
     qArr = textsHandler.handleText(qArr);
-
     return qArr;
   }
 
