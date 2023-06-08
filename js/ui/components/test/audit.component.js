@@ -36,7 +36,7 @@ function AuditComponent() {
       let title = srcBuilder.getTitle(qData);
       $(".audit-panel .main .col2 .title").text(title);
 
-      debugger;
+
       let src = srcBuilder.build(qData, "questions");
       $(".audit-panel .main .col2 .img").attr('src', src);
 

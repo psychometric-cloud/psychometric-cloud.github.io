@@ -12,12 +12,7 @@ function TextsHandler() {
         qBank[i].season === text.season &&
         qBank[i].chapter === text.chapter) {
 
-        console.log(i);
         siblings.push(JSON.parse(JSON.stringify(qBank[i])))
-
-        if (siblings.length > 4) {
-          debugger;
-        }
       }
     }
     return siblings;
@@ -66,9 +61,6 @@ function TextsHandler() {
       let filtered = filterTexts(qArr);
       let append = appendTextSiblings(filtered, texts);
 
-      if (append.length > filtered.length + 4) {
-        debugger;
-      }
       return append;
     }
     return qArr;

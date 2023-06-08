@@ -113,7 +113,6 @@ initProviders = () => {
 //-----------------------------------------------------
 
 $(document).ready(() => {
-  debugger;
   showLoader(true);
   initProviders();
 

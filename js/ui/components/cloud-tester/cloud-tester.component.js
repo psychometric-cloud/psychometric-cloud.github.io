@@ -61,7 +61,7 @@ function CloudTesterComponent() {
   //-------------------------------------
 
   function show(_filteredData, _selectedOption) {
-    debugger;
+
     currItem = 0;
     itemsArr = _filteredData;
     selectedOption = _selectedOption;
