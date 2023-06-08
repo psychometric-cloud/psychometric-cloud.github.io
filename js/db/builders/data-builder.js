@@ -39,13 +39,12 @@ function DataBuilder() {
       } else {
         callback();
       }
-    }, 1S50);
+    }, 150);
   }
 
   //-----------------------------------------
 
   loadTestFiles = (callback) => {
-
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {
         files.push({
