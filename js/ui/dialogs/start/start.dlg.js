@@ -7,10 +7,11 @@ const eSubject = {
 function StartDialog() {
 
   let selectedSubject = eSubject.math;
-  let selectedPublishers = [ePublisher.mallo1];
+  let selectedPublishers = [ePublisher.mallo];
   let selectedAreas = [];
 
   function show(show) {
+    reset();
     $(".start-dlg-wrap").toggleClass("active", show);
   }
 
@@ -95,19 +96,19 @@ function StartDialog() {
     selectedSubject = $('input[name="subjects-radio"]:checked').val();
 
     if (selectedSubject === eSubject.math) {
-      $(`.area.math .select-all`).prop('checked', true);
+      $(`.area.math .select-all`).prop('checked', false);
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.math);
       }, 0);
     }
     else if (selectedSubject === eSubject.he) {
-      $(`.area.he .select-all`).prop('checked', true);
+      $(`.area.he .select-all`).prop('checked', false);
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.he);
       }, 0);
     }
     else if (selectedSubject === eSubject.en) {
-      $(`.area.en .select-all`).prop('checked', true)
+      $(`.area.en .select-all`).prop('checked', false)
       setTimeout(() => {
         onAreaSelectAllClicked(eSubject.en);
       }, 0);
@@ -238,6 +239,21 @@ function StartDialog() {
 
   //---------------------------------------------
 
+  function reset() {
+    currStep = 0;
+
+    $(".start-dlg-wrap").removeClass("active");
+    $(".start-dlg-wrap .active").removeClass("active");
+    $(".dlg-start .init-panel").show();
+
+    $(".step1").addClass("active");
+    $(".btn-next").addClass("active");
+
+    onSubjectChange();
+  }
+
+  //---------------------------------------------
+
   function registerEvents(onFinish) {
     $(".dlg-start .btn-prev").on("click", () => {
       onPrevNextClick(-1);
@@ -290,9 +306,9 @@ function StartDialog() {
     });
 
     $('.start-dlg-wrap .popper').click((e) => {
-      location.reload();
+      reset();
+      resetMainUI();
     });
-
   }
 
   //---------------------------------------
@@ -307,12 +323,11 @@ function StartDialog() {
 
     $(".btn").removeClass("active");
     $(".btn-next").addClass("active");
-
-    onSubjectChange();
   }
 
   return {
     set: set,
-    show: show
+    show: show,
+    reset: reset
   }
 }

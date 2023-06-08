@@ -1,7 +1,5 @@
 window.ePublisher = {
   mallo: "MALLO",
-  mallo1: "mallo1",
-  mallo2: "mallo2",
   niv: "NIVR"
 }
 
@@ -22,7 +20,6 @@ window.eSubjects = {
   en: "en",
   he: "he"
 }
-
 
 window.eChapters = {
   math1: "math1",
