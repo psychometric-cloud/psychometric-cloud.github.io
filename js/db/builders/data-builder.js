@@ -9,6 +9,7 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/w/data.json"
@@ -46,6 +47,7 @@ function DataBuilder() {
 
   loadTestFiles = (callback) => {
 
+    debugger;
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {
         files.push({
@@ -62,6 +64,7 @@ function DataBuilder() {
   //-----------------------------------------
 
   build = (callback) => {
+    debugger;
     loadTestFiles(() => {
       processFiles(0, () => {
         callback();
