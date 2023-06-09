@@ -36,53 +36,54 @@ window.MATH_SUB_AREAS = [
 
   //--- geo: --------------------------
 
-  "tri",
-  "poly",
-  "circles",
-  "third",
+  "tri",//משולש
+  "poly",//מצולעים
+  "circles",//מעגלים
+  "third",//תלת מימד
+  "perimeter",//היקף
 
   //--- alg: --------------------------
 
-  "eq",
-  "expression",
-  "percent",
-  "fractions",
-  "exponent",
-  "root",
-  "oddEven",
-  "prime",
-  "newOp",
-  "letters",
-  "avg",
-  "inequality",
-  "divide",
-  "factorial",
-  "abs",
-  "remainder",
-  "series",
-  "axis",
+  "eq", //משוואה
+  "expression",//ביטוים
+  "percent",//אחוזים
+  "fractions",//שברים
+  "exponent",//חזקה
+  "root",//שורש
+  "oddEven",// זוגי ואי-זוגי
+  "prime",//מספר ראשןני
+  "newOp",//פעולות מומצאות
+  "letters",//אותיות וספרות
+  "avg",//ממוצע
+  "inequality",//אי שיויון
+  "divide",//לחלק
+  "factorial",//עצרת
+  "abs",//ערך מוחלט
+  "remainder",//שארית
+  "series",//סדרות
+  "axis",//ציר
 
   //--- prb: --------------------------
 
-  "relations",
-  "comb",
-  "probability",
-  "supply",
-  "movement",
-  "quant",
+  "relations",//יחסים
+  "comb",//צירופים
+  "probability",//הסתברות
+  "supply",//הספק
+  "movement",//תנועה
+  "quant",//בעיות כמות
 ];
 
 window.HE_AREAS = [
-  "analogy",
-  "deduce",
-  "text"
+  "analogy",//אנלוגיות
+  "deduce",//הסקה
+  "text"//קריאה
 ];
 
 window.EN_AREAS = [
-  "complete",
-  "restate",
-  "text1",
-  "text2",
+  "complete",//השלמת משפטים
+  "restate",//ניסוח מחדש
+  "text1",//קריאה
+  "text2",//קריאה
 ];
 
 window.eQuestionStatus = {
