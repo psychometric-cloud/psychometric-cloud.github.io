@@ -5,9 +5,9 @@
   "questions": {
     "math1": [
       "1:prb,quant:3",
-      "2:alg,eq:3",
+      "2:alg,eq,exponent:3",
       "3:alg,newOp:1",
-      "4:geo:1",
+      "4:geo,poly:1",
       "5:prb:1",
       "6:prb,expression:4",
       "7:alg,abs:2",
@@ -16,10 +16,10 @@
       "10:chart:3",
       "11:chart:1",
       "12:chart:3",
-      "13:geo,circle:3",
+      "13:geo,circle,poly:3",
       "14:prb,comb:4",
-      "15:alg,divide:3",
-      "16:geo:4",
+      "15:alg,divide,factorial:3",
+      "16:geo,poly:4",
       "17:alg,axis:2",
       "18:prb,supply:4",
       "19:prb,percent:2",
@@ -28,7 +28,7 @@
     "math2": [
       "1:geo:3",
       "2:geo,tri:3",
-      "3:alg,eq:3",
+      "3:alg,eq,exponent:3",
       "4:prb,quant:3",
       "5:prb,probability:2",
       "6:alg,inequality:1",
@@ -43,9 +43,9 @@
       "15:prb,relations:1",
       "16:geo:2",
       "17:alg,letters:2",
-      "18:prb,comb:4",
-      "19:geo:2",
-      "20:geo:2"
+      "18:prb,seqNum:4",
+      "19:geo,poly:2",
+      "20:geo,tri:2"
     ],
     "HE1": [
       "1:analogy:4",

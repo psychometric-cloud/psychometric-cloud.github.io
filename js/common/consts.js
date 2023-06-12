@@ -63,6 +63,7 @@ window.MATH_SUB_AREAS = [
   "remainder",//שארית
   "series",//סדרות
   "axis",//ציר
+  
 
   //--- prb: --------------------------
 
@@ -72,17 +73,19 @@ window.MATH_SUB_AREAS = [
   "supply",//הספק
   "movement",//תנועה
   "quant",//בעיות כמות
+  "seqNum",// מספרים עוקבים
 ];
 
 window.HE_AREAS = [
   "analogy",//אנלוגיות
   "deduce",//הסקה
-  "text"//קריאה
+  "reading"//קריאה
 ];
 
 window.EN_AREAS = [
   "complete",//השלמת משפטים
   "restate",//ניסוח מחדש
+  "reading",//קריאה
   "text1",//קריאה
   "text2",//קריאה
 ];
