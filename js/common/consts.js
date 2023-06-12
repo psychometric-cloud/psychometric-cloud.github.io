@@ -38,7 +38,7 @@ window.MATH_SUB_AREAS = [
 
   "tri",//משולש
   "poly",//מצולעים
-  "circles",//מעגלים
+  "circle",//מעגלים
   "third",//תלת מימד
   "perimeter",//היקף
   "cube",//קוביה
