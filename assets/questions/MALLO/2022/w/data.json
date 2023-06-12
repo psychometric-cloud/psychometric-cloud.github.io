@@ -8,7 +8,7 @@
       "2:prb:3",
       "3:alg,root:4",
       "4:alg,fractions:4",
-      "5:geo:3",
+      "5:geo,tri,poly:3",
       "6:prb,probability:2",
       "7:alg,letters:4",
       "8:alg,avg:4",
@@ -21,8 +21,8 @@
       "15:alg,inequality:4",
       "16:alg:1",
       "17:prb:3",
-      "18:prb:2",
-      "19:prb:1",
+      "18:prb,movement:2",
+      "19:prb,quant:1",
       "20:prb,oddEven:1"
     ],
     "math2": [
@@ -36,7 +36,7 @@
       "8:geo,poly:2",
       "9:prb,relations:2",
       "10:alg,newOp:1",
-      "11:geo:3",
+      "11:geo,circles:3",
       "12:alg,prime:3",
       "13:alg,remainder:3",
       "14:geo,poly:4",

@@ -41,6 +41,7 @@ window.MATH_SUB_AREAS = [
   "circles",//מעגלים
   "third",//תלת מימד
   "perimeter",//היקף
+  "cube",//קוביה
 
   //--- alg: --------------------------
 
