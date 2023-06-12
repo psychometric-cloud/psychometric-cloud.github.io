@@ -63,7 +63,7 @@ window.MATH_SUB_AREAS = [
   "remainder",//שארית
   "series",//סדרות
   "axis",//ציר
-  
+
 
   //--- prb: --------------------------
 
@@ -82,10 +82,9 @@ window.HE_AREAS = [
   "reading"//קריאה
 ];
 
-window.EN_AREAS = [
-  "complete",//השלמת משפטים
-  "restate",//ניסוח מחדש
-  "reading",//קריאה
+window.EN_MAIN_AREAS = ["complete", "restate", "reading"];
+
+window.EN_SUB_AREAS = [
   "text1",//קריאה
   "text2",//קריאה
 ];

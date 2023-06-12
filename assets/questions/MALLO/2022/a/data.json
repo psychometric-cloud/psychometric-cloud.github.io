@@ -5,7 +5,7 @@
   "questions": {
     "math1": [
       "1:prb,quant:1",
-      "2:geo, poly, tri:2",
+      "2:geo,poly,tri:2",
       "3:geo,tri:2",
       "4:alg,exponent:1",
       "5:prb,supply:1",
@@ -38,7 +38,7 @@
       "10:prb,quant:3",
       "11:geo,poly:2",
       "12:alg,inequality:4",
-      "13:geo,circles:4",
+      "13:geo,circle:4",
       "14:alg,newOp:4",
       "15:prb,probability:1",
       "16:chart:2",

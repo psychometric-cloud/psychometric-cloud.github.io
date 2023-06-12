@@ -3,14 +3,20 @@ function ChapterValidator() {
   checkAreas = (areas, optionalMainAreas, optionalSubAreas) => {
     let areasArr = areas.split(",");
 
-    if (areasArr.length < 1 || areasArr.length > 2) {
+    if (areasArr.length < 1) {
       return false;
     }
     if (!optionalMainAreas.includes(areasArr[0])) {
       return false;
     }
-    if (areas.length === 2 && !optionalSubAreas.includes(areasArr[1]))
-      return false;
+
+    if (areasArr.length >= 2) {
+      for (let i = 1; i < areasArr.length; i++) {
+        if (!optionalSubAreas.includes(areasArr[i])) {
+          return false;
+        }
+      }
+    }
 
     return true;
   }
@@ -55,7 +61,7 @@ function ChapterValidator() {
       return isChapterValid(fileName, fileData, chapterName, HE_AREAS, []);
     }
     if (chapterName.startsWith("EN")) {
-      return isChapterValid(fileName, fileData, chapterName, EN_AREAS, []);
+      return isChapterValid(fileName, fileData, chapterName, EN_MAIN_AREAS, EN_SUB_AREAS);
     }
   };
 

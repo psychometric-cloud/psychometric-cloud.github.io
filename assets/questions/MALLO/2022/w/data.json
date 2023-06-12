@@ -36,7 +36,7 @@
       "8:geo,poly:2",
       "9:prb,relations:2",
       "10:alg,newOp:1",
-      "11:geo,circles:3",
+      "11:geo,circle:3",
       "12:alg,prime:3",
       "13:alg,remainder:3",
       "14:geo,poly:4",
