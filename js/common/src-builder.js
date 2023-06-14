@@ -32,6 +32,7 @@ function SrcBuilder() {
     if (qData.season === "autumn") {
       return sSeasons.a;
     }
+    return qData.season;
   }
 
   //---------------------------------------

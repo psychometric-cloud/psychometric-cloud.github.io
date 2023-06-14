@@ -5,6 +5,8 @@ selectedQuestions = [];
 
 function renderUI(filterBy, filteredData) {
 
+  $(".history-btn").removeClass("show");
+
   if (filterBy.actionType === eActionType.test) {
     testComponent.show(filterBy.selectedSubject, filteredData);
   } else {
@@ -47,6 +49,7 @@ function resetMainUI() {
   $(".audit-panel").removeClass("show");
   $(".practice-panel").removeClass("show");
   $(".cloud-tester-panel").removeClass("show");
+  $(".history-btn").addClass("show");
 
   startDlg.reset();
 }

@@ -64,8 +64,27 @@ html {
 
 .header .countdown {
   color: white;
-  font-size: 23px;
+  font-size: 30px;
   padding: 0 20px;
+  display: none;
+}
+
+.header .countdown.show {
+  display: flex;
+}
+
+.header .countdown .box {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .countdown .splitter {
+  width: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header .history-btn {
