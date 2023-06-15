@@ -7,7 +7,7 @@
       "1:prb,quant:3",
       "2:alg,eq,exponent:3",
       "3:alg,newOp:1",
-      "4:geo,poly:1",
+      "4:geo,poly,tri:1",
       "5:prb:1",
       "6:prb,expression:4",
       "7:alg,abs:2",
