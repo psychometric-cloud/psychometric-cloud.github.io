@@ -41,7 +41,7 @@
       "13:alg,expression,abs:2",
       "14:geo,circle:1",
       "15:alg,avg:4",
-      "16:alg,letter,fractions:2",
+      "16:alg,letter,fraction:2",
       "17:prb,probability:3",
       "18:prb,movement:3",
       "19:alg,inequality:4",

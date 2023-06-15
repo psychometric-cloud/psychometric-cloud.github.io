@@ -8,7 +8,7 @@
       "2:alg,avg:4",
       "3:prb,quant:4",
       "4:alg,eq:2",
-      "5:alg,letter:2",
+      "5:alg,letters:2",
       "6:prb,supply:2",
       "7:alg,abs,inequality:4",
       "8:prb:1",
