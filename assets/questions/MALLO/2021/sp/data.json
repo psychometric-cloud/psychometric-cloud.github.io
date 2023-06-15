@@ -44,7 +44,7 @@
       "16:prb:1",
       "17:alg,exponent:4",
       "18:prb,quant:4",
-      "19:alg,divide,:3",
+      "19:alg,divide:3",
       "20:alg,axis:2"
     ],
     "HE1": [
