@@ -4,7 +4,7 @@
   "season": "spring",
   "questions": {
     "math1": [
-      "1:prb,:1",
+      "1:prb:1",
       "2:alg,abs,eq:2",
       "3:geo,tri,circle:3",
       "4:alg,oddEven:3",

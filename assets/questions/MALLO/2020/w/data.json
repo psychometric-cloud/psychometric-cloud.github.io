@@ -26,7 +26,7 @@
       "20:alg,axis:4"
     ],
     "math2": [
-      "1:peb,quant:1",
+      "1:prb,quant:1",
       "2:geo,poly,area:4",
       "3:alg,eq,exponent,fractions:1",
       "4:geo,poly:2",
