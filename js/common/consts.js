@@ -42,6 +42,8 @@ window.MATH_SUB_AREAS = [
   "third",//תלת מימד
   "perimeter",//היקף
   "cube",//קוביה
+  "area",//שטח
+  
 
   //--- alg: --------------------------
 
