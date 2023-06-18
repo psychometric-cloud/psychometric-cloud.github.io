@@ -19,6 +19,8 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/su/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json",
+
     
 
 
