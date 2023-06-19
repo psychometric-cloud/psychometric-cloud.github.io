@@ -19,20 +19,21 @@ function SrcBuilder() {
   //-------------------------------------
 
   function getSeason(qData) {
+    let _season = qData.season.toLowerCase();
 
-    if (qData.season === "winter") {
+    if (_season === "winter") {
       return sSeasons.w;
     }
-    if (qData.season === "summer") {
+    if (_season === "summer") {
       return sSeasons.su;
     }
-    if (qData.season === "spring") {
+    if (_season === "spring") {
       return sSeasons.sp;
     }
-    if (qData.season === "autumn") {
+    if (_season === "autumn") {
       return sSeasons.a;
     }
-    return qData.season;
+    return _season;
   }
 
   //---------------------------------------

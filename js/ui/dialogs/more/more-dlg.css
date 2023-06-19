@@ -9,7 +9,7 @@
   left: 0;
   background-color: #fff;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .more-panel.show {

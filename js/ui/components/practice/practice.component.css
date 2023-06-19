@@ -60,9 +60,13 @@
 
 .practice-panel .img-wrap {
   position: relative;
-  margin-top: 60px;
+  margin-top: 80px;
   max-height: 450px;
   overflow: auto;
+}
+
+.practice-panel .img-wrap img {
+  max-width: 985px;
 }
 
 .practice-panel .footer {
