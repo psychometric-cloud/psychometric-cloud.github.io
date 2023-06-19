@@ -1,17 +1,17 @@
 {
 "publisher": "MALLO",
   "year": "2018",
-  "season": "Autumn",
+  "season": "autumn",
   "questions": {
     "math1": [
       "1:alg,inequality:1",
       "2:prb,quant:3",
       "3:geo,circle,perimeter,poly:4",
-      "3:prb,supply,:4",
+      "3:prb,supply:4",
       "4:geo,third:4",
       "5:alg,fractions,exponent:1",
       "6:alg,axis:2",
-      "7:alg,divide,remainder:2",
+      "7:alg,divide:2",
       "8:alg,fractions,factorial:2",
       "9:alg,avg:1",
       "10:chart:2",
