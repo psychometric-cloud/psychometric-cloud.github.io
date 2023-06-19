@@ -1,6 +1,5 @@
 .more-panel {
   overflow: auto;
-  padding-top: 45px;
   display: none;
   position: fixed;
   top: 0;
@@ -20,4 +19,15 @@
   position: fixed;
   top: 50px;
   right: 50px;
+}
+
+.more-panel .img-wrap {
+  max-height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.more-panel .img-wrap img {
+  max-width: 1050px;
 }
