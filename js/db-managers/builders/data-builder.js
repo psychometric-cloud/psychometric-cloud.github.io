@@ -1,9 +1,9 @@
 function DataBuilder() {
 
-  files = [];
-  chapterArr = Object.values(eChapters);
+  let files = [];
+  let chapterArr = Object.values(eChapters);
 
-  filesUrls = [
+  let filesUrls = [
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
@@ -19,17 +19,37 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json",
-
-    
-
-
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json"
 
   ];
 
+
   //-----------------------------------------
 
-  processFile = (file) => {
+  const writeStat = () => {
+    let math = 0;
+    let en = 0;
+    let he = 0;
+
+    for (let i = 0; i < qBank.length; i++) {
+      let chapter = qBank[i].chapter;
+
+      if (chapter === eChapters.math1 || chapter === eChapters.math2) {
+        math += 1;
+      }
+      else if (chapter === eChapters.he1 || chapter === eChapters.he2) {
+        he += 1;
+      }
+      else if (chapter === eChapters.en1 || chapter === eChapters.en2) {
+        en += 1;
+      }
+    }
+    console.log(`Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
+  }
+
+  //-----------------------------------------
+
+  const processFile = (file) => {
     if (fileValidator.validate(file.name, file.data)) {
       console.log(file.name)
       chapterArr.forEach((chapter) => {
@@ -42,7 +62,7 @@ function DataBuilder() {
 
   //-----------------------------------------
 
-  processFiles = (fileIndex, callback) => {
+  const processFiles = (fileIndex, callback) => {
     let file = files[fileIndex];
 
     setTimeout(() => {
@@ -58,7 +78,7 @@ function DataBuilder() {
 
   //-----------------------------------------
 
-  loadTestFiles = (callback) => {
+  const loadTestFiles = (callback) => {
 
     filesUrls.forEach((fileUrl) => {
       utils.loadJson(fileUrl, (json) => {
@@ -75,9 +95,10 @@ function DataBuilder() {
 
   //-----------------------------------------
 
-  build = (callback) => {
+  const build = (callback) => {
     loadTestFiles(() => {
       processFiles(0, () => {
+        writeStat();
         callback();
       })
     })

@@ -1,6 +1,6 @@
 function QuestionBuilder() {
 
-  add = (test, question, chapter) => {
+  let add = (test, question, chapter) => {
     let qInfo = question.split(":");
     let areas = qInfo[1].split(",");
 

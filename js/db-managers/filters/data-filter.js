@@ -76,9 +76,11 @@ function DataFilter() {
       filterByPublishers(res1, filterBy, (res2) => {
         if (!_.isEmpty(filterBy.selectedAreas)) {
           filterByAreas(res2, filterBy, (res3) => {
+            console.log(`Total Filtered Data: ${res3.length}`)
             callback(res3);
           })
         } else {
+          console.log(`Total Filtered Data: ${res2.length}`)
           callback(res2);
         }
       })
