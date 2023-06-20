@@ -29,7 +29,26 @@
 }
 
 .more-panel .img-wrap img {
-  min-width: 850px;
   max-width: 1050px;
+}
 
+.more-panel .actions {
+  display: flex;
+  position: fixed;
+  top: 37px;
+  right: 40px;
+}
+
+.more-panel .actions .btn {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  color: white;
+  border-radius: 5px;
 }
