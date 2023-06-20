@@ -4,6 +4,7 @@ function DataBuilder() {
   let chapterArr = Object.values(eChapters);
 
   let filesUrls = [
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
@@ -21,9 +22,6 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/su/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/sp/data.json",
-
-
 
   ];
 
