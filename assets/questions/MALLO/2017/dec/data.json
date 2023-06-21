@@ -41,7 +41,7 @@
         "13:geo,poly,perimeter:4",
         "14:alg,fractions,inequality:2",
         "15:alg,percent:2",
-        "16:prb,quat:1",
+        "16:prb,quant:1",
         "17:prb,probability:3",
         "18:geo,tri,area:2",
         "19:prb,quant:2",
