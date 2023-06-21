@@ -17,7 +17,7 @@
         "11:alg,divide:3",
         "12:geo,tri:2",
         "13:alg,divide,remainder:1",
-        "14:prn,supply:2",
+        "14:prb,supply:2",
         "15:geo,poly:4",
         "16:prb,probability:3",
         "17:chart:1",
