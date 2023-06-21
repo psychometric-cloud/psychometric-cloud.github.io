@@ -34,6 +34,8 @@ window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];
 
 window.MATH_SUB_AREAS = [
 
+  "general",//כללי
+
   //--- geo: --------------------------
 
   "tri",//משולש
