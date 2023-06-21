@@ -3,6 +3,8 @@ function MoreDialog() {
   let lastTextSrc = "";
   let lastAnswerSrc = "";
 
+  //----------------------------------------
+
   let resizeImage = _.debounce((dir) => {
     percent = 0.2;
     add_width = (dir * (percent * $(".more-panel img.show").width())) + 'px';
@@ -11,6 +13,8 @@ function MoreDialog() {
       width: '+=' + add_width
     });
   }, 50);
+
+  //----------------------------------------
 
   function showImage(src, cls, resetWidth) {
     $(".more-panel img").removeClass("show");
@@ -22,7 +26,9 @@ function MoreDialog() {
     $(`.more-panel img.${cls}`).addClass("show");
   }
 
-  function show(item) {
+  //----------------------------------------
+
+  function showText(item) {
     let src = srcBuilder.build(item, "questions", true);
 
     showImage(src, "text", lastTextSrc !== src);
@@ -31,14 +37,18 @@ function MoreDialog() {
     $(".more-panel").addClass("show");
   }
 
+  //----------------------------------------
+
   function showAnswer(item) {
     let src = srcBuilder.build(item, "answers");
 
-    showImage(src, "text", lastAnswerSrc !== src);
+    showImage(src, "answer", lastAnswerSrc !== src);
     lastAnswerSrc = src;
 
     $(".more-panel").addClass("show");
   }
+
+  //----------------------------------------
 
   function init() {
     $(".more-panel").click(() => {
@@ -63,7 +73,7 @@ function MoreDialog() {
   init();
 
   return {
-    show: show,
+    showText: showText,
     showAnswer: showAnswer
   }
 }

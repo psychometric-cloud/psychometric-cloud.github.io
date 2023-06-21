@@ -9,7 +9,7 @@ function PracticeComponent() {
 
   function onMoreClick(type) {
     let qData = itemsArr[currItem];
-    moreDlg.show(qData);
+    moreDlg.showText(qData);
   }
 
   //-------------------------------------
