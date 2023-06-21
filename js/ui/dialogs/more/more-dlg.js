@@ -23,6 +23,7 @@ function MoreDialog() {
 
   function init() {
     $(".more-panel").click(() => {
+      $(".more-panel img").width("");
       $(".more-panel").removeClass("show")
     });
     $(".more-panel .btn.inc").click((e) => {
