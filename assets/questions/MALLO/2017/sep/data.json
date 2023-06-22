@@ -28,9 +28,9 @@
       "math2": [
         "1:geo,third:2",
         "2:prb,supply:3",
-        "3:alg.eq,fractions:4",
+        "3:alg,eq,fractions:4",
         "4:geo,circle,tri:3",
-        "5:ag,avg:4",
+        "5:alg,avg:4",
         "6:alg,fractions:4",
         "7:alg,eq:1",
         "8:chart:4",
