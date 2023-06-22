@@ -29,7 +29,7 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/sep/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/feb/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/apr/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/july/data.json",
 
 
   ];
