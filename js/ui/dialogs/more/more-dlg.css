@@ -28,8 +28,13 @@
   padding: 10px;
 }
 
-.more-panel .img-wrap img {
-  max-width: 1050px;
+.more-panel img {
+  display: none;
+  max-width: 1000px;
+}
+
+.more-panel .img-wrap img.show {
+  display: inline-block;
 }
 
 .more-panel .actions {

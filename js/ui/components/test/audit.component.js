@@ -15,7 +15,7 @@ function AuditComponent() {
 
   function onMoreClick(type) {
     let qData = test[currItem];
-    moreDlg.show(qData);
+    moreDlg.showText(qData);
   }
 
   //-------------------------------------

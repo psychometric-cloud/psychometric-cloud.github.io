@@ -9,7 +9,7 @@ function CloudTesterComponent() {
 
   function onMoreClick() {
     let qData = itemsArr[currItem];
-    moreDlg.show(qData);
+    moreDlg.showText(qData);
   }
 
   //-------------------------------------
