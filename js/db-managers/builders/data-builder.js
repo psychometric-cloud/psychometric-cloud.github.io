@@ -27,7 +27,7 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/dec/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/sep/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/peb/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/feb/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/apr/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json",
 
