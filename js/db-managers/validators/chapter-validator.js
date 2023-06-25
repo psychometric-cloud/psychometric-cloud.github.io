@@ -26,7 +26,11 @@ function ChapterValidator() {
   isChapterValid = (fileName, fileData, chapterName, optionalMainAreas, optionalSubAreas) => {
 
     fileData.questions[chapterName].forEach((item, index) => {
-      let info = item !== "skip" ? item.split(":") : [index, "geo", 1];
+      let info = item !== "skip" ? item.split(":") : item;
+
+      if (info === "skip") {
+        return true;
+      }
 
       if (info.length !== 3) {
         console.log(`chapter ${chapterName} in ${fileName} is invalid.(${item} 1)`);
