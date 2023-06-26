@@ -178,3 +178,12 @@ html {
 .start-panel .start-btn.show {
   display: block;
 }
+
+.toggle-star {
+  margin-right: 25px;
+  display: none;
+}
+
+.toggle-star.show {
+  display: block;
+}

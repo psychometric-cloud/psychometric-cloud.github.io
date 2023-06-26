@@ -111,3 +111,21 @@
   border: 1px solid gray;
   pointer-events: none;
 }
+
+.dlg-start .btn-star {
+  padding: 7px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dlg-start .btn-star:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.dlg-start .btn-star.clicked svg {
+  color: #e91e63;
+  fill: #e91e63;
+}

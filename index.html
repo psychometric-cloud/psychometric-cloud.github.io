@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./assets/styles/radio.css">
   <link rel="stylesheet" href="./assets/styles/chkbox.css">
   <link rel="stylesheet" href="./assets/styles/dropdown.css">
+  <link rel="stylesheet" href="./assets/styles/toggle.css">
   <link rel="stylesheet" href="./assets/styles/selec-group.css">
   <link rel="stylesheet" href="./assets/styles/dialog.css">
   <link rel="stylesheet" href="./js/main.css">
@@ -41,6 +42,13 @@
         </div>
         <img class="history-btn" src="./assets/app/icon-history.png">
         <div class="btn-test-cloud">Check Cloud</div>
+        <div class="toggle-switch toggle-star">
+          <input type="checkbox" id="chkTest" name="chkTest">
+          <label for="chkTest">
+            <span class="txt">Stars only</span>
+            <span class="toggle-track"></span>
+          </label>
+        </div>
       </div>
     </div>
 
@@ -83,6 +91,14 @@
           <div class="img-wrap">
             <img class="img">
           </div>
+        </div>
+        <div class="btn-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-star">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
         </div>
       </div>
       <div class="footer">
@@ -149,6 +165,14 @@
           <div class="img-wrap">
             <img class="img">
           </div>
+        </div>
+        <div class="btn-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-star">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
         </div>
       </div>
       <div class="footer">
@@ -459,6 +483,14 @@
       <div class="panel step3">
         <div class="dlg-header">
           <div class="title">Choose Source</div>
+          <div class="btn-star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-star">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
         </div>
         <div class="dlg-body publisher">
           <label class="checkbox">
@@ -592,6 +624,7 @@
   <script src="./js/common/dropdown.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/src-builder.js"></script>
+  <script src="./js/db-managers/stars/stars-manager.js"></script>
   <script src="./js/db-managers/builders/data-builder.js"></script>
   <script src="./js/db-managers/builders/question-builder.js"></script>
   <script src="./js/db-managers/validators/chapter-validator.js"></script>

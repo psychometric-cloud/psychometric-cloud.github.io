@@ -239,6 +239,12 @@ function StartDialog() {
 
   //---------------------------------------------
 
+  function onBtnStarClicked() {
+    $('.start-dlg-wrap .btn-star').toggleClass("clicked");
+  }
+
+  //---------------------------------------------
+
   function reset() {
     currStep = 0;
 
@@ -248,6 +254,7 @@ function StartDialog() {
 
     $(".step1").addClass("active");
     $(".btn-next").addClass("active");
+    $('.start-dlg-wrap .btn-star').removeClass("clicked");
 
     onSubjectChange();
   }
@@ -308,6 +315,10 @@ function StartDialog() {
     $('.start-dlg-wrap .popper').click((e) => {
       reset();
       resetMainUI();
+    });
+
+    $('.start-dlg-wrap .btn-star').click((e) => {
+      onBtnStarClicked();
     });
   }
 

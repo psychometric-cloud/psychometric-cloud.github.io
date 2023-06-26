@@ -16,13 +16,10 @@
 
 .practice-panel .main {
   flex: 1;
-}
-
-.practice-panel .main {
   display: flex;
-  width: 100%
+  width: 100%;
+  position: relative;
 }
-
 
 .practice-panel .main .col2 {
   flex: 1;
@@ -100,4 +97,25 @@
 .practice-panel .option.active {
   font-weight: 600;
   color: red;
+}
+
+.practice-panel .btn-star {
+  padding: 7px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+.practice-panel .btn-star:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.practice-panel .btn-star.clicked svg {
+  color: #e91e63;
+  fill: #e91e63;
 }

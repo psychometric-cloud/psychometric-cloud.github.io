@@ -6,7 +6,7 @@ function QuestionBuilder() {
       let qInfo = question.split(":");
       let areas = qInfo[1].split(",");
 
-      qBank.push({
+      let q = {
         publisher: test.publisher,
         year: parseInt(test.year),
         season: test.season,
@@ -14,7 +14,10 @@ function QuestionBuilder() {
         qNum: parseInt(qInfo[0]),
         qAreas: areas,
         aNum: parseInt(qInfo[2])
-      });
+      }
+      q.isStar = starsManager.isStar(q);
+
+      qBank.push(q);
     }
   }
 

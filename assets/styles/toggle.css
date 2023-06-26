@@ -1,0 +1,42 @@
+.toggle-switch input[type=checkbox] {
+  display: none
+}
+
+.toggle-switch label {
+  cursor: pointer;
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.toggle-switch label .txt {
+  padding: 0 10px;
+}
+
+.toggle-switch label .toggle-track {
+  display: block;
+  height: 28px;
+  width: 50px;
+  background: #eee;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.toggle-switch .toggle-track:before {
+  content: '';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background: red;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: right .2s ease-in;
+}
+
+.toggle-switch input[type="checkbox"]:checked+label .toggle-track:before {
+  background: green;
+  right: 22px;
+}

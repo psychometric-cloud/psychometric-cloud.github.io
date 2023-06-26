@@ -24,6 +24,8 @@ function PracticeComponent() {
       let src = srcBuilder.build(qData, selectedOption);
       $(".practice-panel .main .col2 .img").attr('src', src);
 
+      $('.practice-panel .btn-star').toggleClass("clicked", qData.isStar);
+
       $(".practice-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
       $(".practice-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
       $(".practice-panel .main .col2 .icon-txt2").toggleClass('show', qData.qAreas[0] === "reading" && qData.qAreas[1] === "text2");
@@ -54,6 +56,13 @@ function PracticeComponent() {
     $(".practice-panel .btn-next").toggleClass("disabled", currItem === itemsArr.length - 1);
   }
 
+  //---------------------------------------------
+
+  function onBtnStarClicked() {
+    starsManager.toggleStar(itemsArr[currItem]);
+    $('.practice-panel .btn-star').toggleClass("clicked");
+  }
+
   //-------------------------------------
 
   function show(_filteredData, _selectedOption) {
@@ -66,6 +75,7 @@ function PracticeComponent() {
     showItem();
 
     $(".practice-panel").addClass("show");
+    $(".toggle-star").addClass("show");
   }
 
   //-------------------------------------
@@ -82,6 +92,9 @@ function PracticeComponent() {
     });
     $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
       onMoreClick();
+    });
+    $('.practice-panel .btn-star').click((e) => {
+      onBtnStarClicked();
     });
   }
 

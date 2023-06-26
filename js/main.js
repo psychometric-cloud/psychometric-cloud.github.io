@@ -95,6 +95,7 @@ initProviders = () => {
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
   srcBuilder = new SrcBuilder();
+  starsManager = new StarsManager();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();
   testStat = new TestStat();
