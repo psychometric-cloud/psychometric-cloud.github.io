@@ -42,13 +42,6 @@
         </div>
         <img class="history-btn" src="./assets/app/icon-history.png">
         <div class="btn-test-cloud">Check Cloud</div>
-        <div class="toggle-switch toggle-star">
-          <input type="checkbox" id="chkTest" name="chkTest">
-          <label for="chkTest">
-            <span class="txt">Stars only</span>
-            <span class="toggle-track"></span>
-          </label>
-        </div>
       </div>
     </div>
 
@@ -482,33 +475,22 @@
       </div>
       <div class="panel step3">
         <div class="dlg-header">
-          <div class="title">Choose Source</div>
-          <div class="btn-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-star">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
+          <div class="toggle-switch toggle-lbl">
+            <input type="checkbox" id="chklbl" name="chklbl">
+            <label for="chklbl">
+              <span class="toggle-track"></span>
+            </label>
           </div>
+          <div class="title">Choose Label</div>
         </div>
-        <div class="dlg-body publisher">
+        <div class="dlg-body labels-wrap disabled">
           <label class="checkbox">
-            <input type="checkbox" class="select-all" value="all">
-            <span> All</span>
+            <input type="checkbox" class="select-item" value="l0">
+            <span>Stars</span>
           </label>
           <label class="checkbox">
-            <input type="checkbox" class="select-item" value="mallo" checked>
-            <span> מאל"ו</span>
-          </label>
-
-          <label class="checkbox">
-            <input type="checkbox" class="select-item" value="niv">
-            <span> ניב רווח</span>
-          </label>
-          <label class="checkbox">
-            <input type="checkbox" class="select-item" value="pshco">
-            <span> פסיכו</span>
+            <input type="checkbox" class="select-item" value="l1">
+            <span>Check again</span>
           </label>
         </div>
       </div>
@@ -575,13 +557,6 @@
   </div>
 
   <div class="more-panel">
-    <!-- <div class="btn-close">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-    </div> -->
     <div class="img-wrap">
       <img class="answer no-select">
       <img class="text no-select">
@@ -624,7 +599,7 @@
   <script src="./js/common/dropdown.js"></script>
   <script src="./js/common/utils.js"></script>
   <script src="./js/common/src-builder.js"></script>
-  <script src="./js/db-managers/stars/stars-manager.js"></script>
+  <script src="./js/db-managers/labels/labels-manager.js"></script>
   <script src="./js/db-managers/builders/data-builder.js"></script>
   <script src="./js/db-managers/builders/question-builder.js"></script>
   <script src="./js/db-managers/validators/chapter-validator.js"></script>

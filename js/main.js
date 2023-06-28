@@ -18,7 +18,6 @@ function renderUI(filterBy, filteredData) {
 
 function filterData(filterBy, callback) {
   showLoader(true);
-
   dataFilter.filter(filterBy, (filteredData) => {
     showLoader(false);
     callback(filteredData);
@@ -95,7 +94,7 @@ initProviders = () => {
   fileValidator = new FileValidator();
   questionBuilder = new QuestionBuilder();
   srcBuilder = new SrcBuilder();
-  starsManager = new StarsManager();
+  labelsManager = new LabelsManager();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();
   testStat = new TestStat();

@@ -91,6 +91,10 @@
   cursor: pointer;
 }
 
+.dlg-start .btn-prev.hide {
+  display: none
+}
+
 .dlg-start .btn-next.disable {
   color: rgb(168, 168, 168);
   pointer-events: none;
@@ -128,4 +132,12 @@
 .dlg-start .btn-star.clicked svg {
   color: #e91e63;
   fill: #e91e63;
+}
+
+.dlg-start .toggle-lbl {
+  margin: 0 10px 0 -10px;
+}
+
+.dlg-start .labels-wrap.disabled .checkbox {
+  pointer-events: none;
 }

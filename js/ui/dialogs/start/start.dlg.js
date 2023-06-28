@@ -7,8 +7,8 @@ const eSubject = {
 function StartDialog() {
 
   let selectedSubject = eSubject.math;
-  let selectedPublishers = [ePublisher.mallo];
   let selectedAreas = [];
+  let selectedLabels = [];
 
   function show(show) {
     reset();
@@ -65,11 +65,11 @@ function StartDialog() {
   function onPrevNextClick(step) {
 
     currStep += step;
+    console.log(currStep);
 
     if (actionType === eActionType.test) {
-      if (currStep === 1) {
-        currStep += step;
-      }
+      $(".btn-prev").addClass("hide");
+      currStep = 2;
     }
 
     showButtons();
@@ -85,8 +85,8 @@ function StartDialog() {
     onFinish({
       actionType,
       selectedSubject,
-      selectedPublishers,
-      selectedAreas
+      selectedAreas,
+      selectedLabels
     });
   }
 
@@ -179,55 +179,25 @@ function StartDialog() {
 
   //--------------------------------------------
 
-  function onPublisherSelectAllClicked(e, type) {
+  function onLabelSelectItemClicked() {
+    selectedLabels = [];
 
-    selectedPublishers = [];
-
-    if ($(`.publisher .select-all`).prop('checked')) {
-      $(`.publisher .select-item`).each(function () {
-        this.checked = true;
-      });
-    } else {
-      $(`.publisher .select-item`).each(function () {
-        this.checked = false;
-      });
-    }
-    setSelectedPublisher();
-    checkButtons();
-  }
-
-  //--------------------------------------------
-
-  function onPublisherSelectItemClicked(e) {
-
-    if ($(`.publisher .select-item:checked`).length == $(`.publisher .select-item`).length) {
-      $(`.publisher .select-all`).prop('checked', true);
-    } else {
-      $(`.publisher .select-all`).prop('checked', false);
-    }
-
-    setSelectedPublisher();
-    checkButtons();
-  }
-
-  //--------------------------------------------
-
-  function setSelectedPublisher() {
-
-    selectedPublishers = [];
-
-    $(`.publisher .select-item`).each(function () {
+    $(`.labels-wrap label .select-item`).each(function () {
       if (this.checked) {
-        selectedPublishers.push(this.value)
+        selectedLabels.push(this.value)
       }
     });
+    checkButtons();
   }
 
   //--------------------------------------------
 
   function checkButtons() {
     $(".btn-next").toggleClass("disable", currStep > 0 && selectedAreas.length == 0);
-    $(".btn-go").toggleClass("disable", selectedPublishers.length == 0);
+
+    if (!$('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
+      $(".btn-go").toggleClass("disable", selectedLabels.length == 0);
+    }
   }
 
   //---------------------------------------------
@@ -245,8 +215,21 @@ function StartDialog() {
 
   //---------------------------------------------
 
+  function onBtnToggleLblClicked() {
+    $('.start-dlg-wrap .labels-wrap').toggleClass("disabled");
+
+    if ($('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
+      selectedLabels = [];
+      $('.start-dlg-wrap .labels-wrap label .select-item').prop('checked', false);
+    }
+    checkButtons();
+  }
+
+  //---------------------------------------------
+
   function reset() {
     currStep = 0;
+    selectedLabels = [];
 
     $(".start-dlg-wrap").removeClass("active");
     $(".start-dlg-wrap .active").removeClass("active");
@@ -254,7 +237,11 @@ function StartDialog() {
 
     $(".step1").addClass("active");
     $(".btn-next").addClass("active");
-    $('.start-dlg-wrap .btn-star').removeClass("clicked");
+    $(".btn-prev").removeClass("hide");
+    $(".btn-go").removeClass("disable");
+    $('.start-dlg-wrap .labels-wrap').addClass("disabled");
+    $('.start-dlg-wrap .toggle-lbl input').prop('checked', false);
+    $('.start-dlg-wrap .labels-wrap label .select-item').prop('checked', false);
 
     onSubjectChange();
   }
@@ -298,13 +285,6 @@ function StartDialog() {
       onAreaSelectItemClicked(e, eSubject.en);
     });
 
-    $('.publisher .select-all').click((e) => {
-      onPublisherSelectAllClicked(e);
-    });
-    $('.publisher .select-item').click((e) => {
-      onPublisherSelectItemClicked(e);
-    });
-
     $('.btn-test').click((e) => {
       onBtnPreActionClicked(eActionType.test);
     });
@@ -315,6 +295,13 @@ function StartDialog() {
     $('.start-dlg-wrap .popper').click((e) => {
       reset();
       resetMainUI();
+    });
+
+    $('.labels-wrap label .select-item').click((e) => {
+      onLabelSelectItemClicked(e);
+    });
+    $('.start-dlg-wrap .toggle-lbl input').click((e) => {
+      onBtnToggleLblClicked();
     });
 
     $('.start-dlg-wrap .btn-star').click((e) => {
@@ -334,6 +321,8 @@ function StartDialog() {
 
     $(".btn").removeClass("active");
     $(".btn-next").addClass("active");
+
+
   }
 
   return {

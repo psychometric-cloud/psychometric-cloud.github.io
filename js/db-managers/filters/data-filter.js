@@ -68,23 +68,48 @@ function DataFilter() {
     }, 350);
   }
 
+
+  //-----------------------------------------
+
+  filterByLabels = (arr, filterBy, callback) => {
+    setTimeout(() => {
+
+      if (_.isEmpty(filterBy.selectedLabels)) {
+        callback(arr);
+      } else {
+        res = [];
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < filterBy.selectedLabels.length; j++) {
+            if (arr[i].labels.includes(filterBy.selectedSubject[j])) {
+              res.push(arr[i]);
+              return;
+            }
+          }
+        }
+        callback(res);
+      }
+    }, 150);
+  }
+
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
 
-    filterBySubject(qBank, filterBy, (res1) => {
-      filterByPublishers(res1, filterBy, (res2) => {
-        if (!_.isEmpty(filterBy.selectedAreas)) {
-          filterByAreas(res2, filterBy, (res3) => {
+    if (filterBy.actionType === 1) {
+      filterBySubject(qBank, filterBy, (res1) => {
+        console.log(`Total Filtered Data: ${res1.length}`)
+        callback(res1);
+      });
+    } else {
+      filterBySubject(qBank, filterBy, (res1) => {
+        filterByAreas(res1, filterBy, (res2) => {
+          filterByLabels(res2, filterBy, (res3) => {
             console.log(`Total Filtered Data: ${res3.length}`)
             callback(res3);
-          })
-        } else {
-          console.log(`Total Filtered Data: ${res2.length}`)
-          callback(res2);
-        }
-      })
-    });
+          });
+        });
+      });
+    }
   }
 
   return {

@@ -15,7 +15,7 @@ function QuestionBuilder() {
         qAreas: areas,
         aNum: parseInt(qInfo[2])
       }
-      q.isStar = starsManager.isStar(q);
+      q.labels = labelsManager.getQuestionLabels(q);
 
       qBank.push(q);
     }

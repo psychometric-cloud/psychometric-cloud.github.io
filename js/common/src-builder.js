@@ -44,8 +44,20 @@ function SrcBuilder() {
 
   //---------------------------------------
 
+  function getDomain(qData) {
+    if (qData.publisher.toUpperCase() === "MALLO") {
+      if (qData.year >= 2014) {
+        return "https://psychometric-cloud.github.io";
+      }
+      return "https://psychometric-cloud-part2.github.io";
+    }
+    return "error";
+  }
+
+  //---------------------------------------
+
   function build(qData, option, more) {
-    src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
+    src = `${getDomain(qData)}/assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
 
     if (more) {
       let _src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;

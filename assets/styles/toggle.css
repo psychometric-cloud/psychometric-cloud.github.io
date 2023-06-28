@@ -28,7 +28,7 @@
   display: inline-block;
   height: 28px;
   width: 28px;
-  background: red;
+  background: #a09e9e;
   border-radius: 20px;
   position: absolute;
   top: 0;
@@ -37,6 +37,6 @@
 }
 
 .toggle-switch input[type="checkbox"]:checked+label .toggle-track:before {
-  background: green;
+  background: #e91e63;
   right: 22px;
 }
