@@ -178,3 +178,48 @@ html {
 .start-panel .start-btn.show {
   display: block;
 }
+
+/* -------------------------------------------- */
+/* labels */
+/* -------------------------------------------- */
+
+
+.q-labels {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+}
+
+.q-labels .lbl {
+  padding: 7px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.q-labels .lbl.red svg {
+  color: #a0a0a0;
+  fill: none;
+}
+
+.q-labels .lbl.red.clicked svg {
+  color: #e91e63;
+  fill: #e91e63;
+}
+
+.q-labels .lbl.green svg {
+  color: #a0a0a0;
+  fill: none;
+}
+
+.q-labels .lbl.green.clicked svg {
+  fill: #ca35ad;
+  color: #ca35ad;
+}
+
+.q-labels .lbl:hover {
+  background-color: rgb(211, 211, 211);
+}

@@ -1,6 +1,6 @@
 function LabelsManager() {
 
-  let labels = [];
+  let labeledQuestions = [];
 
   function isQuestionEqual(q1, q2) {
     let res = q1.year === q2.year &&
@@ -15,7 +15,7 @@ function LabelsManager() {
   //-----------------------------------------
 
   function _loadLabels() {
-    labels = JSON.parse(localStorage.getItem("q-labels")) || [];
+    labeledQuestions = JSON.parse(localStorage.getItem("q-labels")) || [];
   }
 
   //-----------------------------------------
@@ -23,7 +23,7 @@ function LabelsManager() {
   function _setQuestionLabel(question, label) {
     if (question.labels.includes(label)) {
       const index = question.labels.indexOf(label);
-      question.labels = question.labels.splice(index, 1);
+      question.labels.splice(index, 1);
     } else {
       question.labels.push(label);
     }
@@ -31,13 +31,14 @@ function LabelsManager() {
 
   //-----------------------------------------
 
-  function _updateLabels(question) {
-    labels = labels.filter((q) => {
+  function _updateLabeledQuestionsArr(question) {
+
+    labeledQuestions = labeledQuestions.filter((q) => {
       return !isQuestionEqual(q, question);
     });
 
     if (!_.isEmpty(question.labels)) {
-      labels.push(question)
+      labeledQuestions.push(question)
     }
   }
 
@@ -45,17 +46,17 @@ function LabelsManager() {
 
   function toggleLabel(question, label) {
     _setQuestionLabel(question, label);
-    _updateLabels();
+    _updateLabeledQuestionsArr(question);
 
-    localStorage.setItem("q-labels", JSON.stringify(labels));
+    localStorage.setItem("q-labels", JSON.stringify(labeledQuestions));
   }
 
   //-----------------------------------------
 
   function getQuestionLabels(question) {
-    for (let i = 0; i < labels.length; i++) {
-      if (isQuestionEqual(labels[i], question)) {
-        return question.labels;
+    for (let i = 0; i < labeledQuestions.length; i++) {
+      if (isQuestionEqual(labeledQuestions[i], question)) {
+        return labeledQuestions[i].labels || [];
       }
     }
     return [];

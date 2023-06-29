@@ -24,7 +24,8 @@ function PracticeComponent() {
       let src = srcBuilder.build(qData, selectedOption);
       $(".practice-panel .main .col2 .img").attr('src', src);
 
-      $('.practice-panel .btn-star').toggleClass("clicked", qData.isStar);
+      $('.practice-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
+      $('.practice-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
 
       $(".practice-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
       $(".practice-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
@@ -59,8 +60,15 @@ function PracticeComponent() {
   //---------------------------------------------
 
   function onBtnStarClicked() {
-    starsManager.toggleStar(itemsArr[currItem]);
-    $('.practice-panel .btn-star').toggleClass("clicked");
+    labelsManager.toggleLabel(itemsArr[currItem], "star");
+    $('.practice-panel .q-labels .star').toggleClass("clicked");
+  }
+
+  //-------------------------------------
+
+  function onBtnLearnMoreClicked() {
+    labelsManager.toggleLabel(itemsArr[currItem], "learn");
+    $('.practice-panel .q-labels .learn').toggleClass("clicked");
   }
 
   //-------------------------------------
@@ -93,8 +101,11 @@ function PracticeComponent() {
     $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
       onMoreClick();
     });
-    $('.practice-panel .btn-star').click((e) => {
+    $('.practice-panel .q-labels .star').click((e) => {
       onBtnStarClicked();
+    });
+    $('.practice-panel .q-labels .learn').click((e) => {
+      onBtnLearnMoreClicked();
     });
   }
 
