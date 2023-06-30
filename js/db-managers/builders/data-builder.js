@@ -33,7 +33,7 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json",
-    //"https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
 
   ];
 
