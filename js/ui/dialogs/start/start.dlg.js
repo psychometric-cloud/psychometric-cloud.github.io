@@ -65,7 +65,6 @@ function StartDialog() {
   function onPrevNextClick(step) {
 
     currStep += step;
-    console.log(currStep);
 
     if (actionType === eActionType.test) {
       $(".btn-prev").addClass("hide");

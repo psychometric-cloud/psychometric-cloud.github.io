@@ -60,7 +60,7 @@ function DataBuilder() {
         en += 1;
       }
     }
-    console.log(`Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
+    console.log(`${files.length} files loaded. Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
   }
 
   //-----------------------------------------
@@ -89,7 +89,7 @@ function DataBuilder() {
       } else {
         callback();
       }
-    }, 250);
+    }, 150);
   }
 
   //-----------------------------------------
