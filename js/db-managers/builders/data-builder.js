@@ -1,6 +1,6 @@
 function DataBuilder() {
 
-  let files = [];  //asdfasdfasd
+  let files = [];
   let chapterArr = Object.values(eChapters);
 
   let filesUrls = [
@@ -35,8 +35,6 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json",
-
-
   ];
 
 
@@ -82,6 +80,7 @@ function DataBuilder() {
     let file = files[fileIndex];
 
     setTimeout(() => {
+
       processFile(file);
 
       if (fileIndex < files.length - 1) {
@@ -89,7 +88,7 @@ function DataBuilder() {
       } else {
         callback();
       }
-    }, 150);
+    }, 100);
   }
 
   //-----------------------------------------
@@ -112,6 +111,8 @@ function DataBuilder() {
   //-----------------------------------------
 
   const build = (callback) => {
+    filesUrls = _.shuffle(filesUrls);
+
     loadTestFiles(() => {
       processFiles(0, () => {
         writeStat();

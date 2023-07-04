@@ -60,14 +60,14 @@ function PracticeComponent() {
   //---------------------------------------------
 
   function onBtnStarClicked() {
-    labelsManager.toggleLabel(itemsArr[currItem], "star");
+    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.star);
     $('.practice-panel .q-labels .star').toggleClass("clicked");
   }
 
   //-------------------------------------
 
   function onBtnLearnMoreClicked() {
-    labelsManager.toggleLabel(itemsArr[currItem], "learn");
+    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.latter);
     $('.practice-panel .q-labels .learn').toggleClass("clicked");
   }
 
