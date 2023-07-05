@@ -15,14 +15,13 @@ function PracticeComponent() {
   //-------------------------------------
 
   function setItemsArr(filteredData) {
+    itemsArr = [];
 
     for (let i = 0; i < filteredData.length; i++) {
-      if (filteredData[i].isStandalone) {
-        itemsArr.push(filteredData[i]);
-      } else {
-        for (let j = 0; j < filteredData[i].members.length; j++) {
-          itemsArr.push(filteredData[i].members[j]);
-        }
+      itemsArr.push(filteredData[i]);
+
+      for (let j = 0; j < filteredData[i].members.length; j++) {
+        itemsArr.push(filteredData[i].members[j]);
       }
     }
   }
@@ -93,7 +92,7 @@ function PracticeComponent() {
     currItem = 0;
     selectedOption = _selectedOption;
 
-    setItemsArr(filterData);
+    setItemsArr(_filteredData);
     updateButtonsStatus();
     showItem();
 

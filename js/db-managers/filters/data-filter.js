@@ -100,7 +100,7 @@ function DataFilter() {
     let arr = [];
     let shuffledIndexes = utils.shuffleNums(data.length);
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < shuffledIndexes.length; i++) {
       arr.push(data[shuffledIndexes[i]])
     }
     return arr;
