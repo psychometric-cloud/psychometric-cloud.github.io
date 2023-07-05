@@ -96,19 +96,31 @@ function DataFilter() {
 
   //-----------------------------------------
 
+  shuffle = (data) => {
+    let arr = [];
+    let shuffledIndexes = utils.shuffleNums(data.length);
+
+    for (var i = 0; i < 10; i++) {
+      arr.push(data[shuffledIndexes[i]])
+    }
+    return arr;
+  }
+
+  //-----------------------------------------
+
   filter = (filterBy, callback) => {
 
     if (filterBy.actionType === eActionType.test) {
       filterBySubject(qBank, filterBy, (res1) => {
         console.log(`Total Filtered Data: ${res1.length}`)
-        callback(res1);
+        callback(shuffle(res1));
       });
     } else {
       filterBySubject(qBank, filterBy, (res1) => {
         filterByAreas(res1, filterBy, (res2) => {
           filterByLabels(res2, filterBy, (res3) => {
             console.log(`Total Filtered Data: ${res3.length}`)
-            callback(res3);
+            callback(shuffle(res3));
           });
         });
       });

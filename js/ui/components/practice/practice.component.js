@@ -14,6 +14,21 @@ function PracticeComponent() {
 
   //-------------------------------------
 
+  function setItemsArr(filteredData) {
+
+    for (let i = 0; i < filteredData.length; i++) {
+      if (filteredData[i].isStandalone) {
+        itemsArr.push(filteredData[i]);
+      } else {
+        for (let j = 0; j < filteredData[i].members.length; j++) {
+          itemsArr.push(filteredData[i].members[j]);
+        }
+      }
+    }
+  }
+
+  //-------------------------------------
+
   function showItem() {
     let qData = itemsArr[currItem];
 
@@ -76,9 +91,9 @@ function PracticeComponent() {
   function show(_filteredData, _selectedOption) {
 
     currItem = 0;
-    itemsArr = _filteredData;
     selectedOption = _selectedOption;
 
+    setItemsArr(filterData);
     updateButtonsStatus();
     showItem();
 

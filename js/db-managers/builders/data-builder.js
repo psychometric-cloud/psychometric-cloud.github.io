@@ -13,59 +13,35 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/w/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/w/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/dec/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/sep/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/feb/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/apr/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/a/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/w/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/su/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/a/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/su/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2019/w/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/a/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/su/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2018/w/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/dec/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/sep/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/feb/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/apr/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json",
   ];
-
-
-  //-----------------------------------------
-
-  const writeStat = () => {
-    let math = 0;
-    let en = 0;
-    let he = 0;
-
-    for (let i = 0; i < qBank.length; i++) {
-      let chapter = qBank[i].chapter;
-
-      if (chapter === eChapters.math1 || chapter === eChapters.math2) {
-        math += 1;
-      }
-      else if (chapter === eChapters.he1 || chapter === eChapters.he2) {
-        he += 1;
-      }
-      else if (chapter === eChapters.en1 || chapter === eChapters.en2) {
-        en += 1;
-      }
-    }
-    console.log(`${files.length} files loaded. Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
-  }
 
   //-----------------------------------------
 
   const processFile = (file) => {
     if (fileValidator.validate(file.name, file.data)) {
-      console.log(file.name)
+      console.log(file.name);
       chapterArr.forEach((chapter) => {
         file.data.questions[chapter].forEach((question) => {
           questionBuilder.add(file.data, question, chapter);
@@ -108,6 +84,24 @@ function DataBuilder() {
     });
   }
 
+
+  const tets = (files) => {
+    let res = [];
+
+    for (let i = 0; i < qBank.length; i++) {
+      let chapter = qBank[i].chapter;
+
+      if (chapter === eChapters.math1 || chapter === eChapters.math2) {
+        if (qBank[i].year === 2021) {
+          if (!qBank[i].isStandalone) {
+            res.push(`${qBank[i].year}-${qBank[i].season}`)
+          }
+        }
+      }
+    }
+    console.log(res);
+  }
+
   //-----------------------------------------
 
   const build = (callback) => {
@@ -115,7 +109,8 @@ function DataBuilder() {
 
     loadTestFiles(() => {
       processFiles(0, () => {
-        writeStat();
+        tets();
+        dataStats.writeStat(files);
         callback();
       })
     })
