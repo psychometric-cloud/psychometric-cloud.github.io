@@ -1,10 +1,10 @@
-function FileValidator() {
+function DataValidator() {
 
-  chapterValidator = new ChapterValidator();
+  let chapterValidator = new ChapterValidator();
 
-  ePublisherArr = Object.values(ePublisher);
+  let ePublisherArr = Object.values(ePublisher);
 
-  checkMainStructure = (fileName, fileData) => {
+  const checkMainStructure = (fileName, fileData) => {
     let isValid =
       _.has(fileData, "publisher") &&
       _.has(fileData, "year") &&
@@ -19,7 +19,7 @@ function FileValidator() {
 
   //------------------------------------------
 
-  checkQuestionsStructure = (fileName, fileData) => {
+  const checkQuestionsStructure = (fileName, fileData) => {
     let isValid =
       Array.isArray(fileData.questions.math1) &&
       Array.isArray(fileData.questions.math2) &&
@@ -36,7 +36,7 @@ function FileValidator() {
 
   //--------------------------------------------
 
-  checkPublisher = (fileName, fileData) => {
+  const checkPublisher = (fileName, fileData) => {
     if (!ePublisherArr.includes(fileData.publisher)) {
       console.log(`Publisher ${fileData.publisher} in: '${fileName}' is invalid`);
       return false;
@@ -46,7 +46,7 @@ function FileValidator() {
 
   //------------------------------------------
 
-  checkYear = (fileName, fileData) => {
+  const checkYear = (fileName, fileData) => {
 
     if (fileData.publisher === ePublisher.MALLO) {
       if (units.isBetween(fileData.year, 2009, 2023)) {
@@ -59,7 +59,7 @@ function FileValidator() {
 
   //------------------------------------------
 
-  checkSeason = (fileName, fileData) => {
+  const checkSeason = (fileName, fileData) => {
     if (fileData.season === ePublisher.mallo) {
       if (!Object.values(window.eSeasons).includes(fileData.season)) {
         console.log(`season ${fileData.season} in '${fileName}' is invalid`);
@@ -71,7 +71,7 @@ function FileValidator() {
 
   //------------------------------------------
 
-  checkChapters = (fileName, fileData) => {
+  const checkChapters = (fileName, fileData) => {
 
     let isValid =
       chapterValidator.checkChapter(fileName, fileData, eChapters.math1) &&
@@ -86,7 +86,7 @@ function FileValidator() {
 
   //------------------------------------------
 
-  validate = (fileName, fileData) => {
+  const validateFile = (fileName, fileData) => {
 
     let isValid = true;
 
@@ -102,9 +102,39 @@ function FileValidator() {
     return isValid;
   }
 
+
+  //-----------------------------------------
+
+  const validate = () => {
+    let res = {};
+    let errors = false;
+
+    if (window.location.href.includes('?test')) {
+
+      for (let i = 0; i < qBank.length; i++) {
+        let chapter = qBank[i].chapter;
+
+        if (!qBank[i].isStandalone) {
+          res[`${qBank[i].year}-${qBank[i].season}`] = res[`${qBank[i].year}-${qBank[i].season}`] || {};
+          res[`${qBank[i].year}-${qBank[i].season}`][chapter] = (res[`${qBank[i].year}-${qBank[i].season}`][chapter] || 0) + 1
+        }
+      }
+      Object.keys(res).forEach(key => {
+        let isKeyValid = res[key].EN1 === 2 && res[key].EN2 === 2 && res[key].HE1 === 1 && res[key].HE2 === 1 && res[key].math1 === 1 && res[key].math2 === 1;
+        if (!isKeyValid) {
+          errors = true;
+          console.log(key);
+        }
+      });
+    }
+
+    return !errors;
+  }
+
   //------------------------------------------
 
   return {
-    validate: validate
+    validate,
+    validateFile
   }
 }
