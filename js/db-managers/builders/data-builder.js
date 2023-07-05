@@ -4,15 +4,15 @@ function DataBuilder() {
   let chapterArr = Object.values(eChapters);
 
   let filesUrls = [
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/su/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/a/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
-    "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
+    // "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
     // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/a/data.json",
     // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/w/data.json",
     // "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/su/data.json",
