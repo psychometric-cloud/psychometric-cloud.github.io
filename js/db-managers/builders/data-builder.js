@@ -32,40 +32,17 @@ function DataBuilder() {
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json",
     "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json",
-
-
-
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json",
+    "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json",
   ];
-
-
-  //-----------------------------------------
-
-  const writeStat = () => {
-    let math = 0;
-    let en = 0;
-    let he = 0;
-
-    for (let i = 0; i < qBank.length; i++) {
-      let chapter = qBank[i].chapter;
-
-      if (chapter === eChapters.math1 || chapter === eChapters.math2) {
-        math += 1;
-      }
-      else if (chapter === eChapters.he1 || chapter === eChapters.he2) {
-        he += 1;
-      }
-      else if (chapter === eChapters.en1 || chapter === eChapters.en2) {
-        en += 1;
-      }
-    }
-    console.log(`Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
-  }
 
   //-----------------------------------------
 
   const processFile = (file) => {
-    if (fileValidator.validate(file.name, file.data)) {
-      console.log(file.name)
+    if (dataValidator.validateFile(file.name, file.data)) {
+
+      console.log(file.name);
       chapterArr.forEach((chapter) => {
         file.data.questions[chapter].forEach((question) => {
           questionBuilder.add(file.data, question, chapter);
@@ -87,7 +64,7 @@ function DataBuilder() {
       } else {
         callback();
       }
-    }, 250);
+    }, 100);
   }
 
   //-----------------------------------------
@@ -107,13 +84,20 @@ function DataBuilder() {
     });
   }
 
+
+
+
   //-----------------------------------------
 
   const build = (callback) => {
+    filesUrls = _.shuffle(filesUrls);
+
     loadTestFiles(() => {
       processFiles(0, () => {
-        writeStat();
-        callback();
+        if (dataValidator.validate()) {
+          dataStats.writeStat(files);
+          callback();
+        }
       })
     })
   }

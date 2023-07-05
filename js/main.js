@@ -91,9 +91,10 @@ showLoader = (show) => {
 
 initProviders = () => {
   utils = new utils();
-  fileValidator = new FileValidator();
+  dataValidator = new DataValidator();
   questionBuilder = new QuestionBuilder();
   srcBuilder = new SrcBuilder();
+  dataStats = new DataStats();
   labelsManager = new LabelsManager();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();

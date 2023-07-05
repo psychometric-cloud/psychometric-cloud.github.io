@@ -13,13 +13,13 @@ window.sSeasons = {
   w: "w",
   sp: "sp",
   su: "su"
-}
+};
 
 window.eSubjects = {
   math: "math",
   en: "en",
   he: "he"
-}
+};
 
 window.eChapters = {
   math1: "math1",
@@ -28,7 +28,13 @@ window.eChapters = {
   he2: "HE2",
   en1: "EN1",
   en2: "EN2"
-}
+};
+
+window.eQLabel = {
+  star: "star",
+  latter: "latter"
+};
+
 
 window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];
 
@@ -45,7 +51,7 @@ window.MATH_SUB_AREAS = [
   "perimeter",//היקף
   "cube",//קוביה
   "area",//שטח
-  
+
 
   //--- alg: --------------------------
 

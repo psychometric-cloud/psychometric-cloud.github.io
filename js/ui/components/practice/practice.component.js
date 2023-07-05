@@ -14,6 +14,22 @@ function PracticeComponent() {
 
   //-------------------------------------
 
+  function setItemsArr(filteredData) {
+    itemsArr = [];
+
+    for (let i = 0; i < filteredData.length; i++) {
+      itemsArr.push(filteredData[i]);
+
+      if (_.has(filteredData[i], "members")) {
+        for (let j = 0; j < filteredData[i].members.length; j++) {
+          itemsArr.push(filteredData[i].members[j]);
+        }
+      }
+    }
+  }
+
+  //-------------------------------------
+
   function showItem() {
     let qData = itemsArr[currItem];
 
@@ -24,7 +40,8 @@ function PracticeComponent() {
       let src = srcBuilder.build(qData, selectedOption);
       $(".practice-panel .main .col2 .img").attr('src', src);
 
-      $('.practice-panel .btn-star').toggleClass("clicked", qData.isStar);
+      $('.practice-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
+      $('.practice-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
 
       $(".practice-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
       $(".practice-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
@@ -59,8 +76,15 @@ function PracticeComponent() {
   //---------------------------------------------
 
   function onBtnStarClicked() {
-    starsManager.toggleStar(itemsArr[currItem]);
-    $('.practice-panel .btn-star').toggleClass("clicked");
+    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.star);
+    $('.practice-panel .q-labels .star').toggleClass("clicked");
+  }
+
+  //-------------------------------------
+
+  function onBtnLearnMoreClicked() {
+    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.latter);
+    $('.practice-panel .q-labels .learn').toggleClass("clicked");
   }
 
   //-------------------------------------
@@ -68,9 +92,9 @@ function PracticeComponent() {
   function show(_filteredData, _selectedOption) {
 
     currItem = 0;
-    itemsArr = _filteredData;
     selectedOption = _selectedOption;
 
+    setItemsArr(_filteredData);
     updateButtonsStatus();
     showItem();
 
@@ -93,8 +117,11 @@ function PracticeComponent() {
     $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
       onMoreClick();
     });
-    $('.practice-panel .btn-star').click((e) => {
+    $('.practice-panel .q-labels .star').click((e) => {
       onBtnStarClicked();
+    });
+    $('.practice-panel .q-labels .learn').click((e) => {
+      onBtnLearnMoreClicked();
     });
   }
 
