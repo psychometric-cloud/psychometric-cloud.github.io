@@ -20,8 +20,10 @@ function PracticeComponent() {
     for (let i = 0; i < filteredData.length; i++) {
       itemsArr.push(filteredData[i]);
 
-      for (let j = 0; j < filteredData[i].members.length; j++) {
-        itemsArr.push(filteredData[i].members[j]);
+      if (_.has(filteredData[i], "members")) {
+        for (let j = 0; j < filteredData[i].members.length; j++) {
+          itemsArr.push(filteredData[i].members[j]);
+        }
       }
     }
   }
