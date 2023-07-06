@@ -5,12 +5,12 @@ function PracticeComponent() {
   let selectedOption = "questions";
 
 
-  //-------------------------------------
+  // //-------------------------------------
 
-  function onMoreClick(type) {
-    let qData = itemsArr[currItem];
-    moreDlg.showText(qData);
-  }
+  // function onMoreClick(type) {
+  //   let qData = itemsArr[currItem];
+  //   moreDlg.showText(qData);
+  // }
 
   //-------------------------------------
 
@@ -33,7 +33,11 @@ function PracticeComponent() {
   function showItem() {
     let qData = itemsArr[currItem];
 
-    if (qData) {
+    $(".practice-panel .main, .practice-panel .reading-box").removeClass("show");
+
+    if (qData.isStandalone) {
+      $(".practice-panel .main").addClass("show");
+
       let title = srcBuilder.getTitle(qData);
       $(".practice-panel .main .col2 .title").text(title);
 
@@ -42,10 +46,21 @@ function PracticeComponent() {
 
       $('.practice-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
       $('.practice-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
+    } else {
+      $(".practice-panel .reading-box").addClass("show");
 
-      $(".practice-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");
-      $(".practice-panel .main .col2 .icon-txt").toggleClass('show', qData.qAreas[0] === "reading" && (qData.qAreas[1] !== "text2"));
-      $(".practice-panel .main .col2 .icon-txt2").toggleClass('show', qData.qAreas[0] === "reading" && qData.qAreas[1] === "text2");
+      let title = srcBuilder.getTitle(qData);
+      $(".practice-panel .reading-box .left .title").text(title);
+
+      let q_src = srcBuilder.build(qData, "questions");
+      $(".practice-panel .left img.question").attr('src', q_src);
+
+      let t_src = srcBuilder.build(qData, "questions", true);
+      $(".practice-panel .right img.text").attr('src', t_src);
+
+      setTimeout(() => {
+        $(".practice-panel .text-wrap").css("max-height", $(".practice-panel .right").height());
+      })
     }
   }
 
@@ -114,9 +129,9 @@ function PracticeComponent() {
     $(".practice-panel .img-wrap img").click(() => {
       onAnsBtnClick();
     });
-    $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
-      onMoreClick();
-    });
+    // $(".practice-panel .icon-chart, .practice-panel .icon-txt, .practice-panel .icon-txt2").click(() => {
+    //   onMoreClick();
+    // });
     $('.practice-panel .q-labels .star').click((e) => {
       onBtnStarClicked();
     });

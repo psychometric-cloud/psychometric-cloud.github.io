@@ -57,6 +57,7 @@ html {
   align-items: center;
   background-color: #3c3c3c;
   height: 60px;
+  min-height: 60px;
 }
 
 .header .logo {

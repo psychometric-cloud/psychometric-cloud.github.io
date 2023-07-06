@@ -16,9 +16,13 @@
 
 .practice-panel .main {
   flex: 1;
-  display: flex;
+  display: none;
   width: 100%;
   position: relative;
+}
+
+.practice-panel .main.show {
+  display: flex;
 }
 
 .practice-panel .main .col2 {
@@ -28,7 +32,7 @@
   flex-direction: column;
 }
 
-.practice-panel .title-wrap {
+.practice-panel .main .title-wrap {
   background-color: #e2e2e2;
   padding: 8px 10px;
   display: flex;
@@ -37,7 +41,7 @@
   border-radius: 5px;
 }
 
-.practice-panel .title-wrap .title {
+.practice-panel .main .title-wrap .title {
   flex: 1;
   display: flex;
   align-items: center;
@@ -46,30 +50,65 @@
   min-height: 67px;
 }
 
-.practice-panel .title-wrap .icon {
+.practice-panel .main .title-wrap .icon {
   background: #f0f0f0;
   display: none;
 }
 
-.practice-panel .title-wrap .icon.show {
+.practice-panel .main .title-wrap .icon.show {
   display: block;
 }
 
-.practice-panel .img-wrap {
+.practice-panel .main .img-wrap {
   position: relative;
   margin-top: 80px;
   max-height: 450px;
   overflow: auto;
 }
 
-.practice-panel .img-wrap img {
+.practice-panel .main .img-wrap img {
   max-width: 985px;
+}
+
+.practice-panel .reading-box {
+  flex: 1;
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.practice-panel .reading-box.show {
+  display: flex;
+}
+
+.practice-panel .reading-box .col {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.practice-panel .reading-box .text-wrap {
+  overflow: auto;
+}
+
+.practice-panel .reading-box .text {
+  max-width: 100%;
+}
+
+.practice-panel .reading-box .left .title {
+  border: 3px solid #c4c4c4;
+  background: #e7e7e7;
+  padding: 5px 20px;
+  margin-bottom: 15px;
 }
 
 .practice-panel .footer {
   display: flex;
   background-color: #eeeeee;
   height: 80px;
+  min-height: 80px;
   width: 100%;
   align-items: center;
   justify-content: end;
