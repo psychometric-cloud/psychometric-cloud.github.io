@@ -102,39 +102,9 @@ function DataValidator() {
     return isValid;
   }
 
-
-  //-----------------------------------------
-
-  const validate = () => {
-    let res = {};
-    let errors = false;
-
-    if (window.location.href.includes('?test')) {
-
-      for (let i = 0; i < qBank.length; i++) {
-        let chapter = qBank[i].chapter;
-
-        if (!qBank[i].isStandalone) {
-          res[`${qBank[i].year}-${qBank[i].season}`] = res[`${qBank[i].year}-${qBank[i].season}`] || {};
-          res[`${qBank[i].year}-${qBank[i].season}`][chapter] = (res[`${qBank[i].year}-${qBank[i].season}`][chapter] || 0) + 1
-        }
-      }
-      Object.keys(res).forEach(key => {
-        let isKeyValid = res[key].EN1 === 2 && res[key].EN2 === 2 && res[key].HE1 === 1 && res[key].HE2 === 1 && res[key].math1 === 1 && res[key].math2 === 1;
-        if (!isKeyValid) {
-          errors = true;
-          console.log(key);
-        }
-      });
-    }
-
-    return !errors;
-  }
-
   //------------------------------------------
 
   return {
-    validate,
     validateFile
   }
 }

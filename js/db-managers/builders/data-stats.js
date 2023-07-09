@@ -25,7 +25,7 @@ function DataStats() {
         en += incBy(i);
       }
     }
-    console.log(`${files.length} files loaded. Total questions:${qBank.length}, Math:${math}, HE:${he}, EN:${en}`);
+    console.log(`${files.length} files loaded. Total questions:${math + en + he}, Math:${math}, HE:${he}, EN:${en}`);
   }
 
   return {
