@@ -76,6 +76,9 @@ function PracticeComponent() {
     let t_src = srcBuilder.build(qData, "questions", true);
     $(".practice-panel .reading-box .right .text").attr('src', t_src);
 
+    let isEnglish = (qData.chapter === "en1" || qData.chapter === "en2");
+    $(".practice-panel .reading-box").toggleClass("en", isEnglish);
+
     setTimeout(() => {
       $(".practice-panel .text-wrap").css("max-height", $(".practice-panel .right").height());
     })
@@ -128,10 +131,9 @@ function PracticeComponent() {
 
   //-------------------------------------
 
-  function show(_filteredData, _selectedOption) {
+  function show(_filteredData) {
 
     currItem = 0;
-    selectedOption = _selectedOption;
 
     setItemsArr(_filteredData);
     updateButtonsStatus();

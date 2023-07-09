@@ -85,6 +85,10 @@
   display: flex;
 }
 
+.practice-panel .reading-box .en {
+  flex-direction: row-reverse;
+}
+
 .practice-panel .reading-box .col {
   display: flex;
   flex-direction: column;
