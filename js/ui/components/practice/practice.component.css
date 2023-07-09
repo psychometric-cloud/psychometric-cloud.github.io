@@ -108,6 +108,11 @@
   overflow: auto;
 }
 
+.practice-panel .reading-box .qa-wrap {
+  max-height: 500px;
+  overflow: auto;
+}
+
 .practice-panel .reading-box .text,
 .practice-panel .reading-box .qa {
   max-width: 100%;
