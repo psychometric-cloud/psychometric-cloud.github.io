@@ -60,7 +60,7 @@ function SrcBuilder() {
     src = `${getDomain(qData)}/assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
 
     if (more) {
-      let _src = `./assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;
+      let _src = `${getDomain(qData)}/assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;
       let subject = getSubject(qData);
 
       if (qData.qAreas.length === 2) {
