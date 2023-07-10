@@ -66,11 +66,6 @@ function StartDialog() {
 
     currStep += step;
 
-    if (actionType === eActionType.test) {
-      $(".btn-prev").addClass("hide");
-      currStep = 2;
-    }
-
     showButtons();
     showPanels();
     checkButtons();
@@ -203,6 +198,13 @@ function StartDialog() {
 
   function onBtnPreActionClicked(_actionType) {
     actionType = _actionType;
+
+    if (actionType === eActionType.test) {
+      $(".btn-prev").addClass("hide");
+      currStep = 2;
+      showButtons();
+    }
+
     $(".dlg-start .init-panel").hide();
   }
 

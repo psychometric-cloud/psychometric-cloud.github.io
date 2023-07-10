@@ -45,16 +45,32 @@ function TestDataBuilder() {
     return arr;
   }
 
+  //-------------------------------------
+
+  function setReadingQuestions(arr) {
+    extendedArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      extendedArr.push(arr[i]);
+
+      if (_.has(arr[i], "members")) {
+        for (let j = 0; j < arr[i].members.length; j++) {
+          extendedArr.push(arr[i].members[j]);
+        }
+      }
+    }
+    return extendedArr;
+  }
+
   //---------------------------------------
 
   function build(subject, data) {
-    let qArr = [];
 
     data = removeHistory(subject, data);
-    qArr = buildBasicTest(data);
-    console.log(qArr);
-    qArr = textsHandler.handleText(qArr);
-    return qArr;
+    let basicTest = buildBasicTest(data);
+    let extendedTest = setReadingQuestions(basicTest);
+
+    return extendedTest;
   }
 
   return {

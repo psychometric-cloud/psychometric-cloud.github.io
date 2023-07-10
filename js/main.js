@@ -8,7 +8,7 @@ function renderUI(filterBy, filteredData) {
   $(".history-btn").removeClass("show");
 
   if (filterBy.actionType === eActionType.test) {
-    testComponent.show(filterBy.selectedSubject, filteredData);
+    testComponent.show(filteredData, filterBy.selectedSubject);
   } else {
     practiceComponent.show(filteredData, "questions");
   }

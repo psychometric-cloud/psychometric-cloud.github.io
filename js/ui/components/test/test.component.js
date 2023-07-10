@@ -4,11 +4,18 @@ function TestComponent() {
   let currItem = 0;
   let currSubject;
 
+  //---------------------------------------------
+
+  function onLabelStarClicked() {
+    labelsManager.toggleLabel(test[currItem], eQLabel.star);
+    $('.test-panel .q-labels .star').toggleClass("clicked");
+  }
+
   //-------------------------------------
 
-  function onMoreClick(type) {
-    let qData = test[currItem];
-    moreDlg.showText(qData);
+  function onLabelLearnMoreClicked() {
+    labelsManager.toggleLabel(test[currItem], eQLabel.latter);
+    $('.test-panel .q-labels .learn').toggleClass("clicked");
   }
 
   //-------------------------------------------------
@@ -42,27 +49,74 @@ function TestComponent() {
     reportComponent.show(test, stat);
   }
 
-  //-------------------------------------------------
+  //-------------------------------------
 
   function showItem() {
     let qData = test[currItem];
 
-    if (qData) {
-      let title = srcBuilder.getTitle(qData);
-      $(".test-panel .main .col2 .title").text(title);
+    resetPanels();
 
-      let src = srcBuilder.build(qData, "questions");
-      $(".test-panel .main .col2 .img").attr('src', src);
-
-      $(".test-panel .q-info").html(`${currItem + 1}/${test.length}`)
-      $(".test-panel .main .title-wrap").toggleClass('chart', qData.qAreas[0] === "chart");
-      $(".test-panel .main .title-wrap").toggleClass('reading', qData.qAreas[0] === "reading");
+    if (qData.isStandalone) {
+      setMainPanel(qData);
+    } else {
+      setReadingBoxPanel(qData);
     }
+  }
+
+  //------------------------------------
+
+  function resetPanels() {
+    $(".test-panel .main, .test-panel .reading-box").removeClass("show");
+    $(".test-panel .main .question, .test-panel .reading-box .question").addClass("show");
+    $(".test-panel .main .answer, .test-panel .reading-box .answer").removeClass("show");
+  }
+
+  //------------------------------------
+
+  function setMainPanel(qData) {
+    $(".test-panel .main").addClass("show");
+
+    let title = srcBuilder.getTitle(qData);
+    $(".test-panel .main .col2 .title").text(title);
+
+    let q_src = srcBuilder.build(qData, "questions");
+    $(".test-panel .main .question").attr('src', q_src);
+
+    let a_src = srcBuilder.build(qData, "answers");
+    $(".test-panel .main .answer").attr('src', a_src);
+
+    $('.test-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
+    $('.test-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
+  }
+
+  //------------------------------------
+
+  function setReadingBoxPanel(qData) {
+    $(".test-panel .reading-box").addClass("show");
+
+    let title = srcBuilder.getTitle(qData);
+    $(".test-panel .reading-box .left .title").text(title);
+
+    let q_src = srcBuilder.build(qData, "questions");
+    $(".test-panel .reading-box .left .question").attr('src', q_src);
+
+    let a_src = srcBuilder.build(qData, "answers");
+    $(".test-panel .reading-box .left .answer").attr('src', a_src);
+
+    let t_src = srcBuilder.build(qData, "questions", true);
+    $(".test-panel .reading-box .right .text").attr('src', t_src);
+
+    let isEnglish = (qData.chapter === "en1" || qData.chapter === "en2");
+    $(".test-panel .reading-box").toggleClass("en", isEnglish);
+
+    setTimeout(() => {
+      $(".test-panel .text-wrap").css("max-height", $(".test-panel .right").height());
+    })
   }
 
   //------------------------------------------
 
-  function show(subject, filteredData) {
+  function show(filteredData, subject) {
 
     currItem = 0;
     currSubject = subject;
@@ -81,11 +135,14 @@ function TestComponent() {
   //-------------------------------------
 
   function init() {
-    $(".test-panel .answers .answer").click((e) => {
+    $(".test-panel .footer .answers .answer").click((e) => {
       onAnswerClick(e);
     });
-    $(".test-panel .main").click(() => {
-      onMoreClick();
+    $('.test-panel .q-labels .star').click((e) => {
+      onLabelStarClicked();
+    });
+    $('.test-panel .q-labels .learn').click((e) => {
+      onLabelLearnMoreClicked();
     });
   }
 

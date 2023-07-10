@@ -3,6 +3,19 @@ function AuditComponent() {
   let test = [];
   let currItem = 0;
 
+  //---------------------------------------------
+
+  function onLabelStarClicked() {
+    labelsManager.toggleLabel(test[currItem], eQLabel.star);
+    $('.audit-panel .q-labels .star').toggleClass("clicked");
+  }
+
+  //-------------------------------------
+
+  function onLabelLearnMoreClicked() {
+    labelsManager.toggleLabel(test[currItem], eQLabel.latter);
+    $('.audit-panel .q-labels .learn').toggleClass("clicked");
+  }
 
   //------------------------------------
 
@@ -103,6 +116,12 @@ function AuditComponent() {
     });
     $(".audit-panel .icon-txt").click(() => {
       onMoreClick();
+    });
+    $('.audit-panel .q-labels .star').click((e) => {
+      onLabelStarClicked();
+    });
+    $('.audit-panel .q-labels .learn').click((e) => {
+      onLabelLearnMoreClicked();
     });
   }
 

@@ -34,6 +34,18 @@
   text-transform: uppercase;
 }
 
+.test-panel .report-box .title .caption {
+  flex: 1;
+}
+
+.test-panel .report-box .title .btn-check-test {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 17px;
+}
+
 .test-panel .report-box .box-body {
   display: flex;
   background: #fff;
