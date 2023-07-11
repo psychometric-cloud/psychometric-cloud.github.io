@@ -4,19 +4,21 @@ function TestTimer() {
   var ticker;
 
   var updateTimer = (onTimerEnd) => {
-    let secs = timeInSecs;
-    if (secs > 0) {
-      timeInSecs--;
-    } else {
-      clearInterval(ticker);
-      onTimerEnd();
+    if (document.hasFocus()) {
+      let secs = timeInSecs;
+      if (secs > 0) {
+        timeInSecs--;
+      } else {
+        clearInterval(ticker);
+        onTimerEnd();
+      }
+
+      let mins = Math.floor(secs / 60);
+      secs %= 60;
+
+      $(".countdown .min").text(((mins < 10) ? "0" : "") + mins);
+      $(".countdown .sec").text(((secs < 10) ? "0" : "") + secs);
     }
-
-    let mins = Math.floor(secs / 60);
-    secs %= 60;
-
-    $(".countdown .min").text(((mins < 10) ? "0" : "") + mins);
-    $(".countdown .sec").text(((secs < 10) ? "0" : "") + secs);
   }
 
   //---------------------------------------
@@ -25,6 +27,7 @@ function TestTimer() {
     let maxTime = test.length;
 
     timeInSecs = parseInt(maxTime * 60);
+
     updateTimer(onTimerEnd);
     ticker = setInterval(updateTimer, 1000);
 
