@@ -37,8 +37,7 @@ function PracticeComponent() {
 
   function resetPanels() {
     $(".practice-panel .main, .practice-panel .reading-box").removeClass("show");
-    $(".practice-panel .main .question, .practice-panel .reading-box .question").addClass("show");
-    $(".practice-panel .main .answer, .practice-panel .reading-box .answer").removeClass("show");
+    $(".practice-panel .main, .practice-panel .reading-box").removeClass("answer");
   }
 
   //------------------------------------
@@ -96,15 +95,13 @@ function PracticeComponent() {
   //------------------------------------
 
   function onQueAnsBtnClick() {
-    $(".practice-panel .main .qa-wrap .question").toggleClass("show");
-    $(".practice-panel .main .qa-wrap .answer").toggleClass("show");
+    $(".practice-panel .main").toggleClass("answer");
   }
 
   //------------------------------------
 
   function onReadingBoxClick() {
-    $(".practice-panel .reading-box .qa-wrap .question").toggleClass("show");
-    $(".practice-panel .reading-box .qa-wrap .answer").toggleClass("show");
+    $(".practice-panel .reading-box").toggleClass("answer");
   }
 
   //------------------------------------
@@ -152,7 +149,7 @@ function PracticeComponent() {
     $(".practice-panel .btn-next").click(() => {
       onNextPrevClick(1);
     });
-    $(".practice-panel .main .qa-wrap").click(() => {
+    $(".practice-panel .main").click(() => {
       onQueAnsBtnClick();
     });
     $(".practice-panel .reading-box .left").click(() => {

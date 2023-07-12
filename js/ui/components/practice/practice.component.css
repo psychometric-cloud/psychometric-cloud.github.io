@@ -27,7 +27,7 @@
 
 .practice-panel .main.answer {
   background-repeat: repeat;
-  background-image: url(./dot.png);
+  background-image: url(../../../../assets/app/dot.png)
 }
 
 .practice-panel .main .col2 {
@@ -71,12 +71,16 @@
   overflow: auto;
 }
 
-.practice-panel .main .qa-wrap .qa {
+.practice-panel .main .qa-wrap .qa.answer {
   display: none;
 }
 
-.practice-panel .main .qa-wrap .qa.show {
-  display: block
+.practice-panel .main.answer .qa-wrap .qa.answer {
+  display: block;
+}
+
+.practice-panel .main.answer .qa-wrap .qa.question {
+  display: none;
 }
 
 .practice-panel .reading-box {
@@ -138,7 +142,7 @@
   display: none;
 }
 
-.practice-panel .reading-box .left .qa.show {
+.practice-panel .reading-box.answer .left .qa {
   display: block;
 }
 

@@ -67,13 +67,13 @@ window.MATH_SUB_AREAS = [
   "letters",//אותיות וספרות
   "avg",//ממוצע
   "inequality",//אי שיויון
-  "divide",//לחלק
+  "dividers",//לחלק
   "factorial",//עצרת
   "abs",//ערך מוחלט
   "remainder",//שארית
   "series",//סדרות
   "axis",//ציר
-
+  "range",//תחום
 
   //--- prb: --------------------------
 

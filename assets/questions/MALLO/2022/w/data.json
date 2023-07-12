@@ -18,11 +18,11 @@
       "12:chart:1",
       "13:alg,eq:4",
       "14:prb:2",
-      "15:alg,inequality:4",
+      "15:alg,range:4",
       "16:geo,tri:1",
       "17:prb:3",
-      "18:prb,movement:2",
-      "19:prb,quant:1",
+      "18:prb:2",
+      "19:prb:1",
       "20:prb,oddEven:1"
     ],
     "math2": [
