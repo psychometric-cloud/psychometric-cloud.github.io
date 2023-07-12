@@ -25,6 +25,11 @@
   display: flex;
 }
 
+.practice-panel .main.answer {
+  background-repeat: repeat;
+  background-image: url(./dot.png);
+}
+
 .practice-panel .main .col2 {
   flex: 1;
   display: flex;
