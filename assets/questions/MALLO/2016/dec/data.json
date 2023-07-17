@@ -28,7 +28,7 @@
     "math2": [
       "1:geo,poly:3",
       "2:alg,fractions,eq:3",
-      "3:alg,divide,remainder:2",
+      "3:alg,dividers,remainder:2",
       "4:prb,quant:2",
       "5:alg,avg:1",
       "6:geo,poly,tri,area:2",

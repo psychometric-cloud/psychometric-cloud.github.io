@@ -39,7 +39,7 @@
       "11:alg,percent:1",
       "12:geo,poly:3",
       "13:geo,poly:4",
-      "14:alg,oddEven,divide:3",
+      "14:alg,oddEven,dividers:3",
       "15:alg,expression,abs:2",
       "16:prb,relations:1",
       "17:chart:4",

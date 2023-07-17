@@ -25,12 +25,11 @@
       "19:alg,inequality:3",
       "20:geo,poly:1"
     ],
-
-    "math2" :[
+    "math2": [
       "1:alg,inequality:4",
       "2:geo,poly:4",
       "3:geo,poly:2",
-      "4:alg,divide,remainder:1",
+      "4:alg,dividers,remainder:1",
       "5:prb,quant:1",
       "6:prb,supply:2",
       "7:alg,abs:1",
@@ -48,7 +47,6 @@
       "19:geo,poly,area:4",
       "20:alg,percent:1"
     ],
-
     "HE1": [
       "1:analogy:3",
       "2:analogy:4",

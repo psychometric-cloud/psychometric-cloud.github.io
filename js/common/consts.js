@@ -67,7 +67,7 @@ window.MATH_SUB_AREAS = [
   "letters",//אותיות וספרות
   "avg",//ממוצע
   "inequality",//אי שיויון
-  "dividers",//לחלק
+  "dividers",//מחלקים
   "factorial",//עצרת
   "abs",//ערך מוחלט
   "remainder",//שארית

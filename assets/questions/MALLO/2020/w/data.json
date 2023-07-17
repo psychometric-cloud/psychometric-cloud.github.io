@@ -44,7 +44,7 @@
       "16:alg,percent:2",
       "17:geo,poly:3",
       "18:geo,circle,tri:1",
-      "19:alg,divide,percent:2",
+      "19:alg,dividers,percent:2",
       "20:prb,quant:4"
     ],
     "HE1": [

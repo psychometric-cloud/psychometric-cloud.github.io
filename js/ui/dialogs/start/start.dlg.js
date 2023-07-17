@@ -244,7 +244,60 @@ function StartDialog() {
     $('.start-dlg-wrap .toggle-lbl input').prop('checked', false);
     $('.start-dlg-wrap .labels-wrap label .select-item').prop('checked', false);
 
+    setStats();
     onSubjectChange();
+  }
+
+  //---------------------------------------------
+
+  function setStats() {
+    $("stat.math-all").text("");
+    $("stat.chat").text("");
+    $("stat.geo").text("");
+    $("stat.geo-general").text("");
+    $("stat.tri").text("");
+    $("stat.poly").text("");
+    $("stat.circle").text("");
+    $("stat.third").text("");
+    $("stat.perimeter").text("");
+    $("stat.cube").text("");
+    $("stat.area").text("");
+    $("stat.alg").text("");
+    $("stat.alg-general").text("");
+    $("stat.eq").text("");
+    $("stat.expression").text("");
+    $("stat.percent").text("");
+    $("stat.fractions").text("");
+    $("stat.exponent").text("");
+    $("stat.root").text("");
+    $("stat.oddEven").text("");
+    $("stat.prime").text("");
+    $("stat.newOp").text("");
+    $("stat.letters").text("");
+    $("stat.avg").text("");
+    $("stat.inequality").text("");
+    $("stat.dividers").text("");
+    $("stat.factorial").text("");
+    $("stat.abs").text("");
+    $("stat.remainder").text("");
+    $("stat.series").text("");
+    $("stat.axis").text("");
+    $("stat.prb").text("");
+    $("stat.prb-general").text("");
+    $("stat.relations").text("");
+    $("stat.comb").text("");
+    $("stat.probability").text("");
+    $("stat.supply").text("");
+    $("stat.movement").text("");
+    $("stat.seqNum").text("");
+    $("stat.he-all").text("");
+    $("stat.analogy").text("");
+    $("stat.deduce").text("");
+    $("stat.he-reading").text("");
+    $("stat.en-all").text("");
+    $("stat.complete").text("");
+    $("stat.restate").text("");
+    $("stat.en-reading").text("");
   }
 
   //---------------------------------------------

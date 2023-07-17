@@ -18,7 +18,7 @@
       "12:chart:4",
       "13:prb,supply:3",
       "14:geo,circle:4",
-      "15:alg,divide,remainder:1",
+      "15:alg,dividers,remainder:1",
       "16:alg,newOp:3",
       "17:geo,poly:4",
       "18:alg,fractions,root:2",

@@ -16,7 +16,7 @@
       "10:alg,expression,percent:1",
       "11:prb,quant:2",
       "12:geo,poly:3",
-      "13:alg,divide:1",
+      "13:alg,dividers:1",
       "14:alg,newOp:4",
       "15:prb,supply:3",
       "16:geo,poly,area:4",

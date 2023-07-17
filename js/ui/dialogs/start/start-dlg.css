@@ -83,7 +83,6 @@
   display: block;
 }
 
-
 .dlg-start .btn-next,
 .dlg-start .btn-prev {
   border: 1px solid gray;
@@ -140,4 +139,13 @@
 
 .dlg-start .labels-wrap.disabled .checkbox {
   pointer-events: none;
+}
+
+
+.dlg-start .stat {
+  padding: 0 10px;
+  color: #c6bec1;
+  font-size: 16px;
+  display: flex;
+  align-items: flex-end;
 }

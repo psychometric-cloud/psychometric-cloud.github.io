@@ -41,7 +41,7 @@
       "13:chart:1",
       "14:alg,avg:2",
       "15:geo,circle:3",
-      "16:alg,expression,divide:3",
+      "16:alg,expression,dividers:3",
       "17:alg,newOp:2",
       "18:geo,area,poly:1",
       "19:alg,letters:1",

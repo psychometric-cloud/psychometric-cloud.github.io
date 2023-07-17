@@ -1,5 +1,5 @@
 {
-"publisher": "MALLO",
+  "publisher": "MALLO",
   "year": "2018",
   "season": "autumn",
   "questions": {
@@ -10,7 +10,7 @@
       "4:geo,third:4",
       "5:alg,fractions,exponent:1",
       "6:alg,axis:2",
-      "7:alg,divide:2",
+      "7:alg,dividers:2",
       "8:alg,fractions,factorial:2",
       "9:alg,avg:1",
       "10:chart:2",
@@ -37,7 +37,7 @@
       "9:chart:3",
       "10:chart:3",
       "11:chart:2",
-      "12:alg,divide,letters:2",
+      "12:alg,dividers,letters:2",
       "13:geo,poly:2",
       "14:alg,percent:2",
       "15:geo,poly:1",

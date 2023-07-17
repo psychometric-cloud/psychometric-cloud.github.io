@@ -32,16 +32,16 @@
 }
 
 /* Span */
-.checkbox>span {
-  display: inline-block;
+.checkbox>div {
+  display: flex;
   width: 100%;
   cursor: pointer;
 }
 
 /* Box */
-.checkbox>span::before {
+.checkbox>div::before {
   content: "";
-  display: inline-block;
+  display: flex;
   box-sizing: border-box;
   margin: 3px 11px 3px 1px;
   border: solid 2px;
@@ -55,7 +55,7 @@
 }
 
 /* Checkmark */
-.checkbox>span::after {
+.checkbox>div::after {
   content: "";
   display: block;
   position: absolute;
@@ -75,18 +75,18 @@
   background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
 }
 
-.checkbox>input:checked+span::before,
-.checkbox>input:indeterminate+span::before {
+.checkbox>input:checked+div::before,
+.checkbox>input:indeterminate+div::before {
   border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
   background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
 }
 
-.checkbox>input:checked+span::after,
-.checkbox>input:indeterminate+span::after {
+.checkbox>input:checked+div::after,
+.checkbox>input:indeterminate+div::after {
   border-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
 }
 
-.checkbox>input:indeterminate+span::after {
+.checkbox>input:indeterminate+div::after {
   border-left: none;
   transform: translate(4px, 3px);
 }
@@ -111,11 +111,11 @@
   transition: transform 0s, opacity 0s;
 }
 
-.checkbox>input:active+span::before {
+.checkbox>input:active+div::before {
   border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
 }
 
-.checkbox>input:checked:active+span::before {
+.checkbox>input:checked:active+div::before {
   border-color: transparent;
   background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
 }
@@ -125,17 +125,17 @@
   opacity: 0;
 }
 
-.checkbox>input:disabled+span {
+.checkbox>input:disabled+div {
   color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
   cursor: initial;
 }
 
-.checkbox>input:disabled+span::before {
+.checkbox>input:disabled+div::before {
   border-color: currentColor;
 }
 
-.checkbox>input:checked:disabled+span::before,
-.checkbox>input:indeterminate:disabled+span::before {
+.checkbox>input:checked:disabled+div::before,
+.checkbox>input:indeterminate:disabled+div::before {
   border-color: transparent;
   background-color: currentColor;
 }

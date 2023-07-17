@@ -25,8 +25,7 @@
       "19:prb,movement:3",
       "20:alg,newOp:4"
     ],
-
-    "math2" :[
+    "math2": [
       "1:alg,avg:1",
       "2:geo,poly,tri,area:3",
       "3:geo,circle:4",
@@ -46,9 +45,8 @@
       "17:alg,general:3",
       "18:prb,supply:1",
       "19:geo,tri:2",
-      "20:alg,divide,remainder:1"
+      "20:alg,dividers,remainder:1"
     ],
-
     "HE1": [
       "1:analogy:4",
       "2:analogy:4",

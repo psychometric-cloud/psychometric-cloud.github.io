@@ -58,7 +58,8 @@ function DataBuilder() {
 
     loadTestFiles(() => {
       processFiles(0, () => {
-        dataStats.writeStat(files);
+        dataStats.set();
+        console.log(dataStats.get());
         callback();
       })
     })
