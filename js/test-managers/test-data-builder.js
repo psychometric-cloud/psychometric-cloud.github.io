@@ -24,10 +24,15 @@ function TestDataBuilder() {
       return data;
     }
     for (let i = 0; i < data.length; i++) {
+      let addItem = true;
       for (let j = 0; j < historyTests.length; j++) {
-        if (!isQuestionEqual(data[i], historyTests[j])) {
-          res.push(data[i]);
+        if (isQuestionEqual(data[i], historyTests[j])) {
+          addItem = false
+          break;
         }
+      }
+      if (addItem) {
+        res.push(data[i]);
       }
     }
     return res;
@@ -37,10 +42,22 @@ function TestDataBuilder() {
 
   function buildBasicTest(data) {
     let arr = [];
+    let index = 0;
+    let textAdded = false;
     let shuffledIndexes = utils.shuffleNums(data.length);
 
-    for (var i = 0; i < 10; i++) {
-      arr.push(data[shuffledIndexes[i]])
+    while (arr.length < 10 && index < data.length) {
+      let q = data[shuffledIndexes[index]];
+
+      if (q.isStandalone) {
+        arr.push(q)
+      } else {
+        if (!textAdded) {
+          textAdded = true;
+          arr.push(q)
+        }
+      }
+      index += 1;
     }
     return arr;
   }

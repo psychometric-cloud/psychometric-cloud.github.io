@@ -24,6 +24,10 @@ function PracticeComponent() {
   function showItem() {
     let qData = itemsArr[currItem];
 
+    if (!qData) {
+      debugger;
+    }
+
     resetPanels();
 
     if (qData.isStandalone) {

@@ -33,10 +33,6 @@ function QuestionBuilder() {
       let qInfo = question.split(":");
       let areas = qInfo[1].split(",");
 
-      if (areas.length === 1) {
-        areas.push("general");
-      }
-
       let q = {
         publisher: test.publisher,
         year: parseInt(test.year),

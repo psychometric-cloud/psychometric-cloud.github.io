@@ -1,12 +1,12 @@
 function DataFilter() {
 
   isAreaInclude = (item, filterBy) => {
-    for (i = 0; i < item.qAreas.length; i++) {
-      if (!filterBy.selectedAreas.includes(item.qAreas[i])) {
-        return false;
+    for (i = 0; i < filterBy.selectedAreas.length; i++) {
+      if (item.qAreas.includes(filterBy.selectedAreas[i])) {
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
   //------------------------------------------
@@ -86,7 +86,6 @@ function DataFilter() {
                 break;
               }
             }
-
           }
         }
         callback(res);

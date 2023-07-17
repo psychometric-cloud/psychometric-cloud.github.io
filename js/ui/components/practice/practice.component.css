@@ -138,12 +138,16 @@
   margin-bottom: 45px;
 }
 
-.practice-panel .reading-box .left .qa {
+.practice-panel .reading-box .left .qa.answer {
   display: none;
 }
 
-.practice-panel .reading-box.answer .left .qa {
+.practice-panel .reading-box.answer .left .qa.answer {
   display: block;
+}
+
+.practice-panel .reading-box.answer .left .qa.qa.question {
+  display: none;
 }
 
 .practice-panel .footer {
