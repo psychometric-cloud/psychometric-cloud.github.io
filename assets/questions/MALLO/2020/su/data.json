@@ -5,7 +5,7 @@
   "questions": {
     "math1": [
       "1:geo,poly,area:2",
-      "2:alg,eq,exponent:3",
+      "2:alg,expression:3",
       "3:prb:4",
       "4:alg,eq:2",
       "5:alg,inequality:1",

@@ -65,9 +65,9 @@ function MoreDialog() {
       resizeImage(-1);
     });
 
-    $(".more-panel img").click((e) => {
-      e.stopPropagation();
-    });
+    // $(".more-panel img").click((e) => {
+    //   e.stopPropagation();
+    // });
   }
 
   init();

@@ -48,6 +48,8 @@ function resetMainUI() {
   $(".audit-panel").removeClass("show");
   $(".practice-panel").removeClass("show");
   $(".cloud-tester-panel").removeClass("show");
+  $(".test-questions").removeClass("show");
+  $(".btn-check-test").removeClass("show");
   $(".history-btn").addClass("show");
 
   startDlg.reset();

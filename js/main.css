@@ -70,6 +70,8 @@ html {
 .header .center {
   flex: 1;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .header .center .inner {
@@ -124,6 +126,50 @@ html {
 
 .header .btn-test-cloud.show {
   display: block;
+}
+
+
+.header .test-questions {
+  display: none;
+}
+
+.header .test-questions.show {
+  display: flex;
+}
+
+.header .test-questions .btn {
+  min-width: 35px;
+  height: 35px;
+  border: 1px solid gray;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.header .test-questions .btn.clicked {
+  background: #bbbbbb;
+  color: #000;
+}
+
+.header .test-questions .btn.active {
+  border: 2px solid #fff;
+}
+
+.header .btn-check-test {
+  display: none;
+  padding: 8px 10px;
+  margin: 0 10px;
+  color: white;
+  border: 1px solid #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .btn-check-test.show {
+  display: flex
 }
 
 

@@ -35,8 +35,8 @@ function AuditComponent() {
 
   onBtnClick = (i) => {
     currItem = i;
-    $(".audit-panel .questions .btn").removeClass("active");
-    $(`.audit-panel .questions .btn[data-id="${i}"]`).addClass("active");
+    $(".audit-panel .questions .btn .wrap").removeClass("active");
+    $(`.audit-panel .questions .btn[data-id="${i}"] .wrap`).addClass("active");
     showItem();
   }
 
@@ -48,7 +48,6 @@ function AuditComponent() {
     if (qData) {
       let title = srcBuilder.getTitle(qData);
       $(".audit-panel .main .col2 .title").text(title);
-
 
       let src = srcBuilder.build(qData, "questions");
       $(".audit-panel .main .col2 .img").attr('src', src);
@@ -88,8 +87,10 @@ function AuditComponent() {
       let active = i === 0 ? "active" : "";
 
       buttons += `
-        <div class="btn ${status} ${active}" data-id="${i}" onclick="onBtnClick(${i})">
+        <div class="btn ${status}" data-id="${i}" onclick="onBtnClick(${i})">
+         <div class="wrap ${active}">         
           ${i + 1}
+         </div>  
         </div>`
     }
     $(".audit-panel .questions").html(buttons);
