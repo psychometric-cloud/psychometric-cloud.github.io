@@ -74,6 +74,7 @@ window.MATH_SUB_AREAS = [
   "series",//סדרות
   "axis",//ציר
   "range",//תחום
+  "num",// מספרים 
 
   //--- prb: --------------------------
 
@@ -83,7 +84,6 @@ window.MATH_SUB_AREAS = [
   "supply",//הספק
   "movement",//תנועה
   "quant",//בעיות כמות
-  "seqNum",// מספרים עוקבים
 ];
 
 window.HE_AREAS = [
