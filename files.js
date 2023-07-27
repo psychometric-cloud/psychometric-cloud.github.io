@@ -37,7 +37,7 @@ window.urlsList = [
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2015/feb/data.json",
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/dec/data.json",
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/oct/data.json",
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/jul/data.json",
+  "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/jul/data.json", //OK
 
   //----------------------------------------
 
