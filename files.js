@@ -49,6 +49,14 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/apr/data.json", //OK
 
   //---------------------------------------- // Hi Assaf. Put new files here......
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/feb/data.json", //OK
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/dec/data.json", //OK
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/feb/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/dec/data.json", 
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/apr/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/feb/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/PS1H/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/dec/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json",
 ];
