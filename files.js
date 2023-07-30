@@ -6,9 +6,9 @@ window.urlsList = [
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/w/data.json",  //OK
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/a/data.json",  //OK
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/w/data.json",  //OK
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json",
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json",
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/a/data.json",
+  "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/su/data.json", //OK
+  "https://psychometric-cloud.github.io/assets/questions/MALLO/2021/sp/data.json", //OK
+  "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/a/data.json",  //ok
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/w/data.json",
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/su/data.json",
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2020/sp/data.json",
