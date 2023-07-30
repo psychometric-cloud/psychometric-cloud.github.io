@@ -57,6 +57,8 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/feb/data.json",
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/PS1H/data.json",
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/dec/data.json",
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json",
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/oct/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/jul/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/apr/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/feb/data.json",
 ];
