@@ -75,6 +75,7 @@ window.MATH_SUB_AREAS = [
   "axis",//ציר
   "range",//תחום
   "num",// מספרים 
+  "isCorrect",// נכון בהכרח 
 
   //--- prb: --------------------------
 
