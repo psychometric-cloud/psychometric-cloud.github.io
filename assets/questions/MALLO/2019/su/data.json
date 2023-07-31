@@ -21,7 +21,7 @@
       "15:geo:3",
       "16:alg,num:2",
       "17:prb,wit:2",
-      "18:alg,minmax:1",
+      "18:prb,wit,minmax:1",
       "19:alg,series:1",
       "20:geo:4"
     ],

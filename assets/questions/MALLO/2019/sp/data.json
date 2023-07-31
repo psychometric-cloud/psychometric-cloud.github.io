@@ -29,7 +29,7 @@
       "1:alg,exponent:4",
       "2:geo,:2",
       "3:geo,poly:3",
-      "4:alg,minmax:2",
+      "4:prb,wit,minmax:2",
       "5:geo:1",
       "6:prb,wit:4",
       "7:prb,supply:3",

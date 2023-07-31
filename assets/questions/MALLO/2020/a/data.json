@@ -14,7 +14,7 @@
       "8:geo:2",
       "9:alg,newOp:2",
       "10:prb,supply:3",
-      "11:alg,minmax:4",
+      "11:prb,wit,minmax:4",
       "12:alg,dividers:2",
       "13:alg,isCorrect:1",
       "14:geo:1",

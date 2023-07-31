@@ -4,7 +4,7 @@
   "season": "spring",
   "questions": {
     "math1": [
-      "1:alg,minmax:1",
+      "1:prb,wit,minmax:1",
       "2:alg,abs:2",
       "3:geo:3",
       "4:alg,num:3",
