@@ -40,7 +40,6 @@ window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];
 
 window.MATH_SUB_AREAS = [
 
-  "general",//כללי
 
   //--- geo: --------------------------
 
@@ -79,12 +78,12 @@ window.MATH_SUB_AREAS = [
 
   //--- prb: --------------------------
 
+  "wit", //בעיות מתחכמות
   "relations",//יחסים
   "comb",//צירופים
   "probability",//הסתברות
   "supply",//הספק
-  "movement",//תנועה
-  "quant",//בעיות כמות
+  "movement"//תנועה
 ];
 
 window.HE_AREAS = [
