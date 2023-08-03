@@ -58,8 +58,8 @@ function DataBuilder() {
 
     loadTestFiles(() => {
       processFiles(0, () => {
+        console.log(`Total processed: ${urlsList.length}`);
         dataStats.set();
-        console.log(dataStats.get());
         callback();
       })
     })

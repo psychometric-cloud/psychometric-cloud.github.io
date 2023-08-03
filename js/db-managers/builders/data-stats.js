@@ -59,12 +59,14 @@ function DataStats() {
 
     setStatsByChapters(stats.en, [eChapters.en1, eChapters.en2], EN_MAIN_AREAS);
     setTotal(stats.en, eSubject.en, EN_MAIN_AREAS);
+
+    console.log(stats);
   }
 
   //-----------------------------------------------------
 
   const get = () => {
-    return stats;;
+    return stats;
   }
 
   return {

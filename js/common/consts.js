@@ -74,11 +74,13 @@ window.MATH_SUB_AREAS = [
   "axis",//ציר
   "range",//תחום
   "num",// מספרים 
+  "quant",//כמות
   "isCorrect",// נכון בהכרח 
 
   //--- prb: --------------------------
 
   "wit", //בעיות מתחכמות
+  "minmax",
   "relations",//יחסים
   "comb",//צירופים
   "probability",//הסתברות

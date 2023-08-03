@@ -33,7 +33,7 @@
       "5:alg,avg:2",
       "6:prb,relations:2",
       "7:prb,wit:3",
-      "8:alg,osCorrect:3",
+      "8:alg,isCorrect:3",
       "9:geo:3",
       "10:alg,percent:1",
       "11:alg,num:2",
