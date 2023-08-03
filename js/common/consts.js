@@ -50,7 +50,7 @@ window.MATH_SUB_AREAS = [
   "perimeter",//היקף
   "cube",//קוביה
   "area",//שטח
-
+  "axis",
 
   //--- alg: --------------------------
 
@@ -75,6 +75,7 @@ window.MATH_SUB_AREAS = [
   "range",//תחום
   "num",// מספרים 
   "quant",//כמות
+  "seqNum",//מספרים עוקבים
   "isCorrect",// נכון בהכרח 
 
   //--- prb: --------------------------
@@ -96,7 +97,7 @@ window.HE_AREAS = [
 
 window.EN_MAIN_AREAS = ["complete", "restate", "reading"];
 
-window.EN_SUB_AREAS = [
+window.READING_SUB_AREAS = [
   "text1",//קריאה
   "text2",//קריאה
 ];
