@@ -62,10 +62,10 @@ function ChapterValidator() {
       return isChapterValid(fileName, fileData, chapterName, MATH_MAIN_AREAS, MATH_SUB_AREAS);
     }
     if (chapterName.startsWith("HE")) {
-      return isChapterValid(fileName, fileData, chapterName, HE_AREAS, []);
+      return isChapterValid(fileName, fileData, chapterName, HE_AREAS, READING_SUB_AREAS);
     }
     if (chapterName.startsWith("EN")) {
-      return isChapterValid(fileName, fileData, chapterName, EN_MAIN_AREAS, EN_SUB_AREAS);
+      return isChapterValid(fileName, fileData, chapterName, EN_MAIN_AREAS, READING_SUB_AREAS);
     }
   };
 

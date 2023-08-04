@@ -33,7 +33,7 @@
       "5:alg,num:2",
       "6:geo:3",
       "7:prb,wit,minmax:3",
-      "8:prb,wit4",
+      "8:prb,wit:4",
       "9:alg,eq:4",
       "10:geo:2",
       "11:alg,quant:3",

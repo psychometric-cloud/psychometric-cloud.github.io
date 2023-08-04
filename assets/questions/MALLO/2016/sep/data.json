@@ -41,7 +41,7 @@
       "13:chart:1",
       "14:alg,avg:2",
       "15:geo:3",
-      "16:alg,exponent,:1",
+      "16:alg,exponent:1",
       "17:alg,axis:1",
       "18:prb,comb:2",
       "19:alg,num:1",

@@ -40,7 +40,6 @@ window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];
 
 window.MATH_SUB_AREAS = [
 
-  "general",//כללי
 
   //--- geo: --------------------------
 
@@ -51,7 +50,7 @@ window.MATH_SUB_AREAS = [
   "perimeter",//היקף
   "cube",//קוביה
   "area",//שטח
-
+  "axis",
 
   //--- alg: --------------------------
 
@@ -75,16 +74,19 @@ window.MATH_SUB_AREAS = [
   "axis",//ציר
   "range",//תחום
   "num",// מספרים 
+  "quant",//כמות
+  "seqNum",//מספרים עוקבים
   "isCorrect",// נכון בהכרח 
 
   //--- prb: --------------------------
 
+  "wit", //בעיות מתחכמות
+  "minmax",
   "relations",//יחסים
   "comb",//צירופים
   "probability",//הסתברות
   "supply",//הספק
-  "movement",//תנועה
-  "quant",//בעיות כמות
+  "movement"//תנועה
 ];
 
 window.HE_AREAS = [
@@ -95,7 +97,7 @@ window.HE_AREAS = [
 
 window.EN_MAIN_AREAS = ["complete", "restate", "reading"];
 
-window.EN_SUB_AREAS = [
+window.READING_SUB_AREAS = [
   "text1",//קריאה
   "text2",//קריאה
 ];
