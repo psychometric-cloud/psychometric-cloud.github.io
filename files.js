@@ -84,6 +84,12 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/jul/data.json",
 
    add new files here.......
+   
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/apr/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/jul/data.json",
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s1/data.json", todo - idk what the season or year to put!!!
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s2/data.json",todo - idk what the season or year to put!!!
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s3/data.json", todo - idk what the season or year to put!!!
 
   */
 ];
