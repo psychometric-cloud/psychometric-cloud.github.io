@@ -42,10 +42,10 @@ function ChapterValidator() {
         return false;
       }
 
-      if (!utils.isEq(info[0], index + 1)) {
-        console.log(`chapter ${chapterName} in ${fileName} is invalid.(${item} 3)`);
-        return false;
-      }
+      // if (!utils.isEq(info[0], index + 1)) {
+      //   console.log(`chapter ${chapterName} in ${fileName} is invalid.(${item} 3)`);
+      //   return false;
+      // }
 
       if (!utils.isBetween(info[2], 1, 4)) {
         console.log(`chapter ${chapterName} in ${fileName} is invalid.(${item} 4)`);

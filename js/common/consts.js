@@ -77,6 +77,7 @@ window.MATH_SUB_AREAS = [
   "quant",//כמות
   "seqNum",//מספרים עוקבים
   "isCorrect",// נכון בהכרח 
+  "compare",// השוואה כמותית 
 
   //--- prb: --------------------------
 
@@ -90,6 +91,10 @@ window.MATH_SUB_AREAS = [
 ];
 
 window.HE_AREAS = [
+
+  "sentence",//משפטים 2009-2012 
+  "exp",//ביטויים 2009-2012 
+  "logic",//הגיון 2009-2012 
   "analogy",//אנלוגיות
   "deduce",//הסקה
   "reading"//קריאה
