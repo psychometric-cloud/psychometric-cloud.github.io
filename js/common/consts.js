@@ -36,7 +36,7 @@ window.eQLabel = {
 };
 
 
-window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb"];
+window.MATH_MAIN_AREAS = ["chart", "geo", "alg", "prb", "compare"];
 
 window.MATH_SUB_AREAS = [
 
@@ -77,7 +77,6 @@ window.MATH_SUB_AREAS = [
   "quant",//כמות
   "seqNum",//מספרים עוקבים
   "isCorrect",// נכון בהכרח 
-  "compare",// השוואה כמותית 
 
   //--- prb: --------------------------
 
