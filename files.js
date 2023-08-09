@@ -59,7 +59,7 @@ window.urlsList = [
 
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/dec/data.json", //ok 
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/PS1H/data.json",//ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/ps1/data.json",//ok
 
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/apr/data.json", //ok

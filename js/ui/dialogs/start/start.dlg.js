@@ -165,7 +165,7 @@ function StartDialog() {
         if (this.value === "texts") {
           selectedAreas = ["reading", "text1", "text2"];
         }
-        else {
+        else if (!$(this).hasClass("main")) {
           selectedAreas.push(this.value);
         }
       }
@@ -341,7 +341,6 @@ function StartDialog() {
     });
 
     $('.start-dlg-wrap .popper').click((e) => {
-      reset();
       resetMainUI();
     });
 
