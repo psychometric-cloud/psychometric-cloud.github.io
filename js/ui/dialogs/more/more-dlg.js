@@ -29,7 +29,7 @@ function MoreDialog() {
   //----------------------------------------
 
   function showText(item) {
-    let src = srcBuilder.build(item, "questions", true);
+    let src = srcBuilder.textUrl(item);
 
     showImage(src, "text", lastTextSrc !== src);
     lastTextSrc = src;
@@ -40,7 +40,7 @@ function MoreDialog() {
   //----------------------------------------
 
   function showAnswer(item) {
-    let src = srcBuilder.build(item, "answers");
+    let src = srcBuilder.imageUrl(item, "answers");
 
     showImage(src, "answer", lastAnswerSrc !== src);
     lastAnswerSrc = src;

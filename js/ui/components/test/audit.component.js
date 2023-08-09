@@ -49,7 +49,7 @@ function AuditComponent() {
       let title = srcBuilder.getTitle(qData);
       $(".audit-panel .main .col2 .title").text(title);
 
-      let src = srcBuilder.build(qData, "questions");
+      let src = srcBuilder.imageUrl(qData, "questions");
       $(".audit-panel .main .col2 .img").attr('src', src);
 
       if (qData.aNum !== qData.proposedAnswer) {

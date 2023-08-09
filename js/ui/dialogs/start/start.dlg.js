@@ -165,7 +165,7 @@ function StartDialog() {
         if (this.value === "texts") {
           selectedAreas = ["reading", "text1", "text2"];
         }
-        else if (!$(this).hasClass("main")) {
+        else {
           selectedAreas.push(this.value);
         }
       }

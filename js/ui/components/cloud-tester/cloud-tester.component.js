@@ -21,7 +21,7 @@ function CloudTesterComponent() {
       let title = srcBuilder.getTitle(qData);
       $(".cloud-tester-panel .main .col2 .title").text(title);
 
-      let src = srcBuilder.build(qData, selectedOption);
+      let src = srcBuilder.imageUrl(qData, selectedOption);
       $(".cloud-tester-panel .main .col2 .img").attr('src', src);
 
       $(".cloud-tester-panel .main .col2 .icon-chart").toggleClass('show', qData.qAreas[0] === "chart");

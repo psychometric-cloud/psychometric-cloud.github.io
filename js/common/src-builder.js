@@ -49,32 +49,52 @@ function SrcBuilder() {
       if (qData.year >= 2014) {
         return "https://psychometric-cloud.github.io";
       }
-      return "https://psychometric-cloud-part2.github.io";
     }
-    return "error";
+    return "https://psychometric-cloud-part2.github.io";
   }
 
   //---------------------------------------
 
-  function build(qData, option, more) {
-    src = `${getDomain(qData)}/assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
+  function buildUrl(qData) {
+    let publisher = getPublisher(qData);
 
-    if (more) {
-      let _src = `${getDomain(qData)}/assets/questions/${getPublisher(qData)}/${qData.year}/${getSeason(qData)}/questions`;
-      let subject = getSubject(qData);
+    if (publisher === "MALLO") {
+      return `${getDomain(qData)}/assets/questions/MALLO/${qData.year}/${getSeason(qData)}`;
+    }
+    if (publisher === "ONEXONE") {
+      return `${getDomain(qData)}/assets/questions/onexone/s${qData.year}`;
+    }
+    return "";
+  }
 
-      if (qData.qAreas.length === 2) {
-        let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
-        src = `${_src}/${subject}/${qData.chapter.slice(-1)}_${t}.png`
-      } else {
-        src = `${_src}/${subject}/${qData.chapter.slice(-1)}_T.png`
-      }
+
+  //---------------------------------------
+
+  function imageUrl(qData, option) {
+    let src = buildUrl(qData);
+    return `${src}/${option}/${getSubject(qData)}/${getName(qData)}.png`;
+  }
+
+  //---------------------------------------
+
+  function textUrl(qData) {
+    let src = buildUrl(qData);
+    let _src = `${src}/questions`;
+    let subject = getSubject(qData);
+
+    if (qData.qAreas.length === 2) {
+      let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
+      src = `${_src}/${subject}/${qData.chapter.slice(-1)}_${t}.png`
+    } else {
+      src = `${_src}/${subject}/${qData.chapter.slice(-1)}_T.png`
     }
     return src;
   }
 
+
   return {
     getTitle: getTitle,
-    build: build
+    imageUrl: imageUrl,
+    textUrl: textUrl
   }
 }

@@ -85,10 +85,10 @@ function TestComponent() {
     let title = srcBuilder.getTitle(qData);
     $(".test-panel .main .col2 .title").text(title);
 
-    let q_src = srcBuilder.build(qData, "questions");
+    let q_src = src(qData, "questions");
     $(".test-panel .main .question").attr('src', q_src);
 
-    let a_src = srcBuilder.build(qData, "answers");
+    let a_src = srcBuilder.imageUrl(qData, "answers");
     $(".test-panel .main .answer").attr('src', a_src);
 
     $('.test-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
@@ -103,13 +103,13 @@ function TestComponent() {
     let title = srcBuilder.getTitle(qData);
     $(".test-panel .reading-box .left .title").text(title);
 
-    let q_src = srcBuilder.build(qData, "questions");
+    let q_src = srcBuilder.imageUrl(qData, "questions");
     $(".test-panel .reading-box .left .question").attr('src', q_src);
 
-    let a_src = srcBuilder.build(qData, "answers");
+    let a_src = srcBuilder.imageUrl(qData, "answers");
     $(".test-panel .reading-box .left .answer").attr('src', a_src);
 
-    let t_src = srcBuilder.build(qData, "questions", true);
+    let t_src = srcBuilder.textUrl(qData);
     $(".test-panel .reading-box .right .text").attr('src', t_src);
 
     let isEnglish = (qData.chapter === "en1" || qData.chapter === "en2");
