@@ -1,6 +1,6 @@
 window.ePublisher = {
   mallo: "MALLO",
-  niv: "NIVR"
+  onexone: "onexone"
 }
 
 window.eActionType = {
