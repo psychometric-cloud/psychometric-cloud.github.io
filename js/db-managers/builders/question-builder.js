@@ -44,6 +44,7 @@ function QuestionBuilder() {
         isStandalone: areas[0] !== "chart" && areas[0] !== "reading"
       }
       q.labels = labelsManager.getQuestionLabels(q);
+      q.qAreas = tagsManager.getStoredQuestionTags(q);
 
       if (!q.isStandalone) {
         if (isFirstMember(q)) {

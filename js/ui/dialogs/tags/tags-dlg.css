@@ -1,0 +1,109 @@
+.tags-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.tags-btn:hover svg {
+  stroke: red;
+}
+
+.tags-panel {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.tags-panel.show {
+  display: flex;
+}
+
+.tags-panel .bg {
+  background-color: black;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+}
+
+.tags-panel .inner-wrap {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+.tags-panel .tags {
+  display: none;
+  border: 2px solid black;
+}
+
+.tags-panel .tags.show {
+  display: block;
+}
+
+.tags-panel .row {
+  display: flex;
+}
+
+.tags-panel .row .tag {
+  background: #fff;
+  width: 110px;
+  height: 30px;
+  border: 1px solid #a3a3a3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-panel .row .tag.alg {
+  color: red;
+}
+
+.tags-panel .row .tag.alg.select {
+  color: #fff;
+  background: #ca35ad;
+}
+
+.tags-panel .row .tag.prb {
+  color: #548bc9;
+}
+
+.tags-panel .row .tag.prb.select {
+  color: #fff;
+  background: #78aaeb;
+}
+
+.tags-panel .row .tag:hover {
+  background: #dfdfdf;
+}
+
+.tags-panel .labels {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin-left: 10px;
+}
+
+.tags-panel .labels .lbl {
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-panel .labels .lbl:hover {
+  background: #dfdfdf;
+}

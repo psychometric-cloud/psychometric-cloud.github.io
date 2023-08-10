@@ -6,16 +6,8 @@ function TestComponent() {
 
   //---------------------------------------------
 
-  function onLabelStarClicked() {
-    labelsManager.toggleLabel(test[currItem], eQLabel.star);
-    $('.test-panel .q-labels .star').toggleClass("clicked");
-  }
-
-  //-------------------------------------
-
-  function onLabelLearnMoreClicked() {
-    labelsManager.toggleLabel(test[currItem], eQLabel.latter);
-    $('.test-panel .q-labels .learn').toggleClass("clicked");
+  function openTagsDialog() {
+    tagsDialog.open(currItem);
   }
 
   //-------------------------------------------------
@@ -85,7 +77,7 @@ function TestComponent() {
     let title = srcBuilder.getTitle(qData);
     $(".test-panel .main .col2 .title").text(title);
 
-    let q_src = src(qData, "questions");
+    let q_src = srcBuilder.imageUrl(qData, "questions");
     $(".test-panel .main .question").attr('src', q_src);
 
     let a_src = srcBuilder.imageUrl(qData, "answers");
@@ -169,11 +161,8 @@ function TestComponent() {
     $(".test-panel .footer .answers .answer").click((e) => {
       onAnswerClick(e);
     });
-    $('.test-panel .q-labels .star').click((e) => {
-      onLabelStarClicked();
-    });
-    $('.test-panel .q-labels .learn').click((e) => {
-      onLabelLearnMoreClicked();
+    $('.test-panel .tags-btn').click((e) => {
+      openTagsDialog();
     });
     $(".header .btn-check-test").unbind("click").click((e) => {
       endTest();

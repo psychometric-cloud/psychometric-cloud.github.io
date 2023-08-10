@@ -98,6 +98,7 @@ initProviders = () => {
   srcBuilder = new SrcBuilder();
   dataStats = new DataStats();
   labelsManager = new LabelsManager();
+  tagsManager = new TagsManager();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();
   testStat = new TestStat();
@@ -109,6 +110,7 @@ initProviders = () => {
   reportComponent = new ReportComponent();
   auditComponent = new AuditComponent();
   practiceComponent = new PracticeComponent();
+  tagsDialog = new TagsDialog();
   startDlg = new StartDialog();
   moreDlg = new MoreDialog();
   historyDlg = new HistoryDialog();

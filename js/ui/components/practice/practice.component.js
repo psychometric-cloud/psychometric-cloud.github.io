@@ -114,16 +114,8 @@ function PracticeComponent() {
 
   //---------------------------------------------
 
-  function onLabelStarClicked() {
-    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.star);
-    $('.practice-panel .q-labels .star').toggleClass("clicked");
-  }
-
-  //-------------------------------------
-
-  function onLabelLearnMoreClicked() {
-    labelsManager.toggleLabel(itemsArr[currItem], eQLabel.latter);
-    $('.practice-panel .q-labels .learn').toggleClass("clicked");
+  function openTagsDialog() {
+    tagsDialog.open(itemsArr[currItem]);
   }
 
   //-------------------------------------
@@ -149,18 +141,16 @@ function PracticeComponent() {
     $(".practice-panel .btn-next").click(() => {
       onNextPrevClick(1);
     });
-    $(".practice-panel .main").click(() => {
+    $(".practice-panel .main .col2").click(() => {
       onQueAnsBtnClick();
     });
     $(".practice-panel .reading-box .left").click(() => {
       onReadingBoxClick();
     });
-    $('.practice-panel .q-labels .star').click((e) => {
-      onLabelStarClicked();
+    $('.practice-panel .tags-btn').click((e) => {
+      openTagsDialog();
     });
-    $('.practice-panel .q-labels .learn').click((e) => {
-      onLabelLearnMoreClicked();
-    });
+
   }
 
   init();
