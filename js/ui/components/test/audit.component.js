@@ -3,13 +3,12 @@ function AuditComponent() {
   let test = [];
   let currItem = 0;
 
+
   //---------------------------------------------
 
-  function onLabelStarClicked() {
-    labelsManager.toggleLabel(test[currItem], eQLabel.star);
-    $('.audit-panel .q-labels .star').toggleClass("clicked");
+  function openTagsDialog() {
+    tagsDialog.open(test[currItem]);
   }
-
   //-------------------------------------
 
   function onLabelLearnMoreClicked() {
@@ -118,8 +117,8 @@ function AuditComponent() {
     $(".audit-panel .icon-txt").click(() => {
       onMoreClick();
     });
-    $('.audit-panel .q-labels .star').click((e) => {
-      onLabelStarClicked();
+    $('.audit-panel .tags-btn').click((e) => {
+      openTagsDialog();
     });
     $('.audit-panel .q-labels .learn').click((e) => {
       onLabelLearnMoreClicked();

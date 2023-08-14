@@ -206,22 +206,14 @@
             <img class="img">
           </div>
         </div>
-        <div class="q-labels">
-          <div class="lbl learn green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-bookmark">
-              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-            </svg>
-          </div>
-          <div class="lbl star red">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-star">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-          </div>
+        <div class="tags-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-settings">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
         </div>
         <div class="icon icon-txt">
           <img src="./assets/app/txt.png">
@@ -308,11 +300,53 @@
               <div>הסקה מתרשים<div class="stat chart"></div>
               </div>
             </label>
-            <label class="checkbox">
-              <input type="checkbox" class="select-item" value="geo">
-              <div>גאומטריה<div class="stat geo"></div>
+            <div class="select-group">
+              <div class="header">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item main" value="geo">
+                  <div>גאומטריה<div class="stat geo"></div>
+                  </div>
+                </label>
+                <div class="toggle-btn"><img src="./assets/app/arrow-down.svg"></div>
               </div>
-            </label>
+              <div class="body">
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="tri">
+                  <div>משולשים<div class="stat tri"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="poly">
+                  <div>מצולעים<div class="stat poly"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="circle">
+                  <div>מעגלים<div class="stat circle"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="area">
+                  <div>שטחים<div class="stat area"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="perimeter">
+                  <div>היקף<div class="stat perimeter"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="third">
+                  <div>נפחים<div class="stat third"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="g-axis">
+                  <div>גאומטריה אנליטית<div class="stat g-axis"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
             <div class="select-group">
               <div class="header">
                 <label class="checkbox">
@@ -601,43 +635,47 @@
     <div class="inner-wrap">
       <div class="tags">
         <div class="row">
-          <div class="tag"></div>
-          <div class="tag prb" data-key="wit">חידות</div>
-          <div class="tag alg" data-key="inequality">אי שוויונים</div>
-          <div class="tag alg" data-key="expression">ביטויים</div>
-          <div class="tag alg" data-key="eq">משוואות</div>
-
+          <div class="tag prb" data-key="probability">הסתברות</div>
+          <div class="tag alg" data-key="dividers">מחלקים</div>
+          <div class="tag alg" data-key="axis">ציר המספרים</div>
+          <div class="tag alg" data-key="exponent">חזקות</div>
+          <div class="tag geo" data-key="g-axis">אנליטית</div>
+          <div class="tag geo" data-key="tri">משולשים</div>
         </div>
         <div class="row">
           <div class="tag prb" data-key="comb">צרופים</div>
-          <div class="tag prb" data-key="probability">הסתברות</div>
-          <div class="tag alg" data-key="exponent">חזקות</div>
+          <div class="tag alg" data-key="range">תחום</div>
+          <div class="tag alg" data-key="seqNum">מ. עוקבים</div>
           <div class="tag alg" data-key="percent">אחוזים</div>
-          <div class="tag alg" data-key="dividers">מחלקים</div>
+          <div class="tag geo" data-key="perimeter">היקף</div>
+          <div class="tag geo" data-key="sq">מצולעים</div>
         </div>
         <div class="row">
-          <div class="tag prb" data-key="movement">תנועה</div>
-          <div class="tag prb" data-key="supply">הספק</div>
+          <div class="tag prb" data-key="minmax">min-max</div>
+          <div class="tag prb" data-key="wit">חידות</div>
           <div class="tag alg" data-key="abs">ערך מוחלט</div>
-          <div class="tag alg" data-key="axis">ציר המספרים</div>
+          <div class="tag alg" data-key="inequality">אי שוויונים</div>
           <div class="tag alg" data-key="num">מספרים</div>
-
+          <div class="tag geo" data-key="circle">מעגלים</div>
         </div>
         <div class="row">
           <div class="tag prb" data-key="relations">יחסים</div>
-          <div class="tag prb" data-key="minmax">min-max</div>
+          <div class="tag prb" data-key="supply">הספק</div>
           <div class="tag alg" data-key="prime">מספר ראשוני</div>
           <div class="tag alg" data-key="oddEven">זוגי</div>
-          <div class="tag alg" data-key="seqNum">מ. עוקבים</div>
+          <div class="tag alg" data-key="expression">ביטויים</div>
+          <div class="tag geo" data-key="area">שטחים</div>
         </div>
         <div class="row">
-          <div class="tag prb"></div>
           <div class="tag"></div>
-          <div class="tag alg" data-key="range">תחום</div>
+          <div class="tag prb" data-key="movement">תנועה</div>
           <div class="tag alg" data-key="letters">אותיות</div>
           <div class="tag alg" data-key="newOp">פ. מומצאות</div>
+          <div class="tag alg" data-key="eq">משוואות</div>
+          <div class="tag geo" data-key="third">תלת מימד</div>
         </div>
         <div class="row">
+          <div class="tag"></div>
           <div class="tag"></div>
           <div class="tag"></div>
           <div class="tag"></div>
@@ -646,8 +684,24 @@
         </div>
       </div>
       <div class="labels">
-        <div class="lbl"></div>
-        <div class="lbl"></div>
+        <div class="lbl example" data-key="example">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-heart">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+        <div class="lbl repeat" data-key="repeat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-repeat">
+            <polyline points="17 1 21 5 17 9" />
+            <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+            <polyline points="7 23 3 19 7 15" />
+            <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+          </svg>
+        </div>
         <div class="lbl"></div>
         <div class="lbl"></div>
         <div class="lbl"></div>

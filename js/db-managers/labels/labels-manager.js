@@ -20,17 +20,6 @@ function LabelsManager() {
 
   //-----------------------------------------
 
-  function _setQuestionLabel(question, label) {
-    if (question.labels.includes(label)) {
-      const index = question.labels.indexOf(label);
-      question.labels.splice(index, 1);
-    } else {
-      question.labels.push(label);
-    }
-  }
-
-  //-----------------------------------------
-
   function _updateLabeledQuestionsArr(question) {
 
     labeledQuestions = labeledQuestions.filter((q) => {
@@ -44,10 +33,8 @@ function LabelsManager() {
 
   //-----------------------------------------
 
-  function toggleLabel(question, label) {
-    _setQuestionLabel(question, label);
+  function storeQuestion(question) {
     _updateLabeledQuestionsArr(question);
-
     localStorage.setItem("q-labels", JSON.stringify(labeledQuestions));
   }
 
@@ -65,7 +52,7 @@ function LabelsManager() {
   _loadLabels();
 
   return {
-    toggleLabel,
+    storeQuestion,
     getQuestionLabels
   }
 }

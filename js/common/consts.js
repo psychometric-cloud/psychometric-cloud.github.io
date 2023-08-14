@@ -50,7 +50,7 @@ window.MATH_SUB_AREAS = [
   "perimeter",//היקף
   "cube",//קוביה
   "area",//שטח
-  "axis",
+  "g-axis",
 
   //--- alg: --------------------------
 

@@ -7,7 +7,7 @@ function TestComponent() {
   //---------------------------------------------
 
   function openTagsDialog() {
-    tagsDialog.open(currItem);
+    tagsDialog.open(test[currItem]);
   }
 
   //-------------------------------------------------

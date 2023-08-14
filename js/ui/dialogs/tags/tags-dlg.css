@@ -64,6 +64,15 @@
   justify-content: center;
 }
 
+.tags-panel .row .tag.geo {
+  color: #58b258;
+}
+
+.tags-panel .row .tag.geo.select {
+  color: #fff;
+  background: #09b33c;
+}
+
 .tags-panel .row .tag.alg {
   color: red;
 }
@@ -106,4 +115,14 @@
 
 .tags-panel .labels .lbl:hover {
   background: #dfdfdf;
+}
+
+
+.tags-panel .labels .lbl.example.select svg {
+  fill: red;
+  stroke: red;
+}
+
+.tags-panel .labels .lbl.repeat.select svg {
+  stroke: #cb9412
 }

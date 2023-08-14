@@ -76,6 +76,7 @@ function StartDialog() {
   function onGoClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
+    console.log(selectedAreas);
     onFinish({
       actionType,
       selectedSubject,
@@ -143,13 +144,11 @@ function StartDialog() {
       $(e.target).closest(".select-group").find(".select-item.sub").each(function () {
         this.checked = isChecked;
       });
-    } else {
-      let subChecked = $(e.target).closest(".select-group").find(".select-item.sub:checked");
-      $(e.target).closest(".select-group").find(".select-item.main").prop('checked', subChecked.length > 0);
     }
 
-    let allAreaChecked = ($(`.area.${type} .select-item:checked`).length == $(`.area.${type} .select-item`).length);
-    $(`.area.${type} .select-all`).prop('checked', allAreaChecked);
+    let group = $(e.target).closest(".select-group");
+    let allAreaChecked = group.find(".select-item.sub:checked").length === group.find(".select-item.sub").length;
+    group.find(".select-item.main").prop('checked', allAreaChecked);
 
     markSelectedArea(type);
     checkButtons();
@@ -165,9 +164,7 @@ function StartDialog() {
         if (this.value === "texts") {
           selectedAreas = ["reading", "text1", "text2"];
         }
-        else if (!$(this).hasClass("main")) {
-          selectedAreas.push(this.value);
-        }
+        selectedAreas.push(this.value);
       }
     });
   }

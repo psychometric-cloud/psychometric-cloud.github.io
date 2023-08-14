@@ -86,5 +86,6 @@ window.urlsList = [
 
   "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s1/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s2/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s3/data.json" //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s3/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s4/data.json" //ok
 ];
