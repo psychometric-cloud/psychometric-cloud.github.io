@@ -64,6 +64,9 @@ function SrcBuilder() {
     if (publisher === "ONEXONE") {
       return `${getDomain(qData)}/assets/questions/onexone/s${qData.year}`;
     }
+    if (publisher === "NIVR") {
+      return `${getDomain(qData)}/assets/questions/nivr/s${qData.year}`;
+    }
     return "";
   }
 

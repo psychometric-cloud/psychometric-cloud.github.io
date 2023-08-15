@@ -171,25 +171,35 @@ function StartDialog() {
 
   //--------------------------------------------
 
-  function onLabelSelectItemClicked() {
-    selectedLabels = [];
+  function onLabelClicked(e) {
+    let lbl = $(e.target).closest(".lbl");
+    if (lbl) {
+      let key = lbl.data("key");
+      $(`.labels-wrap .lbl.${key}`).toggleClass("clicked");
 
-    $(`.labels-wrap label .select-item`).each(function () {
-      if (this.checked) {
-        selectedLabels.push(this.value)
+      if (selectedLabels.includes(key)) {
+        selectedLabels = selectedLabels.filter((_lbl) => {
+          return _lbl !== key;
+        })
+      } else {
+        selectedLabels.push(key)
       }
-    });
-    checkButtons();
+      console.log(selectedLabels);
+      checkButtons();
+    }
   }
 
   //--------------------------------------------
 
   function checkButtons() {
     $(".btn-next").toggleClass("disable", currStep > 0 && selectedAreas.length == 0);
+    $(".btn-go").removeClass("disable");
 
-    if (!$('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
-      $(".btn-go").toggleClass("disable", selectedLabels.length == 0);
-    }
+    setTimeout(() => {
+      if (!$('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
+        $(".btn-go").toggleClass("disable", selectedLabels.length == 0);
+      }
+    }, 0);
   }
 
   //---------------------------------------------
@@ -208,18 +218,12 @@ function StartDialog() {
 
   //---------------------------------------------
 
-  function onBtnStarClicked() {
-    $('.start-dlg-wrap .btn-star').toggleClass("clicked");
-  }
-
-  //---------------------------------------------
-
   function onBtnToggleLblClicked() {
     $('.start-dlg-wrap .labels-wrap').toggleClass("disabled");
 
     if ($('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
       selectedLabels = [];
-      $('.start-dlg-wrap .labels-wrap label .select-item').prop('checked', false);
+      $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
     }
     checkButtons();
   }
@@ -240,7 +244,7 @@ function StartDialog() {
     $(".btn-go").removeClass("disable");
     $('.start-dlg-wrap .labels-wrap').addClass("disabled");
     $('.start-dlg-wrap .toggle-lbl input').prop('checked', false);
-    $('.start-dlg-wrap .labels-wrap label .select-item').prop('checked', false);
+    $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
 
     $(".select-group").find(".body").removeClass("open");
 
@@ -269,7 +273,6 @@ function StartDialog() {
     $(".stat.percent").text(`(${stats.math.percent})`);
     $(".stat.fractions").text(`(${stats.math.fractions})`);
     $(".stat.exponent").text(`(${stats.math.exponent})`);
-    $(".stat.root").text(`(${stats.math.root})`);
     $(".stat.oddEven").text(`(${stats.math.oddEven})`);
     $(".stat.prime").text(`(${stats.math.prime})`);
     $(".stat.newOp").text(`(${stats.math.newOp})`);
@@ -279,7 +282,6 @@ function StartDialog() {
     $(".stat.dividers").text(`(${stats.math.dividers})`);
     $(".stat.factorial").text(`(${stats.math.factorial})`);
     $(".stat.abs").text(`(${stats.math.abs})`);
-    $(".stat.remainder").text(`(${stats.math.remainder})`);
     $(".stat.series").text(`(${stats.math.series})`);
     $(".stat.axis").text(`(${stats.math.axis})`);
     $(".stat.prb").text(`(${stats.math.prb})`);
@@ -288,6 +290,7 @@ function StartDialog() {
     $(".stat.probability").text(`(${stats.math.probability})`);
     $(".stat.supply").text(`(${stats.math.supply})`);
     $(".stat.movement").text(`(${stats.math.movement})`);
+    $(".stat.num").text(`(${stats.math.num})`);
     $(".stat.seqNum").text(`(${stats.math.seqNum})`);
   }
 
@@ -340,16 +343,11 @@ function StartDialog() {
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();
     });
-
-    $('.labels-wrap label .select-item').click((e) => {
-      onLabelSelectItemClicked(e);
+    $('.labels-wrap .lbl').click((e) => {
+      onLabelClicked(e);
     });
     $('.start-dlg-wrap .toggle-lbl input').click((e) => {
       onBtnToggleLblClicked();
-    });
-
-    $('.start-dlg-wrap .btn-star').click((e) => {
-      onBtnStarClicked();
     });
   }
 

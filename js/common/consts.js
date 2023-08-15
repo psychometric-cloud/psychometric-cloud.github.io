@@ -1,6 +1,7 @@
 window.ePublisher = {
   mallo: "MALLO",
-  onexone: "onexone"
+  onexone: "onexone",
+  nivr: "nivr"
 }
 
 window.eActionType = {
@@ -24,10 +25,13 @@ window.eSubjects = {
 window.eChapters = {
   math1: "math1",
   math2: "math2",
+  math3: "math3",
   he1: "HE1",
   he2: "HE2",
+  he3: "HE3",
   en1: "EN1",
-  en2: "EN2"
+  en2: "EN2",
+  en3: "EN3",
 };
 
 window.eQLabel = {

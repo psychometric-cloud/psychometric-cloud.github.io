@@ -7,10 +7,12 @@ function renderUI(filterBy, filteredData) {
 
   $(".history-btn").removeClass("show");
 
-  if (filterBy.actionType === eActionType.test) {
-    testComponent.show(filteredData, filterBy.selectedSubject);
-  } else {
-    practiceComponent.show(filteredData, "questions");
+  if (!_.isEmpty(filteredData)) {
+    if (filterBy.actionType === eActionType.test) {
+      testComponent.show(filteredData, filterBy.selectedSubject);
+    } else {
+      practiceComponent.show(filteredData, "questions");
+    }
   }
 }
 

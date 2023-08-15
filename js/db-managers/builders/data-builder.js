@@ -11,9 +11,11 @@ function DataBuilder() {
 
       console.log(file.name);
       chapterArr.forEach((chapter) => {
-        file.data.questions[chapter].forEach((question) => {
-          questionBuilder.add(file.data, question, chapter);
-        })
+        if (file.data.questions[chapter]) {
+          file.data.questions[chapter].forEach((question) => {
+            questionBuilder.add(file.data, question, chapter);
+          })
+        }
       });
     }
   }

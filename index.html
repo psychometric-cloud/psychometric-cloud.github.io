@@ -383,6 +383,11 @@
                   </div>
                 </label>
                 <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="isCorrect">
+                  <div>נכון בהכרח<div class="stat isCorrect"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
                   <input type="checkbox" class="select-item sub" value="oddEven">
                   <div>זוגי/אי זוגי<div class="stat oddEven"></div>
                   </div>
@@ -420,6 +425,21 @@
                 <label class="checkbox">
                   <input type="checkbox" class="select-item sub" value="abs">
                   <div>ערך מוחלט<div class="stat abs"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="quant">
+                  <div>כמותי<div class="stat quant"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="factorial">
+                  <div>עצרת<div class="stat factorial"></div>
+                  </div>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="select-item sub" value="area">
+                  <div>תחום<div class="stat area"></div>
                   </div>
                 </label>
                 <label class="checkbox">
@@ -530,14 +550,26 @@
           <div class="title">Choose Label</div>
         </div>
         <div class="dlg-body labels-wrap disabled">
-          <label class="checkbox">
-            <input type="checkbox" class="select-item" value="star">
-            <span>Stars</span>
-          </label>
-          <label class="checkbox">
-            <input type="checkbox" class="select-item" value="latter">
-            <span>Latter</span>
-          </label>
+          <div class="lbl example" data-key="example">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-heart">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <span>Nice Example</span>
+          </div>
+          <div class="lbl repeat" data-key="repeat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-repeat">
+              <polyline points="17 1 21 5 17 9" />
+              <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+              <polyline points="7 23 3 19 7 15" />
+              <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+            </svg>
+            <span>Repeat</span>
+          </div>
         </div>
       </div>
       <div class="dlg-footer">
@@ -636,33 +668,37 @@
       <div class="tags">
         <div class="row">
           <div class="tag prb" data-key="probability">הסתברות</div>
-          <div class="tag alg" data-key="dividers">מחלקים</div>
           <div class="tag alg" data-key="axis">ציר המספרים</div>
-          <div class="tag alg" data-key="exponent">חזקות</div>
-          <div class="tag geo" data-key="g-axis">אנליטית</div>
+          <div class="tag alg" data-key="alg isCorrect">נכון בהכרח</div>
+          <div class="tag alg" data-key="dividers">מחלקים</div>
+          <div class="tag alg" data-key="quant">כמותי</div>
+          <div class="tag geo" data-key="g-axis">ג. אנליטית</div>
           <div class="tag geo" data-key="tri">משולשים</div>
         </div>
         <div class="row">
           <div class="tag prb" data-key="comb">צרופים</div>
-          <div class="tag alg" data-key="range">תחום</div>
+          <div class="tag alg" data-key="avg">ממוצעים</div>
           <div class="tag alg" data-key="seqNum">מ. עוקבים</div>
+          <div class="tag alg" data-key="range">תחום</div>
           <div class="tag alg" data-key="percent">אחוזים</div>
           <div class="tag geo" data-key="perimeter">היקף</div>
           <div class="tag geo" data-key="sq">מצולעים</div>
         </div>
         <div class="row">
-          <div class="tag prb" data-key="minmax">min-max</div>
+          <div class="tag prb" data-key="relations">יחסים</div>
           <div class="tag prb" data-key="wit">חידות</div>
           <div class="tag alg" data-key="abs">ערך מוחלט</div>
           <div class="tag alg" data-key="inequality">אי שוויונים</div>
+          <div class="tag alg" data-key="exponent">חזקות</div>
           <div class="tag alg" data-key="num">מספרים</div>
           <div class="tag geo" data-key="circle">מעגלים</div>
         </div>
         <div class="row">
-          <div class="tag prb" data-key="relations">יחסים</div>
+          <div class="tag prb" data-key="minmax">min-max</div>
           <div class="tag prb" data-key="supply">הספק</div>
           <div class="tag alg" data-key="prime">מספר ראשוני</div>
           <div class="tag alg" data-key="oddEven">זוגי</div>
+          <div class="tag alg" data-key="factorial">עצרת</div>
           <div class="tag alg" data-key="expression">ביטויים</div>
           <div class="tag geo" data-key="area">שטחים</div>
         </div>
@@ -671,10 +707,12 @@
           <div class="tag prb" data-key="movement">תנועה</div>
           <div class="tag alg" data-key="letters">אותיות</div>
           <div class="tag alg" data-key="newOp">פ. מומצאות</div>
+          <div class="tag alg" data-key="series">סדרות</div>
           <div class="tag alg" data-key="eq">משוואות</div>
           <div class="tag geo" data-key="third">תלת מימד</div>
         </div>
         <div class="row">
+          <div class="tag"></div>
           <div class="tag"></div>
           <div class="tag"></div>
           <div class="tag"></div>

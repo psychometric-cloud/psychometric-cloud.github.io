@@ -42,22 +42,23 @@ function DataStats() {
     let total = 0;
 
     mainAreas.forEach(area => {
-      total += stats[area];
+      total += stats[area] || 0;
     });
 
     stats[`${subject}_all`] = total;
+    console.log(`${subject}_all`, total)
   }
 
   //-----------------------------------------------------
 
   const set = () => {
-    setStatsByChapters(stats.math, [eChapters.math2, eChapters.math1], [...MATH_MAIN_AREAS, ...MATH_SUB_AREAS]);
+    setStatsByChapters(stats.math, [eChapters.math3, eChapters.math2, eChapters.math1], [...MATH_MAIN_AREAS, ...MATH_SUB_AREAS]);
     setTotal(stats.math, eSubject.math, MATH_MAIN_AREAS);
 
-    setStatsByChapters(stats.he, [eChapters.he1, eChapters.he2], HE_AREAS);
+    setStatsByChapters(stats.he, [eChapters.he1, eChapters.he2, eChapters.he3], HE_AREAS);
     setTotal(stats.he, eSubject.he, HE_AREAS);
 
-    setStatsByChapters(stats.en, [eChapters.en1, eChapters.en2], EN_MAIN_AREAS);
+    setStatsByChapters(stats.en, [eChapters.en1, eChapters.en2, eChapters.en3], EN_MAIN_AREAS);
     setTotal(stats.en, eSubject.en, EN_MAIN_AREAS);
 
     console.log(stats);

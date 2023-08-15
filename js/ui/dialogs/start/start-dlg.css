@@ -115,32 +115,36 @@
   pointer-events: none;
 }
 
-.dlg-start .btn-star {
-  padding: 7px;
+/* shaul */
+
+.dlg-start .labels-wrap .lbl {
+  padding: 15px 0;
   border-radius: 18px;
   display: flex;
-  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
-.dlg-start .btn-star:hover {
-  background-color: rgb(211, 211, 211);
+.dlg-start .labels-wrap .lbl svg {
+  margin: 0 5px;
 }
 
-.dlg-start .btn-star.clicked svg {
-  color: #e91e63;
-  fill: #e91e63;
+.dlg-start .labels-wrap .lbl span {
+  margin-left: 5px;
 }
 
-.dlg-start .toggle-lbl {
-  margin: 0 10px 0 -10px;
+.dlg-start .labels-wrap .lbl.example.clicked svg {
+  color: #1283cb;
+  fill: #1283cb;
 }
 
-.dlg-start .labels-wrap.disabled .checkbox {
+.dlg-start .labels-wrap .lbl.repeat.clicked svg {
+  stroke: #cb9412
+}
+
+.dlg-start .labels-wrap.disabled .lbl {
   pointer-events: none;
 }
-
 
 .dlg-start .stat {
   padding: 0 10px;
@@ -148,4 +152,8 @@
   font-size: 16px;
   display: flex;
   align-items: flex-end;
+}
+
+.dlg-start .toggle-lbl {
+  margin-right: 15px;
 }
