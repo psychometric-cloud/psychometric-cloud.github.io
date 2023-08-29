@@ -185,6 +185,14 @@ html {
   display: flex;
 }
 
+
+.total-files {
+  position: fixed;
+  right: 90px;
+  bottom: 75px;
+
+}
+
 /* -------------------------------------------- */
 /* start-panel */
 /* -------------------------------------------- */

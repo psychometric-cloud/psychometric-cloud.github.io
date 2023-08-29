@@ -9,7 +9,6 @@ function DataBuilder() {
   const processFile = (file) => {
     if (dataValidator.validateFile(file.name, file.data)) {
 
-      console.log(file.name);
       chapterArr.forEach((chapter) => {
         if (file.data.questions[chapter]) {
           file.data.questions[chapter].forEach((question) => {
@@ -27,6 +26,9 @@ function DataBuilder() {
 
     setTimeout(() => {
       processFile(file);
+
+      console.log(file.name);
+      $(".total-files").text(fileIndex + 1);
 
       if (fileIndex < files.length - 1) {
         processFiles(fileIndex + 1, callback)
