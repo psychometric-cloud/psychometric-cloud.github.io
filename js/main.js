@@ -129,6 +129,7 @@ $(document).ready(() => {
   dataBuilder.build(() => {
     onInit();
     showLoader(false);
+    $(".total-files").hide();
 
     $(".start-btn").toggleClass("show", true);
     $(".history-btn").toggleClass("show", true);
