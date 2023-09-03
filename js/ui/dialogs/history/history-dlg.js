@@ -21,7 +21,7 @@ function HistoryDialog() {
     $(".history-dlg-wrap").addClass("active");
     latest = testHistory.getLatest();
 
-    for (let i = 0; i < Math.min(latest.length, 9); i++) {
+    for (let i = 0; i < latest.length; i++) {
       let item = latest[i];
       content += `
          <div class="history-item" onClick="onHistoryItemClick(${item.date})">
