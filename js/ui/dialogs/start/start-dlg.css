@@ -138,7 +138,7 @@
   fill: #1283cb;
 }
 
-.dlg-start .labels-wrap .lbl.repeat.clicked svg {
+.dlg-start .labels-wrap .lbl.failed.clicked svg {
   stroke: #cb9412
 }
 

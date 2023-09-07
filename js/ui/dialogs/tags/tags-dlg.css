@@ -74,7 +74,7 @@
 }
 
 .tags-panel .row .tag.alg {
-  color: red;
+  color: #bc3924;
 }
 
 .tags-panel .row .tag.alg.select {
@@ -113,8 +113,12 @@
   justify-content: center;
 }
 
+.tags-panel .labels .lbl svg {
+  color: red;
+}
+
 .tags-panel .labels .lbl:hover {
-  background: #dfdfdf;
+  background: #bdbcbc;
 }
 
 
@@ -123,6 +127,6 @@
   stroke: red;
 }
 
-.tags-panel .labels .lbl.repeat.select svg {
+.tags-panel .labels .lbl.failed.select svg {
   stroke: #cb9412
 }
