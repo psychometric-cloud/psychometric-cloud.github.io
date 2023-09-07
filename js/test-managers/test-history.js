@@ -3,7 +3,7 @@ function TestHistory() {
   function add(test, subject, stat) {
     let tests = get(subject);
 
-    if (tests.length > 10) {
+    if (tests.length > 25) {
       tests.pop();
     };
 
