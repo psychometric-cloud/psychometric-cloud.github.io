@@ -2,13 +2,33 @@ function HistoryDialog() {
 
   let latest = [];
 
+
+  //-------------------------------------
+
   onHistoryItemClick = (date) => {
     $(".history-dlg-wrap").removeClass("active");
 
     for (let i = 0; i < latest.length; i++) {
       if (latest[i].date === date) {
+        setLabels(latest[i].test);
         auditComponent.show(latest[i].test);
         break;
+      }
+    }
+  }
+
+  //-------------------------------------
+
+  const setLabels = (storedQuestions) => {
+
+    for (let i = 0; i < storedQuestions.length; i++) {
+      let q = storedQuestions[i];
+      for (let j = 0; j < qBank.length; j++) {
+        let q1 = qBank[j];
+        if (q1.publisher === q.publisher && q1.year === q.year && q.season === q1.season && q1.chapter === q.chapter && q1.qNum === q.qNum) {
+          q.labels = q1.labels || [];
+          q.qAreas = q1.qAreas || [];
+        }
       }
     }
   }

@@ -121,12 +121,15 @@
   background: #bdbcbc;
 }
 
+.tags-panel .labels .lbl.select {
+  background-color: red;
+}
 
 .tags-panel .labels .lbl.example.select svg {
-  fill: red;
-  stroke: red;
+  fill: #fff;
+  stroke: #fff;
 }
 
 .tags-panel .labels .lbl.failed.select svg {
-  stroke: #cb9412
+  color: #fff;
 }
