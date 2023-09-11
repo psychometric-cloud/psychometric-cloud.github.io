@@ -103,7 +103,6 @@ initProviders = () => {
   tagsManager = new TagsManager();
   testDataBuilder = new TestDataBuilder();
   testHistory = new TestHistory();
-  testStat = new TestStat();
   testTimer = new TestTimer();
   textsHandler = new TextsHandler();
   dataFilter = new DataFilter();

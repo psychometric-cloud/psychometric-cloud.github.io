@@ -35,13 +35,53 @@ function TestComponent() {
   function endTest() {
     testTimer.end();
 
-    let stat = testStat.getStat(test);
+    let stat = reviewTest(test);
     testHistory.add(test, currSubject, stat);
 
     $(".test-questions").removeClass("show");
     $(".btn-check-test").removeClass("show");
 
     reportComponent.show(test, stat);
+  }
+
+  //-------------------------------------
+
+  function reviewTest(test) {
+    let correct = 0;
+
+    for (let i = 0; i < test.length; i++) {
+      if (test[i].aNum === test[i].proposedAnswer) {
+        correct += 1;
+      } else {
+        let q = getQuestion(test[i]);
+        if (!q.labels.includes("failed")) {
+          q.labels.push("failed");
+          labelsManager.storeQuestion(q);
+        }
+      }
+    }
+    return {
+      correct: correct,
+      total: test.length,
+      percentage: parseInt((correct / test.length) * 100)
+    };
+  }
+
+  //-------------------------------------
+
+  function getQuestion(question) {
+    for (var i = 0; i < qBank.length; i++) {
+
+      if (qBank[i].publisher === question.publisher &&
+        qBank[i].year === question.year &&
+        qBank[i].season === question.season &&
+        qBank[i].chapter === question.chapter &&
+        qBank[i].qNum === question.qNum) {
+
+        return qBank[i];
+      }
+    }
+    return null;
   }
 
   //-------------------------------------
