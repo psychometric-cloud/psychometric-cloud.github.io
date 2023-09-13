@@ -59,6 +59,9 @@ function AuditComponent() {
         $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);
       }
 
+      let showTags = qData.chapter.startsWith('math') && !qData.qAreas.includes('chart');
+      $(".tags-btn").toggleClass("show", showTags);
+
       $(".audit-panel .icon-txt").toggleClass('show', (qData.qAreas[0] === "chart" || qData.qAreas[0] === "reading"));
     }
   }

@@ -2,11 +2,15 @@
   position: absolute;
   top: 30px;
   right: 30px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 20px;
   cursor: pointer;
+}
+
+.tags-btn.show {
+  display: flex;
 }
 
 .tags-btn:hover svg {
@@ -41,7 +45,6 @@
 }
 
 .tags-panel .tags {
-  display: none;
   border: 2px solid black;
 }
 

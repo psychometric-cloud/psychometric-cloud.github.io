@@ -5,11 +5,10 @@ function TagsDialog() {
   function open(_qData) {
 
     qData = _qData;
-    $(".tags-panel").addClass("show");
-    $(".tags-panel .tags").removeClass("show");
+    $(".tags-panel").removeClass("show");
 
     if (qData.chapter === eChapters.math1 || qData.chapter === eChapters.math2 || qData.chapter === eChapters.math3) {
-      $(".tags-panel .tags").addClass("show");
+      $(".tags-panel").addClass("show");
       setSelection();
     }
   }

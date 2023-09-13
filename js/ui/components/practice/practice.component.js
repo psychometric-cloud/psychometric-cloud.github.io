@@ -54,8 +54,8 @@ function PracticeComponent() {
     let a_src = srcBuilder.imageUrl(qData, "answers");
     $(".practice-panel .main .answer").attr('src', a_src);
 
-    $('.practice-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
-    $('.practice-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
+    let showTags = qData.chapter.startsWith('math') && !qData.qAreas.includes('chart');
+    $(".tags-btn").toggleClass("show", showTags);
   }
 
   //------------------------------------

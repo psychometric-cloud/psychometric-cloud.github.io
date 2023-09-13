@@ -25,7 +25,7 @@ function TagsManager() {
     tagedQuestions = tagedQuestions.filter((q) => {
       return !isQuestionEqual(q, question);
     });
-    tagedQuestions.push(question);
+    tagedQuestions.push({ question });
   }
 
   //-----------------------------------------

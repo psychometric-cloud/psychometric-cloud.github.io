@@ -53,11 +53,7 @@ function TestComponent() {
       if (test[i].aNum === test[i].proposedAnswer) {
         correct += 1;
       } else {
-        let q = getQuestion(test[i]);
-        if (!q.labels.includes("failed")) {
-          q.labels.push("failed");
-          labelsManager.storeQuestion(q);
-        }
+        setFailLabel(test[i]);
       }
     }
     return {
@@ -65,6 +61,19 @@ function TestComponent() {
       total: test.length,
       percentage: parseInt((correct / test.length) * 100)
     };
+  }
+
+  //-------------------------------------
+
+  function setFailLabel(question) {
+    if (question.chapter.startsWith('math') && !question.qAreas.includes('chart')) {
+      let q = getQuestion(question);
+
+      if (!q.labels.includes("failed")) {
+        q.labels.push("failed");
+        labelsManager.storeQuestion(q);
+      }
+    }
   }
 
   //-------------------------------------
@@ -123,8 +132,8 @@ function TestComponent() {
     let a_src = srcBuilder.imageUrl(qData, "answers");
     $(".test-panel .main .answer").attr('src', a_src);
 
-    $('.test-panel .q-labels .star').toggleClass("clicked", qData.labels.includes("star"));
-    $('.test-panel .q-labels .learn').toggleClass("clicked", qData.labels.includes("learn"));
+    let showTags = qData.chapter.startsWith('math') && !qData.qAreas.includes('chart');
+    $(".tags-btn").toggleClass("show", showTags);
   }
 
   //------------------------------------

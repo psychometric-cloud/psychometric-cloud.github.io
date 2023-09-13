@@ -40,54 +40,53 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildBasicTest(data) {
-    let arr = [];
+  function addStandAloneQuestions(questions, filteredData, shuffledIndexes) {
     let index = 0;
-    let textAdded = false;
-    let shuffledIndexes = utils.shuffleNums(data.length);
 
-    while (arr.length < 10 && index < data.length) {
-      let q = data[shuffledIndexes[index]];
+    while (questions.length < 8 && index < filteredData.length) {
+      let q = filteredData[shuffledIndexes[index]];
 
       if (q.isStandalone) {
-        arr.push(q)
-      } else {
-        if (!textAdded) {
-          textAdded = true;
-          arr.push(q)
-        }
+        questions.push(q)
       }
       index += 1;
     }
-    return arr;
   }
 
   //-------------------------------------
 
-  function setReadingQuestions(arr) {
-    extendedArr = [];
+  function addTextQuestions(questions, filteredData, shuffledIndexes) {
+    let index = 0;
+    let textAdded = false;
 
-    for (let i = 0; i < arr.length; i++) {
-      extendedArr.push(arr[i]);
+    while (!textAdded && index < filteredData.length) {
+      let q = filteredData[shuffledIndexes[index]];
 
-      if (_.has(arr[i], "members")) {
-        for (let j = 0; j < arr[i].members.length; j++) {
-          extendedArr.push(arr[i].members[j]);
+      if (_.has(q, "members")) {
+        textAdded = true;
+        questions.push(q);
+
+        for (let j = 0; j < q.members.length; j++) {
+          questions.push(q.members[j]);
         }
       }
+
+      index += 1;
     }
-    return extendedArr;
   }
 
   //---------------------------------------
 
   function build(subject, data) {
 
-    data = removeHistory(subject, data);
-    let basicTest = buildBasicTest(data);
-    let extendedTest = setReadingQuestions(basicTest);
+    let questions = [];
+    let filteredData = removeHistory(subject, data);
+    let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
-    return extendedTest;
+    addStandAloneQuestions(questions, filteredData, shuffledIndexes);
+    addTextQuestions(questions, filteredData, shuffledIndexes);
+
+    return questions;
   }
 
   return {
