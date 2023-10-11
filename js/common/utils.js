@@ -12,6 +12,18 @@ function utils() {
       });
   }
 
+  loadTxt = (file, cb) => {
+
+    fetch(file)
+      .then((response) => response.text())
+      .then((txt) => {
+        cb(txt)
+      })
+      .catch(function () {
+        console.log(`loading txt ${file} has failed`);
+      });
+  }
+
   //----------------------------------------
 
   isNumeric = (str) => {
@@ -55,6 +67,7 @@ function utils() {
     isBetween: isBetween,
     isNumeric: isNumeric,
     loadJson: loadJson,
+    loadTxt: loadTxt,
     shuffleNums: shuffleNums
   }
 }
