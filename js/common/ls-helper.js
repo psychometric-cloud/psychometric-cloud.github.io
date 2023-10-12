@@ -1,4 +1,4 @@
-(function ls() {
+function lsHelper() {
 
   let downloadLS = (filename, text) => {
     var pom = document.createElement('a');
@@ -26,11 +26,18 @@
     utils.loadTxt(fileUrl, (txt) => {
       let data = JSON.parse(txt);
 
-      localStorage.setItem("q-labels", JSON.parse(data["q-labels"]))
-      localStorage.setItem("q-tags", JSON.parse(data["q-tags"]))
-      localStorage.setItem("math-tests", JSON.parse(data["math-tests"]))
-      localStorage.setItem("en-tests", JSON.parse(data["en-tests"]))
-
+      if (data["q-labels"]) {
+        localStorage.setItem("q-labels", JSON.stringify(data["q-labels"]))
+      }
+      if (data["q-tags"]) {
+        localStorage.setItem("q-tags", JSON.stringify(data["q-tags"]));
+      }
+      if (data["math-tests"]) {
+        localStorage.setItem("math-tests", JSON.stringify(data["math-tests"]))
+      }
+      if (data["en-tests"]) {
+        localStorage.setItem("en-tests", JSON.stringify(data["en-tests"]))
+      }
       console.log("localStorage restored successfully!!")
     })
   }
@@ -39,6 +46,9 @@
     hila,
     shaul
   }
-})();
+};
+
+
+
 
 

@@ -1,6 +1,6 @@
 function utils() {
 
-  loadJson = (file, cb) => {
+  let loadJson = (file, cb) => {
 
     fetch(file)
       .then((response) => response.json())
@@ -12,7 +12,7 @@ function utils() {
       });
   }
 
-  loadTxt = (file, cb) => {
+  let loadTxt = (file, cb) => {
 
     fetch(file)
       .then((response) => response.text())
@@ -26,7 +26,7 @@ function utils() {
 
   //----------------------------------------
 
-  isNumeric = (str) => {
+  let isNumeric = (str) => {
     if (typeof str != "string") {
       return false;
     }
@@ -35,7 +35,7 @@ function utils() {
 
   //----------------------------------------
 
-  isEq = (str, num) => {
+  let isEq = (str, num) => {
     if (!isNumeric(str)) {
       return false;
     }
@@ -44,7 +44,7 @@ function utils() {
 
   //----------------------------------------
 
-  isBetween = (str, num1, num2) => {
+  let isBetween = (str, num1, num2) => {
     if (!isNumeric(str)) {
       return false;
     }
@@ -53,7 +53,7 @@ function utils() {
 
   //----------------------------------------
 
-  shuffleNums = (maxNum) => {
+  let shuffleNums = (maxNum) => {
     let arr = [];
 
     for (var i = 0; i < maxNum; i++) {
