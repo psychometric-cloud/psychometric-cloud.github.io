@@ -127,12 +127,12 @@ $(document).ready(() => {
   showLoader(true);
   initProviders();
 
-  // dataBuilder.build(() => {
-  //   onInit();
-  //   showLoader(false);
-  //   $(".total-files").hide();
+  dataBuilder.build(() => {
+    onInit();
+    showLoader(false);
+    $(".total-files").hide();
 
-  //   $(".start-btn").toggleClass("show", true);
-  //   $(".history-btn").toggleClass("show", true);
-  // })
+    $(".start-btn").toggleClass("show", true);
+    $(".history-btn").toggleClass("show", true);
+  })
 });

@@ -4,7 +4,7 @@ function TestHistory() {
     let tests = get(subject);
 
     if (tests.length > 25) {
-      tests.pop();
+      tests.shift();
     };
 
     tests.push({

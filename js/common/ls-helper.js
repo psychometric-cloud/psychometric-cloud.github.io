@@ -27,16 +27,16 @@ function lsHelper() {
       let data = JSON.parse(txt);
 
       if (data["q-labels"]) {
-        localStorage.setItem("q-labels", JSON.stringify(data["q-labels"]))
+        localStorage.setItem("q-labels", data["q-labels"])
       }
       if (data["q-tags"]) {
-        localStorage.setItem("q-tags", JSON.stringify(data["q-tags"]));
+        localStorage.setItem("q-tags", data["q-tags"]);
       }
       if (data["math-tests"]) {
-        localStorage.setItem("math-tests", JSON.stringify(data["math-tests"]))
+        localStorage.setItem("math-tests", data["math-tests"])
       }
       if (data["en-tests"]) {
-        localStorage.setItem("en-tests", JSON.stringify(data["en-tests"]))
+        localStorage.setItem("en-tests", data["en-tests"])
       }
       console.log("localStorage restored successfully!!")
     })
