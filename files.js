@@ -93,6 +93,8 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s1/data.json", //ok 
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s2/data.json", //ok 
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s4/data.json", //ok 
-  "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s6/data.json", // 1
-  "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s7/data.json" // 1
+  "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s6/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s7/data.json", //ok
+
+  "https://psychometric-cloud-part2.github.io/assets/questions/800/s8/data.json" //ok
 ];
