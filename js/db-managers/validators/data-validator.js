@@ -38,6 +38,7 @@ function DataValidator() {
 
   const checkPublisher = (fileName, fileData) => {
     if (!ePublisherArr.includes(fileData.publisher)) {
+      debugger;
       console.log(`Publisher ${fileData.publisher} in: '${fileName}' is invalid`);
       return false;
     }
