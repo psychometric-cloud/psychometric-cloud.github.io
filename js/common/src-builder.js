@@ -67,6 +67,9 @@ function SrcBuilder() {
     if (publisher === "NIVR") {
       return `${getDomain(qData)}/assets/questions/nivr/s${qData.year}`;
     }
+    if (publisher === "800") {
+      return `${getDomain(qData)}/assets/questions/800/s${qData.year}`;
+    }
     return "";
   }
 
