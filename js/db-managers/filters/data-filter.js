@@ -111,8 +111,10 @@ function DataFilter() {
 
     if (filterBy.actionType === eActionType.test) {
       filterBySubject(qBank, filterBy, (res1) => {
-        console.log(`Total Filtered Data: ${res1.length}`)
-        callback(shuffle(res1));
+        filterByLabels(res1, filterBy, (res2) => {
+          console.log(`Total Filtered Data: ${res2.length}`)
+          callback(shuffle(res2));
+        });
       });
     } else {
       filterBySubject(qBank, filterBy, (res1) => {

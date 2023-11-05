@@ -13,7 +13,7 @@
       "7:geo:4",
       "8:alg,expression:1",
       "9:prb,probability:3",
-      "10:alg,inequality,isCorrect:1",
+      "10:alg,inequality,isCorrect:4",
       "11:geo:1",
       "12:prb,supply:3",
       "13:alg,num,prime:4",

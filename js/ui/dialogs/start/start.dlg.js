@@ -76,7 +76,6 @@ function StartDialog() {
   function onGoClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
-    console.log(selectedAreas);
     onFinish({
       actionType,
       selectedSubject,
@@ -209,7 +208,7 @@ function StartDialog() {
 
     if (actionType === eActionType.test) {
       $(".btn-prev").addClass("hide");
-      currStep = 2;
+      currStep = 1;
       showButtons();
     }
 
