@@ -97,6 +97,7 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s5/data.json", //ok 
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s6/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s7/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s8/data.json", //ok
 
   "https://psychometric-cloud-part2.github.io/assets/questions/800/s8/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/800/s7/data.json" //ok
