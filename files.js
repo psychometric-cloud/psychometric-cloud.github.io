@@ -103,5 +103,5 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/800/s8/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/800/s7/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/marathon/data.json" //1,2
+  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/marathon/data.json" //1...6
 ];
