@@ -267,7 +267,7 @@ function StartDialog() {
   function setStats() {
     $(".stat.math-all").text(getStat("math_all"));
     $(".stat.chart").text(getStat("chart"));
-    $(".stat.geo").text(getStat("geo}"));
+    $(".stat.geo").text(getStat("geo"));
     $(".stat.tri").text(getStat("tri"));
     $(".stat.poly").text(getStat("poly"));
     $(".stat.circle").text(getStat("circle"));
