@@ -253,44 +253,53 @@ function StartDialog() {
 
   //---------------------------------------------
 
-  function setStats() {
+  function getStat(key) {
     let stats = dataStats.get();
 
-    $(".stat.math-all").text(`(${stats.math.math_all})`);
-    $(".stat.chart").text(`(${stats.math.chart})`);
-    $(".stat.geo").text(`(${stats.math.geo})`);
-    $(".stat.tri").text(`(${stats.math.tri})`);
-    $(".stat.poly").text(`(${stats.math.poly})`);
-    $(".stat.circle").text(`(${stats.math.circle})`);
-    $(".stat.third").text(`(${stats.math.third})`);
-    $(".stat.perimeter").text(`(${stats.math.perimeter})`);
-    $(".stat.cube").text(`(${stats.math.cube})`);
-    $(".stat.area").text(`(${stats.math.area})`);
-    $(".stat.alg").text(`(${stats.math.alg})`);
-    $(".stat.eq").text(`(${stats.math.eq})`);
-    $(".stat.expression").text(`(${stats.math.expression})`);
-    $(".stat.percent").text(`(${stats.math.percent})`);
-    $(".stat.fractions").text(`(${stats.math.fractions})`);
-    $(".stat.exponent").text(`(${stats.math.exponent})`);
-    $(".stat.oddEven").text(`(${stats.math.oddEven})`);
-    $(".stat.prime").text(`(${stats.math.prime})`);
-    $(".stat.newOp").text(`(${stats.math.newOp})`);
-    $(".stat.letters").text(`(${stats.math.letters})`);
-    $(".stat.avg").text(`(${stats.math.avg})`);
-    $(".stat.inequality").text(`(${stats.math.inequality})`);
-    $(".stat.dividers").text(`(${stats.math.dividers})`);
-    $(".stat.factorial").text(`(${stats.math.factorial})`);
-    $(".stat.abs").text(`(${stats.math.abs})`);
-    $(".stat.series").text(`(${stats.math.series})`);
-    $(".stat.axis").text(`(${stats.math.axis})`);
-    $(".stat.prb").text(`(${stats.math.prb})`);
-    $(".stat.relations").text(`(${stats.math.relations})`);
-    $(".stat.comb").text(`(${stats.math.comb})`);
-    $(".stat.probability").text(`(${stats.math.probability})`);
-    $(".stat.supply").text(`(${stats.math.supply})`);
-    $(".stat.movement").text(`(${stats.math.movement})`);
-    $(".stat.num").text(`(${stats.math.num})`);
-    $(".stat.seqNum").text(`(${stats.math.seqNum})`);
+    if (isNaN(stats.math[key]))
+      return "0";
+
+    return stats.math[key];
+  }
+
+  //---------------------------------------------
+
+  function setStats() {
+    $(".stat.math-all").text(getStat("math_all"));
+    $(".stat.chart").text(getStat("chart"));
+    $(".stat.geo").text(getStat("geo}"));
+    $(".stat.tri").text(getStat("tri"));
+    $(".stat.poly").text(getStat("poly"));
+    $(".stat.circle").text(getStat("circle"));
+    $(".stat.third").text(getStat("third"));
+    $(".stat.perimeter").text(getStat("perimeter"));
+    $(".stat.cube").text(getStat("cube"));
+    $(".stat.area").text(getStat("area"));
+    $(".stat.alg").text(getStat("alg"));
+    $(".stat.eq").text(getStat("eq"));
+    $(".stat.expression").text(getStat("expression"));
+    $(".stat.percent").text(getStat("percent"));
+    $(".stat.fractions").text(getStat("fractions"));
+    $(".stat.exponent").text(getStat("exponent"));
+    $(".stat.oddEven").text(getStat("oddEven"));
+    $(".stat.prime").text(getStat("prime"));
+    $(".stat.newOp").text(getStat("newOp"));
+    $(".stat.letters").text(getStat("letters"));
+    $(".stat.avg").text(getStat("avg"));
+    $(".stat.inequality").text(getStat("inequality"));
+    $(".stat.dividers").text(getStat("dividers"));
+    $(".stat.factorial").text(getStat("factorial"));
+    $(".stat.abs").text(getStat("abs"));
+    $(".stat.series").text(getStat("series"));
+    $(".stat.axis").text(getStat("axis"));
+    $(".stat.prb").text(getStat("prb"));
+    $(".stat.relations").text(getStat("relations"));
+    $(".stat.comb").text(getStat("comb"));
+    $(".stat.probability").text(getStat("probability"));
+    $(".stat.supply").text(getStat("supply"));
+    $(".stat.movement").text(getStat("movement"));
+    $(".stat.num").text(getStat("num"));
+    $(".stat.seqNum").text(getStat("seqNum"));
   }
 
   //---------------------------------------------

@@ -7,13 +7,13 @@ function SrcBuilder() {
   //-------------------------------------
 
   function getSubject(qData) {
-    return qData.chapter.substring(0, qData.chapter.length - 1).toLowerCase();
+    return qData.chapter.replace(/[0-9]/g, '').toLowerCase();
   }
 
   //-------------------------------------
 
   function getName(qData) {
-    return `${qData.chapter.slice(-1)}_${qData.qNum}`;
+    return `${qData.chapter.replace(/\D/g, '')}_${qData.qNum}`;
   }
 
   //-------------------------------------
@@ -39,7 +39,7 @@ function SrcBuilder() {
   //---------------------------------------
 
   function getTitle(qData) {
-    return `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`
+    return `${getPublisher(qData).toLowerCase()} ${!isNaN(qData.year) ? qData.year : ''} ${qData.season} ${getName(qData)}`
   }
 
   //---------------------------------------
@@ -69,6 +69,9 @@ function SrcBuilder() {
     }
     if (publisher === "800") {
       return `${getDomain(qData)}/assets/questions/800/s${qData.year}`;
+    }
+    if (publisher === "TALMOR") {
+      return `${getDomain(qData)}/assets/questions/talmor/marathon`;
     }
     return "";
   }

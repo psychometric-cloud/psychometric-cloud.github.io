@@ -9,7 +9,8 @@ function DataBuilder() {
   const processFile = (file) => {
     if (dataValidator.validateFile(file.name, file.data)) {
 
-      chapterArr.forEach((chapter) => {
+      let chapters = Object.keys(file.data.questions);
+      chapters.forEach((chapter) => {
         if (file.data.questions[chapter]) {
           file.data.questions[chapter].forEach((question) => {
             questionBuilder.add(file.data, question, chapter);
