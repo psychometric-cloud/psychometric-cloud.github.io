@@ -69,7 +69,7 @@ function TestComponent() {
     if (question.chapter.startsWith('math') && !question.qAreas.includes('chart')) {
       let q = getQuestion(question);
 
-      if (!q.labels.includes("failed")) {
+      if (q && !q.labels.includes("failed")) {
         q.labels.push("failed");
         labelsManager.storeQuestion(q);
       }
@@ -90,6 +90,8 @@ function TestComponent() {
         return qBank[i];
       }
     }
+
+    console.log("getQuestion:failed:" + question);
     return null;
   }
 
