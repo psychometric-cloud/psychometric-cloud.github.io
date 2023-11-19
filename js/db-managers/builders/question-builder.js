@@ -35,7 +35,7 @@ function QuestionBuilder() {
 
       let q = {
         publisher: test.publisher,
-        year: parseInt(test.year),
+        year: test.year,
         season: test.season,
         chapter: chapter,
         qNum: parseInt(qInfo[0]),
