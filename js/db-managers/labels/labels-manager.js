@@ -3,7 +3,7 @@ function LabelsManager() {
   let labeledQuestions = [];
 
   function isQuestionEqual(q1, q2) {
-    let res = q1.year === q2.year &&
+    let res = q1.year == q2.year &&
       q1.provider === q2.provider &&
       q1.season === q2.season &&
       q1.chapter === q2.chapter &&

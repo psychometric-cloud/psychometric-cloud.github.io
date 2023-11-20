@@ -2,7 +2,6 @@ function DataBuilder() {
 
   let files = [];
   let shuffledUrls = [];
-  let chapterArr = Object.values(eChapters);
 
   //-----------------------------------------
 

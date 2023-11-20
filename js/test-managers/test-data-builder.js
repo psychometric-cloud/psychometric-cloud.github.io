@@ -4,7 +4,7 @@ function TestDataBuilder() {
   //---------------------------------------
 
   function isQuestionEqual(q1, q2) {
-    let res = q1.year === q2.year &&
+    let res = q1.year == q2.year && // in localstorage years stored as int
       q1.provider === q2.provider &&
       q1.season === q2.season &&
       q1.chapter === q2.chapter &&
@@ -40,6 +40,17 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
+  function notIncluded(questions, q) {
+    for (let i = 0; i < questions.length; i++) {
+      if (isQuestionEqual(questions[i], q)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  //---------------------------------------
+
   function addStandAloneQuestions(questions, filteredData, shuffledIndexes) {
     let index = 0;
 
@@ -50,6 +61,38 @@ function TestDataBuilder() {
         questions.push(q)
       }
       index += 1;
+    }
+  }
+
+  //---------------------------------------
+
+  function addFailedQuestion(questions, filteredData) {
+
+    for (let i = 0; i < filteredData.length; i++) {
+      let q = filteredData[i];
+
+      if (q.labels.includes("failed") &&
+        q.qAreas[0] !== "chart" &&
+        notIncluded(questions, q)) {
+        questions.push(q);
+        break;
+      }
+    }
+  }
+
+  //---------------------------------------
+
+  function addLikedQuestion(questions, filteredData) {
+
+    for (let i = 0; i < filteredData.length; i++) {
+      let q = filteredData[i];
+
+      if (q.labels.includes("example") &&
+        q.qAreas[0] !== "chart" &&
+        notIncluded(questions, q)) {
+        questions.push(q);
+        break;
+      }
     }
   }
 
@@ -84,6 +127,8 @@ function TestDataBuilder() {
     let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
     addStandAloneQuestions(questions, filteredData, shuffledIndexes);
+    addFailedQuestion(questions, filteredData);
+    addLikedQuestion(questions, filteredData);
     addTextQuestions(questions, filteredData, shuffledIndexes);
 
     return questions;
