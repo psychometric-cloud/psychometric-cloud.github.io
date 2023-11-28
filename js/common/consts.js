@@ -20,7 +20,8 @@ window.sSeasons = {
 window.eSubjects = {
   math: "math",
   en: "en",
-  he: "he"
+  he: "he",
+  mix: "mix"
 };
 
 window.eChapters = {

@@ -165,23 +165,26 @@ function TestComponent() {
 
   //------------------------------------------
 
-  function show(filteredData, subject) {
+  function show(filterBy) {
 
     currItem = 0;
-    currSubject = subject;
+    currSubject = filterBy.selectedSubject;
 
-    test = testDataBuilder.build(subject, filteredData);
-    console.log(test);
+    testDataBuilder.build(filterBy, (_test) => {
 
-    testTimer.start(test, () => {
-      endTest();
-    })
+      test = _test;
+      let maxTime = currSubject === eSubjects.mix ? test.length - 1 : test.length;
 
-    showItem();
-    buildQuestionsButtons();
+      testTimer.start(test, () => {
+        endTest();
+      }, maxTime)
 
-    $(".test-questions").addClass("show");
-    $(".test-panel").addClass("show");
+      showItem();
+      buildQuestionsButtons();
+
+      $(".test-questions").addClass("show");
+      $(".test-panel").addClass("show");
+    });
   }
 
   //-------------------------------------

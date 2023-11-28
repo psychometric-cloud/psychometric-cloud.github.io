@@ -51,8 +51,12 @@ function StartDialog() {
       $(".btn-next").addClass("active");
     }
     else if (currStep == 1) {
-      $(".btn-prev").addClass("active");
-      $(".btn-next").addClass("active");
+      if (actionType === eActionType.test) {
+        $(".btn-go").addClass("active");
+      } else {
+        $(".btn-prev").addClass("active");
+        $(".btn-next").addClass("active");
+      }
     }
     else {
       $(".btn-prev").addClass("active");

@@ -23,8 +23,8 @@ function TestTimer() {
 
   //---------------------------------------
 
-  function start(test, onTimerEnd) {
-    let maxTime = test.length;
+  function start(test, onTimerEnd, mt) {
+    let maxTime = mt || test.length;
 
     timeInSecs = parseInt(maxTime * 60);
 

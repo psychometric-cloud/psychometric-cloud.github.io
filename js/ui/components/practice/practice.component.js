@@ -120,16 +120,18 @@ function PracticeComponent() {
 
   //-------------------------------------
 
-  function show(_filteredData) {
+  function show(filterBy) {
 
     currItem = 0;
 
-    setItemsArr(_filteredData);
-    updateButtonsStatus();
-    showItem();
+    dataFilter.filter(filterBy, (filteredData) => {
+      setItemsArr(filteredData);
+      updateButtonsStatus();
+      showItem();
 
-    $(".practice-panel").addClass("show");
-    $(".toggle-star").addClass("show");
+      $(".practice-panel").addClass("show");
+      $(".toggle-star").addClass("show");
+    })
   }
 
   //-------------------------------------

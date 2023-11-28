@@ -3,27 +3,15 @@ selectedQuestions = [];
 
 /*-------------------------------------------*/
 
-function renderUI(filterBy, filteredData) {
+function renderUI(filterBy) {
 
   $(".history-btn").removeClass("show");
 
-  if (!_.isEmpty(filteredData)) {
-    if (filterBy.actionType === eActionType.test) {
-      testComponent.show(filteredData, filterBy.selectedSubject);
-    } else {
-      practiceComponent.show(filteredData, "questions");
-    }
+  if (filterBy.actionType === eActionType.test) {
+    testComponent.show(filterBy);
+  } else {
+    practiceComponent.show(filterBy, "questions");
   }
-}
-
-/*-------------------------------------------*/
-
-function filterData(filterBy, callback) {
-  showLoader(true);
-  dataFilter.filter(filterBy, (filteredData) => {
-    showLoader(false);
-    callback(filteredData);
-  })
 }
 
 /*-------------------------------------------*/
@@ -79,9 +67,7 @@ function onInit() {
   cloudTesterDlg.init();
 
   startDlg.set((filterBy) => {
-    filterData(filterBy, (res) => {
-      renderUI(filterBy, res);
-    });
+    renderUI(filterBy);
   })
 }
 

@@ -15,13 +15,17 @@ function DataFilter() {
     setTimeout(() => {
       res = [];
 
-      for (let i = 0; i < arr.length; i++) {
-        if (isAreaInclude(arr[i], filterBy)) {
-          res.push(arr[i]);
+      if (_.isEmpty(filterBy.selectedAreas)) {
+        callback(arr);
+      } else {
+        for (let i = 0; i < arr.length; i++) {
+          if (isAreaInclude(arr[i], filterBy)) {
+            res.push(arr[i]);
+          }
         }
+        callback(res);
       }
-      callback(res);
-    }, 350);
+    }, 100);
   }
 
   //-----------------------------------------
@@ -50,7 +54,7 @@ function DataFilter() {
         }
       }
       callback(res);
-    }, 350);
+    }, 100);
   }
 
   //-----------------------------------------
@@ -65,7 +69,7 @@ function DataFilter() {
         }
       }
       callback(res);
-    }, 350);
+    }, 100);
   }
 
 
@@ -90,7 +94,7 @@ function DataFilter() {
         }
         callback(res);
       }
-    }, 150);
+    }, 100);
   }
 
   //-----------------------------------------
@@ -108,24 +112,13 @@ function DataFilter() {
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
-
-    if (filterBy.actionType === eActionType.test) {
-      filterBySubject(qBank, filterBy, (res1) => {
-        filterByLabels(res1, filterBy, (res2) => {
-          console.log(`Total Filtered Data: ${res2.length}`)
-          callback(shuffle(res2));
+    filterBySubject(qBank, filterBy, (res1) => {
+      filterByAreas(res1, filterBy, (res2) => {
+        filterByLabels(res2, filterBy, (res3) => {
+          callback(shuffle(res3));
         });
       });
-    } else {
-      filterBySubject(qBank, filterBy, (res1) => {
-        filterByAreas(res1, filterBy, (res2) => {
-          filterByLabels(res2, filterBy, (res3) => {
-            console.log(`Total Filtered Data: ${res3.length}`)
-            callback(shuffle(res3));
-          });
-        });
-      });
-    }
+    });
   }
 
   return {

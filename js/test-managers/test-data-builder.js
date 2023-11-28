@@ -120,18 +120,62 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function build(subject, data) {
+  function buildBySubject(filterBy, cb) {
 
-    let questions = [];
-    let filteredData = removeHistory(subject, data);
-    let shuffledIndexes = utils.shuffleNums(filteredData.length);
+    dataFilter.filter(filterBy, (filteredData) => {
+      let questions = [];
 
-    addStandAloneQuestions(questions, filteredData, shuffledIndexes);
-    addFailedQuestion(questions, filteredData);
-    addLikedQuestion(questions, filteredData);
-    addTextQuestions(questions, filteredData, shuffledIndexes);
+      filteredData = removeHistory(filterBy.selectedSubject, filteredData);
+      let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
-    return questions;
+      addStandAloneQuestions(questions, filteredData, shuffledIndexes);
+      addFailedQuestion(questions, filteredData);
+      addLikedQuestion(questions, filteredData);
+      addTextQuestions(questions, filteredData, shuffledIndexes);
+
+      cb(questions);
+    })
+  }
+
+  //---------------------------------------
+
+  function buildMix(cb) {
+
+    let res = [];
+
+    let enFilter = {
+      selectedAreas: ['complete', 'restate'],
+      selectedSubject: "en"
+    }
+    let mathFilter = {
+      selectedSubject: "math",
+      selectedAreas: [],
+    }
+    let heFilter = {
+      selectedAreas: ['analogy'],
+      selectedSubject: "he"
+    }
+
+    buildBySubject(mathFilter, (res1) => {
+      res = res.concat(res1);
+      buildBySubject(enFilter, (res2) => {
+        res = res.concat(res2.slice(0, 3));
+        buildBySubject(heFilter, (res3) => {
+          res = res.concat(res3.slice(0, 2));
+          cb(res);
+        })
+      })
+    })
+  }
+
+  //---------------------------------------
+
+  function build(filterBy, cb) {
+    if (filterBy.selectedSubject === eSubjects.mix) {
+      buildMix(cb);
+    } else {
+      buildBySubject(filterBy, cb);
+    }
   }
 
   return {
