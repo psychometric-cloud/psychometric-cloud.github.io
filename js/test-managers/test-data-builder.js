@@ -139,7 +139,7 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildMix(cb) {
+  function buildMathPlus(cb) {
 
     let res = [];
 
@@ -171,8 +171,8 @@ function TestDataBuilder() {
   //---------------------------------------
 
   function build(filterBy, cb) {
-    if (filterBy.selectedSubject === eSubjects.mix) {
-      buildMix(cb);
+    if (filterBy.selectedSubject === eSubjects.math) {
+      buildMathPlus(cb);
     } else {
       buildBySubject(filterBy, cb);
     }

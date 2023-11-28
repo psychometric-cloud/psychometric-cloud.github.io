@@ -173,7 +173,7 @@ function TestComponent() {
     testDataBuilder.build(filterBy, (_test) => {
 
       test = _test;
-      let maxTime = currSubject === eSubjects.mix ? test.length - 1 : test.length;
+      let maxTime = currSubject === eSubjects.math ? test.length - 1 : test.length;
 
       testTimer.start(test, () => {
         endTest();
