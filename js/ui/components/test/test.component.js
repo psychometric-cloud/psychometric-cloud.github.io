@@ -216,6 +216,7 @@ function TestComponent() {
       onAnswerClick(e);
     });
     $('.test-panel .tags-btn').click((e) => {
+      debugger;
       openTagsDialog();
     });
     $(".header .btn-check-test").unbind("click").click((e) => {

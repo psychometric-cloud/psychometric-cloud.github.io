@@ -7,7 +7,7 @@ function TagsDialog() {
     qData = _qData;
     $(".tags-panel").removeClass("show");
 
-    if (qData.chapter === eChapters.math1 || qData.chapter === eChapters.math2 || qData.chapter === eChapters.math3) {
+    if (qData.chapter.startsWith("math")) {
       $(".tags-panel").addClass("show");
       setSelection();
     }
