@@ -159,9 +159,9 @@ function TestDataBuilder() {
     buildBySubject(mathFilter, (res1) => {
       res = res.concat(res1);
       buildBySubject(enFilter, (res2) => {
-        res = res.concat(res2.slice(0, 3));
+        res = res.concat(res2.slice(0, 4));
         buildBySubject(heFilter, (res3) => {
-          res = res.concat(res3.slice(0, 2));
+          res = res.concat(res3.slice(0, 3));
           cb(res);
         })
       })
