@@ -54,7 +54,7 @@ function TestDataBuilder() {
   function addStandAloneQuestions(questions, filteredData, shuffledIndexes) {
     let index = 0;
 
-    while (questions.length < 8 && index < filteredData.length) {
+    while (questions.length < 11 && index < filteredData.length) {
       let q = filteredData[shuffledIndexes[index]];
 
       if (q.isStandalone) {
@@ -159,9 +159,9 @@ function TestDataBuilder() {
     buildBySubject(mathFilter, (res1) => {
       res = res.concat(res1);
       buildBySubject(enFilter, (res2) => {
-        res = res.concat(res2.slice(0, 3));
+        res = res.concat(res2.slice(0, 4));
         buildBySubject(heFilter, (res3) => {
-          res = res.concat(res3.slice(0, 4));
+          res = res.concat(res3.slice(0, 6));
           cb(res);
         })
       })
