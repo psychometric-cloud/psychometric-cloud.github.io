@@ -71,7 +71,10 @@ function SrcBuilder() {
       return `${getDomain(qData)}/assets/questions/800/s${qData.year}`;
     }
     if (publisher === "TALMOR") {
-      return `${getDomain(qData)}/assets/questions/talmor/marathon`;
+      return `${getDomain(qData)}/assets/questions/talmor/${qData.year}`;
+    }
+    if (publisher === "KIDUM") {
+      return `${getDomain(qData)}/assets/questions/kidum/${qData.year}`;
     }
     return "";
   }
