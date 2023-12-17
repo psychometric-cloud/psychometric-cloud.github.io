@@ -9,6 +9,7 @@ function StartDialog() {
   let selectedSubject = eSubject.math;
   let selectedAreas = [];
   let selectedLabels = [];
+  let actionType = eActionType.test;
 
   function show(show) {
     reset();
@@ -346,7 +347,7 @@ function StartDialog() {
     });
 
     $('.btn-test').click((e) => {
-      onBtnPreActionClicked(eActionType.test);
+      onGoClick(onFinish);
     });
     $('.btn-practice').click((e) => {
       onBtnPreActionClicked(eActionType.practice);

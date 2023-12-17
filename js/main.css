@@ -91,7 +91,7 @@ html {
 }
 
 .header .countdown .box {
-  width: 50px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,8 +138,8 @@ html {
 }
 
 .header .test-questions .btn {
-  min-width: 35px;
-  height: 35px;
+  min-width: 33px;
+  height: 33px;
   border: 1px solid gray;
   margin: 0 5px;
   display: flex;
