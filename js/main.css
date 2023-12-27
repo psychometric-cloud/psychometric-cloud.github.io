@@ -114,7 +114,6 @@ html {
 }
 
 .header .btn-test-cloud {
-  background-color: red;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
@@ -129,15 +128,69 @@ html {
 }
 
 
-.header .test-questions {
-  display: none;
+.header .center-outer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
-.header .test-questions.show {
+.header .questions-panel .prev,
+.header .questions-panel .next {
+  color: #ffd62f;
+  width: 35px;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.header .questions-panel .next {
+  padding-left: 15px;
+}
+
+.header .questions-panel .prev:hover,
+.header .questions-panel .next:hover {
+  background-color: #292929;
+}
+
+.header .questions-panel .outer-wrapper {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: 70%;
+}
+
+.header .questions-panel .inner-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  align-items: center;
   display: flex;
 }
 
-.header .test-questions .btn {
+.header .questions-panel .inner-wrapper.left {
+  left: 0;
+}
+
+.header .questions-panel .inner-wrapper.right {
+  right: 0;
+}
+
+.header .questions-panel {
+  display: none;
+}
+
+.header .questions-panel.show {
+  display: flex;
+}
+
+.header .btn-questions {
+  display: flex;
+}
+
+.header .btn-questions .btn {
   min-width: 33px;
   height: 33px;
   border: 1px solid gray;
@@ -148,12 +201,17 @@ html {
   color: #fff;
 }
 
-.header .test-questions .btn.clicked {
+.header .btn-questions .btn:hover {
+  background-color: gray;
+  ;
+}
+
+.header .btn-questions .btn.clicked {
   background: #bbbbbb;
   color: #000;
 }
 
-.header .test-questions .btn.active {
+.header .btn-questions .btn.active {
   border: 2px solid #fff;
 }
 

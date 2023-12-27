@@ -34,8 +34,8 @@ function AuditComponent() {
 
   onBtnClick = (i) => {
     currItem = i;
-    $(".audit-panel .questions .btn .wrap").removeClass("active");
-    $(`.audit-panel .questions .btn[data-id="${i}"] .wrap`).addClass("active");
+    $(".audit-panel .btn-questions .btn .wrap").removeClass("active");
+    $(`.audit-panel .btn-questions .btn[data-id="${i}"] .wrap`).addClass("active");
     showItem();
   }
 
@@ -95,7 +95,7 @@ function AuditComponent() {
          </div>  
         </div>`
     }
-    $(".audit-panel .questions").html(buttons);
+    $(".audit-panel .btn-questions").html(buttons);
   }
 
   //-------------------------------------
@@ -113,6 +113,16 @@ function AuditComponent() {
 
   //-------------------------------------
 
+  function slideQuestions(dir) {
+    if (dir === 0) {
+      $(".audit-panel .questions-panel .inner-wrapper").removeClass("right").addClass("left");
+    } else {
+      $(".audit-panel .questions-panel .inner-wrapper").removeClass("left").addClass("right");
+    }
+  }
+
+  //-------------------------------------
+
   function init() {
     $(".audit-panel .img-wrap img").click(() => {
       onAnsBtnClick();
@@ -125,6 +135,12 @@ function AuditComponent() {
     });
     $('.audit-panel .q-labels .learn').click((e) => {
       onLabelLearnMoreClicked();
+    });
+    $(".audit-panel .questions-panel .prev").click((e) => {
+      slideQuestions(0);
+    });
+    $(".audit-panel .questions-panel .next").click((e) => {
+      slideQuestions(1);
     });
   }
 

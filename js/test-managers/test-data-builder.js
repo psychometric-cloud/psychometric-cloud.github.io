@@ -54,7 +54,7 @@ function TestDataBuilder() {
   function addStandAloneQuestions(questions, filteredData, shuffledIndexes) {
     let index = 0;
 
-    while (questions.length < 9 && index < filteredData.length) {
+    while (questions.length < 11 && index < filteredData.length) {
       let q = filteredData[shuffledIndexes[index]];
 
       if (q.isStandalone) {

@@ -18,9 +18,9 @@ function TestComponent() {
       let qData = test[currItem];
       let num = parseInt($(e.target).data("num"));
       qData.proposedAnswer = num;
-      $(`.header .test-questions .btn[data-id="${currItem}"]`).addClass("clicked");
+      $(`.header .btn-questions .btn[data-id="${currItem}"]`).addClass("clicked");
 
-      if ($(".header .test-questions .btn.clicked").length === test.length) {
+      if ($(".header .btn-questions .btn.clicked").length === test.length) {
         $(".header .btn-check-test").addClass("show");
       }
       if (currItem < test.length - 1) {
@@ -38,10 +38,21 @@ function TestComponent() {
     let stat = reviewTest(test);
     testHistory.add(test, currSubject, stat);
 
-    $(".test-questions").removeClass("show");
-    $(".btn-check-test").removeClass("show");
+    debugger;
+    $(".header .questions-panel").removeClass("show");
+    $(".header .btn-check-test").removeClass("show");
 
     reportComponent.show(test, stat);
+  }
+
+  //-------------------------------------
+
+  function slideQuestions(dir) {
+    if (dir === 0) {
+      $(".header .questions-panel .inner-wrapper").removeClass("right").addClass("left");
+    } else {
+      $(".header .questions-panel .inner-wrapper").removeClass("left").addClass("right");
+    }
   }
 
   //-------------------------------------
@@ -173,7 +184,7 @@ function TestComponent() {
     testDataBuilder.build(filterBy, (_test) => {
 
       test = _test;
-      let maxTime = test.length - 4;//currSubject === eSubjects.math ? test.length - 3 : test.length;
+      let maxTime = test.length - 7;//currSubject === eSubjects.math ? test.length - 3 : test.length;
 
       testTimer.start(test, () => {
         endTest();
@@ -182,7 +193,7 @@ function TestComponent() {
       showItem();
       buildQuestionsButtons();
 
-      $(".test-questions").addClass("show");
+      $(".header .center").addClass("show");
       $(".test-panel").addClass("show");
     });
   }
@@ -198,8 +209,8 @@ function TestComponent() {
           ${i + 1}
         </div>`
     }
-    $(".header .test-questions").html(buttons);
-    $(`.header .test-questions .btn[data-id="0"]`).addClass("active");
+    $(".header .btn-questions").html(buttons);
+    $(`.header .btn-questions .btn[data-id="0"]`).addClass("active");
   }
 
   //---------------------------------------
@@ -220,7 +231,13 @@ function TestComponent() {
     });
     $(".header .btn-check-test").unbind("click").click((e) => {
       endTest();
-    })
+    });
+    $(".header .questions-panel .prev").click((e) => {
+      slideQuestions(0);
+    });
+    $(".header .questions-panel .next").click((e) => {
+      slideQuestions(1);
+    });
   }
 
   init();
