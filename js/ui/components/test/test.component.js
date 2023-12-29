@@ -38,7 +38,6 @@ function TestComponent() {
     let stat = reviewTest(test);
     testHistory.add(test, currSubject, stat);
 
-    debugger;
     $(".header .questions-panel").removeClass("show");
     $(".header .btn-check-test").removeClass("show");
 
@@ -119,13 +118,13 @@ function TestComponent() {
       setReadingBoxPanel(qData);
     }
 
-    $(`.header .test-questions .btn[data-id="${currItem}"]`).addClass("active");
+    $(`.header .btn-questions .btn[data-id="${currItem}"]`).addClass("active");
   }
 
   //------------------------------------
 
   function resetPanels() {
-    $(".header .test-questions  .btn").removeClass("active");
+    $(".header .btn-questions  .btn").removeClass("active");
     $(".test-panel .main, .test-panel .reading-box").removeClass("show");
     $(".test-panel .main .question, .test-panel .reading-box .question").addClass("show");
     $(".test-panel .main .answer, .test-panel .reading-box .answer").removeClass("show");
