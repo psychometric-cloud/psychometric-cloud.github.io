@@ -3,6 +3,7 @@ window.urlsList = [
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/sp/data.json", //OK
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/su/data.json", //OK
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/a/data.json", // OK
+  "https://psychometric-cloud.github.io/assets/questions/MALLO/2023/w/data.json", // no answers!!!
 
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/a/data.json",  //OK
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2022/sp/data.json", //OK
