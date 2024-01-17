@@ -7,7 +7,8 @@ window.ePublisher = {
 
 window.eActionType = {
   test: 1,
-  practice: 2
+  practice: 2,
+  quiz: 3
 };
 
 window.sSeasons = {

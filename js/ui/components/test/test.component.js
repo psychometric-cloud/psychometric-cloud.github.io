@@ -36,6 +36,7 @@ function TestComponent() {
     testTimer.end();
 
     let stat = reviewTest(test);
+    debugger;
     testHistory.add(test, currSubject, stat);
 
     $(".header .questions-panel").removeClass("show");
@@ -180,6 +181,7 @@ function TestComponent() {
     currItem = 0;
     currSubject = filterBy.selectedSubject;
 
+
     testDataBuilder.build(filterBy, (_test) => {
 
       test = _test;
@@ -192,6 +194,9 @@ function TestComponent() {
       showItem();
       buildQuestionsButtons();
 
+      currSubject = filterBy.selectedSubject;
+
+      $(".header .center .outer-wrapper").toggleClass("small", filterBy.actionType === eActionType.quiz);
       $(".header .center").addClass("show");
       $(".test-panel").addClass("show");
     });

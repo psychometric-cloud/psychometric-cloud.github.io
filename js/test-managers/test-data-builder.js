@@ -120,7 +120,7 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildBySubject(filterBy, cb) {
+  function buildBySubject(filterBy, isTest, cb) {
 
     dataFilter.filter(filterBy, (filteredData) => {
       let questions = [];
@@ -129,9 +129,12 @@ function TestDataBuilder() {
       let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
       addStandAloneQuestions(questions, filteredData, shuffledIndexes);
-      addFailedQuestion(questions, filteredData);
-      addLikedQuestion(questions, filteredData);
-      addTextQuestions(questions, filteredData, shuffledIndexes);
+
+      if (isTest) {
+        addFailedQuestion(questions, filteredData);
+        addLikedQuestion(questions, filteredData);
+        addTextQuestions(questions, filteredData, shuffledIndexes);
+      }
 
       cb(questions);
     })
@@ -139,7 +142,7 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildMathPlus(cb) {
+  function buildTest(cb) {
 
     let res = [];
 
@@ -157,11 +160,11 @@ function TestDataBuilder() {
       selectedSubject: "he"
     }
 
-    buildBySubject(mathFilter, (res1) => {
+    buildBySubject(mathFilter, true, (res1) => {
       res = res.concat(res1);
-      buildBySubject(heFilter, (res2) => {
+      buildBySubject(heFilter, true, (res2) => {
         res = res.concat(res2);
-        buildBySubject(enFilter, (res3) => {
+        buildBySubject(enFilter, true, (res3) => {
           res = res.concat(res3.slice(0, 6));
           cb(res);
         })
@@ -171,11 +174,36 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
+  function buildQuiz(cb) {
+
+    let res = [];
+
+    let mathFilter = {
+      selectedAreas: [],
+      selectedSubject: "math",
+
+    }
+    let heFilter = {
+      selectedAreas: [],
+      selectedSubject: "he"
+    }
+
+    buildBySubject(heFilter, false, (res1) => {
+      res = res.concat(res1.slice(0, 4));
+      buildBySubject(mathFilter, false, (res2) => {
+        res = res.concat(res2.slice(0, 8));
+        cb(res);
+      })
+    })
+  }
+
+  //---------------------------------------
+
   function build(filterBy, cb) {
-    if (filterBy.selectedSubject === eSubjects.math) {
-      buildMathPlus(cb);
+    if (filterBy.actionType === eActionType.test) {
+      buildTest(cb);
     } else {
-      buildBySubject(filterBy, cb);
+      buildQuiz(cb);
     }
   }
 

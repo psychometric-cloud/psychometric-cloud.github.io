@@ -78,14 +78,27 @@ function StartDialog() {
 
   /*-------------------------------------------*/
 
-  function onGoClick(onFinish) {
+  function onTestClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
     onFinish({
-      actionType,
-      selectedSubject,
-      selectedAreas,
-      selectedLabels
+      actionType: eActionType.test,
+      selectedSubject: "",
+      selectedAreas: [],
+      selectedLabels: []
+    });
+  }
+
+  /*-------------------------------------------*/
+
+  function onQuizClick(onFinish) {
+    $(".start-dlg-wrap").removeClass("active");
+
+    onFinish({
+      actionType: eActionType.quiz,
+      selectedSubject: "",
+      selectedAreas: [],
+      selectedLabels: []
     });
   }
 
@@ -347,11 +360,14 @@ function StartDialog() {
     });
 
     $('.btn-test').click((e) => {
-      onGoClick(onFinish);
+      onTestClick(onFinish);
     });
-    $('.btn-practice').click((e) => {
-      onBtnPreActionClicked(eActionType.practice);
+    $('.btn-quiz').click((e) => {
+      onQuizClick(onFinish);
     });
+    // $('.btn-practice').click((e) => {
+    //   onBtnPreActionClicked(eActionType.practice);
+    // });
 
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();

@@ -7,7 +7,7 @@ function renderUI(filterBy) {
 
   $(".history-btn").removeClass("show");
 
-  if (filterBy.actionType === eActionType.test) {
+  if (filterBy.actionType === eActionType.test || filterBy.actionType === eActionType.quiz) {
     testComponent.show(filterBy);
   } else {
     practiceComponent.show(filterBy, "questions");

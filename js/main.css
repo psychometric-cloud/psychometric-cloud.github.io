@@ -162,6 +162,10 @@ html {
   max-width: 70%;
 }
 
+.header .questions-panel .outer-wrapper.small {
+  max-width: 545px;
+}
+
 .header .questions-panel .inner-wrapper {
   position: absolute;
   top: 0;

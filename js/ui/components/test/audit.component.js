@@ -107,6 +107,7 @@ function AuditComponent() {
     showItem();
     buildButtons();
 
+    $(".audit-panel .questions-panel .outer-wrapper").toggleClass("small", test.length < 15);
     $(".start-panel").removeClass("show");
     $(".audit-panel").addClass("show");
   }

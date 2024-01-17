@@ -1,12 +1,12 @@
 function TestHistory() {
 
   function add(test, subject, stat) {
-    if (subject === eSubject.mix) {
-      subject = eSubject.math;
-    }
+    //if (subject === eSubject.mix) {
+    subject = eSubject.math;
+    //}
     let tests = get(subject);
 
-    if (tests.length > 25) {
+    if (tests.length > 35) {
       tests.shift();
     };
 

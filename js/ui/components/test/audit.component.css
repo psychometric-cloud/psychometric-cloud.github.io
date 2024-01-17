@@ -70,6 +70,10 @@
   max-width: 70%;
 }
 
+.audit-panel .questions-panel .outer-wrapper.small {
+  max-width: 545px
+}
+
 .audit-panel .questions-panel .inner-wrapper {
   position: absolute;
   top: 0;
