@@ -36,7 +36,6 @@ function TestComponent() {
     testTimer.end();
 
     let stat = reviewTest(test);
-    debugger;
     testHistory.add(test, currSubject, stat);
 
     $(".header .questions-panel").removeClass("show");
