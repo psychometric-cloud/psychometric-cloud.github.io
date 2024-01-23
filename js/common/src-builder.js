@@ -76,6 +76,10 @@ function SrcBuilder() {
     if (publisher === "KIDUM") {
       return `${getDomain(qData)}/assets/questions/kidum/${qData.year}`;
     }
+    if (publisher === "PSYCHO") {
+      debugger;
+      return `${getDomain(qData)}/assets/questions/psycho/${qData.year}`;
+    }
     return "";
   }
 

@@ -3,6 +3,7 @@ window.ePublisher = {
   "onexone": "onexone",
   "nivr": "nivr",
   "800": "800",
+  "psycho": "psycho"
 }
 
 window.eActionType = {

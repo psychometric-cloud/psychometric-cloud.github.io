@@ -180,11 +180,10 @@ function TestComponent() {
     currItem = 0;
     currSubject = filterBy.selectedSubject;
 
-
     testDataBuilder.build(filterBy, (_test) => {
 
       test = _test;
-      let maxTime = test.length - 7;//currSubject === eSubjects.math ? test.length - 3 : test.length;
+      let maxTime = test.length < 15 ? test.length - 3 : test.length - 7;//currSubject === eSubjects.math ? test.length - 3 : test.length;
 
       testTimer.start(test, () => {
         endTest();
