@@ -178,22 +178,14 @@ function TestDataBuilder() {
 
     let res = [];
 
-    let mathFilter = {
-      selectedAreas: [],
-      selectedSubject: "math",
-
-    }
     let heFilter = {
       selectedAreas: [],
       selectedSubject: "he"
     }
 
     buildBySubject(heFilter, false, (res1) => {
-      res = res.concat(res1.slice(0, 8));
-      buildBySubject(mathFilter, false, (res2) => {
-        res = res.concat(res2.slice(0, 4));
-        cb(res);
-      })
+      res = res.concat(res1.slice(0, 12));
+      cb(res);
     })
   }
 
