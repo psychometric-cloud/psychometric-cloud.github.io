@@ -194,7 +194,7 @@ function TestComponent() {
 
       currSubject = filterBy.selectedSubject;
 
-      $(".header .center .outer-wrapper").toggleClass("small", filterBy.actionType === eActionType.quiz);
+      $(".header .center .outer-wrapper").toggleClass("small", filterBy.actionType !== eActionType.test);
       $(".header .center").addClass("show");
       $(".test-panel").addClass("show");
     });

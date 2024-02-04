@@ -6,74 +6,11 @@ const eSubject = {
 
 function StartDialog() {
 
-  let selectedSubject = eSubject.math;
   let selectedAreas = [];
-  let selectedLabels = [];
-  let actionType = eActionType.test;
 
   function show(show) {
     reset();
     $(".start-dlg-wrap").toggleClass("active", show);
-  }
-
-  /*-------------------------------------------*/
-
-  function showPanels() {
-    $(".panel").removeClass("active");
-
-    if (currStep == 0) {
-      $(".panel.step1").addClass("active");
-    }
-    else if (currStep == 1) {
-      $(".panel.step2").addClass("active");
-
-      $(".area").removeClass("active");
-      if (selectedSubject === eSubject.math) {
-        $(".area.math").addClass("active");
-      }
-      if (selectedSubject === eSubject.he) {
-        $(".area.he").addClass("active");
-      }
-      if (selectedSubject === eSubject.en) {
-        $(".area.en").addClass("active");
-      }
-    }
-    else {
-      $(".panel.step3").addClass("active");
-    }
-  }
-
-  /*-------------------------------------------*/
-
-  function showButtons() {
-    $(".btn").removeClass("active");
-
-    if (currStep == 0) {
-      $(".btn-next").addClass("active");
-    }
-    else if (currStep == 1) {
-      if (actionType === eActionType.test) {
-        $(".btn-go").addClass("active");
-      } else {
-        $(".btn-prev").addClass("active");
-        $(".btn-next").addClass("active");
-      }
-    }
-    else {
-      $(".btn-prev").addClass("active");
-      $(".btn-go").addClass("active");
-    }
-  }
-
-  /*-------------------------------------------*/
-
-  function onPrevNextClick(step) {
-
-    currStep += step;
-
-    showButtons();
-    showPanels();
-    checkButtons();
   }
 
   /*-------------------------------------------*/
@@ -102,29 +39,24 @@ function StartDialog() {
     });
   }
 
+  /*-------------------------------------------*/
+
+  function onDemandClick(onFinish) {
+    $(".start-dlg-wrap").removeClass("active");
+
+    onFinish({
+      actionType: eActionType.onDemand,
+      selectedSubject: eSubject.math,
+      selectedAreas: selectedAreas,
+      selectedLabels: []
+    });
+  }
+
   //--------------------------------------------
 
-  function onSubjectChange() {
-    selectedSubject = $('input[name="subjects-radio"]:checked').val();
-
-    if (selectedSubject === eSubject.math) {
-      $(`.area.math .select-all`).prop('checked', false);
-      setTimeout(() => {
-        onAreaSelectAllClicked(eSubject.math);
-      }, 0);
-    }
-    else if (selectedSubject === eSubject.he) {
-      $(`.area.he .select-all`).prop('checked', false);
-      setTimeout(() => {
-        onAreaSelectAllClicked(eSubject.he);
-      }, 0);
-    }
-    else if (selectedSubject === eSubject.en) {
-      $(`.area.en .select-all`).prop('checked', false)
-      setTimeout(() => {
-        onAreaSelectAllClicked(eSubject.en);
-      }, 0);
-    }
+  function onBtnOnDemandClicked() {
+    $(".dlg-start .init-panel").hide();
+    $(".area.math").addClass("active");
   }
 
   //--------------------------------------------
@@ -184,65 +116,13 @@ function StartDialog() {
         selectedAreas.push(this.value);
       }
     });
-  }
-
-  //--------------------------------------------
-
-  function onLabelClicked(e) {
-    let lbl = $(e.target).closest(".lbl");
-    if (lbl) {
-      let key = lbl.data("key");
-      $(`.labels-wrap .lbl.${key}`).toggleClass("clicked");
-
-      if (selectedLabels.includes(key)) {
-        selectedLabels = selectedLabels.filter((_lbl) => {
-          return _lbl !== key;
-        })
-      } else {
-        selectedLabels.push(key)
-      }
-      console.log(selectedLabels);
-      checkButtons();
-    }
+    checkButtons();
   }
 
   //--------------------------------------------
 
   function checkButtons() {
-    $(".btn-next").toggleClass("disable", currStep > 0 && selectedAreas.length == 0);
-    $(".btn-go").removeClass("disable");
-
-    setTimeout(() => {
-      if (!$('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
-        $(".btn-go").toggleClass("disable", selectedLabels.length == 0);
-      }
-    }, 0);
-  }
-
-  //---------------------------------------------
-
-  function onBtnPreActionClicked(_actionType) {
-    actionType = _actionType;
-
-    if (actionType === eActionType.test) {
-      $(".btn-prev").addClass("hide");
-      currStep = 1;
-      showButtons();
-    }
-
-    $(".dlg-start .init-panel").hide();
-  }
-
-  //---------------------------------------------
-
-  function onBtnToggleLblClicked() {
-    $('.start-dlg-wrap .labels-wrap').toggleClass("disabled");
-
-    if ($('.start-dlg-wrap .labels-wrap').hasClass("disabled")) {
-      selectedLabels = [];
-      $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
-    }
-    checkButtons();
+    $(".btn-go").toggleClass("active", selectedAreas.length > 0);
   }
 
   //---------------------------------------------
@@ -255,7 +135,7 @@ function StartDialog() {
     $(".start-dlg-wrap .active").removeClass("active");
     $(".dlg-start .init-panel").show();
 
-    $(".step1").addClass("active");
+    $(".step2").addClass("active");
     $(".btn-next").addClass("active");
     $(".btn-prev").removeClass("hide");
     $(".btn-go").removeClass("disable");
@@ -266,7 +146,6 @@ function StartDialog() {
     $(".select-group").find(".body").removeClass("open");
 
     setStats();
-    onSubjectChange();
   }
 
   //---------------------------------------------
@@ -330,10 +209,7 @@ function StartDialog() {
       onPrevNextClick(1);
     });
     $(".dlg-start .btn-go").on("click", () => {
-      onGoClick(onFinish);
-    });
-    $('input[type=radio][name="subjects-radio"]').change(() => {
-      onSubjectChange();
+      onDemandClick(onFinish);
     });
 
     $('.area.math .select-group .header .toggle-btn').click((e) => {
@@ -358,17 +234,15 @@ function StartDialog() {
     $('.area.en .select-item').click((e) => {
       onAreaSelectItemClicked(e, eSubject.en);
     });
-
     $('.btn-test').click((e) => {
       onTestClick(onFinish);
     });
     $('.btn-quiz').click((e) => {
       onQuizClick(onFinish);
     });
-    // $('.btn-practice').click((e) => {
-    //   onBtnPreActionClicked(eActionType.practice);
-    // });
-
+    $('.btn-on-demand').click((e) => {
+      onBtnOnDemandClicked();
+    });
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();
     });
@@ -388,7 +262,7 @@ function StartDialog() {
     currStep = 0;
 
     $(".step").removeClass("active");
-    $(".step1").addClass("active");
+    $(".step2").addClass("active");
 
     $(".btn").removeClass("active");
     $(".btn-next").addClass("active");

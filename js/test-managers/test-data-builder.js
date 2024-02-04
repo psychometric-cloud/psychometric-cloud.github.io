@@ -191,11 +191,31 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
+  function buildOnDemand(filterBy, cb) {
+    let res = [];
+
+    let mathFilter = {
+      selectedAreas: filterBy.selectedAreas,
+      selectedSubject: eSubject.math
+    };
+
+    buildBySubject(mathFilter, false, (res1) => {
+      res = res.concat(res1.slice(0, 12));
+      cb(res);
+    })
+  }
+
+  //---------------------------------------
+
   function build(filterBy, cb) {
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
-    } else {
+    }
+    else if (filterBy.actionType === eActionType.quiz) {
       buildQuiz(cb);
+    }
+    else {
+      buildOnDemand(filterBy, cb);
     }
   }
 

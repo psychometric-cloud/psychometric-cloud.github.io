@@ -1,6 +1,6 @@
 .dlg.dlg-start {
-  width: 505px;
-  height: 475px;
+  width: 605px;
+  height: 405px;
   margin-top: -250px;
   margin-left: -250px;
 }
@@ -13,29 +13,38 @@
   bottom: 0;
   background: #fff;
   z-index: 10;
-  flex-direction: column;
   border-radius: 10px;
 }
 
 .dlg-start .init-panel img {
-  margin-bottom: 35px;
+  width: 300px;
+  margin-right: 30px;
 }
+
+.dlg-start .init-panel .actions {
+  flex-direction: column;
+}
+
 
 .btn-test,
 .btn-quiz,
-.btn-practice {
+.btn-on-demand {
   padding: 20px;
   border-radius: 35px;
   background: #F44336;
   min-width: 140px;
   text-align: center;
-  margin: 0 10px;
+  margin: 5px 0;
   cursor: pointer;
   color: white;
 }
 
 .btn-test {
   background: #008000;
+}
+
+.btn-on-demand {
+  background: #eb9c26;
 }
 
 .dlg-start .panel {
