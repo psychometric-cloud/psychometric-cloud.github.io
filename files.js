@@ -117,4 +117,5 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p2/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p3/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p4/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p5/data.json", //ok
 ];
