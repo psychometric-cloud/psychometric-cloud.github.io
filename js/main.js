@@ -6,7 +6,12 @@ selectedQuestions = [];
 function renderUI(filterBy) {
 
   $(".history-btn").removeClass("show");
-  testComponent.show(filterBy);
+
+  if (filterBy.actionType === eActionType.onDemand) {
+    practiceComponent.show(filterBy);
+  } else {
+    testComponent.show(filterBy);
+  }
 }
 
 /*-------------------------------------------*/
