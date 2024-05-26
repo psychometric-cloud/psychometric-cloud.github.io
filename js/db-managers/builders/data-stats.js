@@ -43,22 +43,24 @@ function DataStats() {
     });
 
     stats[`${subject}_all`] = total;
-    console.log(`${subject}_all`, total)
+    console.log(`${subject}_all`, total);
+
+    return total;
   }
 
   //-----------------------------------------------------
 
   const set = () => {
     setStatsByChapters(stats.math, [...MATH_MAIN_AREAS, ...MATH_SUB_AREAS]);
-    setTotal(stats.math, eSubject.math, MATH_MAIN_AREAS);
+    let t1 = setTotal(stats.math, eSubject.math, MATH_MAIN_AREAS);
 
     setStatsByChapters(stats.he, HE_AREAS);
-    setTotal(stats.he, eSubject.he, HE_AREAS);
+    let t2 = setTotal(stats.he, eSubject.he, HE_AREAS);
 
     setStatsByChapters(stats.en, EN_MAIN_AREAS);
-    setTotal(stats.en, eSubject.en, EN_MAIN_AREAS);
+    let t3 = setTotal(stats.en, eSubject.en, EN_MAIN_AREAS);
 
-    console.log(stats);
+    console.log("Total: " + `${t1 + t2 + t3}`);
   }
 
   //-----------------------------------------------------

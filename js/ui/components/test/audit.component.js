@@ -2,7 +2,7 @@ function AuditComponent() {
 
   let test = [];
   let currItem = 0;
-
+  let currPage = 1;
 
   //---------------------------------------------
 
@@ -107,18 +107,35 @@ function AuditComponent() {
     showItem();
     buildButtons();
 
-    $(".audit-panel .questions-panel .outer-wrapper").toggleClass("small", test.length < 15);
     $(".start-panel").removeClass("show");
     $(".audit-panel").addClass("show");
+  }
+
+
+  //--------------------------------------
+
+  function reset() {
+    currPage = 1;
+    test = [];
+    currItem = 0;
+
+    $(".audit-panel .btn-questions").html("");
+    $(".audit-panel").removeClass("show");
   }
 
   //-------------------------------------
 
   function slideQuestions(dir) {
-    if (dir === 0) {
-      $(".audit-panel .questions-panel .inner-wrapper").removeClass("right").addClass("left");
+    if (dir === 1) {
+      if (currPage < Math.ceil(test.length / 20)) {
+        currPage += 1;
+        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+      }
     } else {
-      $(".audit-panel .questions-panel .inner-wrapper").removeClass("left").addClass("right");
+      if (currPage > 1) {
+        currPage -= 1;
+        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+      }
     }
   }
 
@@ -148,6 +165,7 @@ function AuditComponent() {
   init();
 
   return {
-    show: show
+    show: show,
+    reset: reset
   }
 }

@@ -1,5 +1,24 @@
 function TestDataBuilder() {
 
+  const test_subjects = [
+    {
+      selectedAreas: ['complete', 'restate'],
+      selectedSubject: "en",
+      testQuestions: 20,
+      quizQuestions: 7
+    },
+    {
+      selectedAreas: [],
+      selectedSubject: "math",
+      testQuestions: 25,
+      quizQuestions: 8
+    },
+    {
+      selectedAreas: [],
+      selectedSubject: "he",
+      testQuestions: 30,
+      quizQuestions: 10
+    }];
 
   //---------------------------------------
 
@@ -51,10 +70,10 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function addStandAloneQuestions(questions, filteredData, shuffledIndexes) {
+  function addStandAloneQuestions(questions, maxQuestions, filteredData, shuffledIndexes) {
     let index = 0;
 
-    while (questions.length < 11 && index < filteredData.length) {
+    while (questions.length < maxQuestions && index < filteredData.length) {
       let q = filteredData[shuffledIndexes[index]];
 
       if (q.isStandalone) {
@@ -123,20 +142,18 @@ function TestDataBuilder() {
   function buildBySubject(filterBy, isTest, cb) {
 
     dataFilter.filter(filterBy, (filteredData) => {
-      let questions = [];
+      let questionsArr = [];
+      let maxQuestions = isTest ? filterBy.testQuestions : filterBy.quizQuestions;
 
       filteredData = removeHistory(filterBy.selectedSubject, filteredData);
       let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
-      addStandAloneQuestions(questions, filteredData, shuffledIndexes);
+      addStandAloneQuestions(questionsArr, maxQuestions, filteredData, shuffledIndexes);
+      addFailedQuestion(questionsArr, filteredData);
+      addLikedQuestion(questionsArr, filteredData);
+      addTextQuestions(questionsArr, filteredData, shuffledIndexes);
 
-      if (isTest) {
-        addFailedQuestion(questions, filteredData);
-        addLikedQuestion(questions, filteredData);
-        addTextQuestions(questions, filteredData, shuffledIndexes);
-      }
-
-      cb(questions);
+      cb(questionsArr);
     })
   }
 
@@ -145,27 +162,14 @@ function TestDataBuilder() {
   function buildTest(cb) {
 
     let res = [];
+    let si = utils.shuffleNums(3);
 
-    let enFilter = {
-      selectedAreas: ['complete', 'restate'],
-      selectedSubject: "en"
-    }
-    let mathFilter = {
-      selectedAreas: [],
-      selectedSubject: "math",
-
-    }
-    let heFilter = {
-      selectedAreas: [],
-      selectedSubject: "he"
-    }
-
-    buildBySubject(mathFilter, true, (res1) => {
+    buildBySubject(test_subjects[si[0]], true, (res1) => {
       res = res.concat(res1);
-      buildBySubject(heFilter, true, (res2) => {
+      buildBySubject(test_subjects[si[1]], true, (res2) => {
         res = res.concat(res2);
-        buildBySubject(enFilter, true, (res3) => {
-          res = res.concat(res3.slice(0, 6));
+        buildBySubject(test_subjects[si[2]], true, (res3) => {
+          res = res.concat(res3);
           cb(res);
         })
       })
@@ -177,16 +181,19 @@ function TestDataBuilder() {
   function buildQuiz(cb) {
 
     let res = [];
+    let si = utils.shuffleNums(3);
 
-    let heFilter = {
-      selectedAreas: [],
-      selectedSubject: "he"
-    }
-
-    buildBySubject(heFilter, false, (res1) => {
-      res = res.concat(res1.slice(0, 12));
-      cb(res);
+    buildBySubject(test_subjects[si[0]], false, (res1) => {
+      res = res.concat(res1);
+      buildBySubject(test_subjects[si[1]], false, (res2) => {
+        res = res.concat(res2);
+        buildBySubject(test_subjects[si[2]], false, (res3) => {
+          res = res.concat(res3);
+          cb(res);
+        })
+      })
     })
+
   }
 
   //---------------------------------------

@@ -67,11 +67,7 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  max-width: 70%;
-}
-
-.audit-panel .questions-panel .outer-wrapper.small {
-  max-width: 545px
+  max-width: 1025px;
 }
 
 .audit-panel .questions-panel .inner-wrapper {

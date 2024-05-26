@@ -159,11 +159,7 @@ html {
   height: 100%;
   position: relative;
   overflow: hidden;
-  max-width: 70%;
-}
-
-.header .questions-panel .outer-wrapper.small {
-  max-width: 545px;
+  max-width: 905px;
 }
 
 .header .questions-panel .inner-wrapper {
@@ -172,6 +168,7 @@ html {
   bottom: 0;
   align-items: center;
   display: flex;
+  transition: all 0.125s ease-in-out;
 }
 
 .header .questions-panel .inner-wrapper.left {

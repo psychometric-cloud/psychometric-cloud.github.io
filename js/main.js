@@ -30,13 +30,13 @@ function resetMainUI() {
   $(".start-panel").addClass("show");
   $(".test-panel").removeClass("show");
   $(".test-panel .report").removeClass("show");
-  $(".audit-panel").removeClass("show");
   $(".practice-panel").removeClass("show");
   $(".cloud-tester-panel").removeClass("show");
-  $(".test-questions").removeClass("show");
   $(".btn-check-test").removeClass("show");
   $(".history-btn").addClass("show");
 
+  auditComponent.reset();
+  testComponent.reset();
   startDlg.reset();
 }
 

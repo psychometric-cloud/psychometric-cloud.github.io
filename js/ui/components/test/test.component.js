@@ -3,6 +3,7 @@ function TestComponent() {
   let test = [];
   let currItem = 0;
   let currSubject;
+  let currPage = 1;
 
   //---------------------------------------------
 
@@ -47,10 +48,16 @@ function TestComponent() {
   //-------------------------------------
 
   function slideQuestions(dir) {
-    if (dir === 0) {
-      $(".header .questions-panel .inner-wrapper").removeClass("right").addClass("left");
+    if (dir === 1) {
+      if (currPage < Math.ceil(test.length / 20)) {
+        currPage += 1;
+        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+      }
     } else {
-      $(".header .questions-panel .inner-wrapper").removeClass("left").addClass("right");
+      if (currPage > 1) {
+        currPage -= 1;
+        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+      }
     }
   }
 
@@ -183,7 +190,7 @@ function TestComponent() {
     testDataBuilder.build(filterBy, (_test) => {
 
       test = _test;
-      let maxTime = test.length < 15 ? test.length - 3 : test.length - 7;//currSubject === eSubjects.math ? test.length - 3 : test.length;
+      let maxTime = Math.ceil((test.length * 55) / 60);
 
       testTimer.start(test, () => {
         endTest();
@@ -194,7 +201,6 @@ function TestComponent() {
 
       currSubject = filterBy.selectedSubject;
 
-      $(".header .center .outer-wrapper").toggleClass("small", filterBy.actionType !== eActionType.test);
       $(".header .center").addClass("show");
       $(".test-panel").addClass("show");
     });
@@ -222,6 +228,17 @@ function TestComponent() {
     showItem();
   }
 
+  //--------------------------------------
+
+  function reset() {
+    currPage = 1;
+    test = [];
+    currItem = 0;
+
+    $(".header .questions-panel").removeClass("show");
+    $(".header .questions-panel .btn-questions").html("");
+  }
+
   //-------------------------------------
 
   function init() {
@@ -245,6 +262,7 @@ function TestComponent() {
   init();
 
   return {
-    show: show
+    show: show,
+    reset: reset
   }
 }
