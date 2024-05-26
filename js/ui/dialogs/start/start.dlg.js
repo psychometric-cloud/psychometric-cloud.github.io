@@ -44,7 +44,6 @@ function StartDialog() {
   function onDemandClick(onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
-    debugger;
     onFinish({
       actionType: eActionType.onDemand,
       selectedSubject: eSubject.math,
@@ -145,6 +144,7 @@ function StartDialog() {
     $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
 
     $(".select-group").find(".body").removeClass("open");
+    checkButtons();
 
     setStats();
   }
