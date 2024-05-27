@@ -184,6 +184,8 @@ function TestComponent() {
 
   function show(filterBy) {
 
+    reset();
+
     currItem = 0;
     currSubject = filterBy.selectedSubject;
 
