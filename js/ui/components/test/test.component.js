@@ -19,6 +19,7 @@ function TestComponent() {
       let qData = test[currItem];
       let num = parseInt($(e.target).data("num"));
       qData.proposedAnswer = num;
+
       $(`.header .btn-questions .btn[data-id="${currItem}"]`).addClass("clicked");
 
       if ($(".header .btn-questions .btn.clicked").length === test.length) {
@@ -49,14 +50,14 @@ function TestComponent() {
 
   function slideQuestions(dir) {
     if (dir === 1) {
-      if (currPage < Math.ceil(test.length / 20)) {
+      if (currPage < (2 * Math.ceil(test.length / 20)) - 1) {
         currPage += 1;
-        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 50}%` });
       }
     } else {
       if (currPage > 1) {
         currPage -= 1;
-        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+        $(".header .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 50}%` });
       }
     }
   }
@@ -237,6 +238,7 @@ function TestComponent() {
     test = [];
     currItem = 0;
 
+    $(".header .inner-wrapper").css({ left: 0 });
     $(".header .questions-panel").removeClass("show");
     $(".header .questions-panel .btn-questions").html("");
   }

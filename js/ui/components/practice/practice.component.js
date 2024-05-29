@@ -123,6 +123,7 @@ function PracticeComponent() {
   function show(filterBy) {
 
     currItem = 0;
+    filterBy.selectedPublishers = ["MALLO", "nivr", "800", "psycho", "talmor", "kidim"];
 
     dataFilter.filter(filterBy, (filteredData) => {
       setItemsArr(filteredData);

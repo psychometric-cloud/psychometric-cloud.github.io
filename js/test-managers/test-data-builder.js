@@ -2,23 +2,24 @@ function TestDataBuilder() {
 
   const test_subjects = [
     {
-      selectedAreas: ['complete', 'restate'],
-      selectedSubject: "en",
-      testQuestions: 20,
-      quizQuestions: 7
+      selectedAreas: [],
+      selectedSubject: "he",
+      testQuestions: 30,
+      quizQuestions: 10
     },
     {
       selectedAreas: [],
       selectedSubject: "math",
       testQuestions: 25,
-      quizQuestions: 8
+      quizQuestions: 5
     },
     {
-      selectedAreas: [],
-      selectedSubject: "he",
-      testQuestions: 30,
-      quizQuestions: 10
-    }];
+      selectedAreas: ['complete', 'restate'],
+      selectedSubject: "en",
+      testQuestions: 20,
+      quizQuestions: 4
+    }
+  ];
 
   //---------------------------------------
 
@@ -139,7 +140,9 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildBySubject(filterBy, isTest, cb) {
+  function buildBySubject(filterBy, isTest, cb, isOnDemand) {
+
+    filterBy.selectedPublishers = isTest ? ["MALLO"] : ["nivr", "800", "psycho", "talmor", "kidim"];
 
     dataFilter.filter(filterBy, (filteredData) => {
       let questionsArr = [];
@@ -209,7 +212,7 @@ function TestDataBuilder() {
     buildBySubject(mathFilter, false, (res1) => {
       res = res.concat(res1.slice(0, 12));
       cb(res);
-    })
+    }, true)
   }
 
   //---------------------------------------
@@ -219,6 +222,7 @@ function TestDataBuilder() {
       buildTest(cb);
     }
     else if (filterBy.actionType === eActionType.quiz) {
+
       buildQuiz(cb);
     }
     else {

@@ -119,6 +119,7 @@ function AuditComponent() {
     test = [];
     currItem = 0;
 
+    $(".audit-panel .inner-wrapper").removeClass("left");
     $(".audit-panel .btn-questions").html("");
     $(".audit-panel").removeClass("show");
   }
@@ -127,14 +128,14 @@ function AuditComponent() {
 
   function slideQuestions(dir) {
     if (dir === 1) {
-      if (currPage < Math.ceil(test.length / 20)) {
+      if (currPage < (2 * Math.ceil(test.length / 20)) - 1) {
         currPage += 1;
-        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 50}%` });
       }
     } else {
       if (currPage > 1) {
         currPage -= 1;
-        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 100}%` });
+        $(".audit-panel .questions-panel .inner-wrapper").css({ left: `-${(currPage - 1) * 50}%` });
       }
     }
   }

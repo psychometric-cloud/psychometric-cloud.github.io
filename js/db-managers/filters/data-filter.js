@@ -112,10 +112,12 @@ function DataFilter() {
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
-    filterBySubject(qBank, filterBy, (res1) => {
-      filterByAreas(res1, filterBy, (res2) => {
-        filterByLabels(res2, filterBy, (res3) => {
-          callback(shuffle(res3));
+    filterByPublishers(qBank, filterBy, (res1) => {
+      filterBySubject(res1, filterBy, (res2) => {
+        filterByAreas(res2, filterBy, (res3) => {
+          filterByLabels(res3, filterBy, (res4) => {
+            callback(shuffle(res4));
+          });
         });
       });
     });
