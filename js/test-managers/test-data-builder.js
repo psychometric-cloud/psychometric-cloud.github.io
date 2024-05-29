@@ -5,7 +5,7 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "he",
       testQuestions: 30,
-      quizQuestions: 10
+      quizQuestions: 12
     },
     {
       selectedAreas: [],
@@ -17,7 +17,7 @@ function TestDataBuilder() {
       selectedAreas: ['complete', 'restate'],
       selectedSubject: "en",
       testQuestions: 20,
-      quizQuestions: 4
+      quizQuestions: 5
     }
   ];
 
@@ -184,35 +184,14 @@ function TestDataBuilder() {
   function buildQuiz(cb) {
 
     let res = [];
-    let si = utils.shuffleNums(3);
 
-    buildBySubject(test_subjects[si[0]], false, (res1) => {
+    buildBySubject(test_subjects[0], false, (res1) => {
       res = res.concat(res1);
-      buildBySubject(test_subjects[si[1]], false, (res2) => {
+      buildBySubject(test_subjects[1], false, (res2) => {
         res = res.concat(res2);
-        buildBySubject(test_subjects[si[2]], false, (res3) => {
-          res = res.concat(res3);
-          cb(res);
-        })
+        cb(res);
       })
     })
-
-  }
-
-  //---------------------------------------
-
-  function buildOnDemand(filterBy, cb) {
-    let res = [];
-
-    let mathFilter = {
-      selectedAreas: filterBy.selectedAreas,
-      selectedSubject: eSubject.math
-    };
-
-    buildBySubject(mathFilter, false, (res1) => {
-      res = res.concat(res1.slice(0, 12));
-      cb(res);
-    }, true)
   }
 
   //---------------------------------------
@@ -220,15 +199,10 @@ function TestDataBuilder() {
   function build(filterBy, cb) {
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
-    }
-    else if (filterBy.actionType === eActionType.quiz) {
-
+    } else
       buildQuiz(cb);
-    }
-    else {
-      buildOnDemand(filterBy, cb);
-    }
   }
+
 
   return {
     build: build
