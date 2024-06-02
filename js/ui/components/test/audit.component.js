@@ -53,7 +53,8 @@ function AuditComponent() {
 
       if (qData.aNum !== qData.proposedAnswer) {
         $(".audit-panel .ans-info").addClass("error");
-        $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
+        $(".audit-panel .ans-info").html(`Please answer again!`);
+        // $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
       } else {
         $(".audit-panel .ans-info").removeClass("error");
         $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);

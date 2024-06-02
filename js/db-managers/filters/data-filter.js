@@ -44,18 +44,18 @@ function DataFilter() {
 
   //-----------------------------------------
 
-  filterByPublishers = (arr, filterBy, callback) => {
-    setTimeout(() => {
-      res = [];
+  // filterByPublishers = (arr, filterBy, callback) => {
+  //   setTimeout(() => {
+  //     res = [];
 
-      for (let i = 0; i < arr.length; i++) {
-        if (filterBy.selectedPublishers.includes(arr[i].publisher)) {
-          res.push(arr[i]);
-        }
-      }
-      callback(res);
-    }, 100);
-  }
+  //     for (let i = 0; i < arr.length; i++) {
+  //       if (filterBy.selectedPublishers.includes(arr[i].publisher)) {
+  //         res.push(arr[i]);
+  //       }
+  //     }
+  //     callback(res);
+  //   }, 100);
+  // }
 
   //-----------------------------------------
 
@@ -112,12 +112,10 @@ function DataFilter() {
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
-    filterByPublishers(qBank, filterBy, (res1) => {
-      filterBySubject(res1, filterBy, (res2) => {
-        filterByAreas(res2, filterBy, (res3) => {
-          filterByLabels(res3, filterBy, (res4) => {
-            callback(shuffle(res4));
-          });
+    filterBySubject(qBank, filterBy, (res1) => {
+      filterByAreas(res1, filterBy, (res2) => {
+        filterByLabels(res2, filterBy, (res3) => {
+          callback(shuffle(res3));
         });
       });
     });

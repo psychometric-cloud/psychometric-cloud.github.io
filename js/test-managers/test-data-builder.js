@@ -5,7 +5,7 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "he",
       testQuestions: 30,
-      quizQuestions: 12
+      quizQuestions: 15
     },
     {
       selectedAreas: [],
@@ -17,7 +17,7 @@ function TestDataBuilder() {
       selectedAreas: ['complete', 'restate'],
       selectedSubject: "en",
       testQuestions: 20,
-      quizQuestions: 5
+      quizQuestions: 0
     }
   ];
 
@@ -141,8 +141,6 @@ function TestDataBuilder() {
   //---------------------------------------
 
   function buildBySubject(filterBy, isTest, cb, isOnDemand) {
-
-    filterBy.selectedPublishers = isTest ? ["MALLO"] : ["nivr", "800", "psycho", "talmor", "kidim"];
 
     dataFilter.filter(filterBy, (filteredData) => {
       let questionsArr = [];
