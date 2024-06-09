@@ -4,19 +4,19 @@ function TestDataBuilder() {
     {
       selectedAreas: [],
       selectedSubject: "he",
-      testQuestions: 30,
+      testQuestions: 18,
       quizQuestions: 15
     },
     {
       selectedAreas: [],
       selectedSubject: "math",
-      testQuestions: 25,
+      testQuestions: 15,
       quizQuestions: 5
     },
     {
       selectedAreas: ['complete', 'restate'],
       selectedSubject: "en",
-      testQuestions: 20,
+      testQuestions: 7,
       quizQuestions: 0
     }
   ];
