@@ -51,14 +51,14 @@ function AuditComponent() {
       let src = srcBuilder.imageUrl(qData, "questions");
       $(".audit-panel .main .col2 .img").attr('src', src);
 
-      if (qData.aNum !== qData.proposedAnswer) {
-        $(".audit-panel .ans-info").addClass("error");
-        $(".audit-panel .ans-info").html(`Please answer again!`);
-        // $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
-      } else {
-        $(".audit-panel .ans-info").removeClass("error");
-        $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);
-      }
+      // if (qData.aNum !== qData.proposedAnswer) {
+      //   $(".audit-panel .ans-info").addClass("error");
+      //   $(".audit-panel .ans-info").html(`Please answer again!`);
+      //   // $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
+      // } else {
+      //   $(".audit-panel .ans-info").removeClass("error");
+      //   $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);
+      // }
 
       let showTags = qData.chapter.startsWith('math') && !qData.qAreas.includes('chart');
       $(".tags-btn").toggleClass("show", showTags);
