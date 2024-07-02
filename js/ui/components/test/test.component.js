@@ -36,14 +36,15 @@ function TestComponent() {
 
   function endTest() {
     testTimer.end();
+    alert("time is over");
 
-    let stat = reviewTest(test);
-    testHistory.add(test, currSubject, stat);
+    // let stat = reviewTest(test);
+    // testHistory.add(test, currSubject, stat);
 
-    $(".header .questions-panel").removeClass("show");
-    // $(".header .btn-check-test").removeClass("show");
+    // $(".header .questions-panel").removeClass("show");
+    // // $(".header .btn-check-test").removeClass("show");
 
-    reportComponent.show(test, stat);
+    // reportComponent.show(test, stat);
   }
 
   //-------------------------------------
