@@ -5,7 +5,7 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "he",
       testQuestions: 18,
-      quizQuestions: 15
+      quizQuestions: 10
     },
     {
       selectedAreas: [],
@@ -17,7 +17,7 @@ function TestDataBuilder() {
       selectedAreas: ['complete', 'restate'],
       selectedSubject: "en",
       testQuestions: 7,
-      quizQuestions: 0
+      quizQuestions: 10
     }
   ];
 

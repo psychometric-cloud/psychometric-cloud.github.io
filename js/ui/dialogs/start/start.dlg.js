@@ -245,6 +245,9 @@ function StartDialog() {
     $('.btn-quiz.quiz-math').click((e) => {
       onQuizClick(1, onFinish);
     });
+    $('.btn-quiz.quiz-en').click((e) => {
+      onQuizClick(2, onFinish);
+    });
     $('.btn-on-demand').click((e) => {
       onBtnOnDemandClicked();
     });
