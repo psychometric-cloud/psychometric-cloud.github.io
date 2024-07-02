@@ -28,11 +28,12 @@ function StartDialog() {
 
   /*-------------------------------------------*/
 
-  function onQuizClick(onFinish) {
+  function onQuizClick(quizType, onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
     onFinish({
       actionType: eActionType.quiz,
+      quizType: quizType,
       selectedSubject: "",
       selectedAreas: [],
       selectedLabels: []
@@ -238,8 +239,11 @@ function StartDialog() {
     $('.btn-test').click((e) => {
       onTestClick(onFinish);
     });
-    $('.btn-quiz').click((e) => {
-      onQuizClick(onFinish);
+    $('.btn-quiz.quiz-he').click((e) => {
+      onQuizClick(0, onFinish);
+    });
+    $('.btn-quiz.quiz-math').click((e) => {
+      onQuizClick(1, onFinish);
     });
     $('.btn-on-demand').click((e) => {
       onBtnOnDemandClicked();

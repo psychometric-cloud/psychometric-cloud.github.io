@@ -183,11 +183,11 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildQuiz(cb) {
+  function buildQuiz(filterBy, cb) {
 
     let res = [];
 
-    buildBySubject(test_subjects[1], false, (res1) => {
+    buildBySubject(test_subjects[filterBy.quizType], false, (res1) => {
       res = res.concat(res1);
         cb(res);
     }, true)
@@ -199,7 +199,7 @@ function TestDataBuilder() {
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
     } else
-      buildQuiz(cb);
+      buildQuiz(filterBy, cb);
   }
 
 
