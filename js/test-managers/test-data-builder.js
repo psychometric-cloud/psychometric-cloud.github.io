@@ -11,7 +11,7 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "math",
       testQuestions: 15,
-      quizQuestions: 5
+      quizQuestions: 10
     },
     {
       selectedAreas: ['complete', 'restate'],
@@ -140,7 +140,7 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildBySubject(filterBy, isTest, cb, isOnDemand) {
+  function buildBySubject(filterBy, isTest, cb, isQuiz) {
 
     dataFilter.filter(filterBy, (filteredData) => {
       let questionsArr = [];
@@ -150,9 +150,13 @@ function TestDataBuilder() {
       let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
       addStandAloneQuestions(questionsArr, maxQuestions, filteredData, shuffledIndexes);
-      addFailedQuestion(questionsArr, filteredData);
-      addLikedQuestion(questionsArr, filteredData);
-      addTextQuestions(questionsArr, filteredData, shuffledIndexes);
+
+      if(!isQuiz){
+        addFailedQuestion(questionsArr, filteredData);
+        addLikedQuestion(questionsArr, filteredData);
+        addTextQuestions(questionsArr, filteredData, shuffledIndexes);
+      }
+
 
       cb(questionsArr);
     })
@@ -183,13 +187,10 @@ function TestDataBuilder() {
 
     let res = [];
 
-    buildBySubject(test_subjects[0], false, (res1) => {
+    buildBySubject(test_subjects[1], false, (res1) => {
       res = res.concat(res1);
-      buildBySubject(test_subjects[1], false, (res2) => {
-        res = res.concat(res2);
         cb(res);
-      })
-    })
+    }, true)
   }
 
   //---------------------------------------

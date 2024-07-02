@@ -37,7 +37,7 @@ function resetMainUI() {
   $(".test-panel .report").removeClass("show");
   $(".practice-panel").removeClass("show");
   $(".cloud-tester-panel").removeClass("show");
-  $(".btn-check-test").removeClass("show");
+  // $(".btn-check-test").removeClass("show");
   $(".history-btn").addClass("show");
 
   auditComponent.reset();

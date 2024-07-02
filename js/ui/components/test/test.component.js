@@ -22,9 +22,9 @@ function TestComponent() {
 
       $(`.header .btn-questions .btn[data-id="${currItem}"]`).addClass("clicked");
 
-      if ($(".header .btn-questions .btn.clicked").length === test.length) {
-        $(".header .btn-check-test").addClass("show");
-      }
+      // if ($(".header .btn-questions .btn.clicked").length === test.length) {
+      //   $(".header .btn-check-test").addClass("show");
+      // }
       if (currItem < test.length - 1) {
         currItem += 1;
       }
@@ -41,7 +41,7 @@ function TestComponent() {
     testHistory.add(test, currSubject, stat);
 
     $(".header .questions-panel").removeClass("show");
-    $(".header .btn-check-test").removeClass("show");
+    // $(".header .btn-check-test").removeClass("show");
 
     reportComponent.show(test, stat);
   }
