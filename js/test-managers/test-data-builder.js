@@ -11,7 +11,7 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "math",
       testQuestions: 15,
-      quizQuestions: 2
+      quizQuestions: 10
     },
     {
       selectedAreas: ['complete', 'restate'],
