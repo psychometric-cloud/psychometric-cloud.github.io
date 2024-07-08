@@ -5,13 +5,13 @@ function TestDataBuilder() {
       selectedAreas: [],
       selectedSubject: "he",
       testQuestions: 18,
-      quizQuestions: 10
+      quizQuestions: 8
     },
     {
       selectedAreas: [],
       selectedSubject: "math",
       testQuestions: 15,
-      quizQuestions: 10
+      quizQuestions: 8
     },
     {
       selectedAreas: ['complete', 'restate'],
@@ -154,10 +154,9 @@ function TestDataBuilder() {
       if(!isQuiz){
         addFailedQuestion(questionsArr, filteredData);
         addLikedQuestion(questionsArr, filteredData);
-        addTextQuestions(questionsArr, filteredData, shuffledIndexes);
       }
 
-
+      addTextQuestions(questionsArr, filteredData, shuffledIndexes);
       cb(questionsArr);
     })
   }
