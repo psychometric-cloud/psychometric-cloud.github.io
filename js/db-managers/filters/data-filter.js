@@ -35,7 +35,7 @@ function DataFilter() {
     res = [];
 
     for (let i = 0; i < arr.length; i++) {
-      if (filterBy.selectedYear === arr[i].year && filterBy.selectedSeason === arr[i].season) {
+      if (parseInt(arr[i].year) >= 2014) { // && filterBy.selectedSeason === arr[i].season
         res.push(arr[i]);
       }
     }
@@ -112,10 +112,12 @@ function DataFilter() {
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
-    filterBySubject(qBank, filterBy, (res1) => {
-      filterByAreas(res1, filterBy, (res2) => {
-        filterByLabels(res2, filterBy, (res3) => {
-          callback(shuffle(res3));
+    filterByYear(qBank, filterBy, (res1) => {
+      filterBySubject(res1, filterBy, (res2) => {
+        filterByAreas(res2, filterBy, (res3) => {
+          filterByLabels(res3, filterBy, (res4) => {
+            callback(shuffle(res4));
+          });
         });
       });
     });
