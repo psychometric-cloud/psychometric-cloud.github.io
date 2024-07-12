@@ -56,38 +56,38 @@ window.urlsList = [
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/apr/data.json", //ok
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2014/feb/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/dec/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/sep/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/jul/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/apr/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/feb/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/dec/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/sep/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/jul/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/apr/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2013/feb/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/dec/data.json", //ok 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/ps1/data.json",//ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/dec/data.json", //ok 
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/oct/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/ps1/data.json",//ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/apr/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/feb/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/jul/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/apr/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2012/feb/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/dec/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/oct/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/jul/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/apr/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/feb/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/dec/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/oct/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/jul/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/apr/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2011/feb/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/dec/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/oct/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/jul/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/apr/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/feb/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/dec/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/oct/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/jul/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/apr/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2010/feb/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/dec/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/oct/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/jul/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/dec/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/oct/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/jul/data.json", //ok
 
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/apr/data.json", //ok
-  "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/feb/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/apr/data.json", //ok
+  // "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/feb/data.json", //ok
 
   // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s1/data.json", //ok
   // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s2/data.json", //ok
