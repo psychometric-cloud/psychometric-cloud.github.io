@@ -35,7 +35,7 @@ function DataFilter() {
     res = [];
 
     for (let i = 0; i < arr.length; i++) {
-      if (parseInt(arr[i].year) >= 2014) { // && filterBy.selectedSeason === arr[i].season
+      if (parseInt(arr[i].year) >= 2013) { // && filterBy.selectedSeason === arr[i].season
         res.push(arr[i]);
       }
     }
