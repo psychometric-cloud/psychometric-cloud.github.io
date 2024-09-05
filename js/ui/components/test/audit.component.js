@@ -8,6 +8,8 @@ function AuditComponent() {
 
   function openTagsDialog() {
     tagsDialog.open(test[currItem]);
+
+
   }
   //-------------------------------------
 
@@ -45,20 +47,13 @@ function AuditComponent() {
     let qData = test[currItem];
 
     if (qData) {
+      setExample();
+
       let title = srcBuilder.getTitle(qData);
       $(".audit-panel .main .col2 .title").text(title);
 
       let src = srcBuilder.imageUrl(qData, "questions");
       $(".audit-panel .main .col2 .img").attr('src', src);
-
-      // if (qData.aNum !== qData.proposedAnswer) {
-      //   $(".audit-panel .ans-info").addClass("error");
-      //   $(".audit-panel .ans-info").html(`Please answer again!`);
-      //   // $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. You marked <b>${qData.proposedAnswer}</b>`);
-      // } else {
-      //   $(".audit-panel .ans-info").removeClass("error");
-      //   $(".audit-panel .ans-info").html(`The correct answer is <b>${qData.aNum}</b>. Great work!`);
-      // }
 
       let showTags = qData.chapter.startsWith('math') && !qData.qAreas.includes('chart');
       $(".tags-btn").toggleClass("show", showTags);
@@ -141,6 +136,27 @@ function AuditComponent() {
     }
   }
 
+    //---------------------------------------------
+
+    function toggleExample() {
+
+      let qData = test[currItem];
+
+      qData.example = !qData.example;
+      labelsManager.storeQuestion(qData);
+
+      $(`.audit-panel .example-btn`).toggleClass("select", qData.example);
+  }
+
+  //---------------------------------------------
+
+  function setExample() {
+
+    let example = labelsManager.getQuestionLabels(test[currItem]);
+    $(`.audit-panel .example-btn`).toggleClass("select", example);
+  }
+  
+
   //-------------------------------------
 
   function init() {
@@ -150,8 +166,8 @@ function AuditComponent() {
     $(".audit-panel .icon-txt").click(() => {
       onMoreClick();
     });
-    $('.audit-panel .tags-btn').click((e) => {
-      openTagsDialog();
+    $('.audit-panel .example-btn').click((e) => {
+      toggleExample();
     });
     $('.audit-panel .q-labels .learn').click((e) => {
       onLabelLearnMoreClicked();

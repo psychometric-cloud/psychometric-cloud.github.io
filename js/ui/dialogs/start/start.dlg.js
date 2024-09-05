@@ -7,6 +7,7 @@ const eSubject = {
 function StartDialog() {
 
   let selectedAreas = [];
+  let btnExample = false;
 
   function show(show) {
     reset();
@@ -28,6 +29,28 @@ function StartDialog() {
 
   /*-------------------------------------------*/
 
+  function onMathQuizClick() {
+    $(".dlg-start .actions").removeClass("show");
+    $(".dlg-start .lite-quiz-panel").addClass("show");
+  }
+
+  /*-------------------------------------------*/
+
+  function onLevelQuizClick(level, onFinish) {
+    $(".start-dlg-wrap").removeClass("active");
+
+    onFinish({
+      actionType: eActionType.quiz,
+      quizType: 1,
+      level: level,
+      selectedSubject: "",
+      selectedAreas: []
+    });
+  }
+
+
+  /*-------------------------------------------*/
+
   function onQuizClick(quizType, onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
@@ -35,8 +58,7 @@ function StartDialog() {
       actionType: eActionType.quiz,
       quizType: quizType,
       selectedSubject: "",
-      selectedAreas: [],
-      selectedLabels: []
+      selectedAreas: []
     });
   }
 
@@ -46,10 +68,10 @@ function StartDialog() {
     $(".start-dlg-wrap").removeClass("active");
 
     onFinish({
+      example:btnExample,
       actionType: eActionType.onDemand,
-      selectedSubject: eSubject.math,
-      selectedAreas: selectedAreas,
-      selectedLabels: []
+      selectedSubject: btnExample ? null: [eSubject.math],
+      selectedAreas: btnExample ? []: selectedAreas
     });
   }
 
@@ -123,7 +145,7 @@ function StartDialog() {
   //--------------------------------------------
 
   function checkButtons() {
-    $(".btn-go").toggleClass("active", selectedAreas.length > 0);
+    $(".btn-go").toggleClass("active", selectedAreas.length > 0 || btnExample);
   }
 
   //---------------------------------------------
@@ -144,10 +166,21 @@ function StartDialog() {
     $('.start-dlg-wrap .toggle-lbl input').prop('checked', false);
     $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
 
+    $(".dlg-start .actions").removeClass("show").addClass("show");
+    $(".dlg-start .lite-quiz-panel").removeClass("show");
+
     $(".select-group").find(".body").removeClass("open");
     checkButtons();
 
     setStats();
+  }
+  
+  //---------------------------------------------
+
+  function onBtnExampleClicked(){
+    btnExample = !btnExample;
+      $('.dlg-start .btn-example').toggleClass("checked", btnExample);
+      checkButtons();
   }
 
   //---------------------------------------------
@@ -242,14 +275,26 @@ function StartDialog() {
     $('.btn-quiz.quiz-he').click((e) => {
       onQuizClick(0, onFinish);
     });
-    $('.btn-quiz.quiz-math').click((e) => {
-      onQuizClick(1, onFinish);
+    $('.btn-quiz.quiz-math').click((e) => {  //shaul  
+      onMathQuizClick();
     });
     $('.btn-quiz.quiz-en').click((e) => {
       onQuizClick(2, onFinish);
     });
     $('.btn-on-demand').click((e) => {
       onBtnOnDemandClicked();
+    });
+    $('.btn-quiz.lite-math').click((e) => {  //shaul
+      onLevelQuizClick(1, onFinish);
+    });
+    $('.btn-quiz.meduim-math').click((e) => {
+      onLevelQuizClick(2, onFinish);
+    });
+    $('.btn-quiz.advance-math').click((e) => {
+      onLevelQuizClick(3, onFinish);
+    });
+    $('.btn-quiz.mixed-math').click((e) => {
+      onQuizClick(1, onFinish);
     });
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();
@@ -259,6 +304,9 @@ function StartDialog() {
     });
     $('.start-dlg-wrap .toggle-lbl input').click((e) => {
       onBtnToggleLblClicked();
+    });
+    $('.dlg-start .btn-example').click((e) => {
+      onBtnExampleClicked();
     });
   }
 

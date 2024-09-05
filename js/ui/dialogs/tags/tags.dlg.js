@@ -5,6 +5,7 @@ function TagsDialog() {
   function open(_qData) {
 
     qData = _qData;
+
     $(".tags-panel").removeClass("show");
 
     if (qData.chapter.startsWith("math")) {

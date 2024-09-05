@@ -30,32 +30,22 @@ function DataFilter() {
 
   //-----------------------------------------
 
-  filterByYear = (arr, filterBy, callback) => {
+  filterByLevels = (arr, filterBy, callback) => {
 
-    res = [];
+    if(_.isNumber(filterBy.minQuestion) && _.isNumber(filterBy.maxQuestion)){
+      res = [];
 
-    for (let i = 0; i < arr.length; i++) {
-      if (parseInt(arr[i].year) >= 2013) { // && filterBy.selectedSeason === arr[i].season
-        res.push(arr[i]);
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].qNum >= filterBy.minQuestion && arr[i].qNum <= filterBy.maxQuestion) {
+          res.push(arr[i]);
+        }
       }
+      callback(res);
+    }else{
+      callback(arr);
     }
-    callback(res);
   }
 
-  //-----------------------------------------
-
-  // filterByPublishers = (arr, filterBy, callback) => {
-  //   setTimeout(() => {
-  //     res = [];
-
-  //     for (let i = 0; i < arr.length; i++) {
-  //       if (filterBy.selectedPublishers.includes(arr[i].publisher)) {
-  //         res.push(arr[i]);
-  //       }
-  //     }
-  //     callback(res);
-  //   }, 100);
-  // }
 
   //-----------------------------------------
 
@@ -63,12 +53,16 @@ function DataFilter() {
     setTimeout(() => {
       res = [];
 
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].chapter.toLowerCase().startsWith(filterBy.selectedSubject)) {
-          res.push(arr[i]);
+      if(_.isNull(filterBy.selectedSubject)){
+        callback(arr);
+      }else{
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].chapter.toLowerCase().startsWith(filterBy.selectedSubject)) {
+            res.push(arr[i]);
+          }
         }
+        callback(res);
       }
-      callback(res);
     }, 100);
   }
 
@@ -78,18 +72,13 @@ function DataFilter() {
   filterByLabels = (arr, filterBy, callback) => {
     setTimeout(() => {
 
-      if (_.isEmpty(filterBy.selectedLabels)) {
+      if (!filterBy.example) {
         callback(arr);
       } else {
         res = [];
         for (let i = 0; i < arr.length; i++) {
-          for (let j = 0; j < filterBy.selectedLabels.length; j++) {
-            if (arr[i].labels.length > 0) {
-              if (arr[i].labels.includes(filterBy.selectedLabels[j])) {
-                res.push(arr[i]);
-                break;
-              }
-            }
+            if (arr[i].example ) {
+              res.push(arr[i]);
           }
         }
         callback(res);
@@ -112,8 +101,9 @@ function DataFilter() {
   //-----------------------------------------
 
   filter = (filterBy, callback) => {
-    filterByYear(qBank, filterBy, (res1) => {
-      filterBySubject(res1, filterBy, (res2) => {
+
+    filterBySubject(qBank, filterBy, (res1) => {
+      filterByLevels(res1, filterBy, (res2) => {
         filterByAreas(res2, filterBy, (res3) => {
           filterByLabels(res3, filterBy, (res4) => {
             callback(shuffle(res4));

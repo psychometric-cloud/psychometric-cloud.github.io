@@ -89,10 +89,10 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/apr/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/MALLO/2009/feb/data.json", //ok
 
-  // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s1/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s2/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s3/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s4/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s1/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s2/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s3/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/onexone/s4/data.json", //ok
 
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s1/data.json", //ok 
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s2/data.json", //ok 
@@ -103,21 +103,21 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s7/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/nivr/s8/data.json", //ok
 
-  // "https://psychometric-cloud-part2.github.io/assets/questions/800/s8/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/800/s7/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/800/s8/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/800/s7/data.json", //ok
 
-  // "https://psychometric-cloud-part2.github.io/assets/questions/talmor/charts/data.json",  //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/talmor/marathon/data.json",  //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/talmor/deduce/data.json",  //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/talmor/probs/data.json",  //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/charts/data.json",  //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/marathon/data.json",  //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/deduce/data.json",  //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/talmor/probs/data.json",  //ok
 
-  // "https://psychometric-cloud-part2.github.io/assets/questions/kidum/s1/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/kidum/s1/data.json", //ok
 
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/analogies/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/completions/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p1/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p2/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p3/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p4/data.json", //ok
-  // "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p5/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/analogies/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/completions/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p1/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p2/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p3/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p4/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p5/data.json", //ok
 ];

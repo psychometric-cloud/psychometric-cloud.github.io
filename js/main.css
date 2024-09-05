@@ -290,3 +290,24 @@ html {
 .start-panel .start-btn.show {
   display: block;
 }
+
+
+.example-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.example-btn svg path {
+  fill: none;
+}
+
+
+.example-btn.select svg path {
+  fill: red;
+}

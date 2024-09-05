@@ -43,9 +43,8 @@ function QuestionBuilder() {
         aNum: parseInt(qInfo[2]),
         isStandalone: areas[0] !== "chart" && areas[0] !== "reading"
       }
-      q.labels = labelsManager.getQuestionLabels(q);
-      q.qAreas = tagsManager.getStoredQuestionTags(q);
-
+      q.example = labelsManager.getQuestionLabels(q);
+      
       if (!q.isStandalone) {
         if (isFirstMember(q)) {
           q.isFirst = true;

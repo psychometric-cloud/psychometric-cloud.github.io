@@ -5,11 +5,6 @@ function TestComponent() {
   let currSubject;
   let currPage = 1;
 
-  //---------------------------------------------
-
-  function openTagsDialog() {
-    tagsDialog.open(test[currItem]);
-  }
 
   //-------------------------------------------------
 
@@ -71,7 +66,7 @@ function TestComponent() {
       if (test[i].aNum === test[i].proposedAnswer) {
         correct += 1;
       } else {
-        setFailLabel(test[i]);
+        // setFailLabel(test[i]);  not required
       }
     }
     return {
@@ -248,9 +243,6 @@ function TestComponent() {
   function init() {
     $(".test-panel .footer .answers .answer").click((e) => {
       onAnswerClick(e);
-    });
-    $('.test-panel .tags-btn').click((e) => {
-      openTagsDialog();
     });
     $(".header .btn-check-test").unbind("click").click((e) => {
       endTest();

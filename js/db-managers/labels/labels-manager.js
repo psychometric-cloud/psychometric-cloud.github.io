@@ -26,7 +26,7 @@ function LabelsManager() {
       return !isQuestionEqual(q, question);
     });
 
-    if (!_.isEmpty(question.labels)) {
+    if (question.example) {
       labeledQuestions.push(question)
     }
   }
@@ -43,10 +43,10 @@ function LabelsManager() {
   function getQuestionLabels(question) {
     for (let i = 0; i < labeledQuestions.length; i++) {
       if (isQuestionEqual(labeledQuestions[i], question)) {
-        return labeledQuestions[i].labels || [];
+        return labeledQuestions[i].example;
       }
     }
-    return [];
+    return false;
   }
 
   _loadLabels();

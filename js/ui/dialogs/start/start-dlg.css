@@ -22,9 +22,19 @@
 }
 
 .dlg-start .init-panel .actions {
+  display:none;
   flex-direction: column;
 }
 
+
+.dlg-start .lite-quiz-panel{
+  display: none;
+  flex-direction: column;
+}
+
+.dlg-start .actions.show, .dlg-start .lite-quiz-panel.show{
+  display: flex;
+}
 
 .btn-test,
 .btn-quiz,
@@ -166,4 +176,21 @@
 
 .dlg-start .toggle-lbl {
   margin-right: 15px;
+}
+
+.dlg-start .btn-example{
+  margin-top: 10px;
+  padding-left: 8px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+ 
+
+.dlg-start .btn-example svg{
+  fill: none
+}
+ 
+
+.dlg-start .btn-example.checked svg{
+  fill: red;
 }

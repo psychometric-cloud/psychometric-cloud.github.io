@@ -58,16 +58,6 @@ function TestDataBuilder() {
     return res;
   }
 
-  //---------------------------------------
-
-  function notIncluded(questions, q) {
-    for (let i = 0; i < questions.length; i++) {
-      if (isQuestionEqual(questions[i], q)) {
-        return false;
-      }
-    }
-    return true;
-  }
 
   //---------------------------------------
 
@@ -84,37 +74,6 @@ function TestDataBuilder() {
     }
   }
 
-  //---------------------------------------
-
-  function addFailedQuestion(questions, filteredData) {
-
-    for (let i = 0; i < filteredData.length; i++) {
-      let q = filteredData[i];
-
-      if (q.labels.includes("failed") &&
-        q.qAreas[0] !== "chart" &&
-        notIncluded(questions, q)) {
-        questions.push(q);
-        break;
-      }
-    }
-  }
-
-  //---------------------------------------
-
-  function addLikedQuestion(questions, filteredData) {
-
-    for (let i = 0; i < filteredData.length; i++) {
-      let q = filteredData[i];
-
-      if (q.labels.includes("example") &&
-        q.qAreas[0] !== "chart" &&
-        notIncluded(questions, q)) {
-        questions.push(q);
-        break;
-      }
-    }
-  }
 
   //-------------------------------------
 
@@ -150,12 +109,6 @@ function TestDataBuilder() {
       let shuffledIndexes = utils.shuffleNums(filteredData.length);
 
       addStandAloneQuestions(questionsArr, maxQuestions, filteredData, shuffledIndexes);
-
-      if(!isQuiz){
-        addFailedQuestion(questionsArr, filteredData);
-        addLikedQuestion(questionsArr, filteredData);
-      }
-
       addTextQuestions(questionsArr, filteredData, shuffledIndexes);
       cb(questionsArr);
     })
@@ -186,19 +139,49 @@ function TestDataBuilder() {
 
     let res = [];
 
-    buildBySubject(test_subjects[filterBy.quizType], false, (res1) => {
+    buildBySubject(filterBy, false, (res1) => {
       res = res.concat(res1);
         cb(res);
-    }, true)
+    }, true);
+  }
+
+  //---------------------------------------
+
+  function buildLevelQuiz(filterBy, cb) {
+
+    let _filterBy = structuredClone(test_subjects[filterBy.quizType]);
+
+    if(filterBy.level === 1){
+      _filterBy.minQuestion = 1;
+      _filterBy.maxQuestion = 6;
+    }
+    
+    else if(filterBy.level === 2){
+      _filterBy.minQuestion = 8;
+      _filterBy.maxQuestion = 14;
+    }
+
+    else if(filterBy.level === 3){
+      _filterBy.minQuestion = 15;
+      _filterBy.maxQuestion = 20;
+    }
+
+     buildQuiz(_filterBy, cb);
   }
 
   //---------------------------------------
 
   function build(filterBy, cb) {
+
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
-    } else
-      buildQuiz(filterBy, cb);
+    } else{
+      if(!_.isUndefined(filterBy.level)){
+        buildLevelQuiz(filterBy, cb);
+      }else{
+        buildQuiz(test_subjects[filterBy.quizType], cb);
+      }
+    }            
   }
 
 

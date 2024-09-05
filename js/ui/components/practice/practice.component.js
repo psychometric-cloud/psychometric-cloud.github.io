@@ -25,6 +25,7 @@ function PracticeComponent() {
     let qData = itemsArr[currItem];
 
     resetPanels();
+    setExample();
 
     if (qData.isStandalone) {
       setMainPanel(qData);
@@ -114,10 +115,24 @@ function PracticeComponent() {
 
   //---------------------------------------------
 
-  function openTagsDialog() {
-    tagsDialog.open(itemsArr[currItem]);
+  function toggleExample() {
+
+      let qData = itemsArr[currItem];
+
+      qData.example = !!qData.example;
+      labelsManager.storeQuestion(qData);
+
+      $(`.practice-panel  .btn-example`).toggleClass("select", qData.example);
   }
 
+  //---------------------------------------------
+
+  function setExample() {
+
+    let qData = itemsArr[currItem];
+    $(`.practice-panel  .btn-example`).toggleClass("select", qData.example);
+  }
+  
   //-------------------------------------
 
   function show(filterBy) {
@@ -150,8 +165,8 @@ function PracticeComponent() {
     $(".practice-panel .reading-box .left").click(() => {
       onReadingBoxClick();
     });
-    $('.practice-panel .tags-btn').click((e) => {
-      openTagsDialog();
+    $('.practice-panel .example-btn').click((e) => {
+      toggleExample();
     });
 
   }

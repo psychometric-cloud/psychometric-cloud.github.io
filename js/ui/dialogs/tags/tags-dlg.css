@@ -1,4 +1,4 @@
-.tags-btn {
+/* .example-btn {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -9,13 +9,16 @@
   cursor: pointer;
 }
 
-.tags-btn.show {
-  display: flex;
+.example-btn svg path {
+  fill: none;
 }
 
-.tags-btn:hover svg {
-  stroke: red;
+.example-btn.show {
+  display: flex;
 }
+ */
+
+
 
 .tags-panel {
   display: none;
