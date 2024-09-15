@@ -38,11 +38,11 @@ window.urlsList = [
   // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/apr/data.json", //ok
   // "https://psychometric-cloud.github.io/assets/questions/MALLO/2017/jul/data.json", //ok
 
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json", //ok
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json", //ok
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json", //ok
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json", //ok
-  "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json", //ok
+  // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/dec/data.json", //ok
+  // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/apr/data.json", //ok
+  // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/sep/data.json", //ok
+  // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/jul/data.json", //ok
+  // "https://psychometric-cloud.github.io/assets/questions/MALLO/2016/feb/data.json", //ok
 
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2015/dec/data.json", //ok
   "https://psychometric-cloud.github.io/assets/questions/MALLO/2015/sep/data.json", //ok
