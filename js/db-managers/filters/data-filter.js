@@ -49,6 +49,24 @@ function DataFilter() {
 
   //-----------------------------------------
 
+  filterByPublisher = (arr, filterBy, callback) => {
+
+    if(!_.isUndefined(filterBy.publisher)){
+      res = [];
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].publisher == filterBy.publisher) {
+          res.push(arr[i]);
+        }
+      }
+      callback(res);
+    }else{
+      callback(arr);
+    }
+  }
+
+  //-----------------------------------------
+
   filterBySubject = (arr, filterBy, callback) => {
     setTimeout(() => {
       res = [];
@@ -103,13 +121,15 @@ function DataFilter() {
   filter = (filterBy, callback) => {
 
     filterBySubject(qBank, filterBy, (res1) => {
-      filterByLevels(res1, filterBy, (res2) => {
-        filterByAreas(res2, filterBy, (res3) => {
-          filterByLabels(res3, filterBy, (res4) => {
-            callback(shuffle(res4));
+      filterByPublisher(res1, filterBy, (res2) => {
+        filterByLevels(res2, filterBy, (res3) => {
+          filterByAreas(res3, filterBy, (res4) => {
+            filterByLabels(res4, filterBy, (res5) => {
+              callback(shuffle(res5));
+            });
           });
         });
-      });
+     });
     });
   }
 

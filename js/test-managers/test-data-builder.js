@@ -166,6 +166,10 @@ function TestDataBuilder() {
       _filterBy.maxQuestion = 20;
     }
 
+    else if(filterBy.level === 4){
+      _filterBy.publisher = "psycho";
+    }
+
      buildQuiz(_filterBy, cb);
   }
 

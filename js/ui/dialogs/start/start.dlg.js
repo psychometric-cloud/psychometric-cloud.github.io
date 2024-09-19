@@ -296,6 +296,9 @@ function StartDialog() {
     $('.btn-quiz.mixed-math').click((e) => {
       onQuizClick(1, onFinish);
     });
+    $('.btn-quiz.psycho-math').click((e) => {  //shaul
+      onLevelQuizClick(4, onFinish);
+    });
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();
     });
