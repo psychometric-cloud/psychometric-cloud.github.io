@@ -71,6 +71,10 @@
   overflow: auto;
 }
 
+.test-panel .main .qa-wrap .question {
+  max-width:950px;
+}
+
 .test-panel .main .qa-wrap .qa {
   display: none;
 }
