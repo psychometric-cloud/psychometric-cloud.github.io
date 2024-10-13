@@ -39,7 +39,7 @@ function SrcBuilder() {
   //---------------------------------------
 
   function getTitle(qData) {
-    return `${getPublisher(qData).toLowerCase()} ${!isNaN(qData.year) ? qData.year : ''} ${qData.season} ${getName(qData)}`
+    return `${getPublisher(qData).toLowerCase()} ${qData.year} ${qData.season} ${getName(qData)}`
   }
 
   //---------------------------------------
