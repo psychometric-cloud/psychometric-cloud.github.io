@@ -167,7 +167,7 @@ function TestDataBuilder() {
     }
 
     else if(filterBy.level === 4){
-      _filterBy.publisher = "psycho";
+      _filterBy.publisher = "psycho700";
     }
 
      buildQuiz(_filterBy, cb);

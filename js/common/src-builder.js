@@ -1,6 +1,9 @@
 function SrcBuilder() {
 
   function getPublisher(qData) {
+    if(qData.publisher.toUpperCase().startsWith("PSYCHO")){
+      return "PSYCHO"; 
+    }
     return qData.publisher.toUpperCase();
   }
 
@@ -77,6 +80,7 @@ function SrcBuilder() {
       return `${getDomain(qData)}/assets/questions/kidum/${qData.year}`;
     }
     if (publisher === "PSYCHO") {
+      debugger;
       return `${getDomain(qData)}/assets/questions/psycho/${qData.year}`;
     }
     return "";
