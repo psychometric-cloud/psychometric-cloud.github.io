@@ -101,6 +101,7 @@ function TestDataBuilder() {
 
   function buildBySubject(filterBy, isTest, cb, isQuiz) {
 
+    debugger;
     dataFilter.filter(filterBy, (filteredData) => {
       let questionsArr = [];
       let maxQuestions = isTest ? filterBy.testQuestions : filterBy.quizQuestions;
@@ -147,44 +148,15 @@ function TestDataBuilder() {
 
   //---------------------------------------
 
-  function buildLevelQuiz(filterBy, cb) {
-
-    let _filterBy = structuredClone(test_subjects[filterBy.quizType]);
-
-    if(filterBy.level === 1){
-      _filterBy.minQuestion = 1;
-      _filterBy.maxQuestion = 6;
-    }
-    
-    else if(filterBy.level === 2){
-      _filterBy.minQuestion = 8;
-      _filterBy.maxQuestion = 14;
-    }
-
-    else if(filterBy.level === 3){
-      _filterBy.minQuestion = 15;
-      _filterBy.maxQuestion = 20;
-    }
-
-    else if(filterBy.level === 4){
-      _filterBy.publisher = "psycho700";
-    }
-
-     buildQuiz(_filterBy, cb);
-  }
-
-  //---------------------------------------
-
   function build(filterBy, cb) {
 
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
     } else{
-      if(!_.isUndefined(filterBy.level)){
-        buildLevelQuiz(filterBy, cb);
-      }else{
-        buildQuiz(test_subjects[filterBy.quizType], cb);
-      }
+      let _filterBy = structuredClone(test_subjects[filterBy.quizType]);
+      
+      _filterBy.publisher = filterBy.publisher;
+      buildQuiz(_filterBy, cb);
     }            
   }
 

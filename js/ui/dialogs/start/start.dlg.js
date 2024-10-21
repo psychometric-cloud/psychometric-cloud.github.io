@@ -31,35 +31,47 @@ function StartDialog() {
 
   function onMathQuizClick() {
     $(".dlg-start .actions").removeClass("show");
-    $(".dlg-start .lite-quiz-panel").addClass("show");
+    $(".dlg-start .math-quiz-options").addClass("show");
   }
+
+  function onHeQuizClick() {
+    $(".dlg-start .actions").removeClass("show");
+    $(".dlg-start .he-quiz-options").addClass("show");
+  }
+
+  // /*-------------------------------------------*/
+
+  // function onLevelQuizClick(level, onFinish) {
+  //   $(".start-dlg-wrap").removeClass("active");
+
+  //   debugger;
+  //   onFinish({
+  //     actionType: eActionType.quiz,
+  //     quizType: 1,
+  //     level: level,
+  //     selectedSubject: "",
+  //     selectedAreas: []
+  //   });
+  // }
+
 
   /*-------------------------------------------*/
 
-  function onLevelQuizClick(level, onFinish) {
+  function onQuizClick(quizType, publisher, onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
-    onFinish({
-      actionType: eActionType.quiz,
-      quizType: 1,
-      level: level,
-      selectedSubject: "",
-      selectedAreas: []
-    });
-  }
-
-
-  /*-------------------------------------------*/
-
-  function onQuizClick(quizType, onFinish) {
-    $(".start-dlg-wrap").removeClass("active");
-
-    onFinish({
+    let data = {
       actionType: eActionType.quiz,
       quizType: quizType,
       selectedSubject: "",
       selectedAreas: []
-    });
+    }
+
+    if(publisher){
+      data.publisher = publisher;
+    }
+
+    onFinish(data);
   }
 
   /*-------------------------------------------*/
@@ -167,7 +179,8 @@ function StartDialog() {
     $('.start-dlg-wrap .labels-wrap .lbl').removeClass('clicked');
 
     $(".dlg-start .actions").removeClass("show").addClass("show");
-    $(".dlg-start .lite-quiz-panel").removeClass("show");
+    $(".dlg-start .math-quiz-options").removeClass("show");
+    $(".dlg-start .he-quiz-options").removeClass("show");
 
     $(".select-group").find(".body").removeClass("open");
     checkButtons();
@@ -273,31 +286,28 @@ function StartDialog() {
       onTestClick(onFinish);
     });
     $('.btn-quiz.quiz-he').click((e) => {
-      onQuizClick(0, onFinish);
+      onHeQuizClick();
     });
-    $('.btn-quiz.quiz-math').click((e) => {  //shaul  
+    $('.btn-quiz.quiz-math').click((e) => {   
       onMathQuizClick();
     });
     $('.btn-quiz.quiz-en').click((e) => {
-      onQuizClick(2, onFinish);
+      onQuizClick(2, null, onFinish);
     });
     $('.btn-on-demand').click((e) => {
       onBtnOnDemandClicked();
     });
-    $('.btn-quiz.lite-math').click((e) => {  //shaul
-      onLevelQuizClick(1, onFinish);
-    });
-    $('.btn-quiz.meduim-math').click((e) => {
-      onLevelQuizClick(2, onFinish);
-    });
-    $('.btn-quiz.advance-math').click((e) => {
-      onLevelQuizClick(3, onFinish);
-    });
     $('.btn-quiz.mixed-math').click((e) => {
-      onQuizClick(1, onFinish);
+      onQuizClick(1, null, onFinish);
     });
-    $('.btn-quiz.psycho-math').click((e) => {  //shaul
-      onLevelQuizClick(4, onFinish);
+    $('.btn-quiz.psycho-math').click((e) => {  
+      onQuizClick(1, "psycho700", onFinish);
+    });
+    $('.btn-quiz.mixed-he').click((e) => {
+      onQuizClick(0, null, onFinish);
+    });
+    $('.btn-quiz.psycho-he').click((e) => {  
+      onQuizClick(0, "psycho", onFinish);
     });
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();

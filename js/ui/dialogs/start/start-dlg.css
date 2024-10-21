@@ -27,12 +27,14 @@
 }
 
 
-.dlg-start .lite-quiz-panel{
+.dlg-start .math-quiz-options,
+.dlg-start .he-quiz-options{
   display: none;
   flex-direction: column;
 }
 
-.dlg-start .actions.show, .dlg-start .lite-quiz-panel.show{
+.dlg-start .actions.show, .dlg-start .math-quiz-options.show,
+.dlg-start .actions.show, .dlg-start .he-quiz-options.show{
   display: flex;
 }
 
