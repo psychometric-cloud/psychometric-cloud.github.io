@@ -80,7 +80,6 @@ function SrcBuilder() {
       return `${getDomain(qData)}/assets/questions/kidum/${qData.year}`;
     }
     if (publisher === "PSYCHO") {
-      debugger;
       return `${getDomain(qData)}/assets/questions/psycho/${qData.year}`;
     }
     return "";
@@ -103,9 +102,9 @@ function SrcBuilder() {
 
     if (qData.qAreas.length === 2) {
       let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
-      src = `${_src}/${subject}/${qData.chapter.slice(-1)}_${t}.png`
+      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g,'')}_${t}.png`
     } else {
-      src = `${_src}/${subject}/${qData.chapter.slice(-1)}_T.png`
+      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g,'')}_T.png`
     }
     return src;
   }

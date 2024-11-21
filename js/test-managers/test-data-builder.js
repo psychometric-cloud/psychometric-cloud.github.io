@@ -101,7 +101,6 @@ function TestDataBuilder() {
 
   function buildBySubject(filterBy, isTest, cb, isQuiz) {
 
-    debugger;
     dataFilter.filter(filterBy, (filteredData) => {
       let questionsArr = [];
       let maxQuestions = isTest ? filterBy.testQuestions : filterBy.quizQuestions;
