@@ -82,6 +82,9 @@ function SrcBuilder() {
     if (publisher === "PSYCHO") {
       return `${getDomain(qData)}/assets/questions/psycho/${qData.year}`;
     }
+    if (publisher === "COOL") {
+      return `${getDomain(qData)}/assets/questions/cool/${qData.year}`;
+    }
     return "";
   }
 

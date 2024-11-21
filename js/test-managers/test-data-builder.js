@@ -25,7 +25,7 @@ function TestDataBuilder() {
 
   function isQuestionEqual(q1, q2) {
     let res = q1.year == q2.year && // in localstorage years stored as int
-      q1.provider === q2.provider &&
+      q1.publisher === q2.publisher &&
       q1.season === q2.season &&
       q1.chapter === q2.chapter &&
       q1.qNum === q2.qNum;
@@ -37,6 +37,7 @@ function TestDataBuilder() {
 
   function removeHistory(subject, data) {
 
+    debugger;
     let historyTests = testHistory.getTests(subject);
     let res = [];
 
@@ -101,7 +102,7 @@ function TestDataBuilder() {
 
   function buildBySubject(filterBy, isTest, cb, isQuiz) {
 
-    dataFilter.filter(filterBy, (filteredData) => {
+    dataFilter.filter(filterBy, true, (filteredData) => {
       let questionsArr = [];
       let maxQuestions = isTest ? filterBy.testQuestions : filterBy.quizQuestions;
 
@@ -155,6 +156,8 @@ function TestDataBuilder() {
       let _filterBy = structuredClone(test_subjects[filterBy.quizType]);
       
       _filterBy.publisher = filterBy.publisher;
+      _filterBy.example = filterBy.example;
+
       buildQuiz(_filterBy, cb);
     }            
   }

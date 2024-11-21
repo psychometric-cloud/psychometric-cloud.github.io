@@ -118,14 +118,18 @@ function DataFilter() {
 
   //-----------------------------------------
 
-  filter = (filterBy, callback) => {
+  filter = (filterBy, doShuffle, callback) => {
 
     filterBySubject(qBank, filterBy, (res1) => {
       filterByPublisher(res1, filterBy, (res2) => {
         filterByLevels(res2, filterBy, (res3) => {
           filterByAreas(res3, filterBy, (res4) => {
             filterByLabels(res4, filterBy, (res5) => {
-              callback(shuffle(res5));
+              if(doShuffle){
+                callback(shuffle(res5));
+              }else{
+                callback(res5);
+              }
             });
           });
         });

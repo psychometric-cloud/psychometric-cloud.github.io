@@ -112,6 +112,7 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/talmor/probs/data.json",  //ok
 
   "https://psychometric-cloud-part2.github.io/assets/questions/kidum/s1/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/cool/s1/data.json", //ok
 
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/700/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/plus/data.json", //ok

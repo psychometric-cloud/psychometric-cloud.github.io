@@ -119,10 +119,10 @@ function PracticeComponent() {
 
       let qData = itemsArr[currItem];
 
-      qData.example = !!qData.example;
+      qData.example = !qData.example;
       labelsManager.storeQuestion(qData);
 
-      $(`.practice-panel  .btn-example`).toggleClass("select", qData.example);
+      $(`.practice-panel  .example-btn`).toggleClass("select", qData.example);
   }
 
   //---------------------------------------------
@@ -130,7 +130,7 @@ function PracticeComponent() {
   function setExample() {
 
     let qData = itemsArr[currItem];
-    $(`.practice-panel  .btn-example`).toggleClass("select", qData.example);
+    $(`.practice-panel  .example-btn`).toggleClass("select", qData.example);
   }
   
   //-------------------------------------
@@ -140,7 +140,7 @@ function PracticeComponent() {
     currItem = 0;
     // filterBy.selectedPublishers = ["MALLO", "nivr", "800", "psycho", "talmor", "kidim"];
 
-    dataFilter.filter(filterBy, (filteredData) => {
+    dataFilter.filter(filterBy, false, (filteredData) => {
       setItemsArr(filteredData);
       updateButtonsStatus();
       showItem();

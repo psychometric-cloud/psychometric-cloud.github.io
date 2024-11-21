@@ -196,3 +196,25 @@
 .dlg-start .btn-example.checked svg{
   fill: red;
 }
+
+
+.dlg-start .btn-cool {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #fb3c3c;
+  color: red;
+  padding: 10px;
+  width: 90px;
+  position: absolute;
+  top: 104px;
+  left: 210px;
+}
+
+.dlg-start .btn-cool.checked {
+  border: 1px solid red;
+  background: red;
+  color: white;
+}

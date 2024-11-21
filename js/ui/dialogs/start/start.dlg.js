@@ -8,6 +8,7 @@ function StartDialog() {
 
   let selectedAreas = [];
   let btnExample = false;
+  let btnCool = false;
 
   function show(show) {
     reset();
@@ -57,7 +58,7 @@ function StartDialog() {
 
   /*-------------------------------------------*/
 
-  function onQuizClick(quizType, publisher, onFinish) {
+  function onQuizClick(quizType, publisher, example, onFinish) {
     $(".start-dlg-wrap").removeClass("active");
 
     let data = {
@@ -71,6 +72,10 @@ function StartDialog() {
       data.publisher = publisher;
     }
 
+    if(example){
+      data.example = example;
+    }
+
     onFinish(data);
   }
 
@@ -82,8 +87,9 @@ function StartDialog() {
     onFinish({
       example:btnExample,
       actionType: eActionType.onDemand,
-      selectedSubject: btnExample ? null: [eSubject.math],
-      selectedAreas: btnExample ? []: selectedAreas
+      publisher: btnCool ? "cool" : undefined,
+      selectedSubject: btnExample || btnCool ? null: [eSubject.math],
+      selectedAreas: btnExample || btnCool ? []: selectedAreas
     });
   }
 
@@ -157,7 +163,7 @@ function StartDialog() {
   //--------------------------------------------
 
   function checkButtons() {
-    $(".btn-go").toggleClass("active", selectedAreas.length > 0 || btnExample);
+    $(".btn-go").toggleClass("active", selectedAreas.length > 0 || btnExample || btnCool);
   }
 
   //---------------------------------------------
@@ -183,6 +189,9 @@ function StartDialog() {
     $(".dlg-start .he-quiz-options").removeClass("show");
 
     $(".select-group").find(".body").removeClass("open");
+
+    $(".dlg-start .btn-example").removeClass("checked");
+    $(".dlg-start .btn-cool").removeClass("checked");
     checkButtons();
 
     setStats();
@@ -195,6 +204,14 @@ function StartDialog() {
       $('.dlg-start .btn-example').toggleClass("checked", btnExample);
       checkButtons();
   }
+    //---------------------------------------------
+
+    function onBtnCoolClicked(){
+      btnCool = !btnCool;
+      $('.dlg-start .btn-cool').toggleClass("checked", btnCool);
+      checkButtons();
+    }
+  
 
   //---------------------------------------------
 
@@ -290,24 +307,27 @@ function StartDialog() {
     });
     $('.btn-quiz.quiz-math').click((e) => {   
       onMathQuizClick();
-    });
+    }); 
     $('.btn-quiz.quiz-en').click((e) => {
-      onQuizClick(2, null, onFinish);
+      onQuizClick(2, null, false, onFinish);
     });
     $('.btn-on-demand').click((e) => {
       onBtnOnDemandClicked();
     });
     $('.btn-quiz.mixed-math').click((e) => {
-      onQuizClick(1, null, onFinish);
+      onQuizClick(1, null, false, onFinish);
     });
     $('.btn-quiz.psycho-math').click((e) => {  
-      onQuizClick(1, "psycho700", onFinish);
+      onQuizClick(1, "psycho700", false, onFinish);
+    });
+    $('.btn-quiz.examples').click((e) => {  
+      onQuizClick(1, null, true, onFinish);
     });
     $('.btn-quiz.mixed-he').click((e) => {
-      onQuizClick(0, null, onFinish);
+      onQuizClick(0, null, false, onFinish);
     });
     $('.btn-quiz.psycho-he').click((e) => {  
-      onQuizClick(0, "psycho", onFinish);
+      onQuizClick(0, "psycho", false, onFinish);
     });
     $('.start-dlg-wrap .popper').click((e) => {
       resetMainUI();
@@ -320,6 +340,9 @@ function StartDialog() {
     });
     $('.dlg-start .btn-example').click((e) => {
       onBtnExampleClicked();
+    });
+    $('.dlg-start .btn-cool').click((e) => {
+      onBtnCoolClicked();
     });
   }
 
