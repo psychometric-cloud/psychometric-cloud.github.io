@@ -126,4 +126,7 @@ window.urlsList = [
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p3/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p4/data.json", //ok
   "https://psychometric-cloud-part2.github.io/assets/questions/psycho/p5/data.json", //ok
+
+  "https://psychometric-cloud-part2.github.io/assets/questions/ez/marathon/data.json", //ok
+  "https://psychometric-cloud-part2.github.io/assets/questions/ez/practice/data.json" //ok
 ];
