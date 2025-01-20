@@ -68,11 +68,11 @@ function StartDialog() {
       selectedAreas: []
     }
 
-    if(publisher){
+    if (publisher) {
       data.publisher = publisher;
     }
 
-    if(example){
+    if (example) {
       data.example = example;
     }
 
@@ -85,11 +85,11 @@ function StartDialog() {
     $(".start-dlg-wrap").removeClass("active");
 
     onFinish({
-      example:btnExample,
+      example: btnExample,
       actionType: eActionType.onDemand,
       publisher: btnCool ? "cool" : undefined,
-      selectedSubject: btnExample || btnCool ? null: [eSubject.math],
-      selectedAreas: btnExample || btnCool ? []: selectedAreas
+      selectedSubject: btnExample || btnCool ? null : [eSubject.math],
+      selectedAreas: btnExample || btnCool ? [] : selectedAreas
     });
   }
 
@@ -196,22 +196,22 @@ function StartDialog() {
 
     setStats();
   }
-  
+
   //---------------------------------------------
 
-  function onBtnExampleClicked(){
+  function onBtnExampleClicked() {
     btnExample = !btnExample;
-      $('.dlg-start .btn-example').toggleClass("checked", btnExample);
-      checkButtons();
+    $('.dlg-start .btn-example').toggleClass("checked", btnExample);
+    checkButtons();
   }
-    //---------------------------------------------
+  //---------------------------------------------
 
-    function onBtnCoolClicked(){
-      btnCool = !btnCool;
-      $('.dlg-start .btn-cool').toggleClass("checked", btnCool);
-      checkButtons();
-    }
-  
+  function onBtnCoolClicked() {
+    btnCool = !btnCool;
+    $('.dlg-start .btn-cool').toggleClass("checked", btnCool);
+    checkButtons();
+  }
+
 
   //---------------------------------------------
 
@@ -305,9 +305,9 @@ function StartDialog() {
     $('.btn-quiz.quiz-he').click((e) => {
       onHeQuizClick();
     });
-    $('.btn-quiz.quiz-math').click((e) => {   
+    $('.btn-quiz.quiz-math').click((e) => {
       onMathQuizClick();
-    }); 
+    });
     $('.btn-quiz.quiz-en').click((e) => {
       onQuizClick(2, null, false, onFinish);
     });
@@ -317,16 +317,16 @@ function StartDialog() {
     $('.btn-quiz.mixed-math').click((e) => {
       onQuizClick(1, null, false, onFinish);
     });
-    $('.btn-quiz.psycho-math').click((e) => {  
-      onQuizClick(1, "psycho700", false, onFinish);
+    $('.btn-quiz.psycho-math').click((e) => {
+      onQuizClick(1, ["psycho700", "ez"], false, onFinish);
     });
-    $('.btn-quiz.examples').click((e) => {  
+    $('.btn-quiz.examples').click((e) => {
       onQuizClick(1, null, true, onFinish);
     });
     $('.btn-quiz.mixed-he').click((e) => {
       onQuizClick(0, null, false, onFinish);
     });
-    $('.btn-quiz.psycho-he').click((e) => {  
+    $('.btn-quiz.psycho-he').click((e) => {
       onQuizClick(0, "psycho", false, onFinish);
     });
     $('.start-dlg-wrap .popper').click((e) => {

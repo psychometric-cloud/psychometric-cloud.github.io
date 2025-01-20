@@ -1,8 +1,8 @@
 function SrcBuilder() {
 
   function getPublisher(qData) {
-    if(qData.publisher.toUpperCase().startsWith("PSYCHO")){
-      return "PSYCHO"; 
+    if (qData.publisher.toUpperCase().startsWith("PSYCHO")) {
+      return "PSYCHO";
     }
     return qData.publisher.toUpperCase();
   }
@@ -76,6 +76,9 @@ function SrcBuilder() {
     if (publisher === "TALMOR") {
       return `${getDomain(qData)}/assets/questions/talmor/${qData.year}`;
     }
+    if (publisher === "EZ") {
+      return `${getDomain(qData)}/assets/questions/ez/${qData.year}`;
+    }
     if (publisher === "KIDUM") {
       return `${getDomain(qData)}/assets/questions/kidum/${qData.year}`;
     }
@@ -105,9 +108,9 @@ function SrcBuilder() {
 
     if (qData.qAreas.length === 2) {
       let t = qData.qAreas[1] === "text1" ? "T1" : "T2";
-      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g,'')}_${t}.png`
+      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g, '')}_${t}.png`
     } else {
-      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g,'')}_T.png`
+      src = `${_src}/${subject}/${qData.chapter.replace(/\D/g, '')}_T.png`
     }
     return src;
   }

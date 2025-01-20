@@ -117,12 +117,12 @@ function PracticeComponent() {
 
   function toggleExample() {
 
-      let qData = itemsArr[currItem];
+    let qData = itemsArr[currItem];
 
-      qData.example = !qData.example;
-      labelsManager.storeQuestion(qData);
+    qData.example = !qData.example;
+    labelsManager.storeQuestion(qData);
 
-      $(`.practice-panel  .example-btn`).toggleClass("select", qData.example);
+    $(`.practice-panel  .example-btn`).toggleClass("select", qData.example);
   }
 
   //---------------------------------------------
@@ -132,7 +132,7 @@ function PracticeComponent() {
     let qData = itemsArr[currItem];
     $(`.practice-panel  .example-btn`).toggleClass("select", qData.example);
   }
-  
+
   //-------------------------------------
 
   function show(filterBy) {

@@ -32,7 +32,7 @@ function DataFilter() {
 
   filterByLevels = (arr, filterBy, callback) => {
 
-    if(_.isNumber(filterBy.minQuestion) && _.isNumber(filterBy.maxQuestion)){
+    if (_.isNumber(filterBy.minQuestion) && _.isNumber(filterBy.maxQuestion)) {
       res = [];
 
       for (let i = 0; i < arr.length; i++) {
@@ -41,7 +41,7 @@ function DataFilter() {
         }
       }
       callback(res);
-    }else{
+    } else {
       callback(arr);
     }
   }
@@ -51,16 +51,25 @@ function DataFilter() {
 
   filterByPublisher = (arr, filterBy, callback) => {
 
-    if(!_.isUndefined(filterBy.publisher)){
+    if (!_.isUndefined(filterBy.publisher)) {
       res = [];
 
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i].publisher == filterBy.publisher) {
-          res.push(arr[i]);
+        if (_.isString(filterBy.publisher)) {
+          if (arr[i].publisher == filterBy.publisher) {
+            res.push(arr[i]);
+          }
+        }
+        if (_.isArray(filterBy.publisher)) {
+          filterBy.publisher.forEach((filter) => {
+            if (arr[i].publisher == filter) {
+              res.push(arr[i]);
+            }
+          })
         }
       }
       callback(res);
-    }else{
+    } else {
       callback(arr);
     }
   }
@@ -71,9 +80,9 @@ function DataFilter() {
     setTimeout(() => {
       res = [];
 
-      if(_.isNull(filterBy.selectedSubject)){
+      if (_.isNull(filterBy.selectedSubject)) {
         callback(arr);
-      }else{
+      } else {
         for (let i = 0; i < arr.length; i++) {
           if (arr[i].chapter.toLowerCase().startsWith(filterBy.selectedSubject)) {
             res.push(arr[i]);
@@ -95,8 +104,8 @@ function DataFilter() {
       } else {
         res = [];
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i].example ) {
-              res.push(arr[i]);
+          if (arr[i].example) {
+            res.push(arr[i]);
           }
         }
         callback(res);
@@ -125,15 +134,15 @@ function DataFilter() {
         filterByLevels(res2, filterBy, (res3) => {
           filterByAreas(res3, filterBy, (res4) => {
             filterByLabels(res4, filterBy, (res5) => {
-              if(doShuffle){
+              if (doShuffle) {
                 callback(shuffle(res5));
-              }else{
+              } else {
                 callback(res5);
               }
             });
           });
         });
-     });
+      });
     });
   }
 

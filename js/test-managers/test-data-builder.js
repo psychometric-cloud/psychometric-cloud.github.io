@@ -37,7 +37,6 @@ function TestDataBuilder() {
 
   function removeHistory(subject, data) {
 
-    debugger;
     let historyTests = testHistory.getTests(subject);
     let res = [];
 
@@ -142,7 +141,7 @@ function TestDataBuilder() {
 
     buildBySubject(filterBy, false, (res1) => {
       res = res.concat(res1);
-        cb(res);
+      cb(res);
     }, true);
   }
 
@@ -152,14 +151,14 @@ function TestDataBuilder() {
 
     if (filterBy.actionType === eActionType.test) {
       buildTest(cb);
-    } else{
+    } else {
       let _filterBy = structuredClone(test_subjects[filterBy.quizType]);
-      
+
       _filterBy.publisher = filterBy.publisher;
       _filterBy.example = filterBy.example;
 
       buildQuiz(_filterBy, cb);
-    }            
+    }
   }
 
 
