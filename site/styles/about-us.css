@@ -1,0 +1,343 @@
+@import "_common.css";
+@import "_navbar.css";
+@import "_footer.css";
+@import "_get-start.css";
+
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 185px;
+  margin-bottom: 150px;
+
+  .wrapper {
+    width: 1000px;
+    height: 598px;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle at 1px 1px, #605e5e 1px, transparent 0);
+    background-position: center;
+    transform: translateZ(-500px);
+
+    .title {
+      text-align: center;
+      text-shadow: 1px 1px 0px #0000001a, -1px -1px 0px #ffffff33;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: #ffffff80;
+      font-family: Poppins;
+      font-size: 90px;
+      font-weight: 600;
+      margin-top: 117px;
+      letter-spacing: -1.8px;
+      background: linear-gradient(135deg, #fff 30%, #ffffff80 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1s, slideIn 1.5s;
+
+      .gradient {
+        margin-right: 30px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #ffc446 0%, #ff6a07f5 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
+        -webkit-text-stroke-width: 0;
+      }
+    }
+
+    .subtitle {
+      font-family: Poppins;
+      font-size: 20px;
+      color: #c9c9c9;
+      width: 80%;
+      max-width: 720px;
+      line-height: 43px;
+      text-align: center;
+      animation: fadeIn 1s, slideIn 1.5s;
+      padding-top: 15px;
+    }
+  }
+}
+
+.our-story {
+  padding: 60px 0 105px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #131313;
+
+  .img-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+
+    img {
+      max-width: 645px;
+      width: 90%;
+    }
+
+    .name {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0px;
+      font-family: 'Poppins';
+      color: #b4b0b0;
+      margin-top: 20px;
+    }
+  }
+
+  p {
+    color: #d1d1d1;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.45px;
+    max-width: 730px;
+    padding: 0 50px;
+  }
+
+  strong {
+    color: #fcfdfff0;
+    font-family: Poppins;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.45px;
+  }
+}
+
+.timeline {
+  padding-top: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: auto;
+    width: 155px;
+    margin-bottom: 65px;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: 647px;
+    justify-content: center;
+
+    .line-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: auto;
+      width: 10px;
+
+      .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: #fdb039;
+        margin-bottom: 75px;
+
+        &:first-of-type {
+          margin-top: 15px;
+        }
+      }
+
+      &&::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 2px;
+        background: #222c32;
+      }
+    }
+
+    .dates-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 35px 20px 0 0;
+
+      .date {
+        font-family: Poppins;
+        font-size: 20px;
+        transform: translateY(-11px);
+        margin-bottom: 55px;
+
+        &.gray {
+          color: #b4b4b4;
+        }
+      }
+    }
+
+    .contents-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-top: 24px;
+
+      .content {
+        font-family: Poppins;
+        color: #d4d5d7;
+        font-weight: 500;
+        font-size: 17px;
+        height: 85px;
+        width: 410px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1536px) {
+  .about {
+    margin-top: 110px;
+
+    .wrapper {
+      .title {
+        font-size: 88px;
+      }
+
+      .sub-title {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .about {
+    margin-top: 190px;
+
+    .wrapper {
+      width: 700px;
+
+      .title {
+        font-size: 80px;
+        line-height: 90px;
+        margin-bottom: 25px
+      }
+
+      .subtitle {
+        width: 500px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 700px) {
+  .about {
+
+    .wrapper {
+      width: 500px;
+
+      .title {
+        line-height: 70px;
+        font-size: 60px;
+      }
+
+      .subtitle {
+        width: 400px;
+        font-size: 17px;
+      }
+    }
+
+    .our-story {
+      p {
+        font-size: 15px;
+        padding: 0 50px;
+      }
+    }
+
+    .timeline {
+
+      .wrapper {
+        .dates-wrapper {
+          margin-top: 37px;
+
+          .date {
+            font-size: 18px;
+            height: 30px;
+          }
+        }
+
+        .contents-wrapper {
+          .content {
+            font-size: 16px;
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 500px) {
+  .about {
+    margin-top: 140px;
+
+    .wrapper {
+      width: 400px;
+
+      .title {
+        font-size: 50px;
+        line-height: 60px;
+      }
+
+      .subtitle {
+        width: 300px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .our-story {
+    p {
+      font-size: 15px;
+      padding: 0 25px;
+    }
+  }
+
+  .timeline {
+    .wrapper {
+      .dates-wrapper {
+        margin: 35px 15px 0 0;
+
+        .date {
+          font-size: 16px;
+          margin-bottom: 60px;
+        }
+      }
+
+      .contents-wrapper {
+        margin-left: 15px;
+
+        .content {
+          font-size: 15px;
+          max-width: 160px;
+        }
+      }
+    }
+  }
+}
