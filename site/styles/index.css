@@ -1,9 +1,3 @@
-@import "_common.css";
-@import "_navbar.css";
-@import "_footer.css";
-@import "_get-start.css";
-
-
 .home-page {
   height: 100vh;
   width: 100%;
@@ -653,6 +647,16 @@
 
   .demo {
     margin-top: 200px;
+  }
+
+  .why-us {
+    .why2 img {
+      width: 340px;
+    }
+
+    .why3 img {
+      width: 360px;
+    }
   }
 
   .recommendations {
