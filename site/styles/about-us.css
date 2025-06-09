@@ -1,9 +1,3 @@
-@import "_common.css";
-@import "_navbar.css";
-@import "_footer.css";
-@import "_get-start.css";
-
-
 .about {
   width: 100%;
   display: flex;
