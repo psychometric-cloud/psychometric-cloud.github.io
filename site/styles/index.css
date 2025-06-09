@@ -638,11 +638,10 @@
       }
 
       .subtitle {
-        color: red;
         width: 300px;
         font-size: 16px;
         margin-bottom: 50px;
-        line-height: 30px;
+        line-height: 35px;
       }
 
       .btn-start {
