@@ -84,6 +84,11 @@
           text-decoration: none;
         }
 
+        .spacer {
+          display: inline;
+          margin-right: 5px;
+        }
+
         .read-more {
           display: none;
           align-items: center;
@@ -91,7 +96,7 @@
           .txt {
             color: #FFA970;
             font-size: 16px;
-            margin: 0 10px;
+            margin-right: 10px;
           }
 
           .arrow {
@@ -211,6 +216,7 @@
 
           .title {
             color: #ececec;
+            padding: 0 25px;
 
             .gradient {
               background: linear-gradient(135deg, #ffc446 0%, #ff6a07f5 100%);
@@ -222,6 +228,10 @@
           .text {
             padding: 25px;
             color: #dddbdb;
+          }
+
+          .read-more {
+            display: inline-flex;
           }
 
           .small-image {
@@ -249,20 +259,25 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .platform {
     .content {
       .main {
         .home-page {
-          margin: 120px 0 150px 0;
+          margin: 120px 0 160px 0;
 
           .title {
             font-size: 47px;
-            line-height: 70px;
+            line-height: 60px;
+          }
+
+          .subtitle {
+            line-height: 38px;
           }
         }
 
         .feature {
+          align-items: normal;
           margin-left: -40px;
         }
       }
