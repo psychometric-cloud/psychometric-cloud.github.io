@@ -76,6 +76,10 @@ a:hover {
 }
 
 @media (max-width: 800px) {
+  html {
+    overflow-x: hidden;
+  }
+
   .no_overflow {
     overflow: hidden;
   }
