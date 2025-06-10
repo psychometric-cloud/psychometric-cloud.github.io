@@ -305,13 +305,17 @@ header {
 
     .sidebar {
       position: fixed;
-      right: -100%;
+      right: 0;
+      /* Keep it at right: 0 */
+      transform: translateX(100%);
+      /* Move it off-screen with transform */
       top: 60px;
       bottom: 0;
       width: 100%;
       z-index: 0;
       background: #000;
-      transition: 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      /* Animate transform instead */
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -371,7 +375,8 @@ header {
 
       .sidebar {
         z-index: 20;
-        right: 0;
+        transform: translateX(0);
+        /* Bring it back on-screen */
       }
     }
   }

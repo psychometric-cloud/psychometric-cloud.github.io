@@ -117,10 +117,6 @@
           animation: animatedgradient 10s ease alternate infinite;
           background-size: 300% 300%;
           border-radius: 20px;
-          right: -5px;
-          /* Instead of extending past container */
-          max-width: 100vw;
-          /* Never exceed viewport width */
         }
       }
 
